@@ -1,0 +1,2 @@
+Src/stm32L476Disco_USART2_9600N81.o: \
+ ../Src/stm32L476Disco_USART2_9600N81.S

@@ -1,0 +1,1606 @@
+
+DiscoBlinkyMoT.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+08000188 <init_Cmd_handle>:
+*/
+	.global init_Cmd_handle @;initialize command buffer indexes, set entry point at Cmd_wait_for_startchar(), link Cmd_handle to device function
+	.thumb_func
+init_Cmd_handle:			@;void init_Cmd_Handler(Cmd_handle *, Device_table *, (*Cmd_source)(), Tasklist_root *)
+	@;Cmd_buf is where commands are received and interpreted. New commands re-zero the buffer
+	mov rCMDP,r0
+ 8000188:	4605      	mov	r5, r0
+	str r1,[rCMDP,#(CMD_DEVICETABLE)]	@;command dispatch table
+ 800018a:	f845 1c04 	str.w	r1, [r5, #-4]
+	str r2,[rCMDP,#(CMD_SOURCE)]		@;address command communication channel struct
+ 800018e:	f845 2c08 	str.w	r2, [r5, #-8]
+	str r3,[rCMDP,#(TASKLIST)]			@;tasklist head
+ 8000192:	f845 3c18 	str.w	r3, [r5, #-24]
+
+08000196 <reset_Cmd_handle>:
+reset_Cmd_handle: @;local entry point for use in Cmd_Handler. Entry here assumes rCMDP is valid
+	MOV_imm32 r1,Cmd_wait_for_startchar
+ 8000196:	f240 11b7 	movw	r1, #439	; 0x1b7
+ 800019a:	f6c0 0100 	movt	r1, #2048	; 0x800
+	str r1,[rCMDP,#(CMD_STATE)]
+ 800019e:	f845 1c10 	str.w	r1, [r5, #-16]
+	mov r1,#0					
+ 80001a2:	f04f 0100 	mov.w	r1, #0
+	str r1,[rCMDP,#(CMD_WRINDX)]
+ 80001a6:	f845 1c14 	str.w	r1, [r5, #-20]
+	bx lr						@;back to caller 
+ 80001aa:	4770      	bx	lr
+
+080001ac <Cmd_Handler>:
+	
+	.global Cmd_Handler 		@;void Cmd_Handler(Cmd_handle *); //parses commands received on 
+	.thumb_func
+Cmd_Handler: 					@;called in main()'s while(1)
+	@;this is the common entry point for dispatching Cmd_Handler-states
+	push {r7,lr}				@; registers saved will be restored by each Cmd_Handler state
+ 80001ac:	b580      	push	{r7, lr}
+	mov rCMDP,r0				@; Cmd_handle in rCMDP
+ 80001ae:	4605      	mov	r5, r0
+	ldr r0,[rCMDP,#(CMD_STATE)]	@; address of an entry point in Cmd_Handler in r0
+ 80001b0:	f855 0c10 	ldr.w	r0, [r5, #-16]
+	bx r0						@; dispatch to the current state of Cmd_Handler
+ 80001b4:	4700      	bx	r0
+
+080001b6 <Cmd_wait_for_startchar>:
+
+	.thumb_func
+Cmd_wait_for_startchar:			@;here with Cmd_handle in rCMDP
+	ldr r0,[rCMDP,#(CMD_SOURCE)]@;dispatch to function providing command stream
+ 80001b6:	f855 0c08 	ldr.w	r0, [r5, #-8]
+	blx r0						@; returns r0 >= 0 if char, return <0 if no new value
+ 80001ba:	4780      	blx	r0
+	cmp r0,#(':')				@;
+ 80001bc:	283a      	cmp	r0, #58	; 0x3a
+	beq	Cmd_have_startchar
+ 80001be:	d000      	beq.n	80001c2 <Cmd_have_startchar>
+	@; here if start char was not received
+	b run_tasks					//was pop {r7,pc}
+ 80001c0:	e05e      	b.n	8000280 <run_tasks>
+
+080001c2 <Cmd_have_startchar>:
+
+Cmd_have_startchar: @; here when start char wss received
+	@; reinitialize command-buffer control values
+	mov r2,#0					@;initialize counters
+ 80001c2:	f04f 0200 	mov.w	r2, #0
+	str r2,[rCMDP,#CMD_WRINDX]	@;
+ 80001c6:	f845 2c14 	str.w	r2, [r5, #-20]
+	MOV_imm32 r0,Cmd_get_msg_evenchar @;try again later
+ 80001ca:	f240 10d7 	movw	r0, #471	; 0x1d7
+ 80001ce:	f6c0 0000 	movt	r0, #2048	; 0x800
+	str r0,[rCMDP,#(CMD_STATE)] 
+ 80001d2:	f845 0c10 	str.w	r0, [r5, #-16]
+
+080001d6 <Cmd_get_msg_evenchar>:
+
+	@; fall through to start command  acquisition task 
+
+	.thumb_func
+Cmd_get_msg_evenchar:			@;message bytes all consist of a pair (even:odd) of hex ASCII bytes
+	ldr r0,[rCMDP,#(CMD_SOURCE)]@;dispatch to function providing command stream
+ 80001d6:	f855 0c08 	ldr.w	r0, [r5, #-8]
+	blx r0						@; returns r0 >= 0 if char, return <0 if no new value
+ 80001da:	4780      	blx	r0
+	cmp r0,#0
+ 80001dc:	2800      	cmp	r0, #0
+	bgt Cmd_have_evenchar		@;we've received a new character
+ 80001de:	dc00      	bgt.n	80001e2 <Cmd_have_evenchar>
+	@; here if nothing was received
+	b run_tasks					// was pop {r7,pc}
+ 80001e0:	e04e      	b.n	8000280 <run_tasks>
+
+080001e2 <Cmd_have_evenchar>:
+
+Cmd_have_evenchar:				@; here when there's a new character
+	cmp r0,#0x0A				@;test for newline (= end-of-message) of various flavors
+ 80001e2:	280a      	cmp	r0, #10
+	beq	Cmd_have_endchar		@; ..
+ 80001e4:	d02d      	beq.n	8000242 <Cmd_have_endchar>
+	cmp r0,#0x0D				@; ..
+ 80001e6:	280d      	cmp	r0, #13
+	beq	Cmd_have_endchar		@; ..
+ 80001e8:	d02b      	beq.n	8000242 <Cmd_have_endchar>
+	@; here if character was not end-of-message
+	ldr r2,[rCMDP,#CMD_WRINDX]		@;get offset to current write-location in the command buffer
+ 80001ea:	f855 2c14 	ldr.w	r2, [r5, #-20]
+	@;convert message character to binary and save value 
+	@;no error checking -- assumes all message characters are legal hex ASCII 0-9 A-F
+	cmp r0,#('9')				@;check if hi nybble character is 9 or below
+ 80001ee:	2839      	cmp	r0, #57	; 0x39
+	ite LS						@;	..
+ 80001f0:	bf94      	ite	ls
+	subLS r0,#('0')				@;	if yes -- adjust for numeric '0' - '9' 
+ 80001f2:	3830      	subls	r0, #48	; 0x30
+	subHI r0,#('A'-10)			@;  else adjust for alpha 'A' - 'F'
+ 80001f4:	3837      	subhi	r0, #55	; 0x37
+	lsl r0,#4					@;	save binary hi nybble value
+ 80001f6:	ea4f 1000 	mov.w	r0, r0, lsl #4
+	strb r0,[rCMDP,r2]			@;  ..	
+ 80001fa:	54a8      	strb	r0, [r5, r2]
+
+	@;prepare parser to look for odd character
+	MOV_imm32 r0,Cmd_get_msg_oddchar @;try again later
+ 80001fc:	f240 2009 	movw	r0, #521	; 0x209
+ 8000200:	f6c0 0000 	movt	r0, #2048	; 0x800
+	str r0,[rCMDP,#(CMD_STATE)] 
+ 8000204:	f845 0c10 	str.w	r0, [r5, #-16]
+
+08000208 <Cmd_get_msg_oddchar>:
+	@; fall through to odd char acquisition task 
+	
+	.thumb_func
+Cmd_get_msg_oddchar:			@;message bytes all consist of a pair (even:odd) of hex ASCII bytes
+	ldr r0,[rCMDP,#(CMD_SOURCE)]@;dispatch to function providing command stream
+ 8000208:	f855 0c08 	ldr.w	r0, [r5, #-8]
+	blx r0						@; returns r0 >= 0 if char, return <0 if no new value
+ 800020c:	4780      	blx	r0
+	cmp r0,#0
+ 800020e:	2800      	cmp	r0, #0
+	bgt Cmd_have_oddchar
+ 8000210:	dc00      	bgt.n	8000214 <Cmd_have_oddchar>
+	@; here if nothing was received
+	b run_tasks					//was pop {r7,pc}
+ 8000212:	e035      	b.n	8000280 <run_tasks>
+
+08000214 <Cmd_have_oddchar>:
+
+Cmd_have_oddchar: @; here if something was received 
+	cmp r0,#0x0A				@;test for newline of various flavors !!newline here would be an error
+ 8000214:	280a      	cmp	r0, #10
+	beq	Cmd_error_exit			@; ..
+ 8000216:	d030      	beq.n	800027a <Cmd_error_exit>
+	cmp r0,#0x0D				@; ..
+ 8000218:	280d      	cmp	r0, #13
+	beq Cmd_error_exit			@; ..
+ 800021a:	d02e      	beq.n	800027a <Cmd_error_exit>
+	
+	@; here if character was not end-of-message
+	ldr r2,[rCMDP,#CMD_WRINDX]						@;get offset to current write-location in the command buffer
+ 800021c:	f855 2c14 	ldr.w	r2, [r5, #-20]
+	@;convert message character to binary (assumes all message characters are legal hex ASCII 0-9 A-F
+	cmp r0,#('9')		
+ 8000220:	2839      	cmp	r0, #57	; 0x39
+	ite LS						@;	check if lo nybble's value is 9 or below
+ 8000222:	bf94      	ite	ls
+	subLS r0,#('0')				@;	if yes -- adjust for numeric '0' - '9' 
+ 8000224:	3830      	subls	r0, #48	; 0x30
+	subHI r0,#('A'-10)			@;  else adjust for alpha 'A' - 'F'		
+ 8000226:	3837      	subhi	r0, #55	; 0x37
+	ldr r1,[rCMDP,r2]				@;get previously converted hi nybble value of this byte 
+ 8000228:	58a9      	ldr	r1, [r5, r2]
+	add r1,r0					@; add lo nybble to it
+ 800022a:	4401      	add	r1, r0
+	strb r1,[rCMDP,r2]				@; and save it back
+ 800022c:	54a9      	strb	r1, [r5, r2]
+	adds r2,#1					@;  then update buffer pointer
+ 800022e:	3201      	adds	r2, #1
+	str r2,[rCMDP,#CMD_WRINDX]		@; ..
+ 8000230:	f845 2c14 	str.w	r2, [r5, #-20]
+
+	@;prepare parser to look for even character next
+	MOV_imm32 r0,Cmd_get_msg_evenchar @;try again later
+ 8000234:	f240 10d7 	movw	r0, #471	; 0x1d7
+ 8000238:	f6c0 0000 	movt	r0, #2048	; 0x800
+	str r0,[rCMDP,#(CMD_STATE)] 
+ 800023c:	f845 0c10 	str.w	r0, [r5, #-16]
+	b Cmd_get_msg_evenchar 
+ 8000240:	e7c9      	b.n	80001d6 <Cmd_get_msg_evenchar>
+
+08000242 <Cmd_have_endchar>:
+	
+Cmd_have_endchar: @;here from Cmd_build_msg_even_char when '\n' (x0D or 0x0A) of message was received 
+	ldr r2,[rCMDP,#CMD_WRINDX]		@;r2 holds offset to end+1 of message body
+ 8000242:	f855 2c14 	ldr.w	r2, [r5, #-20]
+	cmp r2,#0
+ 8000246:	2a00      	cmp	r2, #0
+	beq Cmd_error_exit			@; message body is empty
+ 8000248:	d017      	beq.n	800027a <Cmd_error_exit>
+
+	@; ok so far, now do the checksum. rCMDP still holds bufhandle
+	add r2,rCMDP,r2				@;r2 now holds address of end+1 of message body in buffer
+ 800024a:	442a      	add	r2, r5
+	mov r3,rCMDP				@;r3 points to origin of command message in buffer
+ 800024c:	462b      	mov	r3, r5
+	movs r0,#0					@;initialize checksum value (also clears carry, but we don't worry about carry because we are adding bytes to words)
+ 800024e:	2000      	movs	r0, #0
+
+08000250 <Cmd_accumulate_checksum>:
+Cmd_accumulate_checksum:
+	ldrb r1,[r3],#1				@;read a byte from the command
+ 8000250:	f813 1b01 	ldrb.w	r1, [r3], #1
+	adds r0,r1					@; and accumulate to the checksum 
+ 8000254:	1840      	adds	r0, r0, r1
+	cmp r3,r2					@;have we reached the end of the command?
+ 8000256:	4293      	cmp	r3, r2
+	blo Cmd_accumulate_checksum @;	no -- 
+ 8000258:	d3fa      	bcc.n	8000250 <Cmd_accumulate_checksum>
+	@;here when all bytes of message have been accumulated to checksum
+	and r0,0xFF					@;checksum is low 8 bits only
+ 800025a:	f000 00ff 	and.w	r0, r0, #255	; 0xff
+	cmp r0,#0
+ 800025e:	2800      	cmp	r0, #0
+	bne Cmd_error_exit
+ 8000260:	d10b      	bne.n	800027a <Cmd_error_exit>
+
+08000262 <Cmd_dispatch>:
+
+	@;here with a valid command string at Cmd_handle
+Cmd_dispatch:	@;!!TODO -- check dispatch code against the length of Devicetable
+	@;here with a valid command in the buffer 
+	mov r0,rCMDP				@;reset controls for next call to Cmd_handler
+ 8000262:	4628      	mov	r0, r5
+	bl reset_Cmd_handle			@; ..
+ 8000264:	f7ff ff97 	bl	8000196 <reset_Cmd_handle>
+	mov r0,rCMDP				@;r0 points to command string 
+ 8000268:	4628      	mov	r0, r5
+	ldrb r1,[r0],#1				@;device# in r1; r0 now points to devices's fn# in command buffer
+ 800026a:	f810 1b01 	ldrb.w	r1, [r0], #1
+	ldr r2,[rCMDP,#(CMD_DEVICETABLE)] @;device table origin in r2
+ 800026e:	f855 2c04 	ldr.w	r2, [r5, #-4]
+	ldr r2,[r2,r1,LSL #2]		@;lookup command in Devicetable -- command execution address in r2
+ 8000272:	f852 2021 	ldr.w	r2, [r2, r1, lsl #2]
+	blx r2						@;dispatch device / device function ; r0 points to device's fn# in the command buffer
+ 8000276:	4790      	blx	r2
+
+08000278 <Cmd_complete_exit>:
+Cmd_complete_exit:
+	b run_tasks
+ 8000278:	e002      	b.n	8000280 <run_tasks>
+
+0800027a <Cmd_error_exit>:
+
+
+Cmd_error_exit:	@;here if the message was empty or invalid (not hex ASCII or checksum fails) 
+	@;!! TODO? : send NACK to controller to indicate some problem with the message
+	mov r0,rCMDP				@;reset controls for next call to Cmd_handler
+ 800027a:	4628      	mov	r0, r5
+	bl reset_Cmd_handle			@; ..
+ 800027c:	f7ff ff8b 	bl	8000196 <reset_Cmd_handle>
+
+08000280 <run_tasks>:
+	
+run_tasks:
+//	MOV_imm32 r3,Tasklist_root	@; point task pointer ('rTASKP'=r4) to 1st entry on task list
+	ldr r3,[rCMDP,#(TASKLIST)]	@; get starting task pointer
+ 8000280:	f855 3c18 	ldr.w	r3, [r5, #-24]
+	ldr rTASKP,[r3,#NEXT]		@;  rTASKP now points to the XEQ field of the 1st task on the task list
+ 8000284:	685c      	ldr	r4, [r3, #4]
+	str sp,[r3,#C_startingSP]	@; save starting sp (C tasks exit without cleaning up stack)
+ 8000286:	f8c3 d00c 	str.w	sp, [r3, #12]
+	ldr pc,[rTASKP]				@;  off we go to the first task on the task list. Ww'll return here after tasks have run
+ 800028a:	f8d4 f000 	ldr.w	pc, [r4]
+
+0800028e <do_tasks_return>:
+	@;returns through final task on list 'do_tasks_return' which does a pop {r7,pc}	back to main()'s while(1)
+
+	.global do_tasks_return
+	.thumb_func
+do_tasks_return:				@;execution behavior of Tasklist_last
+	ldr r3,[rCMDP,#(TASKLIST)]	@; get starting task pointer
+ 800028e:	f855 3c18 	ldr.w	r3, [r5, #-24]
+	ldr sp,[r3,#C_startingSP]	@; restore starting sp (C tasks will have messed it up)
+ 8000292:	f8d3 d00c 	ldr.w	sp, [r3, #12]
+	pop {r7,pc}
+ 8000296:	bd80      	pop	{r7, pc}
+
+08000298 <MSG_post_fn>:
+
+	.global MSG_post_fn @; place a message in a message queue
+	.thumb_func
+MSG_post_fn: @;void _MSG_post_fn(void *msgchannel_handle, void *devicedata) appends a command or task message to a message list. 
+@; low-level function designed to be called by Msg_post macro from within device command or task 
+	push {r7,lr}
+ 8000298:	b580      	push	{r7, lr}
+
+	@;arrive with r0 pointing to msgchannel_handle, r1 pointing to device_data of message poster
+	ldr r2,[r0,#MSGHEAD_PTR]				@;get pointer to message at head of msgchannel queue in r2
+ 800029a:	6842      	ldr	r2, [r0, #4]
+	cbz r2,1f								@;if message queue is empty then new message is both first and last			
+ 800029c:	b11a      	cbz	r2, 80002a6 <MSG_post_fn+0xe>
+	@;here when there's at least one message in the queue
+	ldr r2,[r0,#MSGTAIL_PTR]				@;r2 now points to device_data of the message at the tail of the message queue
+ 800029e:	6882      	ldr	r2, [r0, #8]
+	str	r1,[r2,#MSGLINK]					@;store pointer to our device_data in the device_data of the current last in queue
+ 80002a0:	6151      	str	r1, [r2, #20]
+	str	r1,[r0,#MSGTAIL_PTR]				@; and we become the last message in the queue
+ 80002a2:	6081      	str	r1, [r0, #8]
+	b 2f
+ 80002a4:	e001      	b.n	80002aa <MSG_post_fn+0x12>
+1: 	@;here if message queue is empty	
+	str r1,[r0,#MSGHEAD_PTR]				@;store pointer to our device_data to make our message first in the queue
+ 80002a6:	6041      	str	r1, [r0, #4]
+	str r1,[r0,#MSGTAIL_PTR]				@; and also last
+ 80002a8:	6081      	str	r1, [r0, #8]
+
+2:	mov r0,#0								@; zero our message's 'next message' link because we are now last in queue
+ 80002aa:	f04f 0000 	mov.w	r0, #0
+	str	r0,[r1,#MSGLINK]					@; .. 
+ 80002ae:	6148      	str	r0, [r1, #20]
+
+ 	pop {r7,pc}								@;  back to 'Msg_post' macro
+ 80002b0:	bd80      	pop	{r7, pc}
+
+080002b2 <Msg_Handler_init>:
+
+	
+	.global Msg_Handler_init 				@;clear any messages waiting on the message list, reset list to empty
+	.thumb_func
+Msg_Handler_init: @;void Msg_Handler_init(void *msgchannel_handle, int (*nbTXfn)(uint8_t c);
+	str r1,[r0,#NBTX_FUNC]
+ 80002b2:	6001      	str	r1, [r0, #0]
+	mov r1,#0
+ 80002b4:	f04f 0100 	mov.w	r1, #0
+	str r1,[r0,#MSGHEAD_PTR]
+ 80002b8:	6041      	str	r1, [r0, #4]
+	str r1,[r0,#MSGTAIL_PTR]		
+ 80002ba:	6081      	str	r1, [r0, #8]
+	bx lr					
+ 80002bc:	4770      	bx	lr
+
+080002be <Msg_Handler>:
+	.global Msg_Handler @; coroutine executing round-robin with do_tasks()
+	@; tries to send a character from the current message string each time it runs;
+	@; loads the next message string in MSGLINK when the current string is empty
+	.thumb_func
+Msg_Handler: @;message* Msg_Handler(void *msgchannel_handle); //called in main()'s while(1)
+	push {r7,lr}
+ 80002be:	b580      	push	{r7, lr}
+	
+	mov r3,r0								@;msgchannel_handle in r3
+ 80002c0:	4603      	mov	r3, r0
+	ldr r2,[r3,#MSGHEAD_PTR]				@;get link to data structure of current message
+ 80002c2:	685a      	ldr	r2, [r3, #4]
+	@;-- here with r2=0 if no messages, else r2 now points to device_data of the message
+	cbz r2,1f								@; list is empty, so leave
+ 80002c4:	b1c2      	cbz	r2, 80002f8 <Msg_sender+0x32>
+
+080002c6 <Msg_sender>:
+2:	@;(future) might loop here in the case where multiple characters of the message might be sent at once
+	.global Msg_sender	@;global for debugger visibility
+	.thumb_func							
+Msg_sender:  @; here to send next character of message; removes message from list when they have been sent
+	@;here with r2=address of device_data struct holding message, r3=address of msgchannel_handle struct
+	ldr r1,[r2,#MSGPTR]						@;r1 points to next message character
+ 80002c6:	68d1      	ldr	r1, [r2, #12]
+	ldrb r0,[r1],#1							@;  next message character in r0 
+ 80002c8:	f811 0b01 	ldrb.w	r0, [r1], #1
+	@;attempt to send message character
+	push {r2,r3}							@;save for use on return from nbTXfn()
+ 80002cc:	b40c      	push	{r2, r3}
+	ldr r2,[r3,#NBTX_FUNC]					@;address of nbTXfn() in r2
+ 80002ce:	681a      	ldr	r2, [r3, #0]
+ 	blx r2									@;nbTXfn() returns +1 if char sent, -1 if fail to send
+ 80002d0:	4790      	blx	r2
+	pop {r2,r3}								@; restore pointers to current device_data and msgchannel_handle
+ 80002d2:	bc0c      	pop	{r2, r3}
+	subs r0,#1								@;check if function's return in r0 =1 (character was sent)
+ 80002d4:	3801      	subs	r0, #1
+	cbnz r0,1f								@;  send was blocked, so done for now -- leave (nothing is changed)
+ 80002d6:	b978      	cbnz	r0, 80002f8 <Msg_sender+0x32>
+	@;here if the character was sent. r2=address of devicedata struct, r3=address of msgchannel_handle struct
+	str r1,[r2,#MSGPTR]						@;update message pointer
+ 80002d8:	60d1      	str	r1, [r2, #12]
+	ldr r1,[r2,#MSGCOUNT]					@;update message count and test if =0
+ 80002da:	6911      	ldr	r1, [r2, #16]
+	subs r1,#1								@; (sets ZF if count reached 0)
+ 80002dc:	3901      	subs	r1, #1
+	str r1,[r2,#MSGCOUNT]					@; .. 
+ 80002de:	6111      	str	r1, [r2, #16]
+@;	bne 2b	@; when burst-sending, attempts to send the nextcharacter of the message
+	@; -- here with r2=address of device data structure containing the message control variables 
+	bne 1f									@; message not done-- initially we'll only send one character at a time
+ 80002e0:	d10a      	bne.n	80002f8 <Msg_sender+0x32>
+	@;here if message count has reached 0 (message done)
+	mov r1,#0								@;make MSGPTR=0 (MSGCOUNT alreeady is 0 from above)
+ 80002e2:	f04f 0100 	mov.w	r1, #0
+	str r1,[r2,#MSGPTR]						@; ..
+ 80002e6:	60d1      	str	r1, [r2, #12]
+	@;here to remove msg link of this message from list
+	ldr r0,[r2,#MSGLINK]					@;get address (if exist) of next message in list in r0
+ 80002e8:	6950      	ldr	r0, [r2, #20]
+	str r1,[r2,#MSGLINK]					@;  then clear (write NULL) to this device's link
+ 80002ea:	6151      	str	r1, [r2, #20]
+	mov r2,r0								@; maintain consistent meaning for r2 as address of device data structure
+ 80002ec:	4602      	mov	r2, r0
+	cbz r2,3f								@;if link was null then list is empty so reset the list pointers to NUL 
+ 80002ee:	b10a      	cbz	r2, 80002f4 <Msg_sender+0x2e>
+	@;here when another message follows this one on the list -- make it new first on list
+@;	MOV_imm32 r3,Msgs_list					@; unnecessary/duplicative -- done 'just in case'
+	str r2,[r3,#MSGHEAD_PTR]				@;make this message's next message the new first message
+ 80002f0:	605a      	str	r2, [r3, #4]
+	@; -- here with r2=address of next device data structure containing a message
+	b 1f
+ 80002f2:	e001      	b.n	80002f8 <Msg_sender+0x32>
+@;	b 2b  @; when burst-sending, attempts to start the next message on the list
+
+3:  @;here if no more messages on list ( r2=0 )		
+	str r2,[r3,#MSGHEAD_PTR]					@;mark message list as empty
+ 80002f4:	605a      	str	r2, [r3, #4]
+	str r2,[r3,#MSGTAIL_PTR]					@; ..
+ 80002f6:	609a      	str	r2, [r3, #8]
+	
+1:	@;here with r2=0 if nothing more to send, o.w. = address of device control array
+	mov r0,r2								@;function returns address of continuing or new message, else returns 0 
+ 80002f8:	4610      	mov	r0, r2
+	pop {r7,pc}								@;							
+ 80002fa:	bd80      	pop	{r7, pc}
+
+080002fc <adminDevicetable>:
+ 80002fc:	080008c9 	.word	0x080008c9
+ 8000300:	08000305 	.word	0x08000305
+
+08000304 <MoTdevice_GreenLED_cmd>:
+	.text
+@;------ GreenLED device dispatch
+	.global MoTdevice_GreenLED_cmd	
+	.thumb_func					
+MoTdevice_GreenLED_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'GreenLED'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+ 8000304:	b580      	push	{r7, lr}
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any) 
+ 8000306:	f810 1b01 	ldrb.w	r1, [r0], #1
+	and r1,0x03			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)	tbb [pc,r1]
+ 800030a:	f001 0103 	and.w	r1, r1, #3
+	@; GreenLED function byte meanings
+	@;	0: install - initalize GreenLED hardware and data and place GreenLED ON and OFF tasks on the task list
+	@;	1: change blinking schedule to 'fast'
+	@;	2: change blinking schedule to 'slow'
+	@;  3: remove - remove GreenLED ON and OFF from the task list
+	tbb [pc,r1]
+ 800030e:	e8df f001 	tbb	[pc, r1]
+
+08000312 <MoTdevice_GreenLED_cmd_table>:
+ 8000312:	6702      	.short	0x6702
+ 8000314:	903e      	.short	0x903e
+
+08000316 <MoTdevice_GreenLED_init>:
+	@; - install MoTdevice_GreenLED_ONtask on task list
+	@; - post Green_LED_init_msg 
+	@; - return to Cmd_Handler dispatcher
+
+	@; initialize port pin to drive STM32L476 Discoverys green LED
+	bl GreenLED_init						@;in stm32L476Disco_GreenLED.S
+ 8000316:	f000 f95d 	bl	80005d4 <GreenLED_init>
+
+	@; initialize blinking control parameters (ZERO value prevents blinking) 
+	mov r1,#0								
+ 800031a:	f04f 0100 	mov.w	r1, #0
+	MOV_imm32 r3,MoTdevice_GreenLED_data 				
+ 800031e:	f640 2324 	movw	r3, #2596	; 0xa24
+ 8000322:	f2c2 0300 	movt	r3, #8192	; 0x2000
+	str r1,[r3,#GLED_RELOAD]				
+ 8000326:	6199      	str	r1, [r3, #24]
+	str r1,[r3,#GLED_COUNT]	
+ 8000328:	61d9      	str	r1, [r3, #28]
+
+	@; add MoTdevice_GreenLED_ONtask task to task list - MoTdevice_GreenLED_ONtask and MoTdevice_GreenLED_OFFtask tasks cycle back and forth based on GLED_COUNT and GLED_RELOAD.  
+	LINK_me	MoTdevice_GreenLED_data,MoTdevice_GreenLED_ONtask		@;insert task 'MoTdevice_GreenLED_ONtask' on Tasklist
+ 800032a:	f640 2324 	movw	r3, #2596	; 0xa24
+ 800032e:	f2c2 0300 	movt	r3, #8192	; 0x2000
+ 8000332:	681a      	ldr	r2, [r3, #0]
+ 8000334:	b962      	cbnz	r2, 8000350 <MoTdevice_GreenLED_init+0x3a>
+ 8000336:	f855 2c18 	ldr.w	r2, [r5, #-24]
+ 800033a:	6851      	ldr	r1, [r2, #4]
+ 800033c:	6851      	ldr	r1, [r2, #4]
+ 800033e:	f240 408f 	movw	r0, #1167	; 0x48f
+ 8000342:	f6c0 0000 	movt	r0, #2048	; 0x800
+ 8000346:	6018      	str	r0, [r3, #0]
+ 8000348:	6053      	str	r3, [r2, #4]
+ 800034a:	608b      	str	r3, [r1, #8]
+ 800034c:	6059      	str	r1, [r3, #4]
+ 800034e:	609a      	str	r2, [r3, #8]
+
+	@; post new GreenLED message on list 
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_init_msg, Green_LED_init_msglen
+ 8000350:	f240 001c 	movw	r0, #28
+ 8000354:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 8000358:	f640 2124 	movw	r1, #2596	; 0xa24
+ 800035c:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 8000360:	694a      	ldr	r2, [r1, #20]
+ 8000362:	b98a      	cbnz	r2, 8000388 <MoTdevice_GreenLED_init+0x72>
+ 8000364:	f240 526e 	movw	r2, #1390	; 0x56e
+ 8000368:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 800036c:	60ca      	str	r2, [r1, #12]
+ 800036e:	f240 0215 	movw	r2, #21
+ 8000372:	f2c0 0200 	movt	r2, #0
+ 8000376:	610a      	str	r2, [r1, #16]
+ 8000378:	b580      	push	{r7, lr}
+ 800037a:	f7ff ff8d 	bl	8000298 <MSG_post_fn>
+ 800037e:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 8000382:	f04f 0000 	mov.w	r0, #0
+ 8000386:	e001      	b.n	800038c <MoTdevice_GreenLED_init+0x76>
+ 8000388:	f04f 30ff 	mov.w	r0, #4294967295
+	@; here with r0=0 if message got posted, =-1 if not. Ignored for now. 
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done at 'GreenLED:". Returns to Cmd_Handler
+ 800038c:	bd80      	pop	{r7, pc}
+
+0800038e <MoTdevice_GreenLED_slow>:
+
+	.global MoTdevice_GreenLED_slow @;taskID=1, function number=1		
+	.thumb_func
+MoTdevice_GreenLED_slow: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for GreenLED commands)
+	@; post new GreenLED message on list	!!TODO
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_slow_msg, Green_LED_slow_msglen
+ 800038e:	f240 001c 	movw	r0, #28
+ 8000392:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 8000396:	f640 2124 	movw	r1, #2596	; 0xa24
+ 800039a:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 800039e:	694a      	ldr	r2, [r1, #20]
+ 80003a0:	b98a      	cbnz	r2, 80003c6 <MoTdevice_GreenLED_slow+0x38>
+ 80003a2:	f240 529b 	movw	r2, #1435	; 0x59b
+ 80003a6:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 80003aa:	60ca      	str	r2, [r1, #12]
+ 80003ac:	f240 0218 	movw	r2, #24
+ 80003b0:	f2c0 0200 	movt	r2, #0
+ 80003b4:	610a      	str	r2, [r1, #16]
+ 80003b6:	b580      	push	{r7, lr}
+ 80003b8:	f7ff ff6e 	bl	8000298 <MSG_post_fn>
+ 80003bc:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 80003c0:	f04f 0000 	mov.w	r0, #0
+ 80003c4:	e001      	b.n	80003ca <MoTdevice_GreenLED_slow+0x3c>
+ 80003c6:	f04f 30ff 	mov.w	r0, #4294967295
+
+	@; change GreenLED delay count
+	MOV_imm32 r1,0x12345					@;set a new values for GreenLED blink delay						
+ 80003ca:	f242 3145 	movw	r1, #9029	; 0x2345
+ 80003ce:	f2c0 0101 	movt	r1, #1
+	MOV_imm32 r3,MoTdevice_GreenLED_data 	@; ..				
+ 80003d2:	f640 2324 	movw	r3, #2596	; 0xa24
+ 80003d6:	f2c2 0300 	movt	r3, #8192	; 0x2000
+	str r1,[r3,#GLED_RELOAD]				@; ..	
+ 80003da:	6199      	str	r1, [r3, #24]
+	str r1,[r3,#GLED_COUNT]					@; ..
+ 80003dc:	61d9      	str	r1, [r3, #28]
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+ 80003de:	bd80      	pop	{r7, pc}
+
+080003e0 <MoTdevice_GreenLED_fast>:
+			
+	.global MoTdevice_GreenLED_fast @;taskID=1, function number=2		
+	.thumb_func
+MoTdevice_GreenLED_fast: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for MoTdevice_GreenLED_xxx commands) 
+	@; post new GreenLED message on list	
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_fast_msg, Green_LED_fast_msglen
+ 80003e0:	f240 001c 	movw	r0, #28
+ 80003e4:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 80003e8:	f640 2124 	movw	r1, #2596	; 0xa24
+ 80003ec:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 80003f0:	694a      	ldr	r2, [r1, #20]
+ 80003f2:	b98a      	cbnz	r2, 8000418 <MoTdevice_GreenLED_fast+0x38>
+ 80003f4:	f240 5283 	movw	r2, #1411	; 0x583
+ 80003f8:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 80003fc:	60ca      	str	r2, [r1, #12]
+ 80003fe:	f240 0218 	movw	r2, #24
+ 8000402:	f2c0 0200 	movt	r2, #0
+ 8000406:	610a      	str	r2, [r1, #16]
+ 8000408:	b580      	push	{r7, lr}
+ 800040a:	f7ff ff45 	bl	8000298 <MSG_post_fn>
+ 800040e:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 8000412:	f04f 0000 	mov.w	r0, #0
+ 8000416:	e001      	b.n	800041c <MoTdevice_GreenLED_fast+0x3c>
+ 8000418:	f04f 30ff 	mov.w	r0, #4294967295
+
+	@; change GreenLED delay count
+	MOV_imm32 r1,0x1234						@;set a new values for GreenLED blink delay						
+ 800041c:	f241 2134 	movw	r1, #4660	; 0x1234
+ 8000420:	f2c0 0100 	movt	r1, #0
+	MOV_imm32 r3,MoTdevice_GreenLED_data 		@; ..				
+ 8000424:	f640 2324 	movw	r3, #2596	; 0xa24
+ 8000428:	f2c2 0300 	movt	r3, #8192	; 0x2000
+	str r1,[r3,#GLED_RELOAD]				@; ..	
+ 800042c:	6199      	str	r1, [r3, #24]
+	str r1,[r3,#GLED_COUNT]					@; ..
+ 800042e:	61d9      	str	r1, [r3, #28]
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+ 8000430:	bd80      	pop	{r7, pc}
+
+08000432 <MoTdevice_GreenLED_stop>:
+
+	.global MoTdevice_GreenLED_stop @;taskID=1, function number=3		
+	.thumb_func
+MoTdevice_GreenLED_stop: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for MoTdevice_GreenLED_xxx commands)
+	@; post new GreenLED message on list	
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_remove_msg, Green_LED_remove_msglen
+ 8000432:	f240 001c 	movw	r0, #28
+ 8000436:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 800043a:	f640 2124 	movw	r1, #2596	; 0xa24
+ 800043e:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 8000442:	694a      	ldr	r2, [r1, #20]
+ 8000444:	b98a      	cbnz	r2, 800046a <MoTdevice_GreenLED_stop+0x38>
+ 8000446:	f240 52b3 	movw	r2, #1459	; 0x5b3
+ 800044a:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 800044e:	60ca      	str	r2, [r1, #12]
+ 8000450:	f240 0214 	movw	r2, #20
+ 8000454:	f2c0 0200 	movt	r2, #0
+ 8000458:	610a      	str	r2, [r1, #16]
+ 800045a:	b580      	push	{r7, lr}
+ 800045c:	f7ff ff1c 	bl	8000298 <MSG_post_fn>
+ 8000460:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 8000464:	f04f 0000 	mov.w	r0, #0
+ 8000468:	e001      	b.n	800046e <MoTdevice_GreenLED_stop+0x3c>
+ 800046a:	f04f 30ff 	mov.w	r0, #4294967295
+
+	bl GreenLED_OFF							@; turn the Green LED off
+ 800046e:	f000 f8d3 	bl	8000618 <GreenLED_OFF>
+	@;remove GreenLED device from the task list
+	UNLINK_me MoTdevice_GreenLED_data			
+ 8000472:	f640 2324 	movw	r3, #2596	; 0xa24
+ 8000476:	f2c2 0300 	movt	r3, #8192	; 0x2000
+ 800047a:	689a      	ldr	r2, [r3, #8]
+ 800047c:	6859      	ldr	r1, [r3, #4]
+ 800047e:	6051      	str	r1, [r2, #4]
+ 8000480:	608a      	str	r2, [r1, #8]
+ 8000482:	f04f 0000 	mov.w	r0, #0
+ 8000486:	6018      	str	r0, [r3, #0]
+ 8000488:	6058      	str	r0, [r3, #4]
+ 800048a:	6098      	str	r0, [r3, #8]
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+ 800048c:	bd80      	pop	{r7, pc}
+
+0800048e <MoTdevice_GreenLED_ONtask>:
+	@; 'tasks' are dispatched by do_tasks() at exit from Cmd_Handler() (see \MoT\MoT_Cmd_HandlerXX.S
+
+	.global MoTdevice_GreenLED_ONtask @;task which counts down, blinks and restarts timer
+	.thumb_func
+MoTdevice_GreenLED_ONtask: @;task entry point : arrive here with rTASKP = MoTdevice_GreenLED_data
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; reload value = 0 says no blinking 
+ 800048e:	69a2      	ldr	r2, [r4, #24]
+	cbz r2,1f								@;  not blinking so skip to exit
+ 8000490:	b1ea      	cbz	r2, 80004ce <MoTdevice_GreenLED_ONtask+0x40>
+
+	@; here if first entry and blinking  
+	bl GreenLED_ON							@; turn the Green LED on
+ 8000492:	f000 f8ca 	bl	800062a <GreenLED_ON>
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_ON_msg, Green_LED_ON_msglen @;returns -1 if fail, 0 if succeed
+ 8000496:	f240 001c 	movw	r0, #28
+ 800049a:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 800049e:	f640 2124 	movw	r1, #2596	; 0xa24
+ 80004a2:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 80004a6:	694a      	ldr	r2, [r1, #20]
+ 80004a8:	b98a      	cbnz	r2, 80004ce <MoTdevice_GreenLED_ONtask+0x40>
+ 80004aa:	f240 52c7 	movw	r2, #1479	; 0x5c7
+ 80004ae:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 80004b2:	60ca      	str	r2, [r1, #12]
+ 80004b4:	f240 0203 	movw	r2, #3
+ 80004b8:	f2c0 0200 	movt	r2, #0
+ 80004bc:	610a      	str	r2, [r1, #16]
+ 80004be:	b580      	push	{r7, lr}
+ 80004c0:	f7ff feea 	bl	8000298 <MSG_post_fn>
+ 80004c4:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 80004c8:	f04f 0000 	mov.w	r0, #0
+ 80004cc:	e001      	b.n	80004d2 <MoTdevice_GreenLED_ONtask+0x44>
+ 80004ce:	f04f 30ff 	mov.w	r0, #4294967295
+
+	@; update task resume point -- will skip the above when this task repeats
+	RELINK_me MoTdevice_GreenLED_ONtask_msg_posted		
+ 80004d2:	f240 42dd 	movw	r2, #1245	; 0x4dd
+ 80004d6:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 80004da:	6022      	str	r2, [r4, #0]
+
+080004dc <MoTdevice_GreenLED_ONtask_msg_posted>:
+	.global MoTdevice_GreenLED_ONtask_msg_posted
+	.thumb_func
+MoTdevice_GreenLED_ONtask_msg_posted:	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; get counter reload value
+ 80004dc:	69a2      	ldr	r2, [r4, #24]
+	cbz r2,1f								@; skip remaining operation of task if its 0 (=initial value and halted value)
+ 80004de:	b15a      	cbz	r2, 80004f8 <MoTdevice_GreenLED_ONtask_msg_posted+0x1c>
+	ldr r1,[rTASKP,#GLED_COUNT]				@; otherwise get the current count
+ 80004e0:	69e1      	ldr	r1, [r4, #28]
+	cbz r1,2f								@; prepare for next countdown if its 0
+ 80004e2:	b111      	cbz	r1, 80004ea <MoTdevice_GreenLED_ONtask_msg_posted+0xe>
+	subs r1,#1								@;  otherwise decrement it 
+ 80004e4:	3901      	subs	r1, #1
+	str r1,[rTASKP,#GLED_COUNT]				@;  and store it back
+ 80004e6:	61e1      	str	r1, [r4, #28]
+	b	1f									@; go to exit to the next task
+ 80004e8:	e006      	b.n	80004f8 <MoTdevice_GreenLED_ONtask_msg_posted+0x1c>
+	
+2:	@; here when repeat count reaches 0	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; restart count for MoTdevice_GreenLED_OFFtask_msg phase of this task
+ 80004ea:	69a2      	ldr	r2, [r4, #24]
+	str r2,[rTASKP,#GLED_COUNT]				@;  ..
+ 80004ec:	61e2      	str	r2, [r4, #28]
+	RELINK_me MoTdevice_GreenLED_OFFtask		@; update task resume point as MoTdevice_GreenLED_OFFtask_msg
+ 80004ee:	f240 42ff 	movw	r2, #1279	; 0x4ff
+ 80004f2:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 80004f6:	6022      	str	r2, [r4, #0]
+	
+1:	@; task for this device is done for now -- proceed to next device/task on list
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task 
+ 80004f8:	6864      	ldr	r4, [r4, #4]
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+ 80004fa:	f8d4 f000 	ldr.w	pc, [r4]
+
+080004fe <MoTdevice_GreenLED_OFFtask>:
+
+	
+	.global MoTdevice_GreenLED_OFFtask @; counts down, blinks and restarts timer
+	.thumb_func
+MoTdevice_GreenLED_OFFtask: @;arrive here with rTASKP = MoTdevice_GreenLED_data
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; reload value = 0 says no blinking 
+ 80004fe:	69a2      	ldr	r2, [r4, #24]
+	cbz r2,1f								@;  no blinking so skip to exit
+ 8000500:	b1ea      	cbz	r2, 800053e <MoTdevice_GreenLED_OFFtask+0x40>
+
+	@; here if first entry and blinking 
+	bl GreenLED_OFF							@; turn the Green LED off
+ 8000502:	f000 f889 	bl	8000618 <GreenLED_OFF>
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_OFF_msg, Green_LED_OFF_msglen 
+ 8000506:	f240 001c 	movw	r0, #28
+ 800050a:	f2c2 0000 	movt	r0, #8192	; 0x2000
+ 800050e:	f640 2124 	movw	r1, #2596	; 0xa24
+ 8000512:	f2c2 0100 	movt	r1, #8192	; 0x2000
+ 8000516:	694a      	ldr	r2, [r1, #20]
+ 8000518:	b98a      	cbnz	r2, 800053e <MoTdevice_GreenLED_OFFtask+0x40>
+ 800051a:	f240 52ca 	movw	r2, #1482	; 0x5ca
+ 800051e:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 8000522:	60ca      	str	r2, [r1, #12]
+ 8000524:	f240 0203 	movw	r2, #3
+ 8000528:	f2c0 0200 	movt	r2, #0
+ 800052c:	610a      	str	r2, [r1, #16]
+ 800052e:	b580      	push	{r7, lr}
+ 8000530:	f7ff feb2 	bl	8000298 <MSG_post_fn>
+ 8000534:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 8000538:	f04f 0000 	mov.w	r0, #0
+ 800053c:	e001      	b.n	8000542 <MoTdevice_GreenLED_OFFtask+0x44>
+ 800053e:	f04f 30ff 	mov.w	r0, #4294967295
+
+	@; update task resume point -- will skip the above when this task repeats
+	RELINK_me MoTdevice_GreenLED_OFFtask_msg_posted		
+ 8000542:	f240 524d 	movw	r2, #1357	; 0x54d
+ 8000546:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 800054a:	6022      	str	r2, [r4, #0]
+
+0800054c <MoTdevice_GreenLED_OFFtask_msg_posted>:
+	.global MoTdevice_GreenLED_OFFtask_msg_posted
+	.thumb_func
+MoTdevice_GreenLED_OFFtask_msg_posted:		
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; get counter reload value
+ 800054c:	69a2      	ldr	r2, [r4, #24]
+	cbz r2,1f								@; exit if its 0 (=initial value and halted value)
+ 800054e:	b15a      	cbz	r2, 8000568 <MoTdevice_GreenLED_OFFtask_msg_posted+0x1c>
+	ldr r1,[rTASKP,#GLED_COUNT]				@; otherwise get the current count
+ 8000550:	69e1      	ldr	r1, [r4, #28]
+	cbz r1,2f								@; prepare for next countdown if its 0
+ 8000552:	b111      	cbz	r1, 800055a <MoTdevice_GreenLED_OFFtask_msg_posted+0xe>
+	subs r1,#1								@;  otherwise decrement it 
+ 8000554:	3901      	subs	r1, #1
+	str r1,[rTASKP,#GLED_COUNT]				@;  and store it back
+ 8000556:	61e1      	str	r1, [r4, #28]
+	b	1f									@; go to exit to the next task
+ 8000558:	e006      	b.n	8000568 <MoTdevice_GreenLED_OFFtask_msg_posted+0x1c>
+
+2:	@; here when counter reaches 0	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; restart count
+ 800055a:	69a2      	ldr	r2, [r4, #24]
+	str r2,[rTASKP,#GLED_COUNT]				@;  ..
+ 800055c:	61e2      	str	r2, [r4, #28]
+	RELINK_me MoTdevice_GreenLED_ONtask		@; update task resume point
+ 800055e:	f240 428f 	movw	r2, #1167	; 0x48f
+ 8000562:	f6c0 0200 	movt	r2, #2048	; 0x800
+ 8000566:	6022      	str	r2, [r4, #0]
+
+1:	@; task for this device is done for now -- proceed to next device/task on list
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task
+ 8000568:	6864      	ldr	r4, [r4, #4]
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+ 800056a:	f8d4 f000 	ldr.w	pc, [r4]
+
+0800056e <Green_LED_init_msg>:
+ 800056e:	6e49      	.short	0x6e49
+ 8000570:	6c617473 	.word	0x6c617473
+ 8000574:	7247206c 	.word	0x7247206c
+ 8000578:	426e6565 	.word	0x426e6565
+ 800057c:	6b6e696c 	.word	0x6b6e696c
+ 8000580:	0a79      	.short	0x0a79
+ 8000582:	0d          	.byte	0x0d
+
+08000583 <Green_LED_fast_msg>:
+ 8000583:	46          	.byte	0x46
+ 8000584:	20747361 	.word	0x20747361
+ 8000588:	65657247 	.word	0x65657247
+ 800058c:	696c426e 	.word	0x696c426e
+ 8000590:	20796b6e 	.word	0x20796b6e
+ 8000594:	6e696c62 	.word	0x6e696c62
+ 8000598:	0a6b      	.short	0x0a6b
+ 800059a:	0d          	.byte	0x0d
+
+0800059b <Green_LED_slow_msg>:
+ 800059b:	53          	.byte	0x53
+ 800059c:	20776f6c 	.word	0x20776f6c
+ 80005a0:	65657247 	.word	0x65657247
+ 80005a4:	696c426e 	.word	0x696c426e
+ 80005a8:	20796b6e 	.word	0x20796b6e
+ 80005ac:	6e696c62 	.word	0x6e696c62
+ 80005b0:	0a6b      	.short	0x0a6b
+ 80005b2:	0d          	.byte	0x0d
+
+080005b3 <Green_LED_remove_msg>:
+ 80005b3:	52          	.byte	0x52
+ 80005b4:	766f6d65 	.word	0x766f6d65
+ 80005b8:	72472065 	.word	0x72472065
+ 80005bc:	426e6565 	.word	0x426e6565
+ 80005c0:	6b6e696c 	.word	0x6b6e696c
+ 80005c4:	0a79      	.short	0x0a79
+ 80005c6:	0d          	.byte	0x0d
+
+080005c7 <Green_LED_ON_msg>:
+ 80005c7:	31          	.byte	0x31
+ 80005c8:	0d0a      	.short	0x0d0a
+
+080005ca <Green_LED_OFF_msg>:
+ 80005ca:	0a30      	.short	0x0a30
+ 80005cc:	0d          	.byte	0x0d
+	...
+
+080005ce <savefloatraw>:
+	
+	.align 2
+	.text
+	.global savefloatraw		@; uint32_t savefloat(void* rawfloat, float f);
+savefloatraw:
+	str r1,[r0]
+ 80005ce:	6001      	str	r1, [r0, #0]
+	mov r0,r1
+ 80005d0:	4608      	mov	r0, r1
+ 80005d2:	4770      	bx	lr
+
+080005d4 <GreenLED_init>:
+
+	.text
+	.global GreenLED_init
+	.thumb_func
+GreenLED_init: @;configure port bit PE8 as GPIO output with high-speed push/pull drivers and no pu/pd. 
+	push {r7,lr}
+ 80005d4:	b580      	push	{r7, lr}
+	@; set port enable bit (pg 251 of the manual)
+	mov_imm32 r3,RCC_BASE		@;load RCC struct address
+ 80005d6:	f241 0300 	movw	r3, #4096	; 0x1000
+ 80005da:	f2c4 0302 	movt	r3, #16386	; 0x4002
+	ldr r2,[r3,#RCC_AHB2ENR]	@;get current values of device enables
+ 80005de:	6cda      	ldr	r2, [r3, #76]	; 0x4c
+	orr r2,#(1<<GPIOEEN)		@;enable port
+ 80005e0:	f042 0210 	orr.w	r2, r2, #16
+	str r2,[r3,#RCC_AHB2ENR]	@; ..
+ 80005e4:	64da      	str	r2, [r3, #76]	; 0x4c
+	
+	@; configure as an output (pg 303 of the manual)
+	mov_imm32 r3,GPIOE_BASE		@;load GPIOE struct address
+ 80005e6:	f241 0300 	movw	r3, #4096	; 0x1000
+ 80005ea:	f6c4 0300 	movt	r3, #18432	; 0x4800
+	ldr r2,[r3,#MODER]			@;get current mode values of port
+ 80005ee:	681a      	ldr	r2, [r3, #0]
+	bic r2,#(3<<(2*PE8))		@;clear current mode value of port bit
+ 80005f0:	f422 3240 	bic.w	r2, r2, #196608	; 0x30000
+	orr	r2,#(1<<(2*PE8))		@;set new mode value of port bit to general purpose output
+ 80005f4:	f442 3280 	orr.w	r2, r2, #65536	; 0x10000
+	str r2,[r3,#MODER]			@; ..
+ 80005f8:	601a      	str	r2, [r3, #0]
+	
+	@; configure output as push/pull (pg 304 of the manual)
+	ldr r2,[r3,#OTYPER]			@;get current push/pull settings of port
+ 80005fa:	685a      	ldr	r2, [r3, #4]
+	bic r2,#(1<<(1*PE8))		@;clear current control value of port bit (=push/pull) 
+ 80005fc:	f422 7280 	bic.w	r2, r2, #256	; 0x100
+	str r2,[r3,#OTYPER]			@; ..
+ 8000600:	605a      	str	r2, [r3, #4]
+
+	@; configure output as high speed (pg 304 of the manual)
+	ldr r2,[r3,#OSPEEDR]		@;get current speed values of port
+ 8000602:	689a      	ldr	r2, [r3, #8]
+	bic r2,#(3<<(2*PE8))		@;clear current speed value of port bit
+ 8000604:	f422 3240 	bic.w	r2, r2, #196608	; 0x30000
+	orr	r2,#(2<<(2*PE8))		@;set new speed of port bit as high speed
+ 8000608:	f442 3200 	orr.w	r2, r2, #131072	; 0x20000
+	str r2,[r3,#OSPEEDR]		@; ..
+ 800060c:	609a      	str	r2, [r3, #8]
+
+	@; configure output as no pullup, pulldown
+	ldr r2,[r3,#OPUPDR]			@;get current pu/pd settings of port
+ 800060e:	68da      	ldr	r2, [r3, #12]
+	bic r2,#(3<<(2*PE8))		@;clear current pupd value of port bit (=no pu/pd)
+ 8000610:	f422 3240 	bic.w	r2, r2, #196608	; 0x30000
+	str r2,[r3,#OPUPDR]			@; ..
+ 8000614:	60da      	str	r2, [r3, #12]
+
+	pop {r7,pc}					@; return to caller
+ 8000616:	bd80      	pop	{r7, pc}
+
+08000618 <GreenLED_OFF>:
+
+	.text
+	.global GreenLED_OFF
+	.thumb_func
+GreenLED_OFF: @;turn 'L476 Discovery board's green LED off (GPIOE PE8 => 0) 
+	push {r7,lr}
+ 8000618:	b580      	push	{r7, lr}
+	mov_imm32 r3,GPIOE_BASE		@;r3= GPIOE struct address
+ 800061a:	f241 0300 	movw	r3, #4096	; 0x1000
+ 800061e:	f6c4 0300 	movt	r3, #18432	; 0x4800
+	mov r2,#(1<<(16+PE8))		@;r2= BR8 (see RM0351 Table 39. GPIO register map)
+ 8000622:	f04f 7280 	mov.w	r2, #16777216	; 0x1000000
+	str r2,[r3,#BSRR]			@;reset PE8
+ 8000626:	619a      	str	r2, [r3, #24]
+	pop {r7,pc}					@; return to caller
+ 8000628:	bd80      	pop	{r7, pc}
+
+0800062a <GreenLED_ON>:
+	
+	.text
+	.global GreenLED_ON
+	.thumb_func
+GreenLED_ON: @;turn 'L476 Discovery board's green LED off (GPIOE PE8 => 0) 
+	push {r7,lr}
+ 800062a:	b580      	push	{r7, lr}
+	mov_imm32 r3,GPIOE_BASE		@;r3= GPIOE struct address
+ 800062c:	f241 0300 	movw	r3, #4096	; 0x1000
+ 8000630:	f6c4 0300 	movt	r3, #18432	; 0x4800
+	mov r2,#(1<<(PE8))			@;r2= BR8 (see RM0351 Table 39. GPIO register map)
+ 8000634:	f44f 7280 	mov.w	r2, #256	; 0x100
+	str r2,[r3,#BSRR]			@;reset PE8
+ 8000638:	619a      	str	r2, [r3, #24]
+	pop {r7,pc}					@; return to caller
+ 800063a:	bd80      	pop	{r7, pc}
+
+0800063c <configure_GPIOD_for_USART2>:
+	.equ	ASCR,	0x2C	@;  GPIO analog switch control register,   Address offset: 0x2C    
+
+	.equ	PD5,	5		@; 	bit number 5 of GPIOD
+	.equ	PD6,	6		@; 	bit number 6 of GPIOD
+	
+	push {r7,lr}
+ 800063c:	b580      	push	{r7, lr}
+
+	@;(re-)enable GPIOD 
+	MOV_imm32 r3,RCC_BASE	@; select RCC AHB2 peripheral clock register
+ 800063e:	f241 0300 	movw	r3, #4096	; 0x1000
+ 8000642:	f2c4 0302 	movt	r3, #16386	; 0x4002
+	ldr r2,[r3,#RCC_AHB2ENR]@; ..
+ 8000646:	6cda      	ldr	r2, [r3, #76]	; 0x4c
+	orr	r2,r2,(1<<3)		@; enable GPIOD
+ 8000648:	f042 0208 	orr.w	r2, r2, #8
+	str r2,[r3,#RCC_AHB2ENR]@; ..
+ 800064c:	64da      	str	r2, [r3, #76]	; 0x4c
+
+    @;configure GPIOD PD5/PD6 for alternate function USART2_TX/USART2_RX
+    MOV_imm32 r3,GPIOD_BASE	@;select GPIOD for register operations
+ 800064e:	f640 4300 	movw	r3, #3072	; 0xc00
+ 8000652:	f6c4 0300 	movt	r3, #18432	; 0x4800
+	@;configure PD5,PD6 for alternate function
+	ldr r2,[r3,#(MODER)]
+ 8000656:	681a      	ldr	r2, [r3, #0]
+    bic r2,#(0x03<<(2*PD5))	@;clear mode bits
+ 8000658:	f422 6240 	bic.w	r2, r2, #3072	; 0xc00
+   	bic r2,#(0x03<<(2*PD6))	@; ..
+ 800065c:	f422 5240 	bic.w	r2, r2, #12288	; 0x3000
+	orr r2,#(0x02<<(2*PD5))	@;make alternate function
+ 8000660:	f442 6200 	orr.w	r2, r2, #2048	; 0x800
+	orr r2,#(0x02<<(2*PD6))	@; .. 	
+ 8000664:	f442 5200 	orr.w	r2, r2, #8192	; 0x2000
+	str r2,[r3,#(MODER)]
+ 8000668:	601a      	str	r2, [r3, #0]
+
+	@;configure PD5 output as push-pull  !!comment this and following out to check whether necessary
+	ldr r2,[r3,#(OTYPER)]
+ 800066a:	685a      	ldr	r2, [r3, #4]
+    bic r2,#(0x1<<PD5)		@;clear type bit
+ 800066c:	f022 0220 	bic.w	r2, r2, #32
+	str r2,[r3,#(OTYPER)]
+ 8000670:	605a      	str	r2, [r3, #4]
+
+	@;configure PD5 as high-speed output
+	ldr r2,[r3,#(OSPEEDR)]
+ 8000672:	689a      	ldr	r2, [r3, #8]
+    bic r2,#(0x3<<(2*PD5))	@;clear speed bits
+ 8000674:	f422 6240 	bic.w	r2, r2, #3072	; 0xc00
+	orr r2,#(0x2<<(2*PD5))	@;make high speed
+ 8000678:	f442 6200 	orr.w	r2, r2, #2048	; 0x800
+	str r2,[r3,#(OSPEEDR)]
+ 800067c:	609a      	str	r2, [r3, #8]
+
+	@;no pullup/pulldown on PD5 
+	ldr r2,[r3,#(PUPDR)]
+ 800067e:	68da      	ldr	r2, [r3, #12]
+    bic r2,#(0x3<<(2*PD5))	@;clear PUPD type bits (no pu/pd) 
+ 8000680:	f422 6240 	bic.w	r2, r2, #3072	; 0xc00
+	str r2,[r3,#(PUPDR)]
+ 8000684:	60da      	str	r2, [r3, #12]
+	
+	@;connect PD5 alternate function 7= USART2_TX
+	ldr r2,[r3,#(AFRL)]
+ 8000686:	6a1a      	ldr	r2, [r3, #32]
+    bic r2,#(0xF<<(4*PD5))	@;clear alternate function bits
+ 8000688:	f422 0270 	bic.w	r2, r2, #15728640	; 0xf00000
+	orr r2,#(0x7<<(4*PD5))	@; set alternate function code
+ 800068c:	f442 02e0 	orr.w	r2, r2, #7340032	; 0x700000
+	str r2,[r3,#(AFRL)]
+ 8000690:	621a      	str	r2, [r3, #32]
+	@;configure PD6 output type -- skipped. Its an input
+
+	@;configure PD6 output speed -- skipped. Its an input
+
+	@; configure pullup on PD6 to set default input =1 (= 'mark') if not connected 
+	ldr r2,[r3,#(PUPDR)]
+ 8000692:	68da      	ldr	r2, [r3, #12]
+    bic r2,#(0x3<<(2*PD6))	@;clear PUPD type bits
+ 8000694:	f422 5240 	bic.w	r2, r2, #12288	; 0x3000
+	orr r2,#(0x1<<(2*PD6))	@;configure as pullup
+ 8000698:	f442 5280 	orr.w	r2, r2, #4096	; 0x1000
+	str r2,[r3,#(PUPDR)]
+ 800069c:	60da      	str	r2, [r3, #12]
+	
+	@;connect PD6 alternate function 7= USART2_RX
+	ldr r2,[r3,#(AFRL)]
+ 800069e:	6a1a      	ldr	r2, [r3, #32]
+    bic r2,#(0xF<<(4*PD6))	@;clear alternate function bits
+ 80006a0:	f022 6270 	bic.w	r2, r2, #251658240	; 0xf000000
+	orr r2,#(0x7<<(4*PD6))	@; set alternate function code
+ 80006a4:	f042 62e0 	orr.w	r2, r2, #117440512	; 0x7000000
+	str r2,[r3,#(AFRL)]
+ 80006a8:	621a      	str	r2, [r3, #32]
+
+	@;here with GPIOD configured to connect USART2
+	pop {r7,pc}
+ 80006aa:	bd80      	pop	{r7, pc}
+
+080006ac <USART2_init>:
+	.equ RDR, 0x24   	@   __IO uint16_t RDR;  	/*!< USART Receive Data register,              Address offset: 0x24 */
+	.equ RVED4, 0x26   	@   uint16_t  RESE RVED4;   /*!< Reserved, 0x26 0x26 */
+	.equ TDR, 0x28   	@   __IO uint16_t TDR;  	/*!< USART Transmit Data register,             Address offset: 0x28 */
+	.equ RVED5, 0x2A   	@   uint16_t  RESE RVED5;   /*!< Reserved, 0x2A 0x2A */
+
+  	push {r7,lr}
+ 80006ac:	b580      	push	{r7, lr}
+
+	@; USART2 clock enable -- (re-)enable USART2 
+	MOV_imm32 r3,RCC_BASE		@; select RCC APB1 peripheral clock register
+ 80006ae:	f241 0300 	movw	r3, #4096	; 0x1000
+ 80006b2:	f2c4 0302 	movt	r3, #16386	; 0x4002
+	ldr r2,[r3,#RCC_APB1ENR1]	@; ..
+ 80006b6:	6d9a      	ldr	r2, [r3, #88]	; 0x58
+	orr	r2,#(1<<17)				@; set USART2EN 
+ 80006b8:	f442 3200 	orr.w	r2, r2, #131072	; 0x20000
+	str r2,[r3,#RCC_APB1ENR1]	@; ..
+ 80006bc:	659a      	str	r2, [r3, #88]	; 0x58
+
+
+	@; USART2 reset -- reset USART2 to start off clean
+	MOV_imm32 r3,RCC_BASE			@; ..
+ 80006be:	f241 0300 	movw	r3, #4096	; 0x1000
+ 80006c2:	f2c4 0302 	movt	r3, #16386	; 0x4002
+	ldr r2,[r3,#RCC_APB1RSTR1]		@; ..
+ 80006c6:	6b9a      	ldr	r2, [r3, #56]	; 0x38
+	orr	r2,#(1<<17)				@; set USART2_RST 
+ 80006c8:	f442 3200 	orr.w	r2, r2, #131072	; 0x20000
+	str r2,[r3,#RCC_APB1RSTR1]		@; 
+ 80006cc:	639a      	str	r2, [r3, #56]	; 0x38
+	nop							@; give it time to work (unnecessary?)
+ 80006ce:	bf00      	nop
+	nop							@; ..
+ 80006d0:	bf00      	nop
+	nop							@; ..
+ 80006d2:	bf00      	nop
+	nop							@; ..
+ 80006d4:	bf00      	nop
+	bic	r2,r2,#(1<<17)			@; clear USART2_RST to end reset
+ 80006d6:	f422 3200 	bic.w	r2, r2, #131072	; 0x20000
+	str r2,[r3,#RCC_APB1RSTR1]		@; 
+ 80006da:	639a      	str	r2, [r3, #56]	; 0x38
+	that the transmission of the last frame is complete. This is required for instance when
+	the USART is disabled or enters the Halt mode to avoid corrupting the last
+	transmission. 
+*/
+
+	MOV_imm32 r3,USART2_BASE
+ 80006dc:	f244 4300 	movw	r3, #17408	; 0x4400
+ 80006e0:	f2c4 0300 	movt	r3, #16384	; 0x4000
+
+@; step 0 (added): disable the USART by writing the UE bit in USART_CR1 register to 0 (necessary to change M1, M0)
+	ldr r2,[r3,#CR1]
+ 80006e4:	681a      	ldr	r2, [r3, #0]
+	bic r2,#(1<<0) 		@;UE=0 
+ 80006e6:	f022 0201 	bic.w	r2, r2, #1
+	str r2,[r3,#CR1]
+ 80006ea:	601a      	str	r2, [r3, #0]
+
+@; step 1: Program the M bits in USART_CR1 to define the character protocol  
+	ldr r2,[r3,#CR1]
+ 80006ec:	681a      	ldr	r2, [r3, #0]
+	bic r2,#(1<<12) 	@;M0=0 
+ 80006ee:	f422 5280 	bic.w	r2, r2, #4096	; 0x1000
+	bic r2,#(1<<28) 	@;M1=0 
+ 80006f2:	f022 5280 	bic.w	r2, r2, #268435456	; 0x10000000
+	str r2,[r3,#CR1] 	@;[M1:M0]= [0:0] -> 1 Start bit, 8 data bits, n stop bits
+ 80006f6:	601a      	str	r2, [r3, #0]
+
+@;	step 4. Enable the USART by writing the UE bit in USART_CR1 register to 1.	
+	ldr r2,[r3,#CR1]
+ 80006f8:	681a      	ldr	r2, [r3, #0]
+	orr r2,#(1<<0) 		@;UE=1 
+ 80006fa:	f042 0201 	orr.w	r2, r2, #1
+	str r2,[r3,#CR1]
+ 80006fe:	601a      	str	r2, [r3, #0]
+
+@; step 2: Select the desired baud rate using the USART_BRR register.
+	movw r2,#:lower16:(417)	@;  target baud: 9600; fPCLK=4MHZ; OVER8=0 => USARTDIV = 4000000/9600 =  416.666
+ 8000700:	f240 12a1 	movw	r2, #417	; 0x1a1
+	strh r2,[r3,#BRR]		@;
+ 8000704:	819a      	strh	r2, [r3, #12]
+
+@; step 3. Program the number of stop bits in USART_CR2.
+	ldr r2,[r3,#CR2]
+ 8000706:	685a      	ldr	r2, [r3, #4]
+	bic r2,#(0x3<<12) 	@;STOP=00 (1 stop bit)
+ 8000708:	f422 5240 	bic.w	r2, r2, #12288	; 0x3000
+	str r2,[r3,#CR2]
+ 800070c:	605a      	str	r2, [r3, #4]
+	ldr r2,[r3,#CR1]
+	orr r2,#(1<<0) 		@;UE=1 
+	str r2,[r3,#CR1]
+*/	
+@;	step 5. Select DMA enable (DMAT) in USART_CR3 if multibuffer communication is to take place. 
+	ldr r2,[r3,#CR3]
+ 800070e:	689a      	ldr	r2, [r3, #8]
+	bic r2,#(1<<7)		@;DMAT = 0 so no transmit DMA
+ 8000710:	f022 0280 	bic.w	r2, r2, #128	; 0x80
+	str r2,[r3,#CR3]
+ 8000714:	609a      	str	r2, [r3, #8]
+
+@;	setp 5'. Select DMA enable (DMAR) in USART_CR3 if multibuffer communication is to take place.
+	ldr r2,[r3,#CR3]
+ 8000716:	689a      	ldr	r2, [r3, #8]
+	bic r2,#(1<<6)		@;DMAr = 0 so no receive DMA
+ 8000718:	f022 0240 	bic.w	r2, r2, #64	; 0x40
+	str r2,[r3,#CR3]
+ 800071c:	609a      	str	r2, [r3, #8]
+		
+@;	step 6. Set the TE bit in USART_CR1 to send an idle frame as first transmission.
+	ldr r2,[r3,#CR1]
+ 800071e:	681a      	ldr	r2, [r3, #0]
+	orr r2,#(1<<3) 		@; TE=1 (transmitter enable , "sends a preamble (idle line)"? Sends 'MARK'?)
+ 8000720:	f042 0208 	orr.w	r2, r2, #8
+	str r2,[r3,#CR1]
+ 8000724:	601a      	str	r2, [r3, #0]
+
+@;	step 6'
+	ldr r2,[r3,#CR1]
+ 8000726:	681a      	ldr	r2, [r3, #0]
+	orr r2,#(1<<2) 		@; RE=1 (receiver enable) 
+ 8000728:	f042 0204 	orr.w	r2, r2, #4
+	str r2,[r3,#CR1]
+ 800072c:	601a      	str	r2, [r3, #0]
+	
+	@;GPIO settings
+	bl configure_GPIOD_for_USART2
+ 800072e:	f7ff ff85 	bl	800063c <configure_GPIOD_for_USART2>
+
+	pop {r7,pc}
+ 8000732:	bd80      	pop	{r7, pc}
+
+08000734 <USART2_nbgetchar>:
+
+	.global USART2_nbgetchar @;conditional USART2 getchar()
+	.thumb_func
+USART2_nbgetchar: @; char USART2_nbgetchar(void);	//success: return data>=0; failure: return -1
+ 	push {r7,lr}
+ 8000734:	b580      	push	{r7, lr}
+	MOV_imm32 r3,USART2_BASE	
+ 8000736:	f244 4300 	movw	r3, #17408	; 0x4400
+ 800073a:	f2c4 0300 	movt	r3, #16384	; 0x4000
+
+	@;initialize success/fail to 'fail'
+	mov r0,#-1		
+ 800073e:	f04f 30ff 	mov.w	r0, #4294967295
+	@;check if new data is available
+	ldr r2,[r3,#ISR]			@;is receiver not empty (RXNE ==1)?
+ 8000742:	69da      	ldr	r2, [r3, #28]
+	tst r2,#(1<<5)				@; ..
+ 8000744:	f012 0f20 	tst.w	r2, #32
+	beq	1f						@;	no, receiver is empty -- return -1 (no data is available)
+ 8000748:	d001      	beq.n	800074e <USART2_nbgetchar+0x1a>
+	ldrb r0,[r3,#RDR]			@;	yes, receiver is not empty -- get new data (automatically clears RXNE)
+ 800074a:	f893 0024 	ldrb.w	r0, [r3, #36]	; 0x24
+@;	ands r0,#0xFF				@;	clean it up to 8 bits
+@;	strb r0,[r3,#DR]			@;  echo it back for debug
+1:	pop {r7,pc}					@; 	and return ( data>=0 =='success' )
+ 800074e:	bd80      	pop	{r7, pc}
+
+08000750 <USART2_nbputchar>:
+
+	.global USART2_nbputchar		@;conditional USART2 putchar()
+	.thumb_func
+USART2_nbputchar: @;  int USART2_nbputchar(char data);	//success: return +1; failure: return -1
+ 	push {r7,lr}
+ 8000750:	b580      	push	{r7, lr}
+	MOV_imm32 r3,USART2_BASE	
+ 8000752:	f244 4300 	movw	r3, #17408	; 0x4400
+ 8000756:	f2c4 0300 	movt	r3, #16384	; 0x4000
+
+	@;check if sending is ok
+	ldr r2,[r3,#ISR]			@;is transmitter empty (TXE ==1)?
+ 800075a:	69da      	ldr	r2, [r3, #28]
+	tst r2,#(1<<7)				@; .. 
+ 800075c:	f012 0f80 	tst.w	r2, #128	; 0x80
+	beq 1f						@;	no, transmitter not empty -- return -1 (sending is blocked)
+ 8000760:	d004      	beq.n	800076c <USART2_nbputchar+0x1c>
+	strb r0,[r3,#TDR]			@;	yes -- send data (automatically clears TXE)
+ 8000762:	f883 0028 	strb.w	r0, [r3, #40]	; 0x28
+	mov r0,#1					@;		mark 'success'
+ 8000766:	f04f 0001 	mov.w	r0, #1
+	pop {r7,pc}					@; 		and return +1 (data was sent)
+ 800076a:	bd80      	pop	{r7, pc}
+1:	mov r0,#-1					@;mark 'failure'
+ 800076c:	f04f 30ff 	mov.w	r0, #4294967295
+	pop {r7,pc}					@; 		and return -1 (sending is blocked)
+ 8000770:	bd80      	pop	{r7, pc}
+
+08000772 <USART2_bgetchar>:
+	
+
+	.global USART2_bgetchar		@; blocking USART2 getchar()
+	.thumb_func
+USART2_bgetchar: @;  int USART2_bgetchar(void);	//blocks until new data, then return data in r0
+ 	push {r7,lr}
+ 8000772:	b580      	push	{r7, lr}
+	MOV_imm32 r3,USART2_BASE	
+ 8000774:	f244 4300 	movw	r3, #17408	; 0x4400
+ 8000778:	f2c4 0300 	movt	r3, #16384	; 0x4000
+
+	@;check if new data is available
+1:	ldr r2,[r3,#ISR]			@;is receiver not empty (RXNE ==1)?
+ 800077c:	69da      	ldr	r2, [r3, #28]
+	tst r2,#(1<<5)				@; ..
+ 800077e:	f012 0f20 	tst.w	r2, #32
+	beq	1b						@;	no, receiver is empty -- keep testing
+ 8000782:	d0fb      	beq.n	800077c <USART2_bgetchar+0xa>
+	ldrb r0,[r3,#RDR]			@;	yes, receiver is not empty -- get new data (automatically clears RXNE)
+ 8000784:	f893 0024 	ldrb.w	r0, [r3, #36]	; 0x24
+@;	ands r0,#0xFF				@;	clean it up to 8 bits
+	pop {r7,pc}					@; 	and return ( data>=0 =='success' )
+ 8000788:	bd80      	pop	{r7, pc}
+
+0800078a <USART2_bputchar>:
+
+
+	.global USART2_bputchar		@;blocking USART2 putchar()
+	.thumb_func
+USART2_bputchar: @;  void USART2_bputchar(char data);	//block until character can be sent
+ 	push {r7,lr}
+ 800078a:	b580      	push	{r7, lr}
+	MOV_imm32 r3,USART2_BASE	
+ 800078c:	f244 4300 	movw	r3, #17408	; 0x4400
+ 8000790:	f2c4 0300 	movt	r3, #16384	; 0x4000
+
+	@;check if sending is ok
+1:	ldr r2,[r3,#ISR]			@;is transmitter empty (TXE ==1)?
+ 8000794:	69da      	ldr	r2, [r3, #28]
+	tst r2,#(1<<7)				@; .. 
+ 8000796:	f012 0f80 	tst.w	r2, #128	; 0x80
+	beq 1b						@;	no, transmitter not empty -- keep testing
+ 800079a:	d0fb      	beq.n	8000794 <USART2_bputchar+0xa>
+	strb r0,[r3,#TDR]			@;	yes -- send data (automatically clears TXE)
+ 800079c:	f883 0028 	strb.w	r0, [r3, #40]	; 0x28
+	pop {r7,pc}					@; 		and return
+ 80007a0:	bd80      	pop	{r7, pc}
+
+080007a2 <USART2_writeDR>:
+	
+	
+	.global USART2_writeDR
+	.thumb_func
+USART2_writeDR:			//debug: unconditional write to USART2 DR and return
+ 	push {r7,lr}
+ 80007a2:	b580      	push	{r7, lr}
+	ldr r3,=USART2_BASE	
+ 80007a4:	4b01      	ldr	r3, [pc, #4]	; (80007ac <USART2_writeDR+0xa>)
+	strb r0,[r3,#TDR]			@;	yes -- send data (automatically clears TXE)
+ 80007a6:	f883 0028 	strb.w	r0, [r3, #40]	; 0x28
+	pop {r7,pc}					@; 		and return
+ 80007aa:	bd80      	pop	{r7, pc}
+	
+	.global USART2_writeDR
+	.thumb_func
+USART2_writeDR:			//debug: unconditional write to USART2 DR and return
+ 	push {r7,lr}
+	ldr r3,=USART2_BASE	
+ 80007ac:	40004400 	.word	0x40004400
+
+080007b0 <dotproduct>:
+
+
+uint32_t savefloatraw(uint32_t* rawfloat, float f);
+
+float dotproduct(uint32_t n, float *Avec, float *Bvec, uint32_t Astep, uint32_t Bstep)
+{
+ 80007b0:	b480      	push	{r7}
+ 80007b2:	b085      	sub	sp, #20
+ 80007b4:	af00      	add	r7, sp, #0
+ 80007b6:	60f8      	str	r0, [r7, #12]
+ 80007b8:	60b9      	str	r1, [r7, #8]
+ 80007ba:	607a      	str	r2, [r7, #4]
+ 80007bc:	603b      	str	r3, [r7, #0]
+	//Astep , Bstep are index steps (1,2,..) but actual address steps are sizeof(float) (4,8,..). 
+	return 1.0;
+ 80007be:	f04f 537e 	mov.w	r3, #1065353216	; 0x3f800000
+ 80007c2:	ee07 3a90 	vmov	s15, r3
+}	
+ 80007c6:	eeb0 0a67 	vmov.f32	s0, s15
+ 80007ca:	3714      	adds	r7, #20
+ 80007cc:	46bd      	mov	sp, r7
+ 80007ce:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80007d2:	4770      	bx	lr
+
+080007d4 <main>:
+float fY;
+float AB[][2] = {{1.0,2.0},{3.0,4.0}};
+
+
+int main(void)
+{
+ 80007d4:	b580      	push	{r7, lr}
+ 80007d6:	b082      	sub	sp, #8
+ 80007d8:	af02      	add	r7, sp, #8
+	
+	fY= dotproduct(2, &AB[0][0], &AB[0][1], 1, 2);
+ 80007da:	2302      	movs	r3, #2
+ 80007dc:	9300      	str	r3, [sp, #0]
+ 80007de:	2301      	movs	r3, #1
+ 80007e0:	4a2b      	ldr	r2, [pc, #172]	; (8000890 <main+0xbc>)
+ 80007e2:	492c      	ldr	r1, [pc, #176]	; (8000894 <main+0xc0>)
+ 80007e4:	2002      	movs	r0, #2
+ 80007e6:	f7ff ffe3 	bl	80007b0 <dotproduct>
+ 80007ea:	eef0 7a40 	vmov.f32	s15, s0
+ 80007ee:	4b2a      	ldr	r3, [pc, #168]	; (8000898 <main+0xc4>)
+ 80007f0:	edc3 7a00 	vstr	s15, [r3]
+	
+	fY= fX/iX;
+ 80007f4:	4b29      	ldr	r3, [pc, #164]	; (800089c <main+0xc8>)
+ 80007f6:	edd3 6a00 	vldr	s13, [r3]
+ 80007fa:	4b29      	ldr	r3, [pc, #164]	; (80008a0 <main+0xcc>)
+ 80007fc:	681b      	ldr	r3, [r3, #0]
+ 80007fe:	ee07 3a90 	vmov	s15, r3
+ 8000802:	eeb8 7a67 	vcvt.f32.u32	s14, s15
+ 8000806:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 800080a:	4b23      	ldr	r3, [pc, #140]	; (8000898 <main+0xc4>)
+ 800080c:	edc3 7a00 	vstr	s15, [r3]
+	iY= fY*iX;
+ 8000810:	4b23      	ldr	r3, [pc, #140]	; (80008a0 <main+0xcc>)
+ 8000812:	681b      	ldr	r3, [r3, #0]
+ 8000814:	ee07 3a90 	vmov	s15, r3
+ 8000818:	eeb8 7a67 	vcvt.f32.u32	s14, s15
+ 800081c:	4b1e      	ldr	r3, [pc, #120]	; (8000898 <main+0xc4>)
+ 800081e:	edd3 7a00 	vldr	s15, [r3]
+ 8000822:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8000826:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 800082a:	ee17 2a90 	vmov	r2, s15
+ 800082e:	4b1d      	ldr	r3, [pc, #116]	; (80008a4 <main+0xd0>)
+ 8000830:	601a      	str	r2, [r3, #0]
+	fY= fY-iY;
+ 8000832:	4b19      	ldr	r3, [pc, #100]	; (8000898 <main+0xc4>)
+ 8000834:	ed93 7a00 	vldr	s14, [r3]
+ 8000838:	4b1a      	ldr	r3, [pc, #104]	; (80008a4 <main+0xd0>)
+ 800083a:	681b      	ldr	r3, [r3, #0]
+ 800083c:	ee07 3a90 	vmov	s15, r3
+ 8000840:	eef8 7a67 	vcvt.f32.u32	s15, s15
+ 8000844:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8000848:	4b13      	ldr	r3, [pc, #76]	; (8000898 <main+0xc4>)
+ 800084a:	edc3 7a00 	vstr	s15, [r3]
+
+	fX= 0.15625;	//= 5/32
+ 800084e:	4b13      	ldr	r3, [pc, #76]	; (800089c <main+0xc8>)
+ 8000850:	4a15      	ldr	r2, [pc, #84]	; (80008a8 <main+0xd4>)
+ 8000852:	601a      	str	r2, [r3, #0]
+	iX= savefloatraw(&myrawfloat,fX);
+ 8000854:	4b11      	ldr	r3, [pc, #68]	; (800089c <main+0xc8>)
+ 8000856:	edd3 7a00 	vldr	s15, [r3]
+ 800085a:	eeb0 0a67 	vmov.f32	s0, s15
+ 800085e:	4813      	ldr	r0, [pc, #76]	; (80008ac <main+0xd8>)
+ 8000860:	f7ff feb5 	bl	80005ce <savefloatraw>
+ 8000864:	4602      	mov	r2, r0
+ 8000866:	4b0e      	ldr	r3, [pc, #56]	; (80008a0 <main+0xcc>)
+ 8000868:	601a      	str	r2, [r3, #0]
+
+	USART2_init(); 
+ 800086a:	f7ff ff1f 	bl	80006ac <USART2_init>
+		USART2_bputchar(c+2);
+		USART2_bputchar(c+3);
+	}
+	*/
+
+	init_Cmd_handle(&adminCmd_handle, &adminDevicetable, USART2_nbgetchar, &adminTasklist);
+ 800086e:	4b10      	ldr	r3, [pc, #64]	; (80008b0 <main+0xdc>)
+ 8000870:	4a10      	ldr	r2, [pc, #64]	; (80008b4 <main+0xe0>)
+ 8000872:	4911      	ldr	r1, [pc, #68]	; (80008b8 <main+0xe4>)
+ 8000874:	4811      	ldr	r0, [pc, #68]	; (80008bc <main+0xe8>)
+ 8000876:	f7ff fc87 	bl	8000188 <init_Cmd_handle>
+	Msg_Handler_init(&adminMsgctl, USART2_nbputchar);
+ 800087a:	4911      	ldr	r1, [pc, #68]	; (80008c0 <main+0xec>)
+ 800087c:	4811      	ldr	r0, [pc, #68]	; (80008c4 <main+0xf0>)
+ 800087e:	f7ff fd18 	bl	80002b2 <Msg_Handler_init>
+	while (1)
+	{
+		Cmd_Handler(&adminCmd_handle);
+ 8000882:	480e      	ldr	r0, [pc, #56]	; (80008bc <main+0xe8>)
+ 8000884:	f7ff fc92 	bl	80001ac <Cmd_Handler>
+//		Cmd_Handler(&userCmd_handle);
+		Msg_Handler(&adminMsgctl);
+ 8000888:	480e      	ldr	r0, [pc, #56]	; (80008c4 <main+0xf0>)
+ 800088a:	f7ff fd18 	bl	80002be <Msg_Handler>
+	}
+ 800088e:	e7f8      	b.n	8000882 <main+0xae>
+ 8000890:	20000034 	.word	0x20000034
+ 8000894:	20000030 	.word	0x20000030
+ 8000898:	20000a50 	.word	0x20000a50
+ 800089c:	20000028 	.word	0x20000028
+ 80008a0:	2000002c 	.word	0x2000002c
+ 80008a4:	20000a4c 	.word	0x20000a4c
+ 80008a8:	3e200000 	.word	0x3e200000
+ 80008ac:	20000a44 	.word	0x20000a44
+ 80008b0:	20000000 	.word	0x20000000
+ 80008b4:	08000735 	.word	0x08000735
+ 80008b8:	080002fc 	.word	0x080002fc
+ 80008bc:	20000060 	.word	0x20000060
+ 80008c0:	08000751 	.word	0x08000751
+ 80008c4:	2000001c 	.word	0x2000001c
+
+080008c8 <Reset_Handler>:
+	.thumb_func
+Reset_Handler:
+@;!!wmh  ldr   sp, =_estack    /* Atollic update: set stack pointer */ !!wmh -- setting SP get done automatically  
+
+/* Copy the data segment initializers from flash to SRAM */
+  movs	r1, #0
+ 80008c8:	2100      	movs	r1, #0
+  b	LoopCopyDataInit
+ 80008ca:	e003      	b.n	80008d4 <LoopCopyDataInit>
+
+080008cc <CopyDataInit>:
+
+CopyDataInit:
+	ldr	r3, =_sidata
+ 80008cc:	4b10      	ldr	r3, [pc, #64]	; (8000910 <SystemInit+0x4>)
+	ldr	r3, [r3, r1]
+ 80008ce:	585b      	ldr	r3, [r3, r1]
+	str	r3, [r0, r1]
+ 80008d0:	5043      	str	r3, [r0, r1]
+	adds	r1, r1, #4
+ 80008d2:	3104      	adds	r1, #4
+
+080008d4 <LoopCopyDataInit>:
+
+LoopCopyDataInit:
+	ldr	r0, =_sdata
+ 80008d4:	480f      	ldr	r0, [pc, #60]	; (8000914 <SystemInit+0x8>)
+	ldr	r3, =_edata
+ 80008d6:	4b10      	ldr	r3, [pc, #64]	; (8000918 <SystemInit+0xc>)
+	adds	r2, r0, r1
+ 80008d8:	1842      	adds	r2, r0, r1
+	cmp	r2, r3
+ 80008da:	429a      	cmp	r2, r3
+	bcc	CopyDataInit
+ 80008dc:	d3f6      	bcc.n	80008cc <CopyDataInit>
+	ldr	r2, =_sbss
+ 80008de:	4a0f      	ldr	r2, [pc, #60]	; (800091c <SystemInit+0x10>)
+	b	LoopFillZerobss
+ 80008e0:	e002      	b.n	80008e8 <LoopFillZerobss>
+
+080008e2 <FillZerobss>:
+/* Zero fill the bss segment. */
+FillZerobss:
+	movs	r3, #0
+ 80008e2:	2300      	movs	r3, #0
+	str	r3, [r2], #4
+ 80008e4:	f842 3b04 	str.w	r3, [r2], #4
+
+080008e8 <LoopFillZerobss>:
+
+LoopFillZerobss:
+	ldr	r3, = _ebss
+ 80008e8:	4b0d      	ldr	r3, [pc, #52]	; (8000920 <SystemInit+0x14>)
+	cmp	r2, r3
+ 80008ea:	429a      	cmp	r2, r3
+	bcc	FillZerobss
+ 80008ec:	d3f9      	bcc.n	80008e2 <FillZerobss>
+
+/* Call the clock system intitialization function.*/
+    bl  SystemInit
+ 80008ee:	f000 f80d 	bl	800090c <SystemInit>
+
+080008f2 <enable_FPU>:
+	@; optional -- enable hardware floating point 
+	@; use the additional compiler switches below to enable floating point hardware usage
+	@;	SET AS_FP= -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_FP_HARDWARE
+	@;	SET GCC_FP=-mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant
+enable_FPU:	@;see ARM DUI0553A_cortex_m4_dgug.pdf section 4.4.6
+	LDR.W R0, =CPACR			@; CPACR is located at address 0xE000ED88
+ 80008f2:	f8df 0030 	ldr.w	r0, [pc, #48]	; 8000924 <SystemInit+0x18>
+	LDR R1, [R0]				@; Read CPACR
+ 80008f6:	6801      	ldr	r1, [r0, #0]
+	ORR R1, R1, #(0xF << 20)	@; Set bits 20-23 to enable CP10 and CP11 coprocessors
+ 80008f8:	f441 0170 	orr.w	r1, r1, #15728640	; 0xf00000
+	STR R1, [R0]				@; Write back the modified value to the CPACR
+ 80008fc:	6001      	str	r1, [r0, #0]
+	DSB							@;(Data Synchronization Barrier) wait for store to complete
+ 80008fe:	f3bf 8f4f 	dsb	sy
+	ISB							@;(Instruction Synchronization Barrier) reset pipeline now the FPU is enabled
+ 8000902:	f3bf 8f6f 	isb	sy
+	
+.endif
+
+
+
+	bl	main
+ 8000906:	f7ff ff65 	bl	80007d4 <main>
+
+0800090a <LoopForever>:
+
+LoopForever:
+    b LoopForever
+ 800090a:	e7fe      	b.n	800090a <LoopForever>
+
+0800090c <SystemInit>:
+
+
+SystemInit:	@;!!wmh stub off for now
+	bx lr	@; immediate return
+ 800090c:	4770      	bx	lr
+ 800090e:	0000      	.short	0x0000
+/* Copy the data segment initializers from flash to SRAM */
+  movs	r1, #0
+  b	LoopCopyDataInit
+
+CopyDataInit:
+	ldr	r3, =_sidata
+ 8000910:	08000930 	.word	0x08000930
+	ldr	r3, [r3, r1]
+	str	r3, [r0, r1]
+	adds	r1, r1, #4
+
+LoopCopyDataInit:
+	ldr	r0, =_sdata
+ 8000914:	20000000 	.word	0x20000000
+	ldr	r3, =_edata
+ 8000918:	20000040 	.word	0x20000040
+	adds	r2, r0, r1
+	cmp	r2, r3
+	bcc	CopyDataInit
+	ldr	r2, =_sbss
+ 800091c:	20000040 	.word	0x20000040
+FillZerobss:
+	movs	r3, #0
+	str	r3, [r2], #4
+
+LoopFillZerobss:
+	ldr	r3, = _ebss
+ 8000920:	20000a54 	.word	0x20000a54
+	@; optional -- enable hardware floating point 
+	@; use the additional compiler switches below to enable floating point hardware usage
+	@;	SET AS_FP= -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_FP_HARDWARE
+	@;	SET GCC_FP=-mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant
+enable_FPU:	@;see ARM DUI0553A_cortex_m4_dgug.pdf section 4.4.6
+	LDR.W R0, =CPACR			@; CPACR is located at address 0xE000ED88
+ 8000924:	e000ed88 	.word	0xe000ed88
+
+08000928 <ADC1_2_IRQHandler>:
+ * @retval : None
+*/
+    .section	.text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+	b	Infinite_Loop
+ 8000928:	e7fe      	b.n	8000928 <ADC1_2_IRQHandler>
+ 800092a:	0000      	movs	r0, r0
+ 800092c:	0000      	movs	r0, r0
+	...

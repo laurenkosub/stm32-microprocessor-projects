@@ -1,0 +1,4 @@
+"Src/GreenLED.o"
+"Src/main03.o"
+"Src/myDataOps02.o"
+"startup/startup_stm32l476xx.o"

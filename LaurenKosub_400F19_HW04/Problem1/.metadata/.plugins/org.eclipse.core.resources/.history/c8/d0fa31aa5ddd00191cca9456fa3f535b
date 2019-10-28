@@ -1,0 +1,314 @@
+@; MoTdevice_GreenLED07.S wmh 2019-09-18 : minor adjustments to fit new messaging design
+@; MoTdevice_GreenLED06.S wmh 2019-09-15 : rewrite of STM32F429I version for STM32L476 Disco
+@;	TODO: macro to define GreenLED system variables
+@; deviceGreenLED05.S wmh 2019-09-15 : aborted
+@; deviceGreenLED04.S wmh 2019-06-09 : major revamp of MSG_post macro in concert with new messaging design
+@; GreenLED03.S wmh 2018-11-12 : partial cleanup, some renaming.  
+@; GreenLED02.S wmh 2018-11-12 : --works. handles messaging overwrites. 
+@; The order of coroutines in main() helps: Cmd_Handler -> Msg_Handler -> do_task (which sometime we will rename Task_Handler)
+@; Doing it this way lets commands override ongoing task messages (e.g. the 1-0-1-0.. of the demo) while letting us prevent
+@; task messages from superceding command messages 
+@; GreenLED01.S wmh 2018-11-10 : developing messaging
+@; todo : .macro to build device data structure
+@; GreenLED.S wmh 2018-10-29 : example task definition 
+@	-- question : why aren't we using rTASKP for most for data access functions in MoTdevice_GreenLED_init()?
+
+
+
+@------------------ constant and macro definitions
+
+	#define __ASSEMBLY__
+	#include "./MoT/MoT_definitions.h"
+
+/* definitions below are now in ".\MoT\_MoT_definitions.h" but are copied below FYI 
+
+@;------ utility macro
+	.macro MOV_imm32 reg, constant
+
+@;------ macro used in MoT commands
+	.macro LINK_me	mydata, myXEQ 	@; installs a device in the Tasklist
+		@; this macro is placed at the exit of commands called from Cmd_Handler which install a device task on the task list
+		@; 'mydata' is the address the task's data structure; task data structures are preallocated and optionally initialized at system startup
+		@; 'myXEQ' is the device's execution-resume address.
+		@; note: this macro is placed only at Cmd_Handler()'s exit point so we are free to use r0-r3 without consequences
+		@; 
+
+@;------ macros used in MoT tasks
+	.macro UNLINK_me mydata  	@; remove a device from the Tasklist
+		@; this macro is placed at the exit of tasks which are removing themselves from the Tasklist
+		@; removing a task from the Tasklist does not destroy the task's data so it could be part of a scheme to suspend rather than kill tasks
+		@; because this is placed at the exit point back to main (via pop {r7,pc} ) we are free to use r0-r3
+		@; 
+
+		
+	.macro RELINK_me newXEQ	@; redirect to another section of this device's routines
+		@; this macro automates replacing the device task's resume address; 
+		@; rTASKP points to the task's data element because we are in the task 
+
+	
+@;------ function wrapper for MonT messaging
+	.macro MSG_post mydata, msgctl, msgtext, msglength	@;called by commands and tasks to put a message in the message queue
+	@; initializes register arguments and branches to  MSG_post_fn:  int MSG_post_fn(devicedata *, msgctl *, msgtext *, msglength);
+	@; uses/destroys contents of r0-r3
+	@; MSG_post_fn() returns 0 if success and -1 if fail (device already has a message posted)
+	@; (prevents message linked list from being broken)
+	@; 
+
+*/	
+	
+	
+@;-------------------------- data and code	
+
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; here we're use thumb instructions only
+
+	.bss						@;start of RAM data -- all zeroed by startup (!!important that all be zero at start)
+	.align 2					@;data is all word so should be on word-boundary; 
+	.global MoTdevice_GreenLED_data 		@;for visibility in debug
+MoTdevice_GreenLED_data:	@;origin of GreenLED data structure 
+@;------ system variables of device: the required part of every device's data structure. Accessed by offsets .equ'd at top
+@;	.global MoTdevice_GreenLED_XEQ, MoTdevice_GreenLED_NEXT, MoTdevice_GreenLED_PREV 	@;unnecessary global labels so as to be visible in debugger
+@;	.global MoTdevice_GreenLED_MSGPTR, MoTdevice_GreenLED_MSGCOUNT, MoTdevice_GreenLED_MSGLINK	
+	@; using '.skip' to guarantee placement
+	MoTdevice_GreenLED_XEQ: 		.skip 4		@; offset XEQ holds task-resume address (standard for all tasks)
+	MoTdevice_GreenLED_NEXT:		.skip 4		@; offset NEXT holds link-address of next element in Tasklist (standard for all tasks)
+	MoTdevice_GreenLED_PREV:		.skip 4		@; offset PREV holds link-address of previous element in Tasklist (standard for all tasks)		
+	MoTdevice_GreenLED_MSGPTR:		.skip 4		@;pointer to this message's next character to print
+	MoTdevice_GreenLED_MSGCOUNT:	.skip 4		@;count of remaining number of characters of message to print	
+	MoTdevice_GreenLED_MSGLINK:		.skip 4		@;pointer to data structure of next device with a message (if any)
+		
+@;------ device variables: optional part of device data structure for  GreenLED device. Accessed by offsets .equ'd at top
+@;	.global MoTdevice_GreenLED_reload, MoTdevice_GreenLED_count,MoTdevice_GreenLED_flags  @; global for visibility in debug
+	MoTdevice_GreenLED_reload: 		.skip 4	 	@;value used to reload count after timerout (special for this task)						
+	MoTdevice_GreenLED_count:	 	.skip 4		@;current value of  downcount used to determine blink rate (special for this task)						
+@;	MoTdevice_GreenLED_flags:	 	.skip 4		@;used to prevent green LED 'ON' and 'OFF' tasks from sending multiple status messages
+							
+	@;definitions to make code more understandable (use calculated in case data structure is changed)
+	.equ GLED_RELOAD,(MoTdevice_GreenLED_reload - MoTdevice_GreenLED_data)	@;calculated offset in MoTdevice_GreenLED_data to reload value
+	.equ GLED_COUNT,(MoTdevice_GreenLED_count - MoTdevice_GreenLED_data)	@;calculated offset in MoTdevice_GreenLED_data to count value
+@;	.equ GLED_FLAGS,(MoTdevice_GreenLED_flags - MoTdevice_GreenLED_data)	@; not used
+
+	.text
+@;------ GreenLED device dispatch
+	.global MoTdevice_GreenLED_cmd	
+	.thumb_func					
+MoTdevice_GreenLED_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'GreenLED'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any) 
+	and r1,0x04			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)	tbb [pc,r1]
+	@; GreenLED function byte meanings
+	@;	0: install - initalize GreenLED hardware and data and place GreenLED ON and OFF tasks on the task list
+	@;	1: change blinking schedule to 'fast'
+	@;	2: change blinking schedule to 'slow'
+	@;  3: remove - remove GreenLED ON and OFF from the task list
+	@;	4: blink the led N times
+	tbb [pc,r1]
+MoTdevice_GreenLED_cmd_table:
+	.byte (MoTdevice_GreenLED_init - MoTdevice_GreenLED_cmd_table)/2	  	@;initialize hardware and install GreenLED blink task on task list
+	.byte (MoTdevice_GreenLED_fast - MoTdevice_GreenLED_cmd_table)/2	  	@;change blink rate to fast standard
+	.byte (MoTdevice_GreenLED_slow - MoTdevice_GreenLED_cmd_table)/2	  	@;change blink rate to slow standard 
+	.byte (MoTdevice_GreenLED_stop - MoTdevice_GreenLED_cmd_table)/2		@;remove GreenLED device from the task list
+	.byte (MoTdevice_GreenLED_blinkN - MoTdevice_GreenLED_cmd_table)/2
+	.align 1 @;!!important to do this where odd-byte alignment is possible
+
+@;------ GreenLED commands 
+	@; commands below are dispatched by Cmd_Handler() in main() using the tbb (above) on the command's function number
+	@; commands on entry have r0 pointing to the 'argument' (if any) of the command
+
+	.global MoTdevice_GreenLED_init	@;taskID=1, function number=0		
+	.thumb_func
+MoTdevice_GreenLED_init: @; arrive here from Cmd_Handler with r0 pointing to function arguments if any (this function does not have arguments) 
+	@; - initialize green LED port pin
+	@; - initialize blinking rate-control values 
+	@; - install MoTdevice_GreenLED_ONtask on task list
+	@; - post Green_LED_init_msg 
+	@; - return to Cmd_Handler dispatcher
+
+	@; initialize port pin to drive STM32L476 Discoverys green LED
+	bl GreenLED_init						@;in stm32L476Disco_GreenLED.S
+
+	@; initialize blinking control parameters (ZERO value prevents blinking) 
+	mov r1,#0								
+	MOV_imm32 r3,MoTdevice_GreenLED_data 				
+	str r1,[r3,#GLED_RELOAD]				
+	str r1,[r3,#GLED_COUNT]	
+
+	@; add MoTdevice_GreenLED_ONtask task to task list - MoTdevice_GreenLED_ONtask and MoTdevice_GreenLED_OFFtask tasks cycle back and forth based on GLED_COUNT and GLED_RELOAD.  
+	LINK_me	MoTdevice_GreenLED_data,MoTdevice_GreenLED_ONtask		@;insert task 'MoTdevice_GreenLED_ONtask' on Tasklist
+
+	@; post new GreenLED message on list 
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_init_msg, Green_LED_init_msglen
+	@; here with r0=0 if message got posted, =-1 if not. Ignored for now. 
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done at 'GreenLED:". Returns to Cmd_Handler
+
+	.global MoTdevice_GreenLED_slow @;taskID=1, function number=1		
+	.thumb_func
+MoTdevice_GreenLED_slow: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for GreenLED commands)
+	@; post new GreenLED message on list	!!TODO
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_slow_msg, Green_LED_slow_msglen
+
+	@; change GreenLED delay count
+	MOV_imm32 r1,0x12345					@;set a new values for GreenLED blink delay						
+	MOV_imm32 r3,MoTdevice_GreenLED_data 	@; ..				
+	str r1,[r3,#GLED_RELOAD]				@; ..	
+	str r1,[r3,#GLED_COUNT]					@; ..
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+			
+	.global MoTdevice_GreenLED_fast @;taskID=1, function number=2		
+	.thumb_func
+MoTdevice_GreenLED_fast: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for MoTdevice_GreenLED_xxx commands) 
+	@; post new GreenLED message on list	
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_fast_msg, Green_LED_fast_msglen
+
+	@; change GreenLED delay count
+	MOV_imm32 r1,0x1234						@;set a new values for GreenLED blink delay						
+	MOV_imm32 r3,MoTdevice_GreenLED_data 		@; ..				
+	str r1,[r3,#GLED_RELOAD]				@; ..	
+	str r1,[r3,#GLED_COUNT]					@; ..
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+
+	.global MoTdevice_GreenLED_stop @;taskID=1, function number=3		
+	.thumb_func
+MoTdevice_GreenLED_stop: @; arrive here from Cmd_Handler with r0 pointing to function argument if any (not used for MoTdevice_GreenLED_xxx commands)
+	@; post new GreenLED message on list	
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_remove_msg, Green_LED_remove_msglen
+
+	bl GreenLED_OFF							@; turn the Green LED off
+	@;remove GreenLED device from the task list
+	UNLINK_me MoTdevice_GreenLED_data			
+
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done before MoTdevice_GreenLED_cmd_table dispatch; returns to Cmd_Handler
+
+@; HW04: Function 4
+ 	.global MoTdevice_GreenLED_blinkN	@;taskID=1, function number=1
+ 	.thumb_func
+ MoTdevice_GreenLED_blinkN:
+ 	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_blinkN_msg, Green_LED_blinkN_msglen
+
+ 	@; r0 points to function arguments (aka r0 contains n)
+ 	@; loop N times to turn the light on a off.
+n: 	cmp r0, #0
+	it le
+ 	ble e
+	bl GreenLED_ON
+	mov r11, r1 	@; Delay/wait -- delay time stored in r1 (i think)?
+d:	cmp r11, #0
+	it ge
+	subge r11, #1
+	bge d
+d:	bl GreenLED_OFF
+	j n
+e:	pop {r7, pc}	@; end
+	
+@;------ GreenLED tasks 
+	@; 'tasks' are dispatched by do_tasks() at exit from Cmd_Handler() (see \MoT\MoT_Cmd_HandlerXX.S
+
+	.global MoTdevice_GreenLED_ONtask @;task which counts down, blinks and restarts timer
+	.thumb_func
+MoTdevice_GreenLED_ONtask: @;task entry point : arrive here with rTASKP = MoTdevice_GreenLED_data
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; reload value = 0 says no blinking 
+	cbz r2,1f								@;  not blinking so skip to exit
+
+	@; here if first entry and blinking  
+	bl GreenLED_ON							@; turn the Green LED on
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_ON_msg, Green_LED_ON_msglen @;returns -1 if fail, 0 if succeed
+
+	@; update task resume point -- will skip the above when this task repeats
+	RELINK_me MoTdevice_GreenLED_ONtask_msg_posted		
+	.global MoTdevice_GreenLED_ONtask_msg_posted
+	.thumb_func
+MoTdevice_GreenLED_ONtask_msg_posted:	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; get counter reload value
+	cbz r2,1f								@; skip remaining operation of task if its 0 (=initial value and halted value)
+	ldr r1,[rTASKP,#GLED_COUNT]				@; otherwise get the current count
+	cbz r1,2f								@; prepare for next countdown if its 0
+	subs r1,#1								@;  otherwise decrement it 
+	str r1,[rTASKP,#GLED_COUNT]				@;  and store it back
+	b	1f									@; go to exit to the next task
+	
+2:	@; here when repeat count reaches 0	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; restart count for MoTdevice_GreenLED_OFFtask_msg phase of this task
+	str r2,[rTASKP,#GLED_COUNT]				@;  ..
+	RELINK_me MoTdevice_GreenLED_OFFtask		@; update task resume point as MoTdevice_GreenLED_OFFtask_msg
+	
+1:	@; task for this device is done for now -- proceed to next device/task on list
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task 
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+
+	
+	.global MoTdevice_GreenLED_OFFtask @; counts down, blinks and restarts timer
+	.thumb_func
+MoTdevice_GreenLED_OFFtask: @;arrive here with rTASKP = MoTdevice_GreenLED_data
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; reload value = 0 says no blinking 
+	cbz r2,1f								@;  no blinking so skip to exit
+
+	@; here if first entry and blinking 
+	bl GreenLED_OFF							@; turn the Green LED off
+	MSG_post adminMsgctl, MoTdevice_GreenLED_data, Green_LED_OFF_msg, Green_LED_OFF_msglen 
+
+	@; update task resume point -- will skip the above when this task repeats
+	RELINK_me MoTdevice_GreenLED_OFFtask_msg_posted		
+	.global MoTdevice_GreenLED_OFFtask_msg_posted
+	.thumb_func
+MoTdevice_GreenLED_OFFtask_msg_posted:		
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; get counter reload value
+	cbz r2,1f								@; exit if its 0 (=initial value and halted value)
+	ldr r1,[rTASKP,#GLED_COUNT]				@; otherwise get the current count
+	cbz r1,2f								@; prepare for next countdown if its 0
+	subs r1,#1								@;  otherwise decrement it 
+	str r1,[rTASKP,#GLED_COUNT]				@;  and store it back
+	b	1f									@; go to exit to the next task
+
+2:	@; here when counter reaches 0	
+	ldr r2,[rTASKP,#GLED_RELOAD]			@; restart count
+	str r2,[rTASKP,#GLED_COUNT]				@;  ..
+	RELINK_me MoTdevice_GreenLED_ONtask		@; update task resume point
+
+1:	@; task for this device is done for now -- proceed to next device/task on list
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+
+ 
+@;------ Green_LED messages and message length calculations
+	Green_LED_init_msg:
+	.ascii "Install GreenBlinky\n\r"
+	.equ Green_LED_init_msglen,( . - Green_LED_init_msg)
+	
+	Green_LED_fast_msg:
+	.ascii "Fast GreenBlinky blink\n\r"
+	.equ Green_LED_fast_msglen,( . - Green_LED_fast_msg)
+
+	Green_LED_slow_msg:
+	.ascii "Slow GreenBlinky blink\n\r"
+	.equ Green_LED_slow_msglen,( . - Green_LED_slow_msg)
+
+	Green_LED_remove_msg:
+	.ascii "Remove GreenBlinky\n\r"
+	.equ Green_LED_remove_msglen,( . - Green_LED_remove_msg)
+
+	Green_LED_ON_msg:
+	.ascii "1\n\r"
+	.equ Green_LED_ON_msglen,( . - Green_LED_ON_msg)
+
+	Green_LED_OFF_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	Green_LED_blinkN_msg:
+	.ascii "BlinkN GreenBlinky Blink\n\r"
+	.equ Green_LED_blinkN_msglen, (. - Green_LED_blinkN_msg)
+	@; TODO: define msglen somewhere for blinkN
+
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+	
+
+
+
+
+
+
+

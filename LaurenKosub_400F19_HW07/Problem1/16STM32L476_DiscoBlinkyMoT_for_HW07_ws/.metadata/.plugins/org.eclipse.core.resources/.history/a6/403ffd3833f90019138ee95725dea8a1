@@ -1,0 +1,301 @@
+@; obfuscated_stm32fL476xx_TIM2_demo05.S 2019-10-23 : for HW07
+@; currently configured for use with 4MHz HSI/APB1 by setting prescalar = 3 on line to give 1 MHz couner clock. 
+@; stm32L476xx_TIM2_demo05.S wmh 2019-10-20 : adds CCR1 ramp update to TIM2_IRQHandler
+@; stm32L476xx_TIM2_demo04.S wmh 2019-10-18 : updated for MoTdevice_TIM2PWM
+@; stm32L476xx_TIM2_demo03.S wmh 2019-10-18 : updated for 'L476 -- working
+@; --- characterize target syntax, processor
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; but here we'll use thumb instructions only
+ 	
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+
+	
+@; --- definitions pertinent to TIM2, extracted from 'stm32L476xx.h'
+@;.equ 	PERIPH_BASE,		0x40000000 @; Base address of : AHB/ABP Peripherals 
+@;.equ	AHB1PERIPH_BASE,	(PERIPH_BASE + 0x00020000)
+.equ	RCC_BASE,           0x40021000
+.equ 	APB1RSTR1,			0x38		@; RCC APB1 peripheral reset register; TIM2 is bit0
+.equ	APB1ENR1,			0x58		@; RCC APB1 peripheral clock enable register; TIM2 is bit0
+.equ 	AHB2ENR,			0x4C		@; RCC AHB2 peripheral clock enable register; GPIOA is bit0
+
+.equ 	TIM2_BASE,			(0x40000000)	@; origin of TIM2 control register array
+@; offsets to registers in TIM2 control array
+.equ	CR1,	0x00	@;	  __IO uint32_t CR1;              TIM control register 1,              Address offset: 0x00 	
+.equ	CR2,	0x04	@;	  __IO uint32_t CR2;              TIM control register 2,              Address offset: 0x04 	
+.equ	SMCR,	0x08	@;	  __IO uint32_t SMCR;             TIM slave mode control register,     Address offset: 0x08 	
+.equ	DIER,	0x0C	@;	  __IO uint32_t DIER;             TIM DMA/interrupt enable register,   Address offset: 0x0C 	
+.equ	SR,		0x10	@;	  __IO uint32_t SR;               TIM status register,                 Address offset: 0x10 	
+.equ	EGR,	0x14	@;	  __IO uint32_t EGR;              TIM event generation register,       Address offset: 0x14 	
+.equ	CCMR1,	0x18	@;	  __IO uint32_t CCMR1;            TIM capture/compare mode register 1, Address offset: 0x18 	
+.equ	CCMR2,	0x1C	@;	  __IO uint32_t CCMR2;            TIM capture/compare mode register 2, Address offset: 0x1C 	
+.equ	CCER,	0x20	@;	  __IO uint32_t CCER;             TIM capture/compare enable register, Address offset: 0x20 	
+.equ	CNT,	0x24	@;	  __IO uint32_t CNT;              TIM counter register,                Address offset: 0x24 	
+.equ	PSC,	0x28	@;	  __IO uint32_t PSC;              TIM prescaler,                       Address offset: 0x28 	
+.equ	ARR,	0x2C	@;	  __IO uint32_t ARR;              TIM auto-reload register,            Address offset: 0x2C 	
+.equ	RCR,	0x30	@;	  __IO uint32_t RCR;              TIM repetition counter register,     Address offset: 0x30 	
+.equ	CCR1,	0x34	@;	  __IO uint32_t CCR1;             TIM capture/compare register 1,      Address offset: 0x34 	
+.equ	CCR2,	0x38	@;	  __IO uint32_t CCR2;             TIM capture/compare register 2,      Address offset: 0x38 	
+.equ	CCR3,	0x3C	@;	  __IO uint32_t CCR3;             TIM capture/compare register 3,      Address offset: 0x3C 	
+.equ	CCR4,	0x40	@;	  __IO uint32_t CCR4;             TIM capture/compare register 4,      Address offset: 0x40 	
+.equ	BDTR,	0x44	@;	  __IO uint32_t BDTR;             TIM break and dead-time register,    Address offset: 0x44 	
+.equ	DCR,	0x48	@;	  __IO uint32_t DCR;              TIM DMA control register,            Address offset: 0x48 	
+.equ	DMAR,	0x4C	@;	  __IO uint32_t DMAR;             TIM DMA address for full transfer,   Address offset: 0x4C 	
+.equ	OR,		0x50	@;	  __IO uint32_t OR;               TIM option register,                 Address offset: 0x50 	
+.equ	CCMR3,	0x54	@;	  __IO uint32_t CCMR3;            TIM capture/compare mode register 3,      Address offset: 0x54 	
+.equ	CCR5,	0x58	@;	  __IO uint32_t CCR5;             TIM capture/compare mode register5,       Address offset: 0x58 	
+.equ	CCR6,	0x5C	@;	  __IO uint32_t CCR6;             TIM capture/compare mode register6,       Address offset: 0x5C 	
+.equ	AF1,	0x60	@;	  __IO uint32_t AF1;              TIM Alternate function option register 1, Address offset: 0x60 	
+.equ	AF2,	0x64	@;	  __IO uint32_t AF2;              TIM Alternate function option register 2, Address offset: 0x64 	
+
+
+@; --- definitions for alternate function assignment of TIM2 to PA0
+.equ 	GPIOA_BASE, 0x48000000 @; origin of GPIOA control register array
+@; offsets to registers in GPIO control array
+.equ	MODER,	0x00	@;  GPIO port mode register,	Address offset:	0x00	      
+.equ	OTYPER,	0x04	@;  GPIO port output type register,	Address offset:	0x04	      
+.equ	OSPEEDR,0x08	@;  GPIO port output speed register,	Address offset:	0x08	      
+.equ	PUPDR,	0x0C	@;  GPIO port pull-up/pull-down register,	Address offset:	0x0C	      
+.equ	IDR,	0x10	@;  GPIO port input data register,	Address offset:	0x10	      
+.equ	ODR,	0x14	@;  GPIO port output data register,	Address offset:	0x14	      
+.equ	BSRR,	0x18	@;  GPIO port bit set/reset register,	Address offset:	0x18	      
+.equ	LCKR,	0x1C	@;  GPIO port configuration lock register,	Address offset:	0x1C	      
+.equ	AFRL,	0x20	@;  GPIO alternate function register low,	Address offset:	0x20
+.equ	AFRH,	0x24	@;  GPIO alternate function register high,	Address offset:	0x24 
+
+@; --- NVIC register array base addresses
+.equ	NVIC_ISER,	0xE000E100	@; Interrupt Set-Enable Registers, NVIC_ISER0-NVIC_ISER15
+.equ	NVIC_ICER,	0xE000E180	@; Interrupt Clear-Enable Registers, NVIC_ICER0-NVIC_ICER15
+.equ	NVIC_ISPR,	0xE000E200	@; Interrupt Set-Pending Registers, NVIC_ISPR0-NVIC_ISPR15
+.equ	NVIC_ICPR,	0xE000E280	@; Interrupt CLR-Pending Registers, NVIC_ICPR0-NVIC_ICPR15
+.equ 	NVIC_IABR,	0xE000E300	@; Interrupt Active Bit Registers, NVIC_IABR0-NVIC_IABR15
+.equ 	NVIC_IPR,	0xE000E400	@; Interrupt Priority Registers, NVIC_IPR0-NVIC_IPR123
+
+
+@; --- TIM2 demo code
+	.text						
+	.align 2
+
+	.global TIM2_NVIC_init	@; general interrupt enable and priority setting
+							@; 	called first, configures NVIC for all active interrupts
+	.thumb_func
+TIM2_NVIC_init:
+	push {r7,lr}
+	
+	@;enable TIM2 in NVIC (will also need to be enable in TIM configuration)
+	ldr 	r3, =NVIC_ISER		@; NVIC_ISER : set-enable registers
+	ldr		r2, [r3]
+	orr 	r2, r2, #(1<<28)	@; set enable for NVIC_ISER7
+	str		r2, [r3]
+
+	ldr		r3, =TIM2_BASE		@; enable in TIM2 config
+	ldr		r2, [r3, #DIER]		@; DIER = interrupt enable reg
+	mov		r2, #0b1000111		@; UIE=1, CC1IE=1, CC2IE=1, TIE=1
+	str		r2, [r3, #DIER]
+
+	@;set TIM2 interrupt priority mid-level (8)
+	ldr		r3, =NVIC_IPR	@; NVIC_IPR = interupt priority regs
+	mov		r2, #8
+	strb	r2, [r3, #28]
+
+	pop {r7,pc}
+	
+
+    @; functions to freeze/unfreeze TIM2; derived from macros in stm32f7xx_hal.h 
+@; --- definitions for DBGMCU control of TIM2 (from STM32L476xx.h)
+.equ    DBGMCU_BASE,    0xE0042000  @; Debug MCU registers base address 
+.equ	APB1FZ,	0x08	@;	   __IO uint32_t APB1FZ;  /*!< Debug MCU APB1 freeze register,   Address offset: 0x08 */
+.equ    DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos,  0x0   @;position of bit in APB1FZ; setting this bit will cause TIM2 to 'freeze' when CPU stops at breakpoints
+
+	.global DBGMCU_FREEZE_TIM2
+	.thumb_func
+DBGMCU_FREEZE_TIM2:	@;freeze TIM2 when stopped in debug mode
+	ldr r3,=DBGMCU_BASE @; ..
+	ldr r2,[r3,#APB1FZ]	@; ..
+    orr r2,#(1<<DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos) @; ..
+	str r2,[r3,#APB1FZ]	@; ..    
+    bx lr
+
+	.global DBGMCU_UNFREEZE_TIM2
+	.thumb_func
+DBGMCU_UNFREEZE_TIM2:	@;unfreeze TIM2 in debug mode
+	ldr r3,=DBGMCU_BASE @; ..
+	ldr r2,[r3,#APB1FZ]	@; ..
+    bic r2,#(1<<DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos) @; ..
+	str r2,[r3,#APB1FZ]	@; ..    
+    bx lr
+
+
+
+    .global TIM2_CH1_out_to_PA0
+    .thumb_func
+TIM2_CH1_out_to_PA0: 
+   push {r7,lr}
+
+	@;(re-)enable GPIOA 
+
+
+    @;configure PA0 for alternate function TIM2 CH1
+
+	@;put PA0 in alternate function mode
+
+	@;set PA0 output as push-pull
+
+	@;set PA0 as high-speed output
+
+	@;no pullup/pulldown on PA0 
+	
+	@;connect PA0 alternate function x (AFRx) -- TIM2 CH1
+
+	@;here with TIM2 CH1 output on PA0
+	pop {r7,pc}
+
+
+
+	.global TIM2_init
+	.thumb_func
+TIM2_init:	@;TIM2 initialized as a simple up-counter following register descriptions in section 26.4 of STM32F77ZI manual
+    push {r7,lr}
+    ldr		r3, =TIM2_BASE
+
+	@;(re-)enable TIM2 and then reset it
+	ldr		r0, =#0x40021058
+    ldr     r1, [r0]
+    orr     r1, #1
+    str     r1, [r0]
+	@; here with TIM2 enabled and reset
+
+	@;set TIM2 prescaler reload value
+	mov     r1, #3
+    ldr     r0, [r3, #PSC]               /* setting timer clock prescaler */
+	str     r1, [r0]
+	@;set TIM2 counter reload value
+	mov		r1, #20000			@; 20ms intervals
+	ldr		r0, [r3, #ARR]	@; load arr
+	str		r1, [r0]
+	
+	@;select PWM mode and enable TIM1 CH1 preload register
+	mov     r1, #0x0068
+	ldr     r0, [r3, #CCMR1]
+	str     r1, [r0]
+	@;enable CH1 output mode 
+
+	@;set CH1's compare value
+	ldr     r0, [r3, #DIER]
+	mov     r1, #0x3                // set cc1Ie=1, uie=1
+ 	str     r1, [r0]
+
+ 	mov     r1, 0x1
+	ldr     r0, [r3, #CCER]
+	str     r1, [r0]
+
+	mov		r1, #20000
+	ldr     r0, [r3, #CCR1]
+	str     r1, [r0]
+
+	@;generate a software update event to write preload values to ARR and CCR1 (note 3)
+	@;!! here with UIF in SR=1 as a side effect of the above instruction
+
+
+	@;enable TIM2 interrupt on CH1 
+
+	@;enable TIM2 as up-counting edge-aligned overflow-triggered repeating counter (notes 6 and 7)
+	@;!! here with all CCxIF flags in SR =1 as a side effect of the above instruction
+	mov     r1, #0x5
+ 	ldr     r0, [r3, #CR1]
+	str     r1, [r0]
+	ldr     r2, [r0]
+	@; TODO clear TIM2 interrupts at startup (can't hurt)
+	
+	@; here with TIM2 running
+	pop {r7,pc}
+
+	
+	.global TIM2_CH1_pulse_update //device 02 function 02 (direct pulse width change) low-level code
+	.thumb_func
+TIM2_CH1_pulse_update: @;instantanous update. pulsewidth has been recorded in MoTdevice_TIM2PWM_data (MoTdevice_TIM2PWM02.S) so already matches this so no 'ramp' behavior
+	push {r7,lr}
+	@;arrive here from call in MoTdevice_TIM2PWM.S with r0 holding the new pulse value 
+	@; update pulse width
+	
+
+	pop {r7,pc}
+	
+	
+	.global TIM2_IRQHandler
+	.thumb_func
+TIM2_IRQHandler:
+	push {r7,lr}			
+	@;clear CC1 interrupt flag 
+
+	@;check if current CCR1 value matches target value in MoTdevice_TIM2PWM_pulsewidth
+
+	@;here when pulsewidth needs changing
+
+	@;here to increase the pulsewidth (its too long)
+
+	@;here if updating is complete								 	
+	b 3f
+	
+2:	@;here to decrease the pulsewidth (its too short)
+
+	@;have we reached the target pulsewidth?
+	@;	no -- updating to be continued at the next interrupt
+	
+	@;here if updating is complete								 	
+	@;all done (fall through)
+
+3:	@;increment tick count
+	add		r0, r0, #1
+
+	@;is tick limit reached
+	cmp 	r0, #25
+	bne 	4f
+
+	@;here when X interrupts have occurred
+
+	bl RedLED_toggle		@; blink the LED
+	mov 	r0, #0
+	
+4:	@;interrupt is done
+	pop {r7,pc}
+
+/*
+	.global TIM2_delay
+	.thumb_func
+TIM2_delay:	@;temporary development step during interrupt development -- polls TIM2 CH1 comparitor interrupt flag 'CC1IE'
+@;when interrupt flag 'CC1IE' has fired 500 times, increments C variable 'TIM2_ticks' and returns
+	push {r7,lr}
+
+	mov r0,#0				@;initialize tick counter
+
+	@;monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+	ldr r3,=TIM2_BASE 		@;test UIF flag
+1:	ldr r2,[r3,#SR]			@; ..
+	TST r2,#(1<<1)			@;CC1IE set?
+	beq 1b					@; 	no -- continue waiting
+	bic r2,r2,#(1<<1)		@;	yes -- clear it
+	str r2,[r3,#SR]			@; ..
+
+@;here when TIM2 upcount has been reached
+
+	@;increment tick count
+	add r0,r0,#1			@; ..
+	cmp r0,#500				@;is tick limit reached
+	blo	1b					@;  no -- continue count ticks
+	
+@;here when tick limit has been reached
+
+	@;update TIM_ticks
+	movw r1,#:lower16:TIM2_ticks		@; ..
+	movt r1,#:upper16:TIM2_ticks		@; ..
+	ldr r2,[r1]							@; ..
+	adds r2,r2,#1						@; ..
+	str r2,[r1]							@; ..
+
+
+	@;done -- 500 ticks have elapsed
+	pop {r7,pc}
+*/

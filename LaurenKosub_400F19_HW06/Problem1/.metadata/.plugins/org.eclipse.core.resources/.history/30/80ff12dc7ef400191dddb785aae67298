@@ -1,0 +1,202 @@
+@; stm32L476xx_TIM2_demo--redacted.S wmh 2019-10-15 : simple TIM2 initialization with debug timer freeze
+
+@; --- characterize target syntax, processor
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; but here we'll use thumb instructions only
+
+@; --- definitions pertinent to TIM2, extracted from 'stm32L476xx.h'
+	//<**redacted**>
+@; offsets to registers in TIM2 control array
+	.equ        TIM2_BASE, 0x40000000
+    .equ        TIM2_ARR,  TIM2_BASE + 0x2C
+    .equ        TIM2_CR1,  TIM2_BASE
+    .equ        TIM2_DIER, TIM2_BASE + 0x0C
+    .equ        TIM2_PSC,  TIM2_BASE + 0x28
+    .equ        TIM2_SR,   TIM2_BASE + 0x10
+    .equ        TIM2_EGR,  TIM2_BASE + 0x14
+    .equ		TIM2_CCMR1,TIM2_BASE + 0x18
+@; --- TIM2 demo code
+	.text
+
+
+    @; functions to freeze/unfreeze TIM2
+@; --- definitions for DBGMCU control of TIM2, extracted from 'stm32L476xx.h'
+.equ    DBGMCU_BASE,    0xE0042000  @; Debug MCU registers base address
+.equ	APB1FZ,	0x08	@;	   __IO uint32_t APB1FZ;  /*!< Debug MCU APB1 freeze register,   Address offset: 0x08 */
+.equ    DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos,  0x0   @;position of bit in APB1FZ; setting this bit will cause TIM2 to 'freeze' when CPU stops at breakpoints
+
+	.global DBGMCU_FREEZE_TIM2
+	.thumb_func
+DBGMCU_FREEZE_TIM2:	@;call this in main() to freeze TIM2 when stopped in debug mode
+	ldr r3,=DBGMCU_BASE @; ..
+	ldr r2,[r3,#APB1FZ]	@; ..
+    orr r2,#(1<<DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos) @; ..
+	str r2,[r3,#APB1FZ]	@; ..
+    bx lr
+
+	.global DBGMCU_UNFREEZE_TIM2
+	.thumb_func
+DBGMCU_UNFREEZE_TIM2:	@;unfreeze TIM2 in debug mode
+	ldr r3,=DBGMCU_BASE @; ..
+	ldr r2,[r3,#APB1FZ]	@; ..
+    bic r2,#(1<<DBGMCU_APB1_FZ_DBG_TIM2_STOP_Pos) @; ..
+	str r2,[r3,#APB1FZ]	@; ..
+    bx lr
+
+
+
+    .global connect_TIM2_CH1_to_PA0
+    .thumb_func
+connect_TIM2_CH1_to_PA0:
+   push {r7,lr}
+
+	@;(re-)enable GPIOA
+
+    @;configure PA0 for alternate function TIM2 CH1
+
+	@;put PA0 in alternate function mode
+	//<**redacted**>
+	@;set PA0 output as push-pull
+	//<**redacted**>
+	@;set PA0 as high-speed output
+	//<**redacted**>
+	@;no pullup/pulldown on PA0
+	//<**redacted**>
+	@;connect PA0 alternate function 1 (AFR1) -- TIM2 CH1
+	//<**redacted**>
+	@;here with TIM2 CH1 output on PA0
+	pop {r7,pc}
+
+
+
+	.global TIM2_init
+	.thumb_func
+TIM2_init:	@;TIM2 initialized as a simple up-counter
+    push {r0,r1,r2,r3,r7,lr}
+    mov r3, r0
+
+	@;(re-)enable TIM2 and then reset it
+	mov		r1, #0x0081		//	--> CEN=1, CMS=edge aligned,ARPE=1(ARR Buffered)
+	ldr		r0, =TIM2_CR1
+	str 	r1, [r0]
+
+@; here with TIM2 enabled and reset
+    //ldr r3,=TIM2_BASE       @;select TIM2 for register operations
+
+	@;set TIM2 prescaler reload value
+	mov    	r1, #40000
+	ldr  	r0, =TIM2_PSC               /* setting timer clock prescaler */
+    str     r1, [r0]
+
+	mov 	r1, 0x0003
+	ldr     r0, =TIM2_EGR               /* update event to apply prescaler*/
+    str     r1, [r0]
+
+	@;set TIM2 counter reload value
+	ldr     r0, =TIM2_ARR               /* preloading count value */
+    str     r3, [r0]
+
+	@;select PWM mode  and enable TIM1 CH1 preload register
+	//ccmr1:oc1m (bits 6:4): 110
+	//ccmr1:oc1pe (bit 3): 1
+	ldr     r0, =TIM2_CCMR1
+    ldr     r1, [r0]
+    orr     r1, #0x68 	// 1101000
+    mov		r3, 0xffef
+    and		r1, r3	// 111111111101111
+    str     r1, [r0]
+
+	@;enable CH1 output mode
+	//ccmr1:cc1s (bit 0:1): 00
+	ldr     r0, =TIM2_CCMR1
+    ldr     r1, [r0]
+    mov		r3, 0xfffc
+    and     r1, r3
+    str     r1, [r0]
+
+	@;set CH1's compare value
+	//<**redacted**>
+	@;initialize the comparitor register with its value
+	ldr		r0, =TIM2_CCMR1
+	ldr		r1, [r0]
+	movw 	r1,#0x0	@; ..
+	movt 	r1,#0x0	@; ..
+	str		r1, [r0]
+	@;enable TIM2 as up-counting edge-aligned overflow-triggered repeating counter
+	// upcounting: timx_cr1 dir bit (4) = 0
+	// edge aligned: tim2_cr1 cms bits (6,5) = 00
+	// overflow triggered:
+	ldr		r0, =TIM2_CR1
+	ldr 	r1, [r0]
+	mov		r3,#0xff8f
+	and		r1,	r3		//set enable bit to 1 (0001111)
+	str		r1, [r0]
+	@; here with TIM2 running
+	pop {r0,r1,r2,r3,r7,pc}
+
+
+	.global TIM2_poll @;for initial testing of PWM code -- is not the homework solution
+	.thumb_func
+TIM2_poll:	@;waits for TIM2 CH1 comparitor interrupt flag 'CC1IE' to timeout 500 times, then increments C variable 'ticks500' and returns
+	push {r7,lr}
+	ldr	r3, =TIM2_ARR
+	ldr	r4, [r3]
+	mov r0,#0				@;initialize tick counter
+
+	@;monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+p:	ldr r3, =TIM2_SR		@; test UIF flag
+	TST r3, r3				@; UIF set?
+	beq p					@; 	no -- continue waiting
+	bic r3,r3,#1			@;	yes -- clear it
+	str r3,[r3]
+
+@;here when TIM2 upcount has been reached
+
+	@;increment count
+	add r0,r0,#1			@; ..
+	cmp r0,	r4			@;is delay reached
+	blo	p					@;  no -- continue count
+
+@;here when delay has been reached
+	@;toggle LED
+	bl togglePE8
+	b p
+
+	@;done --delay elapsed
+	pop {r7,pc}
+
+/*
+	.global TIM2_demo @;for initial testing of PWM code -- is not the homework solution
+	.thumb_func
+TIM2_demo:	@;waits for TIM2 CH1 comparitor interrupt flag 'CC1IE' to timeout 500 times, then increments C variable 'ticks500' and returns
+	push {r7,lr}
+
+	mov r0,#0				@;initialize tick counter
+
+	@;monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+	ldr r3,=TIM2_BASE 		@;test UIF flag
+1:	ldr r2,[r3,#SR]			@; ..
+	TST r2,#(1<<1)			@;CC1IF set?
+	beq 1b					@; 	no -- continue waiting
+	bic r2,r2,#(1<<1)		@;	yes -- clear it
+	str r2,[r3,#SR]			@; ..
+
+@;here when TIM2 upcount has been reached
+
+	@;increment tick count
+	add r0,r0,#1			@; ..
+	cmp r0,#500				@;is tick limit reached
+	blo	1b					@;  no -- continue count ticks
+	
+@;here when tick limit has been reached
+
+	@;update ticks500
+	movw r1,#:lower16:ticks500	@; ..
+	movt r1,#:upper16:ticks500	@; ..
+	ldr r2,[r1]					@; ..
+	adds r2,r2,#1				@; ..
+	str r2,[r1]					@; ..
+
+	@;done -- 500 ticks have elapsed
+	pop {r7,pc}
+*/

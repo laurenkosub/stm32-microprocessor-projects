@@ -1,0 +1,23 @@
+21:55:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	     16	   1536	   2560	    a00	DiscoBlinky.elf
+ 
+
+21:55:04 Build Finished (took 314ms)
+

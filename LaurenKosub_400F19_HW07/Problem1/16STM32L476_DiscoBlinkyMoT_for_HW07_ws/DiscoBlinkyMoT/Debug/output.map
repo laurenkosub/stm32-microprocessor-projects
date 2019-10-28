@@ -1,0 +1,510 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+serchar             0x4               Src/main09.o
+TIM2_ticks          0x4               Src/main09.o
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .data          0x0000000000000000        0x0 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .data          0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_GreenLED.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_GreenLED.o
+ .data          0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_RedLED.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_RedLED.o
+ .data          0x0000000000000000        0x0 Src/MoT_system/MoT_CmdHandler16.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_CmdHandler16.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .data          0x0000000000000000        0x0 Src/MoT_system/MoT_ringbufbuf03.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_ringbufbuf03.o
+ .data          0x0000000000000000        0x0 Src/MoTdevice_GreenLED08.o
+ .data          0x0000000000000000        0x0 Src/MoTdevice_TIM2PWM02.o
+ .group         0x0000000000000000        0xc Src/main09.o
+ .group         0x0000000000000000        0xc Src/main09.o
+ .text          0x0000000000000000        0x0 Src/main09.o
+ .data          0x0000000000000000        0x0 Src/main09.o
+ .bss           0x0000000000000000        0x0 Src/main09.o
+ .text.SWdelay  0x0000000000000000       0x28 Src/main09.o
+ COMMON         0x0000000000000000        0x8 Src/main09.o
+ .data          0x0000000000000000        0x0 Src/misc_utilities.o
+ .bss           0x0000000000000000        0x0 Src/misc_utilities.o
+ .text          0x0000000000000000       0x14 startup/startup_stm32l476xx.o
+ .data          0x0000000000000000        0x0 startup/startup_stm32l476xx.o
+ .bss           0x0000000000000000        0x0 startup/startup_stm32l476xx.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000020000000 0x0000000000018000 xrw
+RAM2             0x0000000010000000 0x0000000000008000 xrw
+FLASH            0x0000000008000000 0x0000000000100000 xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+LOAD Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+LOAD Src/LL_device/stm32L476Disco_GreenLED.o
+LOAD Src/LL_device/stm32L476Disco_RedLED.o
+LOAD Src/MoT_system/MoT_CmdHandler16.o
+LOAD Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+LOAD Src/MoT_system/MoT_admin_cfg01.o
+LOAD Src/MoT_system/MoT_ringbufbuf03.o
+LOAD Src/MoTdevice_GreenLED08.o
+LOAD Src/MoTdevice_TIM2PWM02.o
+LOAD Src/main09.o
+LOAD Src/misc_utilities.o
+LOAD startup/startup_stm32l476xx.o
+LOAD /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a
+                0x0000000020018000                _estack = 0x20018000
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x0000000008000000      0x188
+                0x0000000008000000                . = ALIGN (0x8)
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000      0x188 startup/startup_stm32l476xx.o
+                0x0000000008000000                g_pfnVectors
+                0x0000000008000188                . = ALIGN (0x8)
+
+.text           0x0000000008000188      0xdd0
+                0x0000000008000188                . = ALIGN (0x8)
+ *(.text)
+ .text          0x0000000008000188       0x5c Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+                0x0000000008000188                LSE_init
+                0x00000000080001d6                HCLK48MHz_init
+ .text          0x00000000080001e4       0xa4 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+                0x00000000080001e4                TIM2_NVIC_init
+                0x0000000008000206                DBGMCU_FREEZE_TIM2
+                0x0000000008000212                DBGMCU_UNFREEZE_TIM2
+                0x000000000800021e                TIM2_CH1_out_to_PA0
+                0x0000000008000222                TIM2_init
+                0x000000000800025e                TIM2_CH1_pulse_update
+                0x0000000008000262                TIM2_IRQHandler
+ .text          0x0000000008000288       0x78 Src/LL_device/stm32L476Disco_GreenLED.o
+                0x0000000008000288                GreenLED_init
+                0x00000000080002cc                GreenLED_OFF
+                0x00000000080002de                GreenLED_ON
+                0x00000000080002f0                GreenLED_toggle
+ .text          0x0000000008000300       0x78 Src/LL_device/stm32L476Disco_RedLED.o
+                0x0000000008000300                RedLED_init
+                0x0000000008000344                RedLED_OFF
+                0x0000000008000356                RedLED_ON
+                0x0000000008000368                RedLED_toggle
+ .text          0x0000000008000378      0x110 Src/MoT_system/MoT_CmdHandler16.o
+                0x0000000008000378                init_Cmd_handle
+                0x000000000800039c                Cmd_Handler
+                0x000000000800047e                do_tasks_return
+ .text          0x0000000008000488      0x440 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                0x0000000008000488                configure_GPIOD_for_USART2
+                0x00000000080004f8                adminTether_init
+                0x00000000080004f8                USART2_init
+                0x0000000008000584                USART2_nbgetchar
+                0x00000000080005a0                USART2_nbputchar
+                0x00000000080005c2                USART2_bgetchar
+                0x00000000080005da                USART2_bputchar
+                0x00000000080005f2                USART2_writeDR
+                0x0000000008000602                USART2_IRQHandler
+                0x00000000080006c4                USART2_IRQinit
+                0x000000000800071a                USART2_MsgPost
+                0x0000000008000746                USART2_MsgsInit
+                0x0000000008000758                USART2_RXbuffer_init
+                0x0000000008000770                USART2_RXgetbuf0
+                0x0000000008000780                USART2_RXgetbuf1
+                0x0000000008000790                USART2_RXresetRXBUF0_NUMOVERRUNS
+                0x00000000080007a2                USART2_RXgetRXBUF0_NUMOVERRUNS
+                0x00000000080007b0                USART2_RXresetRXBUF0_NUMNEWLINES
+                0x00000000080007c2                USART2_RXgetRXBUF0_NUMNEWLINES
+                0x00000000080007d0                USART2_RXresetRXBUF1_NUMOVERRUNS
+                0x00000000080007e2                USART2_RXgetRXBUF1_NUMOVERRUNS
+                0x00000000080007f0                USART2_RXresetRXBUF1_NUMNEWLINES
+                0x0000000008000802                USART2_RXgetRXBUF1_NUMNEWLINES
+                0x00000000080008a2                USART2_RXBUF1_discard
+ .text          0x00000000080008c8        0xc Src/MoT_system/MoT_admin_cfg01.o
+                0x00000000080008c8                adminDevicetable
+ .text          0x00000000080008d4      0x122 Src/MoT_system/MoT_ringbufbuf03.o
+                0x00000000080008d4                ringbufbuf0_rd
+                0x0000000008000910                ringbufbuf1_rd
+                0x0000000008000940                ringbufbuf_wr
+                0x00000000080009b6                ringbufbuf_init
+                0x00000000080009e2                ringbufbuf0_reset
+                0x00000000080009ec                ringbufbuf1_reset
+ .text          0x00000000080009f6      0x282 Src/MoTdevice_GreenLED08.o
+                0x00000000080009f6                MoTdevice_GreenLED_cmd
+                0x0000000008000a08                MoTdevice_GreenLED_init
+                0x0000000008000a74                MoTdevice_GreenLED_slow
+                0x0000000008000aba                MoTdevice_GreenLED_fast
+                0x0000000008000b00                MoTdevice_GreenLED_stop
+                0x0000000008000b50                MoTdevice_GreenLED_ONtask
+                0x0000000008000b92                MoTdevice_GreenLED_ONtask_msg_posted
+                0x0000000008000bb4                MoTdevice_GreenLED_OFFtask
+                0x0000000008000bf6                MoTdevice_GreenLED_OFFtask_msg_posted
+ .text          0x0000000008000c78      0x1e4 Src/MoTdevice_TIM2PWM02.o
+                0x0000000008000c78                MoTdevice_TIM2PWM_cmd
+                0x0000000008000c8a                TIM2PWM_init
+                0x0000000008000cbc                MoTdevice_TIM2PWM_init
+                0x0000000008000d20                MoTdevice_TIM2PWM_report
+                0x0000000008000d72                MoTdevice_TIM2PWM_setpulse
+                0x0000000008000db4                MoTdevice_TIM2PWM_ramppulse
+ .text          0x0000000008000e5c       0x74 Src/misc_utilities.o
+                0x0000000008000e5c                bytecopy
+                0x0000000008000e6c                sprintf_uint32
+ *(.text*)
+ .text.main     0x0000000008000ed0       0x3c Src/main09.o
+                0x0000000008000ed0                main
+ .text.Reset_Handler
+                0x0000000008000f0c       0x48 startup/startup_stm32l476xx.o
+                0x0000000008000f0c                Reset_Handler
+ .text.Default_Handler
+                0x0000000008000f54        0x2 startup/startup_stm32l476xx.o
+                0x0000000008000f54                RTC_Alarm_IRQHandler
+                0x0000000008000f54                EXTI2_IRQHandler
+                0x0000000008000f54                TIM8_TRG_COM_IRQHandler
+                0x0000000008000f54                TIM8_CC_IRQHandler
+                0x0000000008000f54                DebugMon_Handler
+                0x0000000008000f54                TIM1_CC_IRQHandler
+                0x0000000008000f54                TSC_IRQHandler
+                0x0000000008000f54                HardFault_Handler
+                0x0000000008000f54                SysTick_Handler
+                0x0000000008000f54                TAMP_STAMP_IRQHandler
+                0x0000000008000f54                PendSV_Handler
+                0x0000000008000f54                NMI_Handler
+                0x0000000008000f54                EXTI3_IRQHandler
+                0x0000000008000f54                LPTIM2_IRQHandler
+                0x0000000008000f54                DFSDM1_FLT1_IRQHandler
+                0x0000000008000f54                I2C3_ER_IRQHandler
+                0x0000000008000f54                DFSDM1_FLT2_IRQHandler
+                0x0000000008000f54                EXTI0_IRQHandler
+                0x0000000008000f54                I2C2_EV_IRQHandler
+                0x0000000008000f54                CAN1_RX0_IRQHandler
+                0x0000000008000f54                FPU_IRQHandler
+                0x0000000008000f54                TIM1_UP_TIM16_IRQHandler
+                0x0000000008000f54                UsageFault_Handler
+                0x0000000008000f54                ADC1_2_IRQHandler
+                0x0000000008000f54                SPI1_IRQHandler
+                0x0000000008000f54                TIM6_DAC_IRQHandler
+                0x0000000008000f54                TIM8_UP_IRQHandler
+                0x0000000008000f54                DMA2_Channel2_IRQHandler
+                0x0000000008000f54                DMA1_Channel4_IRQHandler
+                0x0000000008000f54                SAI2_IRQHandler
+                0x0000000008000f54                DFSDM1_FLT3_IRQHandler
+                0x0000000008000f54                USART3_IRQHandler
+                0x0000000008000f54                DMA1_Channel7_IRQHandler
+                0x0000000008000f54                CAN1_RX1_IRQHandler
+                0x0000000008000f54                LCD_IRQHandler
+                0x0000000008000f54                UART5_IRQHandler
+                0x0000000008000f54                ADC3_IRQHandler
+                0x0000000008000f54                TIM4_IRQHandler
+                0x0000000008000f54                DMA2_Channel1_IRQHandler
+                0x0000000008000f54                QUADSPI_IRQHandler
+                0x0000000008000f54                I2C1_EV_IRQHandler
+                0x0000000008000f54                DMA1_Channel6_IRQHandler
+                0x0000000008000f54                UART4_IRQHandler
+                0x0000000008000f54                DMA2_Channel4_IRQHandler
+                0x0000000008000f54                TIM3_IRQHandler
+                0x0000000008000f54                RCC_IRQHandler
+                0x0000000008000f54                DMA1_Channel1_IRQHandler
+                0x0000000008000f54                Default_Handler
+                0x0000000008000f54                DMA2_Channel7_IRQHandler
+                0x0000000008000f54                EXTI15_10_IRQHandler
+                0x0000000008000f54                TIM7_IRQHandler
+                0x0000000008000f54                SDMMC1_IRQHandler
+                0x0000000008000f54                TIM5_IRQHandler
+                0x0000000008000f54                I2C3_EV_IRQHandler
+                0x0000000008000f54                EXTI9_5_IRQHandler
+                0x0000000008000f54                RTC_WKUP_IRQHandler
+                0x0000000008000f54                PVD_PVM_IRQHandler
+                0x0000000008000f54                SPI2_IRQHandler
+                0x0000000008000f54                MemManage_Handler
+                0x0000000008000f54                CAN1_TX_IRQHandler
+                0x0000000008000f54                SVC_Handler
+                0x0000000008000f54                DMA2_Channel5_IRQHandler
+                0x0000000008000f54                DMA1_Channel5_IRQHandler
+                0x0000000008000f54                EXTI4_IRQHandler
+                0x0000000008000f54                RNG_IRQHandler
+                0x0000000008000f54                TIM1_TRG_COM_TIM17_IRQHandler
+                0x0000000008000f54                DMA1_Channel3_IRQHandler
+                0x0000000008000f54                COMP_IRQHandler
+                0x0000000008000f54                WWDG_IRQHandler
+                0x0000000008000f54                LPUART1_IRQHandler
+                0x0000000008000f54                DMA2_Channel6_IRQHandler
+                0x0000000008000f54                EXTI1_IRQHandler
+                0x0000000008000f54                DFSDM1_FLT0_IRQHandler
+                0x0000000008000f54                I2C2_ER_IRQHandler
+                0x0000000008000f54                DMA1_Channel2_IRQHandler
+                0x0000000008000f54                TIM8_BRK_IRQHandler
+                0x0000000008000f54                CAN1_SCE_IRQHandler
+                0x0000000008000f54                FLASH_IRQHandler
+                0x0000000008000f54                BusFault_Handler
+                0x0000000008000f54                USART1_IRQHandler
+                0x0000000008000f54                OTG_FS_IRQHandler
+                0x0000000008000f54                SPI3_IRQHandler
+                0x0000000008000f54                I2C1_ER_IRQHandler
+                0x0000000008000f54                FMC_IRQHandler
+                0x0000000008000f54                SWPMI1_IRQHandler
+                0x0000000008000f54                LPTIM1_IRQHandler
+                0x0000000008000f54                SAI1_IRQHandler
+                0x0000000008000f54                DMA2_Channel3_IRQHandler
+                0x0000000008000f54                TIM1_BRK_TIM15_IRQHandler
+ *(.glue_7)
+ .glue_7        0x0000000008000f56        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000000008000f56        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x0000000008000f58                . = ALIGN (0x8)
+ *fill*         0x0000000008000f56        0x2 
+                0x0000000008000f58                _etext = .
+
+.vfp11_veneer   0x0000000008000f58        0x0
+ .vfp11_veneer  0x0000000008000f58        0x0 linker stubs
+
+.v4_bx          0x0000000008000f58        0x0
+ .v4_bx         0x0000000008000f58        0x0 linker stubs
+
+.iplt           0x0000000008000f58        0x0
+ .iplt          0x0000000008000f58        0x0 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+
+.rel.dyn        0x0000000008000f58        0x0
+ .rel.iplt      0x0000000008000f58        0x0 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+
+.rodata         0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+ *(.rodata)
+ *(.rodata*)
+                0x0000000008000f58                . = ALIGN (0x8)
+
+.ARM.extab      0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0000000008000f58                . = ALIGN (0x8)
+
+.ARM            0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+                0x0000000008000f58                __exidx_start = .
+ *(.ARM.exidx*)
+                0x0000000008000f58                __exidx_end = .
+                0x0000000008000f58                . = ALIGN (0x8)
+
+.preinit_array  0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+                0x0000000008000f58                . = ALIGN (0x8)
+
+.init_array     0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                        PROVIDE (__init_array_end = .)
+                0x0000000008000f58                . = ALIGN (0x8)
+
+.fini_array     0x0000000008000f58        0x0
+                0x0000000008000f58                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x0000000008000f58                . = ALIGN (0x8)
+                0x0000000008000f58                _sidata = LOADADDR (.data)
+
+.data           0x0000000020000000      0xa08 load address 0x0000000008000f58
+                0x0000000020000000                . = ALIGN (0x8)
+                0x0000000020000000                _sdata = .
+ *(.data)
+ .data          0x0000000020000000      0x9ec Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                0x0000000020000020                USART2_RXbufHANDLE
+                0x00000000200009e4                admin_Msgctl
+                0x00000000200009e4                USART2_MsgCtl
+ .data          0x00000000200009ec       0x1c Src/MoT_system/MoT_admin_cfg01.o
+                0x00000000200009ec                adminTasklist
+                0x00000000200009fc                adminTasklist_last
+ *(.data*)
+                0x0000000020000a08                . = ALIGN (0x8)
+                0x0000000020000a08                _edata = .
+
+.igot.plt       0x0000000020000a08        0x0 load address 0x0000000008001960
+ .igot.plt      0x0000000020000a08        0x0 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+                0x0000000020000a08                . = ALIGN (0x4)
+
+.bss            0x0000000020000a08      0xa68 load address 0x0000000008001960
+                0x0000000020000a08                _sbss = .
+                0x0000000020000a08                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000020000a08      0x9e4 Src/MoT_system/MoT_admin_cfg01.o
+                0x0000000020000a28                adminCmd_handle
+ .bss           0x00000000200013ec       0x20 Src/MoTdevice_GreenLED08.o
+                0x00000000200013ec                MoTdevice_GreenLED_data
+ .bss           0x000000002000140c       0x64 Src/MoTdevice_TIM2PWM02.o
+                0x000000002000140c                MoTdevice_TIM2PWM_data
+                0x0000000020001424                MoTdevice_TIM2PWM_pulserate
+                0x0000000020001428                MoTdevice_TIM2PWM_pulsewidth
+                0x000000002000142c                MoTdevice_TIM2PWM_pulseramp
+                0x0000000020001430                MoTdevice_TIM2PWM_msgbuffer
+ *(.bss*)
+ *(COMMON)
+                0x0000000020001470                . = ALIGN (0x4)
+                0x0000000020001470                _ebss = .
+                0x0000000020001470                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x0000000020001470      0x600 load address 0x0000000008001960
+                0x0000000020001470                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x0000000020001670                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020001470      0x200 
+                0x0000000020001a70                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020001670      0x400 
+                0x0000000020001a70                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x0000000000000000       0x35
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .ARM.attributes
+                0x0000000000000025       0x25 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .ARM.attributes
+                0x000000000000004a       0x25 Src/LL_device/stm32L476Disco_GreenLED.o
+ .ARM.attributes
+                0x000000000000006f       0x25 Src/LL_device/stm32L476Disco_RedLED.o
+ .ARM.attributes
+                0x0000000000000094       0x25 Src/MoT_system/MoT_CmdHandler16.o
+ .ARM.attributes
+                0x00000000000000b9       0x25 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .ARM.attributes
+                0x00000000000000de       0x25 Src/MoT_system/MoT_admin_cfg01.o
+ .ARM.attributes
+                0x0000000000000103       0x25 Src/MoT_system/MoT_ringbufbuf03.o
+ .ARM.attributes
+                0x0000000000000128       0x25 Src/MoTdevice_GreenLED08.o
+ .ARM.attributes
+                0x000000000000014d       0x25 Src/MoTdevice_TIM2PWM02.o
+ .ARM.attributes
+                0x0000000000000172       0x39 Src/main09.o
+ .ARM.attributes
+                0x00000000000001ab       0x25 Src/misc_utilities.o
+ .ARM.attributes
+                0x00000000000001d0       0x25 startup/startup_stm32l476xx.o
+OUTPUT(DiscoBlinkyMoT.elf elf32-littlearm)
+
+.debug_line     0x0000000000000000      0x85a
+ .debug_line    0x0000000000000000       0x82 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .debug_line    0x0000000000000082       0xb5 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .debug_line    0x0000000000000137       0x7e Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_line    0x00000000000001b5       0x7c Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_line    0x0000000000000231       0xb0 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_line    0x00000000000002e1      0x1b4 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_line    0x0000000000000495       0xb4 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_line    0x0000000000000549       0x96 Src/MoTdevice_GreenLED08.o
+ .debug_line    0x00000000000005df       0x8d Src/MoTdevice_TIM2PWM02.o
+ .debug_line    0x000000000000066c      0x112 Src/main09.o
+ .debug_line    0x000000000000077e       0x5f Src/misc_utilities.o
+ .debug_line    0x00000000000007dd       0x7d startup/startup_stm32l476xx.o
+
+.debug_info     0x0000000000000000      0x2be
+ .debug_info    0x0000000000000000       0x26 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .debug_info    0x0000000000000026       0x26 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .debug_info    0x000000000000004c       0x26 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_info    0x0000000000000072       0x26 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_info    0x0000000000000098       0x26 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_info    0x00000000000000be       0x26 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_info    0x00000000000000e4       0x26 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_info    0x000000000000010a       0x26 Src/MoTdevice_GreenLED08.o
+ .debug_info    0x0000000000000130       0x26 Src/MoTdevice_TIM2PWM02.o
+ .debug_info    0x0000000000000156      0x120 Src/main09.o
+ .debug_info    0x0000000000000276       0x26 Src/misc_utilities.o
+ .debug_info    0x000000000000029c       0x22 startup/startup_stm32l476xx.o
+
+.debug_abbrev   0x0000000000000000      0x186
+ .debug_abbrev  0x0000000000000000       0x14 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .debug_abbrev  0x0000000000000014       0x14 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .debug_abbrev  0x0000000000000028       0x14 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_abbrev  0x000000000000003c       0x14 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_abbrev  0x0000000000000050       0x14 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_abbrev  0x0000000000000064       0x14 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_abbrev  0x0000000000000078       0x14 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_abbrev  0x000000000000008c       0x14 Src/MoTdevice_GreenLED08.o
+ .debug_abbrev  0x00000000000000a0       0x14 Src/MoTdevice_TIM2PWM02.o
+ .debug_abbrev  0x00000000000000b4       0xac Src/main09.o
+ .debug_abbrev  0x0000000000000160       0x14 Src/misc_utilities.o
+ .debug_abbrev  0x0000000000000174       0x12 startup/startup_stm32l476xx.o
+
+.debug_aranges  0x0000000000000000      0x190
+ .debug_aranges
+                0x0000000000000000       0x20 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .debug_aranges
+                0x0000000000000020       0x20 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+ .debug_aranges
+                0x0000000000000040       0x20 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_aranges
+                0x0000000000000060       0x20 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_aranges
+                0x0000000000000080       0x20 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_aranges
+                0x00000000000000a0       0x20 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_aranges
+                0x00000000000000c0       0x20 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_aranges
+                0x00000000000000e0       0x20 Src/MoTdevice_GreenLED08.o
+ .debug_aranges
+                0x0000000000000100       0x20 Src/MoTdevice_TIM2PWM02.o
+ .debug_aranges
+                0x0000000000000120       0x28 Src/main09.o
+ .debug_aranges
+                0x0000000000000148       0x20 Src/misc_utilities.o
+ .debug_aranges
+                0x0000000000000168       0x28 startup/startup_stm32l476xx.o
+
+.debug_str      0x0000000000000000     0x389e
+ .debug_str     0x0000000000000000       0xb9 Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o
+ .debug_str     0x00000000000000b9       0x37 Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o
+                                         0xb7 (size before relaxing)
+ .debug_str     0x00000000000000f0       0x2b Src/LL_device/stm32L476Disco_GreenLED.o
+                                         0xab (size before relaxing)
+ .debug_str     0x000000000000011b       0x29 Src/LL_device/stm32L476Disco_RedLED.o
+                                         0xa9 (size before relaxing)
+ .debug_str     0x0000000000000144       0x25 Src/MoT_system/MoT_CmdHandler16.o
+                                         0xa5 (size before relaxing)
+ .debug_str     0x0000000000000169       0x3e Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                                         0xbe (size before relaxing)
+ .debug_str     0x00000000000001a7       0x25 Src/MoT_system/MoT_ringbufbuf03.o
+                                         0xa5 (size before relaxing)
+ .debug_str     0x00000000000001cc       0x1e Src/MoTdevice_GreenLED08.o
+                                         0x9e (size before relaxing)
+ .debug_str     0x00000000000001ea       0x1d Src/MoTdevice_TIM2PWM02.o
+                                         0x9d (size before relaxing)
+ .debug_str     0x0000000000000207     0x365e Src/main09.o
+                                       0x383b (size before relaxing)
+ .debug_str     0x0000000000003865       0x18 Src/misc_utilities.o
+                                         0x98 (size before relaxing)
+ .debug_str     0x000000000000387d       0x21 startup/startup_stm32l476xx.o
+                                         0xa1 (size before relaxing)
+
+.debug_ranges   0x0000000000000000       0x38
+ .debug_ranges  0x0000000000000000       0x18 Src/main09.o
+ .debug_ranges  0x0000000000000018       0x20 startup/startup_stm32l476xx.o
+
+.debug_macro    0x0000000000000000      0xdc8
+ .debug_macro   0x0000000000000000       0x1a Src/main09.o
+ .debug_macro   0x000000000000001a      0xa60 Src/main09.o
+ .debug_macro   0x0000000000000a7a      0x34e Src/main09.o
+
+.comment        0x0000000000000000       0x7f
+ .comment       0x0000000000000000       0x7f Src/main09.o
+                                         0x80 (size before relaxing)
+
+.debug_frame    0x0000000000000000       0x54
+ .debug_frame   0x0000000000000000       0x54 Src/main09.o

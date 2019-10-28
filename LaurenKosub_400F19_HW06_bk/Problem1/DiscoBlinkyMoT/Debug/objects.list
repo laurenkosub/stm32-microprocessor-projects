@@ -1,0 +1,4 @@
+"Src/main06.o"
+"Src/stm32L476Disco_GreenLED.o"
+"Src/stm32L476xx_TIM2_demo--redacted.o"
+"startup/startup_stm32l476xx.o"

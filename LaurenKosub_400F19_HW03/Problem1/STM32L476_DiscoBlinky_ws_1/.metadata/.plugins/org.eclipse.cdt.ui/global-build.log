@@ -1,0 +1,1047 @@
+00:52:49 **** Clean-only build of configuration Debug for project DiscoBlinky ****
+make clean 
+rm -rf *
+ 
+22:11:54 **** Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/GreenLED.d" -MT"Src/GreenLED.o" -o "Src/GreenLED.o" "../Src/GreenLED.S"
+Finished building: ../Src/GreenLED.S
+ 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:29:41: warning: variable 'r8' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                                         ^~
+../Src/main03.c:29:38: warning: variable 'r7' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                                      ^~
+../Src/main03.c:29:35: warning: variable 'r6' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                                   ^~
+../Src/main03.c:29:31: warning: variable 'r5' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                               ^~
+../Src/main03.c:29:27: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                           ^~
+../Src/main03.c:29:23: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                       ^~
+../Src/main03.c:29:19: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+                   ^~
+../Src/main03.c:29:15: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+               ^~
+../Src/main03.c:29:11: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4, r5, r6,r7,r8;
+           ^~
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1048	     16	   1536	   2600	    a28	DiscoBlinky.elf
+ 
+22:11:57 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:94: Error: instruction not allowed in IT block -- `cmp r0,#0x39'
+../Src/myDataOps02.S:95: Error: incorrect condition in IT block -- `movle r2,#1'
+../Src/myDataOps02.S:96: Error: thumb conditional instruction should be in IT block -- `movgt r2,#0'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+22:12:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Src/main03.o: In function `main':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:32: undefined reference to `loadCONSTANT_01'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:33: undefined reference to `loadCONSTANT_02'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:34: undefined reference to `loadCONSTANT_03'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:35: undefined reference to `loadCONSTANT_04'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:36: undefined reference to `loadCONSTANT_05'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:37: undefined reference to `loadCONSTANT_06'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:38: undefined reference to `loadCONSTANT_07'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:39: undefined reference to `loadCONSTANT_08'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:21:24 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:128: Error: bad instruction `or r1,r3'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+22:21:36 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Src/main03.o: In function `main':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:32: undefined reference to `loadCONSTANT_01'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:33: undefined reference to `loadCONSTANT_02'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:34: undefined reference to `loadCONSTANT_03'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:35: undefined reference to `loadCONSTANT_04'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:36: undefined reference to `loadCONSTANT_05'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:37: undefined reference to `loadCONSTANT_06'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:38: undefined reference to `loadCONSTANT_07'
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/main03.c:39: undefined reference to `loadCONSTANT_08'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:24:45 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:22:7: error: unknown type name 'uint32_T'; did you mean 'uint32_t'?
+  for (uint32_T i = 0; i < 256, i++) {
+       ^~~~~~~~
+       uint32_t
+../Src/main03.c:22:30: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  for (uint32_T i = 0; i < 256, i++) {
+                              ^
+../Src/main03.c:22:35: error: expected ';' before ')' token
+  for (uint32_T i = 0; i < 256, i++) {
+                                   ^
+../Src/main03.c:24:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:24:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:24:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:24:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+22:24:53 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:22:30: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  for (uint32_t i = 0; i < 256, i++) {
+                              ^
+../Src/main03.c:22:35: error: expected ';' before ')' token
+  for (uint32_t i = 0; i < 256, i++) {
+                                   ^
+../Src/main03.c:24:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:24:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:24:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:24:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+           ~^
+           %ld
+../Src/main03.c:24:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+22:24:58 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:22:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  for (int i = 0; i < 256, i++) {
+                         ^
+../Src/main03.c:22:30: error: expected ';' before ')' token
+  for (int i = 0; i < 256, i++) {
+                              ^
+../Src/main03.c:24:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:24:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:24:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:24:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+22:25:08 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:21: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  for (i = 0; i < 256, i++) {
+                     ^
+../Src/main03.c:23:26: error: expected ';' before ')' token
+  for (i = 0; i < 256, i++) {
+                          ^
+../Src/main03.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:25:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+22:25:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:25:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:25:27 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d: %d\n", i, r0);
+   ^~~~~~
+../Src/main03.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main03.c:25:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+           ~^
+           %ld
+../Src/main03.c:25:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("%d: %d\n", i, r0);
+               ~^
+               %ld
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:25:49 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%lu: %lu\n", i, r0);
+   ^~~~~~
+../Src/main03.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:26:44 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:27:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:27:34: error: expected ')' before 'lon'
+   printf("%lu: %lu\n", (unsigned lon) i, (unsigned long) r0);
+                                  ^~~
+../Src/main03.c:27:13: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   printf("%lu: %lu\n", (unsigned lon) i, (unsigned long) r0);
+           ~~^          ~~~~~~~~~~~~~~~~
+           %u
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+22:27:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:28:44 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:27:12: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("%u: %u\n", (unsigned long) i, (unsigned long) r0);
+           ~^         ~~~~~~~~~~~~~~~~~
+           %lu
+../Src/main03.c:27:16: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+   printf("%u: %u\n", (unsigned long) i, (unsigned long) r0);
+               ~^                        ~~~~~~~~~~~~~~~~~~
+               %lu
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:28:57 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:29:21 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+22:29:43 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:21:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%u: %u\n", (unsigned) i, (unsigned) r0);
+   ^~~~~~
+../Src/main03.c:21:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main03.c:21:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+17:32:39 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x10): undefined reference to `_fstat'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+17:37:56 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	     16	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+17:38:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:42:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:21:10: error: expected expression before '>' token
+   if (i => 48 && i <= 57) {
+          ^
+make: *** [Src/subdir.mk:39: Src/main03.o] Error 1
+17:42:42 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    952	     16	   1536	   2504	    9c8	DiscoBlinky.elf
+ 
+17:42:48 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:43:56 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    952	     16	   1536	   2504	    9c8	DiscoBlinky.elf
+ 
+17:44:04 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:46:27 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    952	     16	   1536	   2504	    9c8	DiscoBlinky.elf
+ 
+17:46:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:46:40 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:46:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:47:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:50:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:50:48 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:57:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:9: warning: implicit declaration of function 'decodeAsciiDec'; did you mean 'decodeAsciiHex'? [-Wimplicit-function-declaration]
+   dec = decodeAsciiDec(i);
+         ^~~~~~~~~~~~~~
+         decodeAsciiHex
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1000	     16	   1536	   2552	    9f8	DiscoBlinky.elf
+ 
+17:57:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:58:27 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:9: warning: implicit declaration of function 'decodeAsciiDec'; did you mean 'decodeAsciiHex'? [-Wimplicit-function-declaration]
+   dec = decodeAsciiDec(i);
+         ^~~~~~~~~~~~~~
+         decodeAsciiHex
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	     16	   1536	   2560	    a00	DiscoBlinky.elf
+ 
+17:58:41 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:58:51 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:58:53 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:40:47 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+../Src/myDataOps02.S:66: Error: condition required -- `ite'
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:40:55 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+../Src/myDataOps02.S:67: Error: incorrect condition in IT block -- `bne end'
+../Src/myDataOps02.S:69: Error: instruction not allowed in IT block -- `cmp r1,#0x41'
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:41:07 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+../Src/myDataOps02.S:66: Error: condition required -- `it'
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:41:12 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+../Src/myDataOps02.S:67: Error: incorrect condition in IT block -- `bne end'
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:41:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:41:36 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:49: Error: condition required -- `ite'
+../Src/myDataOps02.S:52: Error: condition required -- `ite'
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:41:54 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:54: Error: bad instruction `j end'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:42:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+19:43:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:44:17 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:44:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:44:56 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:45:50 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+19:45:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:46:33 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:9: warning: implicit declaration of function 'decodeAsciiDec'; did you mean 'decodeAsciiHex'? [-Wimplicit-function-declaration]
+   dec = decodeAsciiDec(i);
+         ^~~~~~~~~~~~~~
+         decodeAsciiHex
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+19:46:44 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:48:08 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+19:50:39 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:54:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+19:55:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:59:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:83: Error: symbol `end' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+19:59:41 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Src/myDataOps02.o: In function `notdec':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug/../Src/myDataOps02.S:78: undefined reference to `notdhex'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+19:59:45 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    936	      0	   1536	   2472	    9a8	DiscoBlinky.elf
+ 
+19:59:49 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+20:02:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:9: warning: implicit declaration of function 'decodeAsciiDec'; did you mean 'decodeAsciiHex'? [-Wimplicit-function-declaration]
+   dec = decodeAsciiDec(i);
+         ^~~~~~~~~~~~~~
+         decodeAsciiHex
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+20:02:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem1/STM32L476_DiscoBlinky_ws_1/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    944	      0	   1536	   2480	    9b0	DiscoBlinky.elf
+ 
+15:55:54 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.

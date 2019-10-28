@@ -1,0 +1,1029 @@
+13:13:53 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+make: *** No rule to make target 'clean'.  Stop.
+13:13:54 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT/MoT_Cmd_Handler16.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_Cmd_Handler16.d" -MT"Src/MoT/MoT_Cmd_Handler16.o" -o "Src/MoT/MoT_Cmd_Handler16.o" "../Src/MoT/MoT_Cmd_Handler16.S"
+Finished building: ../Src/MoT/MoT_Cmd_Handler16.S
+ 
+Building file: ../Src/MoT/MoT_Msg_Handler201.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_Msg_Handler201.d" -MT"Src/MoT/MoT_Msg_Handler201.o" -o "Src/MoT/MoT_Msg_Handler201.o" "../Src/MoT/MoT_Msg_Handler201.S"
+Finished building: ../Src/MoT/MoT_Msg_Handler201.S
+ 
+Building file: ../Src/MoT/MoT_admin_cfg01.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_admin_cfg01.d" -MT"Src/MoT/MoT_admin_cfg01.o" -o "Src/MoT/MoT_admin_cfg01.o" "../Src/MoT/MoT_admin_cfg01.S"
+Finished building: ../Src/MoT/MoT_admin_cfg01.S
+ 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: .\MoT\MoT_definitions.h: No such file or directory
+  #include ".\MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:14:47 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: Src\MoT\MoT_definitions.h: No such file or directory
+  #include "Src\MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:14:59 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: .\MoT\MoT_definitions.h: No such file or directory
+  #include ".\MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:15:43 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: .\MoT\MoT_definitions.h: No such file or directory
+  #include ".\MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:21:19 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: .\MoT\MoT_definitions.h: No such file or directory
+  #include ".\MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:22:23 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S:21:11: fatal error: MoT\MoT_definitions.h: No such file or directory
+  #include "MoT\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:22:40 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S: Assembler messages:
+../Src/MoTdevice_GreenLED07.S:202: Error: symbol `d' is already defined
+../Src/MoTdevice_GreenLED07.S:203: Error: bad instruction `j n'
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:23:10 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S: Assembler messages:
+../Src/MoTdevice_GreenLED07.S:202: Error: symbol `d' is already defined
+../Src/MoTdevice_GreenLED07.S:203: Error: bad instruction `j n'
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:23:17 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+../Src/MoTdevice_GreenLED07.S: Assembler messages:
+../Src/MoTdevice_GreenLED07.S:202: Error: symbol `d' is already defined
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED07.o] Error 1
+13:23:33 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+Finished building: ../Src/MoTdevice_GreenLED07.S
+ 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476Disco_GreenLED.d" -MT"Src/stm32L476Disco_GreenLED.o" -o "Src/stm32L476Disco_GreenLED.o" "../Src/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/stm32L476Disco_USART2_9600N81.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476Disco_USART2_9600N81.d" -MT"Src/stm32L476Disco_USART2_9600N81.o" -o "Src/stm32L476Disco_USART2_9600N81.o" "../Src/stm32L476Disco_USART2_9600N81.S"
+Finished building: ../Src/stm32L476Disco_USART2_9600N81.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2232	     40	   4104	   6376	   18e8	DiscoBlinkyMoT.elf
+ 
+13:24:24 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+Finished building: ../Src/MoTdevice_GreenLED07.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW04/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2232	     40	   4104	   6376	   18e8	DiscoBlinkyMoT.elf
+ 
+00:30:28 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+00:44:43 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT/MoT_Cmd_Handler16.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_Cmd_Handler16.d" -MT"Src/MoT/MoT_Cmd_Handler16.o" -o "Src/MoT/MoT_Cmd_Handler16.o" "../Src/MoT/MoT_Cmd_Handler16.S"
+Finished building: ../Src/MoT/MoT_Cmd_Handler16.S
+ 
+Building file: ../Src/MoT/MoT_Msg_Handler201.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_Msg_Handler201.d" -MT"Src/MoT/MoT_Msg_Handler201.o" -o "Src/MoT/MoT_Msg_Handler201.o" "../Src/MoT/MoT_Msg_Handler201.S"
+Finished building: ../Src/MoT/MoT_Msg_Handler201.S
+ 
+Building file: ../Src/MoT/MoT_admin_cfg01.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT/MoT_admin_cfg01.d" -MT"Src/MoT/MoT_admin_cfg01.o" -o "Src/MoT/MoT_admin_cfg01.o" "../Src/MoT/MoT_admin_cfg01.S"
+Finished building: ../Src/MoT/MoT_admin_cfg01.S
+ 
+Building file: ../Src/MoTdevice_GreenLED07.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED07.d" -MT"Src/MoTdevice_GreenLED07.o" -o "Src/MoTdevice_GreenLED07.o" "../Src/MoTdevice_GreenLED07.S"
+Finished building: ../Src/MoTdevice_GreenLED07.S
+ 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+../Src/main06.c: In function 'TIM2_sast':
+../Src/main06.c:69:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:77:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:66:10: error: old-style parameter declarations in prototyped function definition
+ uint32_t TIM2_sast(uint32_t DELAY)
+          ^~~~~~~~~
+../Src/main06.c:120:1: error: expected '{' at end of input
+ }
+ ^
+../Src/main06.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:45: Src/main06.o] Error 1
+01:19:27 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476Disco_GreenLED.d" -MT"Src/stm32L476Disco_GreenLED.o" -o "Src/stm32L476Disco_GreenLED.o" "../Src/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/stm32L476Disco_USART2_9600N81.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476Disco_USART2_9600N81.d" -MT"Src/stm32L476Disco_USART2_9600N81.o" -o "Src/stm32L476Disco_USART2_9600N81.o" "../Src/stm32L476Disco_USART2_9600N81.S"
+Finished building: ../Src/stm32L476Disco_USART2_9600N81.S
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:8: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:10: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:45: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:47: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:49: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:51: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:53: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:55: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:57: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:72: Error: ARM register expected -- `str [r2,#SR],#1'
+../Src/stm32L476xx_TIM2_demo--redacted.S:73: Error: ARM register expected -- `str [r2,#SR],#0'
+../Src/stm32L476xx_TIM2_demo--redacted.S:84: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:86: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:88: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:90: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:92: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:94: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: junk at end of line, first unrecognized character is `<'
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:22:12 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:51: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:53: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:55: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:57: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:59: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:61: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:63: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:80: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:82: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:84: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:86: Error: bad instruction `tim3->CCMR1 |=TIM_CCMR1_CC1S_0'
+../Src/stm32L476xx_TIM2_demo--redacted.S:88: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:90: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:92: Error: junk at end of line, first unrecognized character is `<'
+../Src/stm32L476xx_TIM2_demo--redacted.S:105: Error: constant expression expected -- `movw r2,r0'
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:22:57 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:105: Error: constant expression expected -- `movw r2,r0'
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:23:20 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:23:46 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: offset out of range
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: offset out of range
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:23:52 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: offset out of range
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: offset out of range
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:24:05 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:24:18 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:24:27 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:119: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:123: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:46:11 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:80: Error: bad instruction `tim2_cr1'
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+01:50:28 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:125: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:129: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:04 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:92: Error: constant expression expected -- `movw r1,r0'
+../Src/stm32L476xx_TIM2_demo--redacted.S:87: Error: invalid constant (2625a00) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:11 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:92: Error: constant expression expected -- `movw r1,r0'
+../Src/stm32L476xx_TIM2_demo--redacted.S:87: Error: invalid constant (2625a00) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:19 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:87: Error: invalid constant (2625a00) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:24 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:87: Error: invalid constant (61a80) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:28 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:31 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:41 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:05:54 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:109: Error: invalid constant (ffef) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:06:13 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:134: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:138: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:08:03 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:75: Warning: register range not in ascending order
+../Src/stm32L476xx_TIM2_demo--redacted.S:134: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:138: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:13:29 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:137: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:141: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:19:07 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:142: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:146: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:20:05 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:143: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:147: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:27:31 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:111: Error: invalid constant (fffc) after fixup
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:27:53 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:149: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:153: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+02:31:07 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:148: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:152: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+12:45:14 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2232	     40	   4104	   6376	   18e8	DiscoBlinkyMoT.elf
+ 
+13:02:07 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:154: Error: backward ref to unknown label "1:"
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+13:02:16 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:154: Error: backward ref to unknown label "1:"
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+13:02:18 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:154: Error: backward ref to unknown label "1:"
+make: *** [Src/subdir.mk:37: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+13:02:23 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2232	     40	   4104	   6376	   18e8	DiscoBlinkyMoT.elf
+ 
+14:11:57 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+../Src/main06.c: In function 'TIM2_sast':
+../Src/main06.c:69:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:77:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:66:10: error: old-style parameter declarations in prototyped function definition
+ uint32_t TIM2_sast(uint32_t DELAY)
+          ^~~~~~~~~
+../Src/main06.c:120:1: error: expected '{' at end of input
+ }
+ ^
+../Src/main06.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:31: Src/main06.o] Error 1
+14:44:57 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+../Src/main06.c: In function 'TIM2_sast':
+../Src/main06.c:69:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:77:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:66:10: error: old-style parameter declarations in prototyped function definition
+ uint32_t TIM2_sast(uint32_t DELAY)
+          ^~~~~~~~~
+../Src/main06.c:120:1: error: expected '{' at end of input
+ }
+ ^
+../Src/main06.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:31: Src/main06.o] Error 1
+14:51:36 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+../Src/main06.c: In function 'TIM2_sast':
+../Src/main06.c:69:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:77:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../Src/main06.c:66:10: error: old-style parameter declarations in prototyped function definition
+ uint32_t TIM2_sast(uint32_t DELAY)
+          ^~~~~~~~~
+../Src/main06.c:120:1: error: expected '{' at end of input
+ }
+ ^
+../Src/main06.c:120:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:31: Src/main06.o] Error 1
+14:52:00 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476Disco_GreenLED.d" -MT"Src/stm32L476Disco_GreenLED.o" -o "Src/stm32L476Disco_GreenLED.o" "../Src/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:53:19 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:53:26 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:53:37 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:53:41 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:54:27 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:101: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:96: Error: undefined symbol UG used as an immediate value
+../Src/stm32L476xx_TIM2_demo--redacted.S:110: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:118: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:54:50 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:99: Error: constant expression expected -- `movw r1,r3'
+../Src/stm32L476xx_TIM2_demo--redacted.S:108: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:116: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:133: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:54:55 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:108: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:116: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:133: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:55:07 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:108: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:116: Error: invalid constant (ffef) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:133: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:55:48 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:116: Error: missing expression -- `orr r1,'
+../Src/stm32L476xx_TIM2_demo--redacted.S:133: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:56:14 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:116: Error: invalid constant (fffc) after fixup
+../Src/stm32L476xx_TIM2_demo--redacted.S:133: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:56:24 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:134: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:58:06 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:135: Error: invalid constant (ff8f) after fixup
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:58:11 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+../Src/stm32L476xx_TIM2_demo--redacted.S: Assembler messages:
+../Src/stm32L476xx_TIM2_demo--redacted.S:180: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/stm32L476xx_TIM2_demo--redacted.S:184: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:39: Src/stm32L476xx_TIM2_demo--redacted.o] Error 1
+14:58:35 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Src/stm32L476xx_TIM2_demo--redacted.o: In function `TIM2_init':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/stm32L476xx_TIM2_demo--redacted.S:123: undefined reference to `TIM2_CCR1'
+Src/main06.o: In function `main':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/main06.c:63: undefined reference to `TIM2_demo'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinkyMoT.elf] Error 1
+14:58:49 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Src/stm32L476xx_TIM2_demo--redacted.o: In function `TIM2_init':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/stm32L476xx_TIM2_demo--redacted.S:123: undefined reference to `TIM2_CCR1'
+Src/main06.o: In function `main':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/main06.c:64: undefined reference to `TIM2_poll'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinkyMoT.elf] Error 1
+14:59:05 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Src/stm32L476xx_TIM2_demo--redacted.o: In function `TIM2_init':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/stm32L476xx_TIM2_demo--redacted.S:105: undefined reference to `TIM2_CCMR1'
+Src/main06.o: In function `main':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/main06.c:64: undefined reference to `TIM2_poll'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinkyMoT.elf] Error 1
+14:59:34 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Src/stm32L476xx_TIM2_demo--redacted.o: In function `p':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug/../Src/stm32L476xx_TIM2_demo--redacted.S:123: undefined reference to `TIM2_CCR1'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinkyMoT.elf] Error 1
+14:59:39 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/stm32L476xx_TIM2_demo--redacted.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/stm32L476xx_TIM2_demo--redacted.d" -MT"Src/stm32L476xx_TIM2_demo--redacted.o" -o "Src/stm32L476xx_TIM2_demo--redacted.o" "../Src/stm32L476xx_TIM2_demo--redacted.S"
+Finished building: ../Src/stm32L476xx_TIM2_demo--redacted.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+    816	      0	   1536	   2352	    930	DiscoBlinkyMoT.elf
+ 
+15:54:06 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:07 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:28 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:32 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:38 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:55 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main06.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main06.d" -MT"Src/main06.o" -o "Src/main06.o" "../Src/main06.c"
+Finished building: ../Src/main06.c
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW06/Problem1/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+    816	      0	   1536	   2352	    930	DiscoBlinkyMoT.elf
+ 
+21:26:59 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:28:14 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:29:04 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+21:29:10 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.

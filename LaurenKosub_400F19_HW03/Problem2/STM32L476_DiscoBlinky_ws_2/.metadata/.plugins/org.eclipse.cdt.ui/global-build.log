@@ -1,0 +1,2572 @@
+15:43:55 **** Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/GreenLED.d" -MT"Src/GreenLED.o" -o "Src/GreenLED.o" "../Src/GreenLED.S"
+Finished building: ../Src/GreenLED.S
+ 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccWTr8oM.s: Assembler messages:
+/tmp/ccWTr8oM.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:44:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccu6IrYi.s: Assembler messages:
+/tmp/ccu6IrYi.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:45:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccnRBArJ.s: Assembler messages:
+/tmp/ccnRBArJ.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:54:09 **** Clean-only build of configuration Debug for project DiscoBlinky ****
+make clean 
+rm -rf *
+ 
+15:54:13 **** Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/GreenLED.d" -MT"Src/GreenLED.o" -o "Src/GreenLED.o" "../Src/GreenLED.S"
+Finished building: ../Src/GreenLED.S
+ 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccbuPh63.s: Assembler messages:
+/tmp/ccbuPh63.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:58:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/cchlgGAm.s: Assembler messages:
+/tmp/cchlgGAm.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:58:49 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccPOlkea.s: Assembler messages:
+/tmp/ccPOlkea.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:58:54 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccl0zkcl.s: Assembler messages:
+/tmp/ccl0zkcl.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+15:59:12 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+/tmp/ccTDs8Te.s: Assembler messages:
+/tmp/ccTDs8Te.s: Error: unaligned opcodes detected in executable segment
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:00:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:23: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:24: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:25: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:26: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:27: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:28: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:29: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:30: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:31: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:32: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:33: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:34: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:35: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:36: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:37: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:38: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:39: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:40: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:41: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:42: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:43: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:44: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:45: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:46: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:47: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:48: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:49: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:50: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:51: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:52: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:53: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:54: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:55: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:56: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:57: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:58: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:59: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:60: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:61: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:62: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:63: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:64: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:65: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:66: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:67: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:68: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:69: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:70: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:71: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:72: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:73: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:74: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:75: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:76: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:77: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:78: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:79: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:80: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:81: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:82: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:83: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:84: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:85: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:86: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:87: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:88: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:89: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:90: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:91: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:92: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:93: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:94: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:95: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:96: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:97: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:98: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:99: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:100: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:101: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:102: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:103: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:104: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:105: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:106: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:107: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:108: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:109: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:110: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:111: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:112: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:113: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:114: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:115: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:116: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:117: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:118: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:119: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:120: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:121: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:122: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:123: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:124: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:125: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:126: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:127: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:128: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:129: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:130: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:131: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:132: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:133: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:134: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:135: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:136: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:137: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:138: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:139: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:140: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:141: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:142: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:143: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:144: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:145: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:146: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:147: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:148: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:149: Error: invalid operands (.text and .data sections) for `-'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:00:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:24: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:25: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:26: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:27: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:28: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:29: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:30: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:31: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:32: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:33: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:34: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:35: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:36: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:37: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:38: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:39: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:40: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:41: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:42: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:43: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:44: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:45: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:46: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:47: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:48: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:49: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:50: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:51: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:52: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:53: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:54: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:55: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:56: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:57: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:58: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:59: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:60: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:61: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:62: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:63: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:64: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:65: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:66: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:67: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:68: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:69: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:70: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:71: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:72: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:73: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:74: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:75: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:76: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:77: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:78: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:79: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:80: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:81: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:82: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:83: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:84: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:85: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:86: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:87: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:88: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:89: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:90: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:91: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:92: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:93: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:94: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:95: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:96: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:97: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:98: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:99: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:100: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:101: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:102: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:103: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:104: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:105: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:106: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:107: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:108: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:109: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:110: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:111: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:112: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:113: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:114: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:115: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:116: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:117: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:118: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:119: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:120: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:121: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:122: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:123: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:124: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:125: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:126: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:127: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:128: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:129: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:130: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:131: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:132: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:133: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:134: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:135: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:136: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:137: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:138: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:139: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:140: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:141: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:142: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:143: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:144: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:145: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:146: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:147: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:148: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:149: Error: invalid operands (.text and .data sections) for `-'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:00:45 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:185: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/myDataOps02.S:189: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:01:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:185: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/myDataOps02.S:189: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:02:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:179: Error: bad instruction `movb r4,[r0,r5]'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:02:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:179: Error: bad instruction `movb r4,[r0+r5]'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:02:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:185: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/myDataOps02.S:189: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:02:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:185: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+../Src/myDataOps02.S:189: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:09:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:189: Error: cannot represent T32_OFFSET_IMM relocation in this object file format
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:09:25 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    904	      0	   1536	   2440	    988	DiscoBlinky.elf
+ 
+16:09:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:10:04 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    904	      0	   1536	   2440	    988	DiscoBlinky.elf
+ 
+16:12:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    904	      0	   1536	   2440	    988	DiscoBlinky.elf
+ 
+16:12:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:12:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:02 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:06 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:24 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:34 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:48 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:18:05 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    136	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+16:18:08 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:47:41 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    136	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+16:47:49 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:23: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:24: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:25: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:26: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:27: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:28: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:29: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:30: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:31: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:32: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:33: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:34: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:35: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:36: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:37: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:38: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:39: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:40: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:41: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:42: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:43: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:44: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:45: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:46: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:47: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:48: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:49: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:50: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:51: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:52: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:53: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:54: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:55: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:56: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:57: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:58: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:59: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:60: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:61: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:62: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:63: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:64: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:65: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:66: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:67: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:68: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:69: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:70: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:71: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:72: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:73: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:74: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:75: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:76: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:77: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:78: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:79: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:80: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:81: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:82: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:83: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:84: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:85: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:86: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:87: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:88: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:89: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:90: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:91: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:92: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:93: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:94: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:95: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:96: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:97: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:98: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:99: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:100: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:101: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:102: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:103: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:104: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:105: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:106: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:107: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:108: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:109: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:110: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:111: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:112: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:113: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:114: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:115: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:116: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:117: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:118: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:119: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:120: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:121: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:122: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:123: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:124: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:125: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:126: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:127: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:128: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:129: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:130: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:131: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:132: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:133: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:134: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:135: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:136: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:137: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:138: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:139: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:140: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:141: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:142: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:143: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:144: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:145: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:146: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:147: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:148: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:149: Error: invalid operands (.text and .data sections) for `-'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:52:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:17: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:18: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:19: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:20: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:21: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:22: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:23: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:24: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:25: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:26: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:27: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:28: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:29: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:30: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:31: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:32: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:33: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:34: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:35: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:36: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:37: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:38: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:39: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:40: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:41: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:42: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:43: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:44: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:45: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:46: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:47: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:48: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:49: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:50: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:51: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:52: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:53: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:54: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:55: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:56: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:57: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:58: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:59: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:60: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:61: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:62: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:63: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:64: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:65: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:66: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:67: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:68: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:69: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:70: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:71: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:72: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:73: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:74: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:75: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:76: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:77: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:78: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:79: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:80: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:81: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:82: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:83: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:84: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:85: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:86: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:87: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:88: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:89: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:90: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:91: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:92: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:93: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:94: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:95: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:96: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:97: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:98: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:99: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:100: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:101: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:102: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:103: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:104: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:105: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:106: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:107: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:108: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:109: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:110: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:111: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:112: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:113: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:114: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:115: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:116: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:117: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:118: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:119: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:120: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:121: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:122: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:123: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:124: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:125: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:126: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:127: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:128: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:129: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:130: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:131: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:132: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:133: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:134: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:135: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:136: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:137: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:138: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:139: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:140: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:141: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:142: Error: invalid operands (.text and .data sections) for `-'
+../Src/myDataOps02.S:143: Error: invalid operands (.text and .data sections) for `-'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+16:53:06 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    136	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+16:53:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    136	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+16:54:25 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:54:27 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+16:56:32 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    128	   1536	   2576	    a10	DiscoBlinky.elf
+ 
+16:56:38 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:05:33 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    128	   1536	   2576	    a10	DiscoBlinky.elf
+ 
+17:07:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    904	    128	   1536	   2568	    a08	DiscoBlinky.elf
+ 
+17:12:21 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    128	   1536	   2576	    a10	DiscoBlinky.elf
+ 
+17:17:45 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    912	    128	   1536	   2576	    a10	DiscoBlinky.elf
+ 
+17:17:48 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:17:51 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:20:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    920	    128	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+17:20:43 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:21:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:21:38 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    920	    128	   1536	   2584	    a18	DiscoBlinky.elf
+ 
+17:23:07 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	    128	   1536	   2592	    a20	DiscoBlinky.elf
+ 
+17:31:13 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:229: Error: unknown pseudo-op: `.thumb_fun'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+17:31:17 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	    128	   1536	   2592	    a20	DiscoBlinky.elf
+ 
+17:31:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	    128	   1536	   2592	    a20	DiscoBlinky.elf
+ 
+17:32:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:33:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:33:32 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:42:48 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:11:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:11:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:11:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:11:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:11:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    992	    128	   1536	   2656	    a60	DiscoBlinky.elf
+ 
+17:42:53 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:11:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3;
+                  ^~
+../Src/main03.c:11:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3;
+              ^~
+../Src/main03.c:11:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3;
+          ^~
+../Src/main03.c:11:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    992	    128	   1536	   2656	    a60	DiscoBlinky.elf
+ 
+17:43:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:11:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:11:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:11:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:11:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:11:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    992	    128	   1536	   2656	    a60	DiscoBlinky.elf
+ 
+17:43:17 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:43:29 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:44:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:44:28 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:45:41 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1000	    128	   1536	   2664	    a68	DiscoBlinky.elf
+ 
+17:46:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:47:12 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:47:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:49:24 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:11:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:11:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:11:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:11:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:11:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1000	    128	   1536	   2664	    a68	DiscoBlinky.elf
+ 
+17:49:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:51:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1000	    128	   1536	   2664	    a68	DiscoBlinky.elf
+ 
+17:51:19 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+17:55:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:17:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:17:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:17:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:17:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:17:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1016	    128	   1536	   2680	    a78	DiscoBlinky.elf
+ 
+17:55:32 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+18:03:51 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:17:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:17:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:17:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:17:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:17:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1016	    128	   1536	   2680	    a78	DiscoBlinky.elf
+ 
+18:08:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1016	    128	   1536	   2680	    a78	DiscoBlinky.elf
+ 
+18:08:36 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+18:36:29 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:17:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:17:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:17:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:17:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:17:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1016	    128	   1536	   2680	    a78	DiscoBlinky.elf
+ 
+18:37:43 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+20:24:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:18:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:18:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:18:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:18:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:18:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+../Src/main03.c:13:7: warning: unused variable 'c' [-Wunused-variable]
+  char c = str0[5];
+       ^
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+20:34:39 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:18:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:18:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:18:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:18:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:18:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+../Src/main03.c:13:7: warning: unused variable 'c' [-Wunused-variable]
+  char c = str0[5];
+       ^
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+20:39:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+20:40:30 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+20:47:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+21:04:22 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+21:04:44 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:37 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:20:36 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:18:22: warning: unused variable 'r4' [-Wunused-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:18:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:18:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:18:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+          ^~
+../Src/main03.c:18:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+../Src/main03.c:13:7: warning: unused variable 'c' [-Wunused-variable]
+  char c = str0[5];
+       ^
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1024	    128	   1536	   2688	    a80	DiscoBlinky.elf
+ 
+21:29:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: incorrect condition in IT block -- `addne r9,#1'
+../Src/myDataOps02.S:247: Error: incorrect condition in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: incorrect condition in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:29:04 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: incorrect condition in IT block -- `addne r9,#1'
+../Src/myDataOps02.S:247: Error: incorrect condition in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: incorrect condition in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:29:15 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:247: Error: incorrect condition in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: incorrect condition in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:29:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:245: Error: condition required -- `itee'
+../Src/myDataOps02.S:246: Error: thumb conditional instruction should be in IT block -- `moveq r1,r4'
+../Src/myDataOps02.S:247: Error: thumb conditional instruction should be in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: thumb conditional instruction should be in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:29:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:247: Error: incorrect condition in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: incorrect condition in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:30:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:249: Error: incorrect condition in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:32:05 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:245: Error: condition required -- `itee'
+../Src/myDataOps02.S:246: Error: thumb conditional instruction should be in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:247: Error: thumb conditional instruction should be in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:32:17 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:245: Error: condition required -- `itee'
+../Src/myDataOps02.S:246: Error: thumb conditional instruction should be in IT block -- `moveq r1,r4'
+../Src/myDataOps02.S:247: Error: thumb conditional instruction should be in IT block -- `movgt r2,r4'
+../Src/myDataOps02.S:248: Error: thumb conditional instruction should be in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:33:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:251: Error: instruction not allowed in IT block -- `cmp r9,#1'
+../Src/myDataOps02.S:252: Error: condition required -- `itee'
+../Src/myDataOps02.S:253: Error: thumb conditional instruction should be in IT block -- `moveq r1,r4'
+../Src/myDataOps02.S:254: Error: thumb conditional instruction should be in IT block -- `movlt r0,r4'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:34:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:252: Error: instruction not allowed in IT block -- `cmp r9,#1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:34:15 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:252: Error: instruction not allowed in IT block -- `cmp r9,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:34:23 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1048	    128	   1536	   2712	    a98	DiscoBlinky.elf
+ 
+21:35:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1048	    128	   1536	   2712	    a98	DiscoBlinky.elf
+ 
+21:37:24 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: incorrect condition in IT block -- `moveq r5,r7'
+../Src/myDataOps02.S:199: Error: incorrect condition in IT block -- `addne r9,#1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:37:31 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1056	    128	   1536	   2720	    aa0	DiscoBlinky.elf
+ 
+21:37:33 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:40:49 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:42:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:43:54 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1048	    128	   1536	   2712	    a98	DiscoBlinky.elf
+ 
+21:43:57 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:44:39 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1048	    128	   1536	   2712	    a98	DiscoBlinky.elf
+ 
+21:44:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:46:56 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:18:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:18:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:18:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:18:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:18:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+../Src/main03.c:13:7: warning: unused variable 'c' [-Wunused-variable]
+  char c = str0[5];
+       ^
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1080	    128	   1536	   2744	    ab8	DiscoBlinky.elf
+ 
+21:47:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:49:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:17:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:17:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:17:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:17:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:17:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+21:51:13 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+21:51:28 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:51:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:52:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+21:55:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1256	    128	   1536	   2920	    b68	DiscoBlinky.elf
+ 
+21:55:21 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:00:19 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+22:00:42 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:06:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	    128	   1536	   2752	    ac0	DiscoBlinky.elf
+ 
+22:06:14 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:06:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:06:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:08:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:10:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                      ^~
+../Src/main03.c:10:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+                  ^~
+../Src/main03.c:10:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+              ^~
+../Src/main03.c:10:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+          ^~
+../Src/main03.c:10:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+22:08:18 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:08:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:17:50 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+22:17:54 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:18:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:28:05 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1072	    128	   1536	   2736	    ab0	DiscoBlinky.elf
+ 
+22:29:37 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:29:39 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+22:30:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:03:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:197: Error: ARM register expected -- `mul r10,#10'
+../Src/myDataOps02.S:265: Error: symbol `loop' is already defined
+../Src/myDataOps02.S:270: Error: symbol `digit' is already defined
+../Src/myDataOps02.S:281: Error: symbol `addition' is already defined
+../Src/myDataOps02.S:286: Error: symbol `subtract' is already defined
+../Src/myDataOps02.S:291: Error: symbol `multiply' is already defined
+../Src/myDataOps02.S:296: Error: symbol `divide' is already defined
+../Src/myDataOps02.S:301: Error: symbol `space' is already defined
+../Src/myDataOps02.S:303: Error: symbol `invalid' is already defined
+../Src/myDataOps02.S:306: Error: symbol `endTBB' is already defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:03:51 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	    128	   1536	   2752	    ac0	DiscoBlinky.elf
+ 
+00:04:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:04:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: ARM register expected -- `mul r10,#10'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:04:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	    128	   1536	   2752	    ac0	DiscoBlinky.elf
+ 
+00:04:41 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: bad instruction `muli r10,#10'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:05:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: bad instruction `imul r10,#10'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:05:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: bad instruction `imul r10,#10'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:05:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:198: Error: bad instruction `imul r10,r10,#10'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:05:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1088	    128	   1536	   2752	    ac0	DiscoBlinky.elf
+ 
+00:06:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:10:26: warning: variable 'r5' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                          ^~
+../Src/main03.c:10:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                      ^~
+../Src/main03.c:10:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                  ^~
+../Src/main03.c:10:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+              ^~
+../Src/main03.c:10:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+          ^~
+../Src/main03.c:10:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1112	    128	   1536	   2776	    ad8	DiscoBlinky.elf
+ 
+00:06:15 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:07:00 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:12:14 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:230: Error: instruction not allowed in IT block -- `mov r10,#0'
+../Src/myDataOps02.S:231: Error: thumb conditional instruction should be in IT block -- `addne r9,#1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:12:26 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1104	    128	   1536	   2768	    ad0	DiscoBlinky.elf
+ 
+00:12:29 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:13:45 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1104	    128	   1536	   2768	    ad0	DiscoBlinky.elf
+ 
+00:13:59 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:17:52 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:18:33 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:25:47 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:227: Error: bad instruction `move1 r12,#0'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:26:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:227: Error: bad instruction `move1 r12,#0'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:26:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:227: Error: bad instruction `move1 r12,#0'
+../Src/myDataOps02.S:228: Error: branch must be last instruction in IT block -- `beq bloop'
+../Src/myDataOps02.S:230: Error: instruction not allowed in IT block -- `cmp r4,#-1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+00:26:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Src/myDataOps02.o: In function `space':
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug/../Src/myDataOps02.S:228: undefined reference to `bloop'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+00:26:34 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1128	    128	   1536	   2792	    ae8	DiscoBlinky.elf
+ 
+00:26:40 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:28:42 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:10:26: warning: variable 'r5' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                          ^~
+../Src/main03.c:10:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                      ^~
+../Src/main03.c:10:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                  ^~
+../Src/main03.c:10:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+              ^~
+../Src/main03.c:10:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+          ^~
+../Src/main03.c:10:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1136	    128	   1536	   2800	    af0	DiscoBlinky.elf
+ 
+00:31:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:10:26: warning: variable 'r5' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                          ^~
+../Src/main03.c:10:22: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                      ^~
+../Src/main03.c:10:18: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+                  ^~
+../Src/main03.c:10:14: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+              ^~
+../Src/main03.c:10:10: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+          ^~
+../Src/main03.c:10:6: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  int r0, r1, r2, r3, r4, r5;
+      ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW03/Problem2/STM32L476_DiscoBlinky_ws_2/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1136	    128	   1536	   2800	    af0	DiscoBlinky.elf
+ 
+00:33:06 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+00:33:20 **** Clean-only build of configuration Debug for project DiscoBlinky ****
+make clean 
+rm -rf *
+ 

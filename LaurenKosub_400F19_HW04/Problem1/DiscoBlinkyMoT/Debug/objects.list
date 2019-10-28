@@ -1,0 +1,8 @@
+"Src/MoT/MoT_Cmd_Handler16.o"
+"Src/MoT/MoT_Msg_Handler201.o"
+"Src/MoT/MoT_admin_cfg01.o"
+"Src/MoTdevice_GreenLED07.o"
+"Src/main06.o"
+"Src/stm32L476Disco_GreenLED.o"
+"Src/stm32L476Disco_USART2_9600N81.o"
+"startup/startup_stm32l476xx.o"

@@ -1,0 +1,376 @@
+14:16:11 **** Clean-only build of configuration Debug for project DiscoBlinky ****
+make clean 
+make: *** No rule to make target 'clean'.  Stop.
+14:16:13 **** Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/GreenLED.d" -MT"Src/GreenLED.o" -o "Src/GreenLED.o" "../Src/GreenLED.S"
+Finished building: ../Src/GreenLED.S
+ 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:7: warning: implicit declaration of function 'loadCONSTANT00'; did you mean 'loadConstant00'? [-Wimplicit-function-declaration]
+  r0 = loadCONSTANT00();
+       ^~~~~~~~~~~~~~
+       loadConstant00
+../Src/main03.c:21:11: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  uint32_t r0;
+           ^~
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Src/main03.o: In function `main':
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug/../Src/main03.c:23: undefined reference to `loadCONSTANT00'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:36: DiscoBlinky.elf] Error 1
+14:16:53 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:23:7: warning: implicit declaration of function 'loadCONSTANT_00'; did you mean 'loadConstant_00'? [-Wimplicit-function-declaration]
+  r0 = loadCONSTANT_00();
+       ^~~~~~~~~~~~~~~
+       loadConstant_00
+../Src/main03.c:21:11: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  uint32_t r0;
+           ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	      8	   1536	   2472	    9a8	DiscoBlinky.elf
+ 
+14:17:23 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:21:11: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  uint32_t r0;
+           ^~
+Finished building: ../Src/main03.c
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+    928	      8	   1536	   2472	    9a8	DiscoBlinky.elf
+ 
+14:17:58 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+14:18:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+14:25:53 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:07:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:07:27 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:07:29 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:09:01 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:10:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+make: Nothing to be done for 'all'.
+19:37:19 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/main03.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main03.d" -MT"Src/main03.o" -o "Src/main03.o" "../Src/main03.c"
+../Src/main03.c: In function 'main':
+../Src/main03.c:25:27: warning: variable 'r4' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4;
+                           ^~
+../Src/main03.c:25:23: warning: variable 'r3' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4;
+                       ^~
+../Src/main03.c:25:19: warning: variable 'r2' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4;
+                   ^~
+../Src/main03.c:25:15: warning: variable 'r1' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4;
+               ^~
+../Src/main03.c:25:11: warning: variable 'r0' set but not used [-Wunused-but-set-variable]
+  uint32_t r0, r1, r2, r3, r4;
+           ^~
+Finished building: ../Src/main03.c
+ 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:87: Error: ARM register expected -- `mul r0,Dbyte'
+../Src/myDataOps02.S:110: Error: constant expression expected -- `movt r0,Dhalf'
+../Src/myDataOps02.S:115: Error: junk at end of line, first unrecognized character is `f'
+../Src/myDataOps02.S:119: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:121: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:39:32 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:87: Error: ARM register expected -- `mul r0,Dbyte'
+../Src/myDataOps02.S:110: Error: constant expression expected -- `movt r0,#ff'
+../Src/myDataOps02.S:119: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:121: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:40:29 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:111: Error: constant expression expected -- `movt r0,#ff'
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:41:04 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:111: Error: constant expression expected -- `movt r0,r0,#FF'
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:41:16 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:111: Error: constant expression expected -- `movt r0,r0,#3'
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:43:08 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:112: Error: constant expression expected -- `movt r0,r1'
+../Src/myDataOps02.S:121: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:124: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:43:28 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:121: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:124: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:43:47 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:111: Error: constant expression expected -- `movt r0,#3f'
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+/tmp/ccYZFNF5.s: Error: local label `"3" (instance number 1 of a fb label)' is not defined
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:43:51 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:44:09 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:45:10 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:120: Error: ARM register expected -- `mul r2,r2,#2'
+../Src/myDataOps02.S:122: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:45:21 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:123: Error: thumb conditional instruction should be in IT block -- `movlt r0,#1'
+../Src/myDataOps02.S:124: Error: thumb conditional instruction should be in IT block -- `movgt r0,#2'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:53:05 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:20: Error: bad expression
+../Src/myDataOps02.S:20: Error: junk at end of line, first unrecognized character is `x'
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+../Src/myDataOps02.S:122: Error: undefined symbol myByte used as an immediate value
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:53:11 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:20: Error: bad expression
+../Src/myDataOps02.S:20: Error: junk at end of line, first unrecognized character is `x'
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+../Src/myDataOps02.S:122: Error: undefined symbol myByte used as an immediate value
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:53:35 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+../Src/myDataOps02.S:122: Error: undefined symbol myByte used as an immediate value
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:54:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+../Src/myDataOps02.S:122: Error: undefined symbol myByte used as an immediate value
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:54:07 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+../Src/myDataOps02.S:122: Error: undefined symbol myByte used as an immediate value
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:54:20 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:54:24 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+../Src/myDataOps02.S: Assembler messages:
+../Src/myDataOps02.S:125: Error: thumb conditional instruction should be in IT block -- `movne r0,#1'
+make: *** [Src/subdir.mk:31: Src/myDataOps02.o] Error 1
+21:55:03 **** Incremental Build of configuration Debug for project DiscoBlinky ****
+make all 
+Building file: ../Src/myDataOps02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/myDataOps02.d" -MT"Src/myDataOps02.o" -o "Src/myDataOps02.o" "../Src/myDataOps02.S"
+Finished building: ../Src/myDataOps02.S
+ 
+Building target: DiscoBlinky.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/STM32L476_DiscoBlinky_ws/DiscoBlinky/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinky.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinky.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinky.elf" "DiscoBlinky.bin"
+arm-none-eabi-size "DiscoBlinky.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	     16	   1536	   2560	    a00	DiscoBlinky.elf
+ 
