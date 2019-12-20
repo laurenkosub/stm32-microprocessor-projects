@@ -1,0 +1,15 @@
+	@; --- characterize target syntax, processor
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; Use thumb instructions only
+
+/*	
+	@;useful macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+*/
+	#define __ASSEMBLY__
+	#include "MoT_definitions.h"
+	
+	

@@ -1,0 +1,17 @@
+The MoT commands, element-by-element:
+function 0
+8-bit <device# = 03>
+8-bit <function# 0 = 00>
+8-bit <checksum>
+
+function 1
+8-bit <device# = 03>
+8-bit <function# 1 = 01>
+8-bit <checksum>
+
+Sample command string, function0 : 03 00 
+  sending  :0300FD
+Sample command string, function1 : 03 01
+  sending : :0301FC
+
+You can use the MoT command generation script (hex2MoTcmd.c) in order to generate your own command and its corresponding checksum. 

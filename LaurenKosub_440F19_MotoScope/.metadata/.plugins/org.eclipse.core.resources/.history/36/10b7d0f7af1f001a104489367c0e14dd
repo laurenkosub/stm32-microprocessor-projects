@@ -1,0 +1,231 @@
+// main11.c wmh 2019-11-13 : enable TIM5, DAC1 and PA5 to generate a triangle wave out PA5
+// main10.c wmh 2019-11-03 : HCLK fixup, working TIM2_CH2 triggered ADC1
+// main09.c wmh 2019-10-21 : adds HCLK48MHz_init() in stm32L476xx_HCLK48MHz_01.S for clock speedup to 48MHz 
+//	- clock speedup 'kind of works' but system seems unstable so is left out for now
+// main09.c wmh 2019-10-16 : adding TIM2 operations and interrupt
+// main08.c wmh 2019-10-14 : moving all message handling to USART2 (new concept) -- see _readme_how_MoT_messaging_works02.txt
+// main07.c wmh 2019-10-12 : continued development
+// main06.c wmh 2019-09-18 : revised message handler
+// main05.c wmh 2019-09-14 : begin MoT adaptation by bringing code from MoT_demo_main02_with_USART3.c
+// we are initially only implementing the admin console
+// we are initially just going to substitute current 'L476 USART2 for prior USART1 as admin console. 
+// we are not initially going to implement 'L476 interrupts but instead just poll USART1
+// we are not initially implementing messaging
+// --> it turns out that with the above simplifications, much of MoT_demo_main02_with_USART3.c wmh 2019-06-13
+// which we thought to bring over is unnecessary, other than than the call to init_Cmd_handle() and the call to 
+// Cmd_Handler() in main's while(1) -- see /src/MoT for the three files we had to add. 
+// main04.c wmh 2019-09-13 : working USART2 initialization and demo.
+// main03.c wmh 2019-08-21 : adding GreenLED Blinky function for STM32L476 Discover
+// main02.c wmh 2019-08-21 : minor changes made (see !!wmh) to strip out all but bare necessities 
+
+#include "stdint-gcc.h"	//for uint8_t, uint16_t, uint32_t  etc. 
+#include <math.h>
+#define HIGH	500
+#define LOW		-500
+
+//definitions in stm32L476Disco_USART2_9600N81.S
+void USART2_init(void); 			//initialize USART2 for asynchronous 9600N81 communication
+int USART2_nbgetchar(void);			//success: return data>=0; failure: return -1
+int USART2_nbputchar(uint8_t c);	//success: return +1; failure: return -1
+int USART2_bgetchar(void);			//blocks until new data, then return data
+void USART2_bputchar(char c);		//block until character can be sent
+void USART2_writeDR(char c);		//debug: unconditional write to USART2 DR and return
+
+//definitions in stm32L476Disco_GreenLED.S
+void GreenLED_init();		//configures port bit PE8 (green LED) as GPIO output
+void GreenLED_ON();			//sets bit PE8 (green LED) 
+void GreenLED_OFF();		//resets bit PE8 (green LED)
+void GreenLED_toggle();		//flips bit PE8 (green LED) to opposite state
+
+//defined here so we can watch it
+uint32_t TIM2_ticks;		//updated in TIM2 interrupt, defined here so viewable as Eclipse 'expression'
+
+//MoT functions
+void init_adminCmd_handle(); 		//initialize command buffer indexes, sets entry point at Cmd_wait_for_startchar()
+void Cmd_Handler(void *);			//parses serial input and dispatches tasks
+void Msg_Handler_init(void *, int (*)(uint8_t));
+void *Msg_Handler(void *);			//returns 0 if no more messages, else address of current message's device data
+void Msg_Handler_phony_post(void);	//'posts' a message on Msg_list to test Msg_Handler
+void init_Cmd_handle(uint32_t *,uint32_t *, uint32_t *,uint32_t * );	//!!3rd argument is a int-void assembly function address but this works if we have declared it '.thumb_func'
+
+//MoT admin variables 
+extern uint32_t adminCmd_handle;	//reference point in Cmd_handle data structure (see \MoT\MoT_admin_cfg01.S)
+extern uint32_t adminDevicetable;	//address of adminDevicetable       --"--
+extern uint32_t adminTasklist;		//address of adminTasklist          --"--
+extern uint32_t adminMsgctl;		//address of adminMsg_ctl
+extern uint32_t USART2_RXgetbuf0;	//shady trick for passing function address
+
+void SWdelay(uint32_t delaycount) 
+{
+	int i;
+	for(i=0;i<delaycount;i++);
+}
+
+int32_t serchar;	//global so easier to watch in the debugger
+
+//defined in stm32fL476xx_TIM2_demo05.S
+void TIM2_NVIC_init();
+void DBGMCU_FREEZE_TIM2();
+void DBGMCU_UNFREEZE_TIM2();
+void TIM2_CH1_out_to_PA0();
+void TIM2_init();
+void TIM2_IRQHandler();
+void TIM2_delay();
+
+//defined in stm32L476Disco_GreenLED.S
+void GreenLED_init();
+void GreenLED_ON();
+void GreenLED_OFF();
+void GreenLED_toggle();
+
+//defined in stm32L476Disco_RedLED.S
+void RedLED_init();
+void RedLED_ON();
+void RedLED_OFF();
+void RedLED_toggle();
+
+void LSE_init();
+void HCLK48MHz_init();
+void TIM2PWM_init();
+
+// functions in .\LL_device\stm32L476xx_ADC1_01.S
+int  ADC1_SWTinit();		//configure ADC1 for software triggered conversion with input on PA1 (JOY_LEFT) 
+void ADC1_SWT();			//start ADC1 conversion
+int  ADC1_bgetdata(void);	//blocking read of ADC1
+
+int ADC1_TIM2Tinit();
+
+
+// ADC1 debug inspection functions
+//#include "stm32L476xx_ADC_TIM_definitions.h"	
+
+void ADC1_2_IRQinit();
+uint32_t ADC1_data;        //updated in ADC1 interrupt
+void DBGMCU_FREEZE_TIM2();
+
+void TIM2_IRQinit();
+
+void PA5_init(void);
+void DAC2_init(void);
+void TIM5_init();
+
+// define the ring buff stuff
+int32_t ringbufbuf0_rd(uint8_t *bufHANDLE);
+int32_t ringbufbuf1_rd(uint8_t *bufHANDLE);
+void ringbufbuf_wr(uint8_t *bufHANDLE, uint8_t wrdata);
+uint32_t ringbufbuf_init(uint8_t *bufHANDLE, uint32_t maxindex);
+uint32_t ringbufbuf0_rest(uint8_t *bufHANDLE);
+uint32_t ringbufbuf1_rest(uint8_t *bufHANDLE);
+uint8_t *adc_data;
+
+// dma definitions
+void DMA_init();
+void DMA1_to_TIM2_CH3();
+
+
+void printToUSART2(char *string) {
+	int i;
+	for (i = 0; i != '\0'; i++) {
+		USART2_bputchar(string[i]);
+	}
+	USART2_bputchar('\n');
+}
+
+// returns 0 is no bounds triggered, 1 if upper bound triggered,
+// 2 if lower bound triggered, 3 if both bounds are triggered
+int checkBounds(uint8_t *bdr) {
+	int i, high = 0, low = 0;
+	for (i = 0; bdr != 0x0; i++) {
+		// do i want to have a preset high/low or have it passed somehow?
+		if (bdr[i] > HIGH) {
+			high = 1;
+		}
+
+		if (bdr[i] < LOW) {
+			low = 1;
+		}
+	}
+	if (high == 1 && low == 1) {
+		printToUSART2("ALARM : upper and lower bounds have been passed");
+	} else if (high == 1) {
+		printToUSART2("ALARM : the upper bound has been passed");
+	} else if (low == 1) {
+		printToUSART2("ALARM : the lower bound has been passed");
+	}
+	return 0;
+}
+
+struct waveData {
+	double rms;
+	double avg;
+};
+
+struct waveData waveformAverage(uint8_t *bdr) {
+	struct waveData wd;
+	int i, rms_cnt = 0;
+	double rms, avg;
+	for (i = 0; bdr != 0x0; i++) {
+		avg += bdr[i];
+		if (bdr[i] > 0) {
+			rms += bdr[i];
+			rms_cnt++;
+		}
+	}
+	wd.avg = avg / i;
+
+	wd.rms = sqrt(rms / rms_cnt);
+	return wd;
+}
+
+int main(void)
+{
+
+	 uint32_t DR;           /*!< ADC group regular data register,               Address offset: 0x40 */
+
+	 /*
+	 // ADC1 debug inspection -- lets us see named register data in the debugger
+	#include "stm32L476xx_ADC_TIM_definitions.h"	
+	//origins of ADC hardware structs
+	ADC_TypeDef *pADC1 	= (ADC_TypeDef *) 0x50040000;
+	ADC_Common_TypeDef *pADC_Common = (ADC_Common_TypeDef *) 0x50040300;
+	TIM_TypeDef *pTIM2  = (TIM_TypeDef *) 0x40000000;
+	TIM_TypeDef *pTIM5  = (TIM_TypeDef *) 0x40000C00;
+	*/
+
+	//ADC1_2_IRQinit();
+	//ADC1_SWT();				//must set ADSTART one time to enable
+	//DBGMCU_FREEZE_TIM2(); 	//test and debug
+
+
+	 GreenLED_init();
+	 LSE_init();
+	 USART2_init();
+	 TIM2_init();
+	 TIM2_NVIC_init();
+	 ADC1_TIM2Tinit();
+	 HCLK48MHz_init();
+
+	 PA5_init();
+	 DAC2_init();
+	 TIM5_init();
+
+	 DMA_init();
+	 DMA1_to_TIM2_CH3();
+
+	 init_Cmd_handle(&adminCmd_handle, &adminDevicetable, &USART2_RXgetbuf0, &adminTasklist);
+
+	int num = 0;
+	double totalWaveAvg = 0;
+	while (1) {
+		//DR=ADC1_data;		//transfer data from the global variable so we can see it in main()'s context
+		DR = ringbufbuf0_rd(adc_data);
+		checkBounds(adc_data);
+		struct waveData wave = waveformAverage(adc_data);
+		totalWaveAvg = (wave.avg +(totalWaveAvg * num) ) / (++num);
+		Cmd_Handler(&adminCmd_handle);
+//		GreenLED_toggle();
+
+	}
+}
+
+

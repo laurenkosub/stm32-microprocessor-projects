@@ -1,0 +1,237 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line. 
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:    
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks 
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted 
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+	.equ 	TIM5_BASE,			0x40000C00	@; origin of TIM5 control register array
+	.equ	TIMx_ARRoffset,		0x2C		@;max count; 16 bits for TIM3,-4,-6,-7; 32 bits for TIM2,-5
+	.equ	TIMx_EGRoffset,		0x14		@;event generation register (write only)
+	.equ	TIMx_CR1offset,		0x00		@;control register (read/write)
+//	.equ 	TIMx_CR2offset,		0x04		@;control register (read/write)
+//	.equ	TIMx_SRoffset,		0x10		@;status register bits are rc_w0
+//	.equ	TIM5_PSCvalue,		0			@;with HCLK=48MHz, gives 48MHz clock input to TIM5
+//	.equ	TIM5_ARRvalue,		95			@;with HCLK=48MHz, PSC=0, ARR=95 we get 500KHz TRGO output. This works with worst case DAC conversion of 3 usec)
+
+	.equ	DAC_BASE,			0x40007400	@;base address of both DAC1, DAC2
+	.equ	DAC_CRoffset,		0x00		@;DAC control register,                                                             
+	.equ	MAMP2_mask,			(0xF<<24)	@;4-bit MAMP field in DAC_CR
+	.equ 	MAMP2,				(0xB<<24) 	@;for triangle wave amplitude = 4095
+	.equ	DAC_DHR12R2offset,	0x14		@;DAC2 12-bit right-aligned data holding register
+	.equ 	DHR12R2_mask_lo,	(0xFF)		@;lower 8 bits of field holding triangle wave offset	
+	.equ 	DHR12R2_mask_hi,	(0xF<<8)	@;upper 4 bits of field holding triangle wave offset	
+
+
+@;-------------------------- data
+	//this device has no data
+
+	@;-------------------------- code	
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+@;------ TriangleWaveGen device dispatch
+@; arguments: uint8_t function code; uint32_t TIM5_ARR value; uint8_t MAMP2 code; uint16_t DHR12R2 value; (ref: RM0351) 
+@;------ GreenLED device dispatch
+	.global MoTdevice_Func_cmd
+	.thumb_func					
+MoTdevice_Func_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'Func'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	//and r1,0x01			@;limit range of function codes to 0-1 for safety (error-checking would be nice but isn't done here)	tbb [pc,r1]
+	@; function byte meanings:
+	@; function 0: initialize the MoT device to continously sample ADC readings every 10 usec and record the interval between successive peaks of an input waveform
+	@; function 1: report as a 32-bit hex number the average interval in usecs between peaks for every 10 peaks observed.
+	tbb [pc,r1]
+MoTdevice_Func_cmd_table:
+	.byte (MoTdevice_Func0 - MoTdevice_Func_cmd_table)/2	  	@; jump to function 0
+	.byte (MoTdevice_Func1 - MoTdevice_Func_cmd_table)/2	  	@; jump to function 1
+	.align 1 @;!!important to do this where odd-byte alignment is possible
+
+	.global MoTdevice_Func0
+	.thumb_func
+MoTdevice_Func0:
+	push {r7, lr}
+	@;stop TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@;load new timer count into TIM2 ARR
+	ldr r2,[r0],#4				@;---- install new timer count value from command line
+	str r2,[r3,#TIM2_ARRoffset]	@; ..
+	ldr r2,[r3,#TIM2_EGRoffset]	@;set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)				@; ..
+	str r2,[r3,#TIM2_EGRoffset]	@; ..
+
+	@; write the waveform data to an array in main
+	    .global DMA_init
+    .thumb_func
+DMA_init:
+	push	{r7, lr}
+
+	@;DMA setup to sample ADC-------------
+	@; DMA enable in ADC1
+	config32 ADC1_BASE, ADC_CFGR, 0, 1, 1 // DMA enable
+	config32 ADC1_BASE, ADC_CFGR, 0, 1, 1 // DMA circ mode selected
+	config32 ADC1_BASE, ADC_CR, 13, 1, 1  // DMA circ mode selected
+
+	@; Enable DMA1 Clock
+	config32 RCC_BASE, AHB1ENR, 0, 1, 1
+
+	@; Reset DMA1 Clock
+	config32 RCC_BASE, AHB1RSTR, 0, 1, 1
+	config32 RCC_BASE, AHB1RSTR, 0, 1, 0
+
+	@; Wait for reset to take place
+	MOV_imm32 r1, 0x12345
+1:	subs r1, #1
+	bne 1b
+
+	@; Disable DMA1 Clock
+	config32 RCC_BASE, AHB1ENR, 0, 0, 0
+	config32 DMA1_BASE, DMA_CCR1, 0, 0, 0 // disable
+
+	@; Clear any flags on channel 1
+	config32 DMA1_BASE, DMA_IFCR, 0, 1, 1
+	config32 DMA1_BASE, DMA_IFCR, 0, 1, 0
+
+	@; Set peripherial reg address
+	MOV_imm32 r0, ADC1_BASE+ADC_DR
+	MOV_imm32 r1, DMA1_BASE
+	str r0, [r1, #DMA_CPAR1]
+
+	@; Set mem address
+	ldr r0, =waveFormData
+	str r0, [r1, #DMA_CMAR1]
+
+	@; set number of data to transfer
+	config32 DMA1_BASE, DMA_CNDTR1, 0, 7, 2048
+
+	@; set channel priority ( 3 = high )
+	config32 DMA1_BASE, DMA_CCR1, 12, 3, 3
+
+	@; set data transfer direction
+	config32 DMA1_BASE, DMA_CCR1, 4, 1, 0
+
+	@; set circ mode
+	config32 DMA1_BASE, DMA_CCR1, 5, 1, 1
+
+	@; set increment modes
+	config32 DMA1_BASE, DMA_CCR1, 7, 1, 1
+	config32 DMA1_BASE, DMA_CCR1, 6, 1, 0
+
+	@; set sizes to 16 bit
+	config32 DMA1_BASE, DMA_CCR1, 8, 3, 1
+	config32 DMA1_BASE, DMA_CCR1, 10, 3, 1
+
+	@; set interupt - clear all, set bit 1
+	config32 DMA1_BASE, DMA_CCR1, 1, 7, 1
+
+	@; channel selection for ch1
+	config32 DMA1_BASE, DMA_CSELR, 0, 15, 0
+
+	@; enable channel
+	config32 ADC1_BASE, DMA_CCR1, 0, 1, 1
+	@; turn on
+	config32 ADC1_BASE, ADC_CFGR, 0, 1, 1
+
+	@;tim2 channel 3 setup------------------------
+	@; channel selection for ch1 (4=tim2_CH3)
+	config32 DMA1_BASE, DMA_CSELR, 0, 15, 4
+	@; enable channel
+	config32 DMA1_BASE, DMA_CCR1, 0, 1, 1
+
+	@;TIM2 config for this
+	@; set ch3 to pwm mode 1
+	config32 TIM2_BASE, CCMR2, 4, 7, 6
+	config32 TIM2_BASE, CCMR2, 15, 1, 0
+	@; set ch3 preload enable
+	config32 TIM2_BASE, CCMR2, 3, 1, 1
+	@; set ch3 output mode
+	config32 TIM2_BASE, CCMR2, 0, 3, 0
+	@; set ch3 ccer enable
+	config32 TIM2_BASE, CCER, 8, 1, 1
+	@; set ch3 compare val
+	config32 TIM2_BASE, CCR3, 0, 0, 64
+	@ generate event on ch3
+	config32 TIM2_BASE, EGR, 3, 1, 1
+	@; capture/compare ch3 dma
+	config32 TIM2_BASE, DIER, 11, 1, 1
+
+	pop {r7, pc}
+
+
+	@;start TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIM2_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIM2_CR1offset]	@; ..
+	
+
+	pop {r7,pc}
+	
+	.global MoTdevice_Func1
+	.thumb_func
+MoTdevice_Func1:
+	push {r7, lr)
+	@;copy message string to report buffer
+	MOV_imm32 r0, ADC1_report_msgbuffer			@;where we'll build the message string
+	adr r1, ADC1_report_msg						@;message string address
+	MOV_imm32 r2, #(ADC1_report_msglen)			@;message string length
+	bl bytecopy			@; uint8_t* bytecopy(uint8_t *dest, uint8_t *src, uint32_t count); //like C memcpy except returns pointer to end of dest
+	@;here with r0 pointing to end of copied message string
+	@;get new ADC1 data value in r1
+	MOV_imm32 r3,ADC1_BASE						@;
+	MOV_imm32 r2,ADC1_data						@;global variable defined in main
+	ldrh r1,[r3,#ADC1_DR]
+	@;convert ADC1 data value in r1 to ASCII, place ASCII numeric of value ADC1_DR value at end of message string
+	bl sprintf_uint32 	@;uint32_t* sprintf_uint32(uint8_t *str, uint32_t n); //convert word to ASCII numeric string in buffer, return pointer to end+1
+	@;here with r0 pointing to end+1 of message
+	@;add CRLF to end of message
+	movw r1,#(0x0D0A)							@; ..
+	strh r1,[r0],#2								@; ..
+	@;here with message completed, r0 pointing to end+1
+	MOV_imm32 r3,ADC1_report_data				@;begin preparation for giving message to handler
+	ldr r1,[r3,#ADC1_MSGLINK]					@;is a message from this task on the message list already ?
+	cbnz r1,1f									@;	yes -  abort posting and report failure
+	@;here if ok to post
+	MOV_imm32 r1,ADC1_report_msgbuffer			@;set message pointer
+	str r1,[r3,#ADC1_MSGPTR]					@; 	..
+	sub r2,r0,r1								@;calculate message bytecount
+	str r2,[r3,#ADC1_MSGCOUNT]					@;  and set it
+	@;here with data structure prepared for posting message
+	mov r0,r3									@; prepare for MsgPost((void *devicedata))
+	bl USART2_MsgPost							@;  and go
+1:	@; here with r0=0 if message got posted, =-1 if not. Ignored for now.
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done at 'MoTdevice_TIM2PWM_cmd:". Returns to Cmd_Handler
+
+	ADC1_report_msg:
+	.ascii "ADC1 raw= "
+	.equ ADC1_report_msglen,( . - ADC1_report_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages !
+	
+/*
+	XYZ_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+*/
+
+
+
+
+
+
+
+

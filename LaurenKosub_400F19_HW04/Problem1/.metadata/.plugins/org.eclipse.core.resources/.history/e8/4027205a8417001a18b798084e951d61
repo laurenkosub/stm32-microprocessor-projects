@@ -1,0 +1,116 @@
+// main06.c wmh 2019-09-18 : revised mesage handler
+// main05.c wmh 2019-09-14 : begin MoT adaptation by bringing code from MoT_demo_main02_with_USART3.c
+// we are initially only implementing the admin console
+// we are initially just going to substitute current 'L476 USART2 for prior USART1 as admin console. 
+// we are not initially going to implement 'L476 interrupts but instead just poll USART1
+// we are not initially implementing messaging
+// --> it turns out that with the above simplifications, much of MoT_demo_main02_with_USART3.c wmh 2019-06-13
+// which we thought to bring over is unnecessary, other than than the call to init_Cmd_handle() and the call to 
+// Cmd_Handler() in main's while(1) -- see /src/MoT for the three files we had to add. 
+// main04.c wmh 2019-09-13 : working USART2 initialization and demo.
+// main03.c wmh 2019-08-21 : adding GreenLED Blinky function for STM32L476 Discover
+// main02.c wmh 2019-08-21 : minor changes made (see !!wmh) to strip out all but bare necessities 
+
+#include "stdint-gcc.h"	//for uint8_t, uint16_t, uint32_t  etc. 
+
+//definitions in stm32L476Disco_USART2_9600N81.S
+void USART2_init(void); 			//initialize USART2 for asynchronous 9600N81 communication
+int USART2_nbgetchar(void);			//success: return data>=0; failure: return -1
+int USART2_nbputchar(uint8_t c);	//success: return +1; failure: return -1
+int USART2_bgetchar(void);			//blocks until new data, then return data
+void USART2_bputchar(char c);		//block until character can be sent
+void USART2_writeDR(char c);		//debug: unconditional write to USART2 DR and return
+
+/* !!TODO rewrite the below functions from MoT_demo_main02_with_USART3.c for 'L476 USART2
+//functions defined in stm32f429xx_USART1_bufbuf_interrupt02.S and stm32f429xx_USART3_bufbuf_interrupt02.S
+void USART1_buffer_init(void);
+void USART1_IRQinit(void);	
+int32_t USART1_getbuf0(void); //get a character from USART1's RX buf0. Non-blocking, returns char >= 0 or -1 if fail/no char
+*/ 
+/*
+	typedef struct {
+		int (*nbTX)(uint8_t);
+		void *pMsghead;
+		void *pMsgtail;
+	} TXchannel_t;
+
+	TXchannel_t Admin_TX = { USART2_nbputchar, (void *)0, (void *)0 };
+*/
+//definitions in stm32L476Disco_GreenLED.S
+void GreenLED_init();	//configures port bit PE8 (green LED) as GPIO output
+void GreenLED_ON();		//sets bit PE8 (green LED) 
+void GreenLED_OFF();	//resets bit PE8 (green LED)
+
+
+//MoT functions
+void init_adminCmd_handle(); 		//initialize command buffer indexes, sets entry point at Cmd_wait_for_startchar()
+void Cmd_Handler(void *);			//parses serial input and dispatches tasks
+//void do_tasks(void);				//starts a traverse of the task-list, returns when tasks have run once
+//void init_Msg_Handler(uint32_t *);		//clear messages waiting on the message list, reset list to empty
+void Msg_Handler_init(void *, int (*)(uint8_t));
+void *Msg_Handler(void *);			//returns 0 if no more messages, else address of current message's device data
+void Msg_Handler_phony_post(void);	//'posts' a message on Msg_list to test Msg_Handler
+void init_Cmd_handle(uint32_t *,uint32_t *, int (*)(),uint32_t * );	// !!3rd argument is a int-void assembly function address but this works if we have declared it '.thumb_func'
+//void init_MSGLIST(uint32_t *);
+
+//MoT admin variables 
+//extern uint32_t USART1_msgctl;
+extern uint32_t adminCmd_handle;	//reference point in Cmd_handle data structure (see \MoT\MoT_admin_cfg01.S)
+extern uint32_t adminDevicetable;	//address of adminDevicetable       --"--
+extern uint32_t adminTasklist;		//address of adminTasklist          --"--
+extern uint32_t adminMsgctl;		//address of adminMsg_ctl
+//extern uint32_t USART1_RXgetbuf0;
+
+void SWdelay(uint32_t delaycount)
+{
+	int i;
+	for(i=0;i<delaycount;i++);
+}
+
+int32_t serchar;	//global so easier to watch in the debugger
+
+int main(void)
+{
+
+	USART2_init(); 
+
+	//initial test of green LED, USART2 drivers with stm32L476 Discovery board ST-Link serial port connected
+	//should turn on green LED and print 12345 on ST-Link serial connection
+	int c;
+	GreenLED_init();
+	USART2_writeDR('1');
+	GreenLED_ON();
+	SWdelay(100000);
+	USART2_bputchar('2');
+	USART2_bputchar('3');
+	while(USART2_nbputchar('4') < 0);
+	while(USART2_nbputchar('5') < 0);
+
+	while(1) {	
+		//should turn off green LED and wait for character input from serial port, then print sequence of characters 
+		GreenLED_OFF();
+		while( (c= USART2_nbgetchar()) <0);
+		while(USART2_nbputchar(c+1) < 0);
+		while(USART2_nbputchar(c+2) < 0);
+		while(USART2_nbputchar(c+3) < 0);
+		//should turn on green LED and wait for character input from serial port, then print sequence of characters 
+		GreenLED_ON();	
+		c= USART2_bgetchar();
+		USART2_bputchar(c+1);
+		USART2_bputchar(c+2);
+		USART2_bputchar(c+3);
+	}
+
+
+/*	init_Cmd_handle(&adminCmd_handle, &adminDevicetable, USART2_nbgetchar, &adminTasklist);
+	Msg_Handler_init(&adminMsgctl, USART2_nbputchar);
+	while (1)
+	{
+		Cmd_Handler(&adminCmd_handle);
+//		Cmd_Handler(&userCmd_handle);
+		Msg_Handler(&adminMsgctl);
+	}
+*/
+}
+
+

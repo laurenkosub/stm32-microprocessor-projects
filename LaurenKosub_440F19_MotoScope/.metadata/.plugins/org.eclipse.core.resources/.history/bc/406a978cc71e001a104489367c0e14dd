@@ -1,0 +1,45 @@
+	@; --- characterize target syntax, processor
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; Use thumb instructions only
+
+/*	
+	@;useful macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+*/
+
+	.macro	CONFIG32 structbase, regoffset, bitoffset, bitmask, bitval
+		MOV_imm32 r3,(\structbase)
+		ldr r2,[r3,#(\regoffset)]
+		bic r2,#((\bitmask)<<(\bitoffset))
+		orr r2,#((\bitval)<<(\bitoffset))
+		str r2,[r3,#(\regoffset)]
+	.endm
+	
+	#define __ASSEMBLY__
+	#include "MoT_definitions.h"
+
+
+	
+@;STM32L4xx USART2 definitions
+
+@; STM32L476xx RCC registers controlling clock enables and USART2 clock source -- from RM0351 (en.DM00083560.pdf)
+	.equ 	RCC_BASE,0x40021000
+	.equ 	RCC_APB1ENR1,0x58
+	.equ 	RCC_APB1RSTR1,0x38
+	.equ 	RCC_AHB2ENR,0x4C 
+	.equ 	RCC_CCIPR,0x88
+	.equ 	RCC_CFGR,0x08
+	
+@;  begin code memory
+	.text						@;start the code section
+
+    .global configure_DMA_CH3	@;set up PD5,PD6 for USART2 operation
+    .thumb_func
+configure_DMA_CH3:
+	push	{r7, lr}
+	
+	@; enable DMA1 Clock
+	CONFIG32 RCC_BASE, AHB1ENR, 0, 1, 1 

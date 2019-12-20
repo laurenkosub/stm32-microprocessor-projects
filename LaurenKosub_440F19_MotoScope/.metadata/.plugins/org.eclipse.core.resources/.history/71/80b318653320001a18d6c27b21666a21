@@ -1,0 +1,140 @@
+@;MoT_admin_cfg01.S wmh 2019-06-14 : data structures controlling admin capabilities and operations
+@; association of admin structures and functions with a communication channel is done by init_Cmd_handle() in main()
+
+	#define __ASSEMBLY__
+	#include "MoT_definitions.h"
+ 
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; use thumb instructions only
+
+	
+@;===================== task list
+	.data						@;important that this is in .data in order to be initialized at startup
+	.align 2
+
+	
+	@;define initialized admin task list
+	.global adminTasklist
+adminTasklist:	
+	.word NULL						@;at offset XEQ: root has no execution behavior
+	.word adminDefaultDevice_task	@;at offset NEXT: adminDefaultDevice_task is between root and last when starting
+	.word NULL						@;at offset PREV: no predecessor
+	.word NULL						@;at offset C_startingSP; used to restore stack pointer after C tasks have run				
+
+	@;define initialized default device
+	.global adminDefaultDevice_task 		
+adminDefaultDevice_task:	
+	adminDefaultDevice_XEQ: 		.word adminDefaultDevice_task0	@;task0=XEQ: first task executed by DefaultDevice after system start. May be replaced by other adminDefaultDevice tasks	
+	adminDefaultDevice_NEXT: 		.word adminTasklist_last
+	adminDefaultDevice_PREV:		.word adminTasklist				
+	adminDefaultDevice_MSGPTR:		.word 0							
+	adminDefaultDevice_MSGCOUNT:	.word 0									
+	adminDefaultDevice_MSGLINK:		.word 0									
+	@;interrupt messaging data 
+	adminDefaultDevice_IRQmsg_flags: .skip 32,0		@;holds the array of message request flags from interrupts, initialized to 0 						
+	adminDefaultDevice_IRQ_data:	 .skip 10240	@;holds the array of pointers to interrupt device data, initialized to 0
+	
+	.global adminTasklist_last
+adminTasklist_last:	
+	.word do_tasks_return				@;at offset XEQ: back to do_tasks caller
+	.word NULL							@;at offset NEXT: nothing after last
+	.word adminDefaultDevice_task		@;at offset PREV: adminDefaultDevice_task is between last and root when starting 
+
+	
+	
+	
+/*	
+	.global adminMsgctl
+adminMsgctl:
+	.word	USART2_nbputchar	@; at offset TX_XEQ
+	.word	USART2_TXint_enab	@; at offet TX_ENAB
+	.word 	NULL				@; at offset MSGHEAD_PTR
+	.word	NULL				@; at MSGTAIL_PTR
+*/
+
+/*	
+	.global adminCmd_channel
+adminCmd_channel:
+	.word USART1_RXgetbuf0		@; at offset MSG_RXDATA
+	.word NULL					@; at offset MSG_TXENAB ??
+	.word NULL					@; at offset MSGLIST_HEAD
+	.word NULL					@; at offset MSGLIST TAIL
+*/
+	
+	
+@;	.equ C_startingSP,12		@; offset in admin/userTasklist where starting SP is stored !!now in "_MoT_definitions.h"
+	
+@;===================== runtime data	
+
+	.bss						@;put in .bss so initialized to 0 at runtime
+	.align 2
+	
+@; Cmd_handle data structure definitions and relative offsets -- !! put all of this in section .data and initialize it a compile-time ==> no need for 'init'
+@;	.align 2
+	.skip 32					@; allocation for struct elements defined in "_MoT_definitions.h"
+	.global adminCmd_handle		@;control struct for admin commands
+adminCmd_handle:				@; Cmd_handle trick (handle is pointer into middle of data structure with params before and data after)
+	.skip 2500					@; !! TODO size of buffer for command parser output
+
+	
+	.text
+
+	@;The 'Devicetable' contains addresses of the entry point of each task or command operation defined for the system. 
+	@ Incoming commands start with an operation ID (opID). The opID*4 = offset into the table holding the operation's entry point
+	@;Whether a opID arrives in a command from the controller (PC) or is part of a system initialization list, it is used to 
+	@;	index into the task table and dispatch the code for that task or. command. 
+	@;
+	@; A 'Command' is an opID that is executed but doesn't leave a follow-on task in the Tasklist 
+	@; A 'Task' is an opID  that leaves a residual task in the Tasklist
+	@; When 'Cmd_Handler' decodes a command message and dispatches the associated operation, the operation starts with r0 pointing
+	@; to the command's binary 'tail' containing any further information needed. Typically, the first entry in the command tail
+	@; is a function number which directs what the command is supposd to do.  See 'GreenLED.S' for an example.  
+	.global adminDevicetable	 @;holds pointers to Device dispatch code; in general admin and user have access to different devices
+adminDevicetable:	
+	.word Reset_Handler			@; Executing Reset_Handler restarts the system 
+	.word MoTdevice_GreenLED_cmd@; init= :0100FF fast= :0101FE slow= :0102FD stop= :0103FC 
+	.word MoTdevice_TriangleWaveGen_cmd	@; arguments: uint8_t function code; uint32_t TIM5_ARR value; uint8_t MAMP1 code; uint16_t DHR12R1 value; (ref: RM0351) 
+@;	.word MoTdevice_TIM2PWM_cmd @; init= :0200FE
+@;	.word RedLED				@; init= :0200FE fast= :0201FD slow= :0202FC stop= :0203FB
+@;	.word TIM2_PWM				@; 
+@;	.word deviceESP8266
+@; *** other device entry points to follow here when they are developed ***
+
+
+
+
+	@; ----- adminDefaultDevice tasks (there are no adminDefaultDevice commands
+	.global adminDefaultDevice_task0 @;executes one time, prints system startup message
+	.thumb_func
+adminDefaultDevice_task0:
+	MSG_post USART2_MsgPost, adminDefaultDevice_task, adminDefaultDevice_task0_msg, adminDefaultDevice_task0_msglen
+	RELINK_me adminDefaultDevice_task1
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task 
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+
+	.global adminDefaultDevice_task1 @;executes every time but first; does nothing 
+	.thumb_func
+adminDefaultDevice_task1:
+	ldr	rTASKP,[rTASKP,#NEXT]				@; rTASKP points to next task 
+	ldr pc,[rTASKP,#XEQ]					@; dispatch next task on list   ..
+
+
+
+
+
+	@;------ adminDefaultDevice messages and message length calculations
+	adminDefaultDevice_task0_msg:
+	.ascii "adminDefaultDevice_task started\n\r"
+	.equ adminDefaultDevice_task0_msglen,( . - adminDefaultDevice_task0_msg)
+	
+
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+	
+
+
+
+
+
+
+

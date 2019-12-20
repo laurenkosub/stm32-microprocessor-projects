@@ -1,0 +1,191 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line.
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+	// TIM 5 Stuff
+	.equ 	TIM5_BASE,			0x40000C00	@; origin of TIM5 control register array
+	.equ	TIMx_ARRoffset,		0x2C		@;max count; 16 bits for TIM3,-4,-6,-7; 32 bits for TIM2,-5
+	.equ	TIMx_EGRoffset,		0x14		@;event generation register (write only)
+	.equ	TIMx_CR1offset,		0x00		@;control register (read/write)
+
+@;-------------------------- data
+	//this device has no data
+
+	@;-------------------------- code
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+@;------ MoToScope Device
+@; arguments: 	uint8_t function code;
+@;				uint8_t (init|manage|scan through|sample|singleshot);
+@;				uint8_t (mode|trigger|triggerdelay|samplesize|reportsize|samplerate|watchdog)
+@;				<necessary parameters>
+
+@;	trigger : start scan at same point on each repretition of the waveform
+@;		- select a value beween 1 and 2048 to pick a starting point for data collection in the circ buff
+
+@;	trigger delay : when time record begins w/ respect to the trigger signal
+@;		- data collection really starts at trigger + delay
+
+@; sample size : how big the buffer should be
+
+@; report size : how much data is reported back to the end user
+
+@; sample rate : # of samples taken per second (x samples/sec = x Hz)
+
+	.global MoTdevice_Scope_cmd
+	.thumb_func
+MoTdevice_Scope_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	and r1,0x03			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)
+MoTdevice_cmd_table:
+	.byte (init_scope - MoTdevice_cmd_table)/2	  	@;initialize hardware and install task on task list
+	.byte (modify_scope - MoTdevice_cmd_table)/2	@; modify a configurement in the hardware
+	.byte (scan_mode - MoTdevice_cmd_table)/2	  	@; scan mode : scan through the data
+	.byte (repeat_mode - MoTdevice_cmd_table)/2	@; continuously read data
+	.byte (single_mode - MoTdevice_cmd_table)/2		@; read only one iteration of the data
+	.align 1 @;!!important to do this where odd-byte alignment is possible
+
+
+	.global modify_scope
+	.thumb_func
+modify_scope:
+	cmp r2,#0
+	it eq
+	bleq modify_mode
+
+	cmp r2,#1
+	it	eq
+	bleq modify_trigger
+
+	cmp r2,#2
+	it	eq
+	bleq modify_trigger_delay
+
+	cmp r2,#3
+	it	eq
+	bleq modify_sample_size
+
+	cmp r2,#4
+	it	eq
+	bleq modify_report_size
+
+	cmp r2,#5
+	it	eq
+	bleq modify_sample_rate
+
+	pop {r7,pc}					@;Returns to Cmd_Handler
+
+/*
+	XYZ_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+*/
+
+@; mode = continuous capture, trigger = pos 0, trigger delay = 0, report size = 2048
+@; sample rate = 48MHz clock
+	.global init_scope
+	.thumb_func
+init_scope: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}
+	bl DMA_init
+	pop {r7,pc}
+
+
+	.global modify_mode
+	.thumb_func
+modify_mode: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@; change mode
+	ldr r2,[r0],#1
+	cmp r2, #1
+	it eq
+	bleq scan_mode
+
+	cmp r2, #2
+	it eq
+	bleq repeat_mode
+
+	cmp r2, #3
+	it eq
+	bleq single_mode
+
+	pop {r7,pc}
+
+
+	.global scan_mode
+	.thumb_func
+scan_mode:
+	@; change trigger value
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	and r1,0x03			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)
+MoTdevice_cmd_table:
+	.byte (init_scope - MoTdevice_cmd_table)/2	  	@;initialize hardware and install task on task list
+	.byte (modify_scope - MoTdevice_cmd_table)/2	@; modify a configurement in the hardware
+	.byte (scan_mode - MoTdevice_cmd_table)/2	  	@; scan mode : scan through the data
+	pop {r7,pc}
+
+	.global repetative_mode
+	.thumb_func
+repeat_mode:
+	push {r7,lr}		@; change trigger value
+	ldr r2,[r0],#4	@; next four bytes in command are
+	pop {r7,pc}
+
+	.global single_mode
+	.thumb_func
+single_mode:
+	push {r7,lr}		@; change trigger value
+
+	pop {r7,pc}
+
+	.global modify_trigger
+	.thumb_func
+modify_trigger: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@; change trigger value
+
+	@;stop TIM5
+	mov_imm32 r3,TIM5_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@;load new timer count into TIM5 ARR
+	ldr r2,[r0],#4				@;---- install new timer count value from command line
+	str r2,[r3,#TIMx_ARRoffset]	@; ..
+	ldr r2,[r3,#TIMx_EGRoffset]	@;set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)				@; ..
+	str r2,[r3,#TIMx_EGRoffset]	@; ..
+
+	@;restart TIM5
+	mov_imm32 r3,TIM5_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7,pc}
+
+	.global modify_trigger_delay
+	.thumb_func
+modify_trigger_delay: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;
+	pop {r7,pc}
+
+	.global modify_report_size
+	.thumb_func
+modify_report_size: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;
+	pop {r7,pc}
+

@@ -1,0 +1,109 @@
+	@; --- characterize target syntax, processor
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; Use thumb instructions only
+	
+	@;useful macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+
+	.macro	CONFIG32 structbase, regoffset, bitoffset, bitmask, bitval
+		MOV_imm32 r3,(\structbase)
+		ldr r2,[r3,#(\regoffset)]
+		bic r2,#((\bitmask)<<(\bitoffset))
+		orr r2,#((\bitval)<<(\bitoffset))
+		str r2,[r3,#(\regoffset)]
+	.endm
+	
+	@; Extra declarations
+	.equ 	SYSCFG_BASE, 0x40010000
+	.equ 	SYSCFG_CFGR1, 0x04
+	.equ	ADC_BASE, 0x50040000
+	.equ 	RCC_AHB2RSTR, 0x2C
+	.equ	RCC_CFGR, 0x08
+	.equ	RCC_CCIPR, 0x88
+	.equ	ADC123_CCR, 0x50040600 //(RCC123 + 0x300)
+	.equ	ADC1_CR, 0x08
+
+	@;constants derived from those defined in the STM32L476 manual (RM0351, en.DM00083560.pdf)
+	.equ	RCC_BASE,0x40021000 	@;origin of RCC register struct (pg 78 of the manual)
+	.equ 	RCC_AHB2RST,0x4C		@;peripheral clock reset register for ADC
+	.equ	ADCRST,13				@;ADC reset bit location in RCC_AHB2RST
+	.equ 	RCC_AHB2ENR,0x2C		@;peripheral clock enable register for GPIOA and ADC(pg 280 of the manual)	
+	.equ	GPIOAEN,0				@;GPIOA peripheral clock enable bit (pg 280 of the manual)
+	.equ 	ADCEN,13				@;ADC peripheral clock enable bit
+	
+	.equ	GPIOA_BASE,0x48000000	@;origin of GPIOA register struct (pg 77 of the manual)
+	.equ	GPIOA_MODER,0x00		@;GPIOA configuration register offsets (pg 311 of the manual)      
+	.equ	GPIOA_OTYPER,0x04		@; .. 
+	.equ	GPIOA_OSPEEDR,0x08	    @; .. 
+	.equ	GPIOA_OPUPDR,0x0C		@; .. 	
+	.equ	GPIOA_IDR,	0x10		@; .. 	      
+	.equ	GPIOA_ODR,	0x14		@; .. 	
+	.equ	GPIOA_BSRR,	0x18		@; .. 	      
+	.equ	GPIOA_LCKR,	0x1C		@; .. 	
+	.equ	GPIOA_AFRL,	0x20		@; .. 	
+	.equ	GPIOA_AFRH,	0x24		@; .. 	
+	.equ	GPIOA_BRR,	0x28		@; .. 
+	.equ	GPIOA_ASCR,	0x2C		@; .. 
+	.equ	GPIOAEN,	0			@;GPIOA peripheral clock enable bit 
+	
+
+@; ADC definitions from stm32L476xx.h and RM0351
+	.equ	ADC, 						0x50040000
+	.equ	ADC1_BASE, 						0x50040000	@;Master ADC1
+	.equ	ADC2, 						0x50040100	@;Slave ADC2
+	.equ	ADC3, 						0x50040200 	@;Single ADC3
+	.equ	ADC123, 					0x50040300	@;ADCs common registers
+
+	.equ	ADC_ISR,              	 	0x00 
+	.equ	ADC_IER,              	 	0x04 
+	.equ	ADC_CR,               	 	0x08 
+	.equ	ADC_CFGR,             	 	0x0C 
+	.equ	ADC_CFGR2,            	 	0x10 
+	.equ	ADC_SMPR1,            	 	0x14 
+	.equ	ADC_SMPR2,            	 	0x18 
+	.equ	ADC_RESERVED1,        	 	0x0C
+	.equ	ADC_TR1,              	 	0x20 
+	.equ	ADC_TR2,              	 	0x24 
+	.equ	ADC_TR3,              	 	0x28 
+	.equ	ADC_RESERVED2,        	 	0x2C 
+	.equ	ADC_SQR1,             	 	0x30 
+	.equ	ADC_SQR2,             	 	0x34 
+	.equ	ADC_SQR3,             	 	0x38 
+	.equ	ADC_SQR4,             	 	0x3C 
+	.equ	ADC_DR,               	 	0x40 
+	.equ	ADC_RESERVED3,        	 	0x44
+	.equ	ADC_RESERVED4,        	 	0x48
+	.equ	ADC_JSQR,             	 	0x4C 
+	.equ	ADC_RESERVED5,     	 		0x50
+	.equ	ADC_OFR1,             	 	0x60 
+	.equ	ADC_OFR2,             	 	0x64 
+	.equ	ADC_OFR3,             	 	0x68 
+	.equ	ADC_OFR4,             	 	0x6C 
+	.equ	ADC_RESERVED6,     	 		0x70
+	.equ	ADC_JDR1,             	 	0x80 
+	.equ	ADC_JDR2,             	 	0x84 
+	.equ	ADC_JDR3,             	 	0x88 
+	.equ	ADC_JDR4,             	 	0x8C 
+	.equ	ADC_RESERVED7,     	 		0x90
+	.equ	ADC_AWD2CR,           	 	0xA0 
+	.equ	ADC_AWD3CR,           	 	0xA4 
+	.equ	ADC_RESERVED8,        	 	0xA8 
+	.equ	ADC_RESERVED9,        	 	0xAC
+	.equ	ADC_DIFSEL,           	 	0xB0 
+	.equ	ADC_CALFACT,          	 	0xB4 
+
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; we're using thumb instructions only
+
+	.text						
+	.align 2
+    .global configure_DMA_CH3	@;set up PD5,PD6 for USART2 operation
+    .thumb_func
+configure_DMA_CH3:
+	push	{r7, lr}
+	
+	@; enable DMA1 Clock
+	CONFIG32 =RCC_BASE, =RCC_AHB1ENR, 0, 1, 1 

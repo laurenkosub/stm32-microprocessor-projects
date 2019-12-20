@@ -1,0 +1,30 @@
+19:06:49 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/main11.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main11.d" -MT"Src/main11.o" -o "Src/main11.o" "../Src/main11.c"
+../Src/main11.c: In function 'main':
+../Src/main11.c:223:55: warning: operation on 'num' may be undefined [-Wsequence-point]
+   totalWaveAvg = (wave.avg +(totalWaveAvg * num) ) / (++num);
+                                                      ~^~~~~~
+../Src/main11.c:190:12: warning: variable 'DR' set but not used [-Wunused-but-set-variable]
+   uint32_t DR;           /*!< ADC group regular data register,               Address offset: 0x40 */
+            ^~
+Finished building: ../Src/main11.c
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -L"/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib" -T"/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"  -lADC1_TIM2T_48MHz -lTIM5_DAC2_PA5 -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9712	  13936	   4208	  27856	   6cd0	DiscoBlinkyMoT.elf
+ 
+
+19:06:49 Build Finished (took 470ms)
+

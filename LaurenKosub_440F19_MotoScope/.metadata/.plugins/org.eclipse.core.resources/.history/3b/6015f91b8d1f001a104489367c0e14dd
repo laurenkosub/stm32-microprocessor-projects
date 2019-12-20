@@ -1,0 +1,108 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line. 
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:    
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks 
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted 
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+	.equ 	TIM5_BASE,			0x40000C00	@; origin of TIM5 control register array
+	.equ	TIMx_ARRoffset,		0x2C		@;max count; 16 bits for TIM3,-4,-6,-7; 32 bits for TIM2,-5
+	.equ	TIMx_EGRoffset,		0x14		@;event generation register (write only)
+	.equ	TIMx_CR1offset,		0x00		@;control register (read/write)
+//	.equ 	TIMx_CR2offset,		0x04		@;control register (read/write)
+//	.equ	TIMx_SRoffset,		0x10		@;status register bits are rc_w0
+//	.equ	TIM5_PSCvalue,		0			@;with HCLK=48MHz, gives 48MHz clock input to TIM5
+//	.equ	TIM5_ARRvalue,		95			@;with HCLK=48MHz, PSC=0, ARR=95 we get 500KHz TRGO output. This works with worst case DAC conversion of 3 usec)
+
+	.equ	DAC_BASE,			0x40007400	@;base address of both DAC1, DAC2
+	.equ	DAC_CRoffset,		0x00		@;DAC control register,                                                             
+	.equ	MAMP2_mask,			(0xF<<24)	@;4-bit MAMP field in DAC_CR
+	.equ 	MAMP2,				(0xB<<24) 	@;for triangle wave amplitude = 4095
+	.equ	DAC_DHR12R2offset,	0x14		@;DAC2 12-bit right-aligned data holding register
+	.equ 	DHR12R2_mask_lo,	(0xFF)		@;lower 8 bits of field holding triangle wave offset	
+	.equ 	DHR12R2_mask_hi,	(0xF<<8)	@;upper 4 bits of field holding triangle wave offset	
+
+
+@;-------------------------- data
+	//this device has no data
+
+	@;-------------------------- code	
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+@;------ TriangleWaveGen device dispatch
+@; arguments: uint8_t function code; uint32_t TIM5_ARR value; uint8_t MAMP2 code; uint16_t DHR12R2 value; (ref: RM0351) 
+
+	.global MoTdevice_TriangleWaveGen_cmd	
+	.thumb_func					
+MoTdevice_TriangleWaveGen_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;
+
+	ldrb r1,[r0],#1		@;read and discard function code from the command buffer and advance r0 to point to the first argument
+	
+	@;stop TIM5
+	mov_imm32 r3,TIM5_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation 
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+	
+	@;load new timer count into TIM5 ARR
+	ldr r2,[r0],#4				@;install new timer count value from command line
+	str r2,[r3,#TIMx_ARRoffset]	@; ..
+	ldr r2,[r3,#TIMx_EGRoffset]	@;set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)				@; ..
+	str r2,[r3,#TIMx_EGRoffset]	@; ..
+	
+	@;install the new MAMP2 value into DAC1 CR
+	mov_imm32 r3,DAC_BASE
+	ldr r2,[r3,#DAC_CRoffset]	@;get current control register value
+	bic r2,#MAMP2_mask			@;clean MAMP2 field 
+	ldrb r1,[r0],#1				@;get replacement MAMP2 value from command line
+	lsl r1,#24					@;align it with the MAMP2 field
+	and r1,#MAMP2_mask			@;clean it to conform to field size
+	orr r2,r1					@;insert it into the CR image
+	str r2,[r3,#DAC_CRoffset]	@; and save the new value
+	
+	@;install the new DHR12R2 value
+	ldr r2,[r3,#DAC_DHR12R2offset]	@;get current DHR12R2 value
+	mov r1,#DHR12R2_mask_lo			@; assemble the mask values in r1
+	orr r1,#DHR12R2_mask_hi			@; 
+	bic r2,r1						@;clean DHR12R2 value in r2
+	ldrh r0,[r0]					@;get replacement DHR12R2 value from the command line (ok to discard r0 because done reading command line)
+	and r0,r1						@;conform replacement value to DHR12R2 field size
+	orr r2,r0						@;insert replacement value into the DHR12R2 image
+	str r2,[r3,#DAC_DHR12R2offset]	@;update DHR12R2 with the new value
+	
+	@;restart TIM5
+	mov_imm32 r3,TIM5_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@; post new  message on list !!not possible without a device data structure
+//	MSG_post USART2_MsgPost, MoTdevice_GreenLED_data, Green_LED_init_msg, Green_LED_init_msglen
+	@; here with r0=0 if message got posted, =-1 if not. Ignored for now. 
+	pop {r7,pc}					@;Returns to Cmd_Handler
+
+/*
+	XYZ_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+*/
+
+
+
+
+
+
+
+

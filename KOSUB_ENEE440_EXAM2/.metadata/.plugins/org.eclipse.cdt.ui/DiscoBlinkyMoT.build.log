@@ -1,0 +1,6 @@
+11:00:23 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+
+11:00:24 Build Finished (took 271ms)
+

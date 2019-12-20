@@ -1,0 +1,101 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line.
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+@;-------------------------- data
+	//this device has no data
+
+	@;-------------------------- code
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+@;------ TriangleWaveGen device dispatch
+@; arguments: 	uint8_t function code;
+@;				uint8_t (init|manage|scan through|sample|singleshot);
+@;				uint8_t (mode|trigger|triggerdelay|samplesize|reportsize|samplerate|watchdog)
+@;				<necessary parameters>
+
+@;	trigger : start scan at same point on each repretition of the waveform
+		- select a value beween 1 and 2048 to pick a starting point for data collection in the circ buff
+
+@;	trigger delay : when time record begins w/ respect to the trigger signal
+		- data collection really starts at trigger + delay
+
+@; sample size : how big the buffer should be
+
+@; report size : how much data is reported back to the end user
+
+@; sample rate : # of samples taken per second (x samples/sec = x Hz)
+
+	.global MoTdevice_Scope_cmd
+	.thumb_func
+MoTdevice_Scope_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;
+
+	ldrb r1,[r0],#1		@; arg1
+	ldrb r2,[r0],#1		@; arg2
+	
+	cmp r1,#0
+	beq manage
+
+	cmp r1,#1
+	beq scan
+	
+	cmp r1,#2
+	beq sample
+	
+	cmp r1,#3
+	beq single
+
+init:
+	bx init_scope
+
+manage:
+	cmp r2,#0
+	beq modify_mode
+
+	cmp r2,#1
+	beq modify_trigger
+
+	cmp r2,#2
+	beq modify_trigger_delay
+
+	cmp r2,#3
+	bxeq modify_sample_size
+
+	cmp r2,#4
+	beq modify_report_size
+
+	cmp r2,#5
+	beq modify_sample_rate
+
+scan:
+
+sample:
+
+single:
+
+end:
+	pop {r7,pc}					@;Returns to Cmd_Handler
+
+/*
+	XYZ_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+*/
+
+
+
+

@@ -1,0 +1,647 @@
+21:12:04 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+make: *** No rule to make target 'clean'.  Stop.
+21:12:06 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT_system/MoT_CmdHandler16.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_CmdHandler16.d" -MT"Src/MoT_system/MoT_CmdHandler16.o" -o "Src/MoT_system/MoT_CmdHandler16.o" "../Src/MoT_system/MoT_CmdHandler16.S"
+Finished building: ../Src/MoT_system/MoT_CmdHandler16.S
+ 
+Building file: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.d" -MT"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" -o "Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" "../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S"
+Finished building: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+ 
+Building file: ../Src/MoT_system/MoT_admin_cfg01.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_admin_cfg01.d" -MT"Src/MoT_system/MoT_admin_cfg01.o" -o "Src/MoT_system/MoT_admin_cfg01.o" "../Src/MoT_system/MoT_admin_cfg01.S"
+Finished building: ../Src/MoT_system/MoT_admin_cfg01.S
+ 
+Building file: ../Src/MoT_system/MoT_ringbufbuf03.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_ringbufbuf03.d" -MT"Src/MoT_system/MoT_ringbufbuf03.o" -o "Src/MoT_system/MoT_ringbufbuf03.o" "../Src/MoT_system/MoT_ringbufbuf03.S"
+Finished building: ../Src/MoT_system/MoT_ringbufbuf03.S
+ 
+Building file: ../Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.d" -MT"Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o" -o "Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.o" "../Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.S"
+Finished building: ../Src/LL_device/igrnore_this_stm32L476xx_HCLK48MHz_01.S
+ 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:144: Error: undefined symbol b10 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: undefined symbol b00 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:12 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:144: Error: undefined symbol b10 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:16 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:144: Error: backward ref to unknown label "10:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:22 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:144: Error: backward ref to unknown label "10:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:25 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:144: Error: undefined symbol b10 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:32 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:153: Error: undefined symbol b0 used as an immediate value
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:12:40 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:161: Error: backward ref to unknown label "0:"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:157: Error: undefined symbol b11 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:13:42 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:166: Error: bad instruction `afrl and afrh'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+21:14:53 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_GreenLED.d" -MT"Src/LL_device/stm32L476Disco_GreenLED.o" -o "Src/LL_device/stm32L476Disco_GreenLED.o" "../Src/LL_device/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_RedLED.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_RedLED.d" -MT"Src/LL_device/stm32L476Disco_RedLED.o" -o "Src/LL_device/stm32L476Disco_RedLED.o" "../Src/LL_device/stm32L476Disco_RedLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_RedLED.S
+ 
+Building file: ../Src/MoTdevice_GreenLED08.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED08.d" -MT"Src/MoTdevice_GreenLED08.o" -o "Src/MoTdevice_GreenLED08.o" "../Src/MoTdevice_GreenLED08.S"
+../Src/MoTdevice_GreenLED08.S:22:11: fatal error: MoT_system\MoT_definitions.h: No such file or directory
+  #include "MoT_system\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_GreenLED08.o] Error 1
+21:17:29 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_GreenLED08.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED08.d" -MT"Src/MoTdevice_GreenLED08.o" -o "Src/MoTdevice_GreenLED08.o" "../Src/MoTdevice_GreenLED08.S"
+Finished building: ../Src/MoTdevice_GreenLED08.S
+ 
+Building file: ../Src/MoTdevice_TIM2PWM02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_TIM2PWM02.d" -MT"Src/MoTdevice_TIM2PWM02.o" -o "Src/MoTdevice_TIM2PWM02.o" "../Src/MoTdevice_TIM2PWM02.S"
+../Src/MoTdevice_TIM2PWM02.S:9:11: fatal error: MoT_system\MoT_definitions.h: No such file or directory
+  #include "MoT_system\MoT_definitions.h"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:34: Src/MoTdevice_TIM2PWM02.o] Error 1
+21:17:34 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/MoTdevice_TIM2PWM02.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_TIM2PWM02.d" -MT"Src/MoTdevice_TIM2PWM02.o" -o "Src/MoTdevice_TIM2PWM02.o" "../Src/MoTdevice_TIM2PWM02.S"
+Finished building: ../Src/MoTdevice_TIM2PWM02.S
+ 
+Building file: ../Src/main09.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main09.d" -MT"Src/main09.o" -o "Src/main09.o" "../Src/main09.c"
+Finished building: ../Src/main09.c
+ 
+Building file: ../Src/misc_utilities.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/misc_utilities.d" -MT"Src/misc_utilities.o" -o "Src/misc_utilities.o" "../Src/misc_utilities.S"
+Finished building: ../Src/misc_utilities.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3960	   2568	   4200	  10728	   29e8	DiscoBlinkyMoT.elf
+ 
+11:18:19 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:187: Error: bad expression -- `mov r1,=MoTdevice_TIM2PWM_pulsewidth'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:207: Error: bad expression -- `mov r1,=MoTdevice_TIM2PWM_pulsewidth'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+11:18:28 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3960	   2568	   4200	  10728	   29e8	DiscoBlinkyMoT.elf
+ 
+15:54:13 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3976	   2568	   4200	  10744	   29f8	DiscoBlinkyMoT.elf
+ 
+19:52:02 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3976	   2568	   4200	  10744	   29f8	DiscoBlinkyMoT.elf
+ 
+20:11:41 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3976	   2568	   4200	  10744	   29f8	DiscoBlinkyMoT.elf
+ 
+20:16:54 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Internal error in fb_label_name at /tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/src/binutils/gas/symbols.c:1873.
+Please report this bug.
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:17:00 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: undefined symbol b1111111111111101 used as an immediate value
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:17:30 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: garbage following instruction -- `orr r1,#2_1111111111111101'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:17:32 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: garbage following instruction -- `orr r1,2_1111111111111101'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:18:30 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: invalid constant (fffd) after fixup
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:18:35 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: invalid constant (fffd) after fixup
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:18:38 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: bad expression -- `orr r1,=#0xFFFD'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:18:42 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: invalid constant (fffd) after fixup
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:18:59 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:250: Error: offset out of range
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:19:03 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3992	   2568	   4200	  10760	   2a08	DiscoBlinkyMoT.elf
+ 
+20:19:17 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3992	   2568	   4200	  10760	   2a08	DiscoBlinkyMoT.elf
+ 
+20:20:25 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:256: Error: ARM register expected -- `cmp'
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:188: Error: offset out of range
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:208: Error: offset out of range
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:20:47 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:256: Error: ARM register expected -- `cmp'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:21:32 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:257: Error: ARM register expected -- `cmp'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:22:18 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4008	   2568	   4200	  10776	   2a18	DiscoBlinkyMoT.elf
+ 
+20:23:43 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3976	   2568	   4200	  10744	   29f8	DiscoBlinkyMoT.elf
+ 
+20:25:35 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3976	   2568	   4200	  10744	   29f8	DiscoBlinkyMoT.elf
+ 
+20:25:45 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for 'all'.
+20:34:05 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S: Assembler messages:
+../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S:184: Error: ']' expected -- `ldr r1,[r3.#PSC]'
+make: *** [Src/LL_device/subdir.mk:30: Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o] Error 1
+20:34:19 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3984	   2568	   4200	  10752	   2a00	DiscoBlinkyMoT.elf
+ 
+20:34:58 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3984	   2568	   4200	  10752	   2a00	DiscoBlinkyMoT.elf
+ 
+20:35:11 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3984	   2568	   4200	  10752	   2a00	DiscoBlinkyMoT.elf
+ 
+20:35:15 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3984	   2568	   4200	  10752	   2a00	DiscoBlinkyMoT.elf
+ 
+20:36:00 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3984	   2568	   4200	  10752	   2a00	DiscoBlinkyMoT.elf
+ 
+23:44:12 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.d" -MT"Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" -o "Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.o" "../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S"
+Finished building: ../Src/LL_device/obfuscated_stm32fL476xx_TIM2_demo05.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW07/Problem2/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4000	   2568	   4200	  10768	   2a10	DiscoBlinkyMoT.elf
+ 

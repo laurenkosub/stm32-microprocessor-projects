@@ -1,6 +1,23 @@
-15:58:17 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+18:24:20 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../Src/main09.c
+Invoking: MCU GCC Compiler
+/home/lkosub/ENEE440/LaurenKosub_400F19_HW08/Problem1/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"/home/lkosub/ENEE440/LaurenKosub_400F19_HW08/Problem1/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main09.d" -MT"Src/main09.o" -o "Src/main09.o" "../Src/main09.c"
+Finished building: ../Src/main09.c
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -T"/home/lkosub/ENEE440/LaurenKosub_400F19_HW08/Problem1/16STM32L476_DiscoBlinkyMoT_for_HW07_ws/DiscoBlinkyMoT/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"   -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2736	   2544	   1536	   6816	   1aa0	DiscoBlinkyMoT.elf
+ 
 
-15:58:17 Build Finished (took 215ms)
+18:24:20 Build Finished (took 511ms)
 

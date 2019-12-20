@@ -1,0 +1,393 @@
+22:02:10 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+make: *** No rule to make target `clean'.  Stop.
+22:02:12 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT_system/MoT_AdminCfg02.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_AdminCfg02.d" -MT"Src/MoT_system/MoT_AdminCfg02.o" -o "Src/MoT_system/MoT_AdminCfg02.o" "../Src/MoT_system/MoT_AdminCfg02.S"
+Finished building: ../Src/MoT_system/MoT_AdminCfg02.S
+ 
+Building file: ../Src/MoT_system/MoT_CmdHandler16.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_CmdHandler16.d" -MT"Src/MoT_system/MoT_CmdHandler16.o" -o "Src/MoT_system/MoT_CmdHandler16.o" "../Src/MoT_system/MoT_CmdHandler16.S"
+Finished building: ../Src/MoT_system/MoT_CmdHandler16.S
+ 
+Building file: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.d" -MT"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" -o "Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" "../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S"
+Finished building: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+ 
+Building file: ../Src/MoT_system/MoT_ringbufbuf03.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_ringbufbuf03.d" -MT"Src/MoT_system/MoT_ringbufbuf03.o" -o "Src/MoT_system/MoT_ringbufbuf03.o" "../Src/MoT_system/MoT_ringbufbuf03.S"
+Finished building: ../Src/MoT_system/MoT_ringbufbuf03.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_GreenLED.d" -MT"Src/LL_device/stm32L476Disco_GreenLED.o" -o "Src/LL_device/stm32L476Disco_GreenLED.o" "../Src/LL_device/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_RedLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_RedLED.d" -MT"Src/LL_device/stm32L476Disco_RedLED.o" -o "Src/LL_device/stm32L476Disco_RedLED.o" "../Src/LL_device/stm32L476Disco_RedLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_RedLED.S
+ 
+Building file: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32fL476xx_TIM5_demo01.d" -MT"Src/LL_device/stm32fL476xx_TIM5_demo01.o" -o "Src/LL_device/stm32fL476xx_TIM5_demo01.o" "../Src/LL_device/stm32fL476xx_TIM5_demo01.S"
+Finished building: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+ 
+Building file: ../Src/MoTdevice_GreenLED08.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED08.d" -MT"Src/MoTdevice_GreenLED08.o" -o "Src/MoTdevice_GreenLED08.o" "../Src/MoTdevice_GreenLED08.S"
+Finished building: ../Src/MoTdevice_GreenLED08.S
+ 
+Building file: ../Src/main10.c
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main10.d" -MT"Src/main10.o" -o "Src/main10.o" "../Src/main10.c"
+../Src/main10.c: In function 'main':
+../Src/main10.c:111:15: warning: unused variable 'pTIM5' [-Wunused-variable]
+  TIM_TypeDef *pTIM5  = (TIM_TypeDef *) 0x40000C00;
+               ^
+../Src/main10.c:110:15: warning: unused variable 'pTIM2' [-Wunused-variable]
+  TIM_TypeDef *pTIM2  = (TIM_TypeDef *) 0x40000000;
+               ^
+../Src/main10.c:109:22: warning: unused variable 'pADC_Common' [-Wunused-variable]
+  ADC_Common_TypeDef *pADC_Common = (ADC_Common_TypeDef *) 0x50040300;
+                      ^
+../Src/main10.c:108:15: warning: unused variable 'pADC1' [-Wunused-variable]
+  ADC_TypeDef *pADC1  = (ADC_TypeDef *) 0x50040000;
+               ^
+../Src/main10.c:105:12: warning: variable 'DR' set but not used [-Wunused-but-set-variable]
+   uint32_t DR;           /*!< ADC group regular data register,               Address offset: 0x40 */
+            ^
+Finished building: ../Src/main10.c
+ 
+Building file: ../Src/misc_utilities.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/misc_utilities.d" -MT"Src/misc_utilities.o" -o "Src/misc_utilities.o" "../Src/misc_utilities.S"
+Finished building: ../Src/misc_utilities.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -L"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Lib" -T"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"  -lADC1_TIM2T_48MHz -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4592	  12864	   4200	  21656	   5498	DiscoBlinkyMoT.elf
+ 
+22:02:43 **** Programming project DiscoBlinkyMoT on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.15.0.201707031232\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.2840806701672973922.cfg -s "F:\\_umd\\_2019-09-01\\ENEE440_F19\\_work\\1112_batMake_libTIM2_ADC1\\HW09_DiscoBlinkyMoT_ws\\DiscoBlinkyMoT" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.1.0.201707031232\\resources\\openocd\\st_scripts" -c "program Debug/DiscoBlinkyMoT.elf verify exit" 
+Open On-Chip Debugger 0.10.0-dev-00302-gc211ca5-dirty (2017-07-03-10:41)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+padded zone erase set to 1
+adapter speed: 480 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 480 kHz
+Info : STLINK v2 JTAG v25 API v2 M v14 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.212574
+Info : STM32L476VGTx.cpu: hardware has 6 breakpoints, 4 watchpoints
+adapter speed: 480 kHz
+STM32L476VGTx.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011a0 msp: 0x20018000
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : Device id = 0x10076415
+Info : STM32L4xx flash size is 1024kb, base address is 0x8000000
+Info : Erase the padded zone before the write
+Error: Whole bank access must start at beginning of bank.
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x21000000 pc: 0x20000068 msp: 0x20018000
+wrote 18432 bytes from file Debug/DiscoBlinkyMoT.elf in 0.640037s (28.123 KiB/s)
+** Programming Finished **
+** Verify Started **
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 17456 bytes in 0.804046s (21.201 KiB/s)
+** Verified OK **
+shutdown command invoked
+22:03:05 **** Programming project DiscoBlinkyMoT on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.15.0.201707031232\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.6327554791837523657.cfg -s "F:\\_umd\\_2019-09-01\\ENEE440_F19\\_work\\1112_batMake_libTIM2_ADC1\\HW09_DiscoBlinkyMoT_ws\\DiscoBlinkyMoT" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.1.0.201707031232\\resources\\openocd\\st_scripts" -c "program Debug/DiscoBlinkyMoT.elf verify exit" 
+Open On-Chip Debugger 0.10.0-dev-00302-gc211ca5-dirty (2017-07-03-10:41)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+padded zone erase set to 1
+adapter speed: 480 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 480 kHz
+Info : STLINK v2 JTAG v25 API v2 M v14 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.211002
+Info : STM32L476VGTx.cpu: hardware has 6 breakpoints, 4 watchpoints
+adapter speed: 480 kHz
+STM32L476VGTx.cpu: target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011a0 msp: 0x20018000
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : Device id = 0x10076415
+Info : STM32L4xx flash size is 1024kb, base address is 0x8000000
+Info : Erase the padded zone before the write
+Error: Whole bank access must start at beginning of bank.
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x21000000 pc: 0x20000068 msp: 0x20018000
+wrote 18432 bytes from file Debug/DiscoBlinkyMoT.elf in 0.630036s (28.570 KiB/s)
+** Programming Finished **
+** Verify Started **
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+STM32L476VGTx.cpu: target state: halted
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20018000
+verified 17456 bytes in 0.632036s (26.971 KiB/s)
+** Verified OK **
+shutdown command invoked
+22:05:01 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+rm -rf *
+ 
+22:05:05 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT_system/MoT_AdminCfg02.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_AdminCfg02.d" -MT"Src/MoT_system/MoT_AdminCfg02.o" -o "Src/MoT_system/MoT_AdminCfg02.o" "../Src/MoT_system/MoT_AdminCfg02.S"
+Finished building: ../Src/MoT_system/MoT_AdminCfg02.S
+ 
+Building file: ../Src/MoT_system/MoT_CmdHandler16.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_CmdHandler16.d" -MT"Src/MoT_system/MoT_CmdHandler16.o" -o "Src/MoT_system/MoT_CmdHandler16.o" "../Src/MoT_system/MoT_CmdHandler16.S"
+Finished building: ../Src/MoT_system/MoT_CmdHandler16.S
+ 
+Building file: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.d" -MT"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" -o "Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" "../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S"
+Finished building: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+ 
+Building file: ../Src/MoT_system/MoT_ringbufbuf03.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_ringbufbuf03.d" -MT"Src/MoT_system/MoT_ringbufbuf03.o" -o "Src/MoT_system/MoT_ringbufbuf03.o" "../Src/MoT_system/MoT_ringbufbuf03.S"
+Finished building: ../Src/MoT_system/MoT_ringbufbuf03.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_GreenLED.d" -MT"Src/LL_device/stm32L476Disco_GreenLED.o" -o "Src/LL_device/stm32L476Disco_GreenLED.o" "../Src/LL_device/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_RedLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_RedLED.d" -MT"Src/LL_device/stm32L476Disco_RedLED.o" -o "Src/LL_device/stm32L476Disco_RedLED.o" "../Src/LL_device/stm32L476Disco_RedLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_RedLED.S
+ 
+Building file: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32fL476xx_TIM5_demo01.d" -MT"Src/LL_device/stm32fL476xx_TIM5_demo01.o" -o "Src/LL_device/stm32fL476xx_TIM5_demo01.o" "../Src/LL_device/stm32fL476xx_TIM5_demo01.S"
+Finished building: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+ 
+Building file: ../Src/MoTdevice_GreenLED08.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED08.d" -MT"Src/MoTdevice_GreenLED08.o" -o "Src/MoTdevice_GreenLED08.o" "../Src/MoTdevice_GreenLED08.S"
+Finished building: ../Src/MoTdevice_GreenLED08.S
+ 
+Building file: ../Src/main10.c
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main10.d" -MT"Src/main10.o" -o "Src/main10.o" "../Src/main10.c"
+../Src/main10.c: In function 'main':
+../Src/main10.c:111:15: warning: unused variable 'pTIM5' [-Wunused-variable]
+  TIM_TypeDef *pTIM5  = (TIM_TypeDef *) 0x40000C00;
+               ^
+../Src/main10.c:110:15: warning: unused variable 'pTIM2' [-Wunused-variable]
+  TIM_TypeDef *pTIM2  = (TIM_TypeDef *) 0x40000000;
+               ^
+../Src/main10.c:109:22: warning: unused variable 'pADC_Common' [-Wunused-variable]
+  ADC_Common_TypeDef *pADC_Common = (ADC_Common_TypeDef *) 0x50040300;
+                      ^
+../Src/main10.c:108:15: warning: unused variable 'pADC1' [-Wunused-variable]
+  ADC_TypeDef *pADC1  = (ADC_TypeDef *) 0x50040000;
+               ^
+../Src/main10.c:105:12: warning: variable 'DR' set but not used [-Wunused-but-set-variable]
+   uint32_t DR;           /*!< ADC group regular data register,               Address offset: 0x40 */
+            ^
+Finished building: ../Src/main10.c
+ 
+Building file: ../Src/misc_utilities.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/misc_utilities.d" -MT"Src/misc_utilities.o" -o "Src/misc_utilities.o" "../Src/misc_utilities.S"
+Finished building: ../Src/misc_utilities.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -L"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Lib" -T"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"  -lADC1_TIM2T_48MHz -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4592	  12864	   4200	  21656	   5498	DiscoBlinkyMoT.elf
+ 
+22:05:25 **** Incremental Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+make: Nothing to be done for `all'.
+22:06:41 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+rm -rf *
+ 
+22:06:42 **** Build of configuration Debug for project DiscoBlinkyMoT ****
+make all 
+Building file: ../startup/startup_stm32l476xx.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/startup_stm32l476xx.d" -MT"startup/startup_stm32l476xx.o" -o "startup/startup_stm32l476xx.o" "../startup/startup_stm32l476xx.S"
+Finished building: ../startup/startup_stm32l476xx.S
+ 
+Building file: ../Src/MoT_system/MoT_AdminCfg02.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_AdminCfg02.d" -MT"Src/MoT_system/MoT_AdminCfg02.o" -o "Src/MoT_system/MoT_AdminCfg02.o" "../Src/MoT_system/MoT_AdminCfg02.S"
+Finished building: ../Src/MoT_system/MoT_AdminCfg02.S
+ 
+Building file: ../Src/MoT_system/MoT_CmdHandler16.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_CmdHandler16.d" -MT"Src/MoT_system/MoT_CmdHandler16.o" -o "Src/MoT_system/MoT_CmdHandler16.o" "../Src/MoT_system/MoT_CmdHandler16.S"
+Finished building: ../Src/MoT_system/MoT_CmdHandler16.S
+ 
+Building file: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.d" -MT"Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" -o "Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o" "../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S"
+Finished building: ../Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.S
+ 
+Building file: ../Src/MoT_system/MoT_ringbufbuf03.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoT_system/MoT_ringbufbuf03.d" -MT"Src/MoT_system/MoT_ringbufbuf03.o" -o "Src/MoT_system/MoT_ringbufbuf03.o" "../Src/MoT_system/MoT_ringbufbuf03.S"
+Finished building: ../Src/MoT_system/MoT_ringbufbuf03.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_GreenLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_GreenLED.d" -MT"Src/LL_device/stm32L476Disco_GreenLED.o" -o "Src/LL_device/stm32L476Disco_GreenLED.o" "../Src/LL_device/stm32L476Disco_GreenLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_GreenLED.S
+ 
+Building file: ../Src/LL_device/stm32L476Disco_RedLED.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32L476Disco_RedLED.d" -MT"Src/LL_device/stm32L476Disco_RedLED.o" -o "Src/LL_device/stm32L476Disco_RedLED.o" "../Src/LL_device/stm32L476Disco_RedLED.S"
+Finished building: ../Src/LL_device/stm32L476Disco_RedLED.S
+ 
+Building file: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/LL_device/stm32fL476xx_TIM5_demo01.d" -MT"Src/LL_device/stm32fL476xx_TIM5_demo01.o" -o "Src/LL_device/stm32fL476xx_TIM5_demo01.o" "../Src/LL_device/stm32fL476xx_TIM5_demo01.S"
+Finished building: ../Src/LL_device/stm32fL476xx_TIM5_demo01.S
+ 
+Building file: ../Src/MoTdevice_GreenLED08.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/MoTdevice_GreenLED08.d" -MT"Src/MoTdevice_GreenLED08.o" -o "Src/MoTdevice_GreenLED08.o" "../Src/MoTdevice_GreenLED08.S"
+Finished building: ../Src/MoTdevice_GreenLED08.S
+ 
+Building file: ../Src/main10.c
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main10.d" -MT"Src/main10.o" -o "Src/main10.o" "../Src/main10.c"
+../Src/main10.c: In function 'main':
+../Src/main10.c:111:15: warning: unused variable 'pTIM5' [-Wunused-variable]
+  TIM_TypeDef *pTIM5  = (TIM_TypeDef *) 0x40000C00;
+               ^
+../Src/main10.c:110:15: warning: unused variable 'pTIM2' [-Wunused-variable]
+  TIM_TypeDef *pTIM2  = (TIM_TypeDef *) 0x40000000;
+               ^
+../Src/main10.c:109:22: warning: unused variable 'pADC_Common' [-Wunused-variable]
+  ADC_Common_TypeDef *pADC_Common = (ADC_Common_TypeDef *) 0x50040300;
+                      ^
+../Src/main10.c:108:15: warning: unused variable 'pADC1' [-Wunused-variable]
+  ADC_TypeDef *pADC1  = (ADC_TypeDef *) 0x50040000;
+               ^
+../Src/main10.c:105:12: warning: variable 'DR' set but not used [-Wunused-but-set-variable]
+   uint32_t DR;           /*!< ADC group regular data register,               Address offset: 0x40 */
+            ^
+Finished building: ../Src/main10.c
+ 
+Building file: ../Src/misc_utilities.S
+Invoking: MCU GCC Compiler
+F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32L476VGTx -DSTM32L4 -DSTM32 -DDEBUG -I"F:/_umd/_2019-09-01/ENEE440_F19/_work/1112_batMake_libTIM2_ADC1/HW09_DiscoBlinkyMoT_ws/DiscoBlinkyMoT/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/misc_utilities.d" -MT"Src/misc_utilities.o" -o "Src/misc_utilities.o" "../Src/misc_utilities.S"
+Finished building: ../Src/misc_utilities.S
+ 
+Building target: DiscoBlinkyMoT.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostartfiles -nodefaultlibs -nostdlib -L"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\Lib" -T"F:\_umd\_2019-09-01\ENEE440_F19\_work\1112_batMake_libTIM2_ADC1\HW09_DiscoBlinkyMoT_ws\DiscoBlinkyMoT\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "DiscoBlinkyMoT.elf" @"objects.list"  -lADC1_TIM2T_48MHz -lm
+Finished building target: DiscoBlinkyMoT.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "DiscoBlinkyMoT.elf" "DiscoBlinkyMoT.bin"
+arm-none-eabi-size "DiscoBlinkyMoT.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4592	  12864	   4200	  21656	   5498	DiscoBlinkyMoT.elf
+ 
+22:06:52 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+rm -rf *
+ 
+22:13:56 **** Clean-only build of configuration Debug for project DiscoBlinkyMoT ****
+make clean 
+make: *** No rule to make target `clean'.  Stop.

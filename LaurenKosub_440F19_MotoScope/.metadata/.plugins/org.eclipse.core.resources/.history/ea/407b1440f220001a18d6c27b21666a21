@@ -1,0 +1,409 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line.
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+	.macro	CONFIG32 structbase, regoffset, bitoffset, bitmask, bitval
+		MOV_imm32 r3,(\structbase)
+		ldr r2,[r3,#(\regoffset)]
+		bic r2,#((\bitmask)<<(\bitoffset))
+		orr r2,#((\bitval)<<(\bitoffset))
+		str r2,[r3,#(\regoffset)]
+	.endm
+
+	// TIM 5 Stuff
+	.equ 	TIM5_BASE,			0x40000C00	@; origin of TIM5 control register array
+	.equ	TIMx_ARRoffset,		0x2C		@;max count; 16 bits for TIM3,-4,-6,-7; 32 bits for TIM2,-5
+	.equ	TIMx_EGRoffset,		0x14		@;event generation register (write only)
+	.equ	TIMx_CR1offset,		0x00		@;control register (read/write)
+
+	.equ	RCC_BASE,0x40021000 	@;origin of RCC register struct (pg 78 of the manual)
+	.equ 	RCC_AHB2RST,0x4C		@;peripheral clock reset register for ADC
+	.equ	ADCRST,13				@;ADC reset bit location in RCC_AHB2RST
+	.equ 	RCC_AHB2ENR,0x2C		@;peripheral clock enable register for GPIOA and ADC(pg 280 of the manual)
+	.equ	GPIOAEN,0				@;GPIOA peripheral clock enable bit (pg 280 of the manual)
+	.equ 	ADCEN,13				@;ADC peripheral clock enable bit
+
+	@; offsets
+	.equ	AHB1ENR, 0x48 		@; RCC AHB1 peripherial clock enable register
+	.equ	AHB1RSTR, 0x28		@; RCC AHB1 reset register (DMA1 rst)
+
+	.equ 	CCMR2, 0x1c
+	.equ	CCER, 0x20
+	.equ	EGR, 0x14
+	.equ	DIER, 0x0c
+	.equ	CCR3, 0x3c
+
+	@; DMA
+	.equ 	DMA1_BASE, 0x4002000
+	.equ 	DMA_CPAR1, 0x10
+	.equ 	DMA_CMAR1, 0x14
+	.equ 	DMA_IFCR, 0x04
+	.equ	DMA_ISR, 0x0
+	.equ 	DMA_CNDTR1, 0x0c
+	.equ 	DMA_CCR1, 0x08
+	.equ 	DMA_CSELR, 0xa8
+
+	@ TIM2
+	.equ 	TIM2_BASE,			(0x40000000)	@; origin of TIM2 control register array
+	@; offsets to registers in TIM2 control array
+	.equ	CR1,	0x00	@;	  __IO uint32_t CR1;              TIM control register 1,              Address offset: 0x00
+	.equ	CR2,	0x04	@;	  __IO uint32_t CR2;              TIM control register 2,              Address offset: 0x04
+	.equ	SMCR,	0x08	@;	  __IO uint32_t SMCR;             TIM slave mode control register,     Address offset: 0x08
+	.equ	DIER,	0x0C	@;	  __IO uint32_t DIER;             TIM DMA/interrupt enable register,   Address offset: 0x0C
+	.equ	SR,		0x10	@;	  __IO uint32_t SR;               TIM status register,                 Address offset: 0x10
+	.equ	EGR,	0x14	@;	  __IO uint32_t EGR;              TIM event generation register,       Address offset: 0x14
+	.equ	CCMR1,	0x18	@;	  __IO uint32_t CCMR1;            TIM capture/compare mode register 1, Address offset: 0x18
+	.equ	CCMR2,	0x1C	@;	  __IO uint32_t CCMR2;            TIM capture/compare mode register 2, Address offset: 0x1C
+	.equ	CCER,	0x20	@;	  __IO uint32_t CCER;             TIM capture/compare enable register, Address offset: 0x20
+	.equ	CNT,	0x24	@;	  __IO uint32_t CNT;              TIM counter register,                Address offset: 0x24
+	.equ	PSC,	0x28	@;	  __IO uint32_t PSC;              TIM prescaler,                       Address offset: 0x28
+	.equ	ARR,	0x2C	@;	  __IO uint32_t ARR;              TIM auto-reload register,            Address offset: 0x2C
+	.equ	RCR,	0x30	@;	  __IO uint32_t RCR;              TIM repetition counter register,     Address offset: 0x30
+	.equ	CCR1,	0x34	@;	  __IO uint32_t CCR1;             TIM capture/compare register 1,      Address offset: 0x34
+	.equ	CCR2,	0x38	@;	  __IO uint32_t CCR2;             TIM capture/compare register 2,      Address offset: 0x38
+	.equ	CCR3,	0x3C	@;	  __IO uint32_t CCR3;             TIM capture/compare register 3,      Address offset: 0x3C
+	.equ	CCR4,	0x40	@;	  __IO uint32_t CCR4;             TIM capture/compare register 4,      Address offset: 0x40
+	.equ	BDTR,	0x44	@;	  __IO uint32_t BDTR;             TIM break and dead-time register,    Address offset: 0x44
+	.equ	DCR,	0x48	@;	  __IO uint32_t DCR;              TIM DMA control register,            Address offset: 0x48
+	.equ	DMAR,	0x4C	@;	  __IO uint32_t DMAR;             TIM DMA address for full transfer,   Address offset: 0x4C
+	.equ	OR,		0x50	@;	  __IO uint32_t OR;               TIM option register,                 Address offset: 0x50
+	.equ	CCMR3,	0x54	@;	  __IO uint32_t CCMR3;            TIM capture/compare mode register 3,      Address offset: 0x54
+	.equ	CCR5,	0x58	@;	  __IO uint32_t CCR5;             TIM capture/compare mode register5,       Address offset: 0x58
+	.equ	CCR6,	0x5C	@;	  __IO uint32_t CCR6;             TIM capture/compare mode register6,       Address offset: 0x5C
+	.equ	AF1,	0x60	@;	  __IO uint32_t AF1;              TIM Alternate function option register 1, Address offset: 0x60
+	.equ	AF2,	0x64	@;	  __IO uint32_t AF2;              TIM Alternate function option register 2, Address offset: 0x64
+
+
+	@; ADC definitions from stm32L476xx.h and RM0351
+	.equ	ADC, 						0x50040000
+	.equ	ADC1_BASE, 						0x50040000	@;Master ADC1
+	.equ	ADC2, 						0x50040100	@;Slave ADC2
+	.equ	ADC3, 						0x50040200 	@;Single ADC3
+	.equ	ADC123, 					0x50040300	@;ADCs common registers
+
+	.equ	ADC_ISR,              	 	0x00
+	.equ	ADC_IER,              	 	0x04
+	.equ	ADC_CR,               	 	0x08
+	.equ	ADC_CFGR,             	 	0x0C
+	.equ	ADC_CFGR2,            	 	0x10
+	.equ	ADC_SMPR1,            	 	0x14
+	.equ	ADC_SMPR2,            	 	0x18
+	.equ	ADC_RESERVED1,        	 	0x0C
+	.equ	ADC_TR1,              	 	0x20
+	.equ	ADC_TR2,              	 	0x24
+	.equ	ADC_TR3,              	 	0x28
+	.equ	ADC_RESERVED2,        	 	0x2C
+	.equ	ADC_SQR1,             	 	0x30
+	.equ	ADC_SQR2,             	 	0x34
+	.equ	ADC_SQR3,             	 	0x38
+	.equ	ADC_SQR4,             	 	0x3C
+	.equ	ADC_DR,               	 	0x40
+	.equ	ADC_RESERVED3,        	 	0x44
+	.equ	ADC_RESERVED4,        	 	0x48
+	.equ	ADC_JSQR,             	 	0x4C
+	.equ	ADC_RESERVED5,     	 		0x50
+	.equ	ADC_OFR1,             	 	0x60
+	.equ	ADC_OFR2,             	 	0x64
+	.equ	ADC_OFR3,             	 	0x68
+	.equ	ADC_OFR4,             	 	0x6C
+	.equ	ADC_RESERVED6,     	 		0x70
+	.equ	ADC_JDR1,             	 	0x80
+	.equ	ADC_JDR2,             	 	0x84
+	.equ	ADC_JDR3,             	 	0x88
+	.equ	ADC_JDR4,             	 	0x8C
+	.equ	ADC_RESERVED7,     	 		0x90
+	.equ	ADC_AWD2CR,           	 	0xA0
+	.equ	ADC_AWD3CR,           	 	0xA4
+	.equ	ADC_RESERVED8,        	 	0xA8
+	.equ	ADC_RESERVED9,        	 	0xAC
+	.equ	ADC_DIFSEL,           	 	0xB0
+	.equ	ADC_CALFACT,          	 	0xB4
+
+@;-------------------------- data
+	//this device has no data
+
+	@;-------------------------- code
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+@;------ MoToScope Device
+@; arguments: 	uint8_t function code;
+@;				uint8_t (init|manage|scan through|sample|singleshot);
+@;				uint8_t (mode|trigger|triggerdelay|samplesize|reportsize|samplerate|watchdog)
+@;				<necessary parameters>
+
+@;	trigger : start scan at same point on each repretition of the waveform
+@;		- select a value beween 1 and 2048 to pick a starting point for data collection in the circ buff
+
+@;	trigger delay : when time record begins w/ respect to the trigger signal
+@;		- data collection really starts at trigger + delay
+
+@; sample size : how big the buffer should be
+
+@; report size : how much data is reported back to the end user
+
+@; sample rate : # of samples taken per second (x samples/sec = x Hz)
+
+	.global MoTdevice_Scope_cmd
+	.thumb_func
+MoTdevice_Scope_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	and r1,0x03			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)
+MoTdevice_cmd_table:
+	.byte (init_scope - MoTdevice_cmd_table)/2	  	@;initialize hardware and install task on task list
+	.byte (modify_scope - MoTdevice_cmd_table)/2	@; modify a configurement in the hardware
+	.byte (scan_mode - MoTdevice_cmd_table)/2	  	@; scan mode : scan through the data
+	.byte (repeat_mode - MoTdevice_cmd_table)/2	@; continuously read data
+	.byte (single_mode - MoTdevice_cmd_table)/2		@; read only one iteration of the data
+	.align 1 @;!!important to do this where odd-byte alignment is possible
+
+
+	.global modify_scope
+	.thumb_func
+modify_scope:
+	cmp r2,#0
+	it eq
+	bleq modify_mode
+
+	cmp r2,#1
+	it	eq
+	bleq modify_trigger
+
+	cmp r2,#2
+	it	eq
+	bleq modify_trigger_delay
+
+	cmp r2,#3
+	it	eq
+	bleq modify_sample_size
+
+	cmp r2,#4
+	it	eq
+	bleq modify_report_size
+
+	cmp r2,#5
+	it	eq
+	bleq modify_sample_rate
+
+	pop {r7,pc}					@;Returns to Cmd_Handler
+
+/*
+	XYZ_msg:
+	.ascii "0\n\r"
+	.equ Green_LED_OFF_msglen,( . - Green_LED_OFF_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+*/
+
+@; mode = continuous capture, trigger = pos 0, trigger delay = 0, report size = 2048
+@; sample rate = 48MHz clock
+	.global init_scope
+	.thumb_func
+init_scope: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}
+	bl general_init
+	pop {r7,pc}
+
+
+	.global modify_mode
+	.thumb_func
+modify_mode:
+	push {r7,lr}		@; change mode
+	ldr r2,[r0],#1
+	cmp r2, #1
+	it eq
+	bleq scan_mode
+
+	cmp r2, #2
+	it eq
+	bleq repeat_mode
+
+	cmp r2, #3
+	it eq
+	bleq single_mode
+
+	pop {r7,pc}
+
+
+	.global scan_mode
+	.thumb_func
+scan_mode:
+	@; change trigger value
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	and r1,0x02			@;limit range of function codes to 0-3 for safety (error-checking would be nice but isn't done here)
+scan_mode_table:
+	.byte (scan_mode_start - scan_mode_table)/2
+	.byte (scan_mode_stop - scan_mode_table)/2
+	.byte (scan_mode_step - MoTdevice_cmd_table)/2
+	.align 1
+
+	.global scan_mode_start
+	.thumb_func
+scan_mode_start:
+	@; start the DMA / ADC1 / TIM2 --------------------
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@; clear
+	pop {r7, pc}
+
+	.global scan_mode_stop
+	.thumb_func
+scan_mode_stop:
+	@; stop the DMA / ADC1 / TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7, pc}
+
+	.global scan_mode_step
+	.thumb_func
+scan_mode_step:
+	@; start the TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; .
+
+	@; monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+	ldr r3,=TIM2_BASE 		@;test UIF flag
+3:	ldr r2,[r3,#SR]			@; ..
+	TST r2,#(1<<1)			@;CC1IF set?
+	beq 3b					@; 	no -- continue waiting
+	bic r2,r2,#(1<<1)		@;	yes -- clear it
+	str r2,[r3,#SR]			@; ..
+
+	@; it has now run for 1 clk cycle, data should be written so stop the clock and wait for another step
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7, pc}
+	// allow clock to run for one cycle then stop and wait to resume
+
+	.global repetative_mode
+	.thumb_func
+repeat_mode:
+	push {r7,lr}		@; change trigger value
+	@;start TIM2 and let it do its job
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+	pop {r7,pc}
+
+	.global single_mode
+	.thumb_func
+single_mode:
+	bl DMA_SINGLESHOT_PA1 // trigger a single shot of data collection via external trigger PA1
+
+/*	@; Approach one was to just use the timer, but I wanted to add additional functionality so i decided
+	@; to use Pa0 instead
+
+	@; start the TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; .
+
+	@; monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+	ldr r3,=TIM2_BASE 		@;test UIF flag
+2:	ldr r2,[r3,#SR]			@; ..
+	TST r2,#(1<<1)			@;CC1IF set?
+	beq 2b					@; 	no -- continue waiting
+	bic r2,r2,#(1<<1)		@;	yes -- clear it
+	str r2,[r3,#SR]			@; ..
+
+	@; it has now run for 1 clk cycle, data should be written so stop the clock and wait for another step
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7,pc}
+	*/
+
+	.global modify_sample_rate
+	.thumb_func
+modify_sample_rate: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@; change trigger value - TIM2 count value
+
+	@;stop TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@;load new timer count into TIM2 ARR
+	ldr r2,[r0],#4				@;---- install new timer count value from command line
+	str r2,[r3,#TIMx_ARRoffset]	@; ..
+	ldr r2,[r3,#TIMx_EGRoffset]	@;set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)				@; ..
+	str r2,[r3,#TIMx_EGRoffset]	@; ..
+
+	@;restart TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7,pc}
+
+	.global modify_trigger
+	.thumb_func
+modify_trigger:
+	@; change trigger value
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	and r1,0x01			@;limit range of function codes to 0-1 for safety (error-checking would be nice but isn't done here)
+modify_trigger_table:
+	.byte (change_trigger_tim2 - modify_trigger_table)/2
+	.byte (change_trigger_pa1 - modify_trigger_table)/2
+	.align 1
+
+
+
+	.global modify_trigger_delay
+	.thumb_func
+modify_trigger_delay: @;Cmd_handler() branches here after identifying a valid command with device ID = 'TriangleWaveGen'
+	push {r7,lr}		@; add trigger_delay to the TIM2BASE
+
+	@;stop TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	@;load new timer count into TIM2 ARR
+	ldr r2,[r0],#4				@;---- install new timer count value from command line
+	ldr r4,[r3,#TIMx_ARRoffset] @; get old value
+	add r2, r4					@; add new value to old value
+	str r2,[r3,#TIMx_ARRoffset]	@; store this updated value
+	ldr r2,[r3,#TIMx_EGRoffset]	@; set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)				@; ..
+	str r2,[r3,#TIMx_EGRoffset]	@; store updated value
+
+	@;restart TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#TIMx_CR1offset] @;resume timer operation
+	orr r2,#(1<<0)				@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#TIMx_CR1offset]	@; ..
+
+	pop {r7,pc}
+
+

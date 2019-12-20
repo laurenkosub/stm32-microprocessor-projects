@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DiscoBlinkyMoT/Src/ADC_config.S&apos; to &apos;MoTdevice_ExamFunctions.S&apos;" description="Rename resource &apos;ADC_config.S&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/ADC_config.S" name="MoTdevice_ExamFunctions.S" stamp="1576501804809" updateReferences="true"/>
+</session>

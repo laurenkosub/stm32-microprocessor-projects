@@ -1,0 +1,275 @@
+@;MoTdevice_TriangleWaveGen01.S 2019-12-07 : single-command no-task no-control-variables device generating triangle waves
+@; This device exists for convenient setting of the TIM2/DAC1 wave generator parameters from the MoT command line. 
+@; Rather than changing DAC parameters in the source code and recompiling for each test, user can interleave commands which
+@; change DAC settings with ADC test commands.
+@;Design:    
+@; This device executes a single command to modify the already-running triangle-wave generator's parameters. It has no tasks 
+@; and no data so the MoT task data and command dispatcher are unnecessary/omitted 
+
+@------------------ constant and definitions
+	#define __ASSEMBLY__
+	#include "MoT_system/MoT_definitions.h"	//various helpful macros
+
+		@; offsets
+	.equ	RCC_BASE,0x40021000 	@;origin of RCC register struct (pg 78 of the manual)
+	.equ	AHB1ENR, 0x48 		@; RCC AHB1 peripherial clock enable register
+	.equ	AHB1RSTR, 0x28		@; RCC AHB1 reset register (DMA1 rst)
+	.equ 	CCMR2, 0x1c
+	.equ	CCER, 0x20
+	.equ	EGR, 0x14
+	.equ	DIER, 0x0c
+	.equ	CCR3, 0x3c
+
+	@; DMA
+	.equ 	DMA1_BASE, 0x4002000
+	.equ 	DMA_CPAR1, 0x10
+	.equ 	DMA_CMAR1, 0x14
+	.equ 	DMA_IFCR, 0x04
+	.equ	DMA_ISR, 0x0
+	.equ 	DMA_CNDTR1, 0x0c
+	.equ 	DMA_CCR1, 0x08
+	.equ 	DMA_CSELR, 0xa8
+
+	@ TIM2
+	.equ 	TIM2_BASE,			(0x40000000)	@; origin of TIM2 control register array
+	@; offsets to registers in TIM2 control array
+	.equ	CR1,	0x00	@;	  __IO uint32_t CR1;              TIM control register 1,              Address offset: 0x00
+	.equ	CR2,	0x04	@;	  __IO uint32_t CR2;              TIM control register 2,              Address offset: 0x04
+	.equ	SMCR,	0x08	@;	  __IO uint32_t SMCR;             TIM slave mode control register,     Address offset: 0x08
+	.equ	DIER,	0x0C	@;	  __IO uint32_t DIER;             TIM DMA/interrupt enable register,   Address offset: 0x0C
+	.equ	SR,		0x10	@;	  __IO uint32_t SR;               TIM status register,                 Address offset: 0x10
+	.equ	EGR,	0x14	@;	  __IO uint32_t EGR;              TIM event generation register,       Address offset: 0x14
+	.equ	CCMR1,	0x18	@;	  __IO uint32_t CCMR1;            TIM capture/compare mode register 1, Address offset: 0x18
+	.equ	CCMR2,	0x1C	@;	  __IO uint32_t CCMR2;            TIM capture/compare mode register 2, Address offset: 0x1C
+	.equ	CCER,	0x20	@;	  __IO uint32_t CCER;             TIM capture/compare enable register, Address offset: 0x20
+	.equ	CNT,	0x24	@;	  __IO uint32_t CNT;              TIM counter register,                Address offset: 0x24
+	.equ	PSC,	0x28	@;	  __IO uint32_t PSC;              TIM prescaler,                       Address offset: 0x28
+	.equ	ARR,	0x2C	@;	  __IO uint32_t ARR;              TIM auto-reload register,            Address offset: 0x2C
+	.equ	RCR,	0x30	@;	  __IO uint32_t RCR;              TIM repetition counter register,     Address offset: 0x30
+	.equ	CCR1,	0x34	@;	  __IO uint32_t CCR1;             TIM capture/compare register 1,      Address offset: 0x34
+	.equ	CCR2,	0x38	@;	  __IO uint32_t CCR2;             TIM capture/compare register 2,      Address offset: 0x38
+	.equ	CCR3,	0x3C	@;	  __IO uint32_t CCR3;             TIM capture/compare register 3,      Address offset: 0x3C
+	.equ	CCR4,	0x40	@;	  __IO uint32_t CCR4;             TIM capture/compare register 4,      Address offset: 0x40
+	.equ	BDTR,	0x44	@;	  __IO uint32_t BDTR;             TIM break and dead-time register,    Address offset: 0x44
+	.equ	DCR,	0x48	@;	  __IO uint32_t DCR;              TIM DMA control register,            Address offset: 0x48
+	.equ	DMAR,	0x4C	@;	  __IO uint32_t DMAR;             TIM DMA address for full transfer,   Address offset: 0x4C
+	.equ	OR,		0x50	@;	  __IO uint32_t OR;               TIM option register,                 Address offset: 0x50
+	.equ	CCMR3,	0x54	@;	  __IO uint32_t CCMR3;            TIM capture/compare mode register 3,      Address offset: 0x54
+	.equ	CCR5,	0x58	@;	  __IO uint32_t CCR5;             TIM capture/compare mode register5,       Address offset: 0x58
+	.equ	CCR6,	0x5C	@;	  __IO uint32_t CCR6;             TIM capture/compare mode register6,       Address offset: 0x5C
+	.equ	AF1,	0x60	@;	  __IO uint32_t AF1;              TIM Alternate function option register 1, Address offset: 0x60
+	.equ	AF2,	0x64	@;	  __IO uint32_t AF2;              TIM Alternate function option register 2, Address offset: 0x64
+
+
+	@; ADC definitions from stm32L476xx.h and RM0351
+	.equ	ADC, 						0x50040000
+	.equ	ADC1_BASE, 						0x50040000	@;Master ADC1
+	.equ	ADC2, 						0x50040100	@;Slave ADC2
+	.equ	ADC3, 						0x50040200 	@;Single ADC3
+	.equ	ADC123, 					0x50040300	@;ADCs common registers
+
+	.equ	ADC_ISR,              	 	0x00
+	.equ	ADC_IER,              	 	0x04
+	.equ	ADC_CR,               	 	0x08
+	.equ	ADC_CFGR,             	 	0x0C
+	.equ	ADC_CFGR2,            	 	0x10
+	.equ	ADC_SMPR1,            	 	0x14
+	.equ	ADC_SMPR2,            	 	0x18
+	.equ	ADC_RESERVED1,        	 	0x0C
+	.equ	ADC_TR1,              	 	0x20
+	.equ	ADC_TR2,              	 	0x24
+	.equ	ADC_TR3,              	 	0x28
+	.equ	ADC_RESERVED2,        	 	0x2C
+	.equ	ADC_SQR1,             	 	0x30
+	.equ	ADC_SQR2,             	 	0x34
+	.equ	ADC_SQR3,             	 	0x38
+	.equ	ADC_SQR4,             	 	0x3C
+	.equ	ADC_DR,               	 	0x40
+	.equ	ADC_RESERVED3,        	 	0x44
+	.equ	ADC_RESERVED4,        	 	0x48
+	.equ	ADC_JSQR,             	 	0x4C
+	.equ	ADC_RESERVED5,     	 		0x50
+	.equ	ADC_OFR1,             	 	0x60
+	.equ	ADC_OFR2,             	 	0x64
+	.equ	ADC_OFR3,             	 	0x68
+	.equ	ADC_OFR4,             	 	0x6C
+	.equ	ADC_RESERVED6,     	 		0x70
+	.equ	ADC_JDR1,             	 	0x80
+	.equ	ADC_JDR2,             	 	0x84
+	.equ	ADC_JDR3,             	 	0x88
+	.equ	ADC_JDR4,             	 	0x8C
+	.equ	ADC_RESERVED7,     	 		0x90
+	.equ	ADC_AWD2CR,           	 	0xA0
+	.equ	ADC_AWD3CR,           	 	0xA4
+	.equ	ADC_RESERVED8,        	 	0xA8
+	.equ	ADC_RESERVED9,        	 	0xAC
+	.equ	ADC_DIFSEL,           	 	0xB0
+	.equ	ADC_CALFACT,          	 	0xB4
+
+
+	@;-------------------------- code	
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; here we're use thumb instructions only
+
+	.text
+
+@;------ Func device dispatch
+	.global MoTdevice_Func_cmd
+	.thumb_func					
+MoTdevice_Func_cmd: @;Cmd_handler() branches here after identifying a valid command with device ID = 'Func'
+	push {r7,lr}		@;this 'push' is balanced with a 'pop' at exit of each of the routines of the dispatch table below
+	ldrb r1,[r0],#1		@;read function code from the command buffer and advance r0 to point to the command's argument list (if any)
+	//and r1,0x01			@;limit range of function codes to 0-1 for safety (error-checking would be nice but isn't done here)	tbb [pc,r1]
+	@; function byte meanings:
+	@; function 0: initialize the MoT device to continously sample ADC readings every 10 usec and record the interval between successive peaks of an input waveform
+	@; function 1: report as a 32-bit hex number the average interval in usecs between peaks for every 10 peaks observed.
+	tbb [pc,r1]
+MoTdevice_Func_cmd_table:
+	.byte (MoTdevice_Func0 - MoTdevice_Func_cmd_table)/2	  	@; jump to function 0
+	.byte (MoTdevice_Func1 - MoTdevice_Func_cmd_table)/2	  	@; jump to function 1
+	.align 1 @;!!important to do this where odd-byte alignment is possible
+
+	.global MoTdevice_Func1
+	.thumb_func
+MoTdevice_Func1:
+	push {r7, lr}
+
+	mov r4,#0				@;initialize tick counter
+
+	@;monitor TIM2 CH1 comparitor interrupt flag 'CC1IE'  (manual page 977)
+	ldr r3,=TIM2_BASE 		@;test UIF flag
+1:	ldr r2,[r3,#SR]			@; ..
+	TST r2,#(1<<1)			@;CC1IF set?
+	beq 1b					@; 	no -- continue waiting
+	bic r2,r2,#(1<<1)		@;	yes -- clear it
+	str r2,[r3,#SR]			@; ..
+
+	@;here when TIM2 upcount has been reached
+	MOV_imm32 r2,AVG_cnt
+	cmp r2, #10
+	ite ge
+	blge AVG_report // only report on the average if it has been calculated in main
+
+	cmp r2, #10
+	ite lt
+	bllt 1b			// if it has not yet been calculated, then wait until it is ready
+
+/*	@;increment tick count
+	add r4,r4,#1			@; ..
+	cmp r4,#100				@;is tick limit reached
+	blo	1b					@;  no -- continue count ticks
+*/
+	@;here when tick limit has been reached - done
+
+	pop {r7,pc}			@;Return to Cmd_Handler
+
+
+	.global MoTdevice_Func0
+	.thumb_func
+MoTdevice_Func0:
+	push {r7, lr}
+	@;TIM2------------------------------------------------------
+	@;stop TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#CR1] @;halt timer operation
+	bic r2,#(1<<0)				@; by clearing CR1 CEN (counter enable)
+	str r2,[r3,#CR1]	@; ..
+
+	@;load new timer count into TIM2 ARR
+	mov r2,#480			@; want to trigger every 10 us (10 / (1/48) = 480)
+	str r2,[r3,#ARR]	@; ..
+	ldr r2,[r3,#EGR]	@;set UG to generate an update event which will put the new value into the timer's ARR
+	orr r2,#(1<<0)		@; ..
+	str r2,[r3,#EGR]	@; ..
+
+	@;DMA-------------------------------------------------------
+	@; DMA enable in ADC1
+	config32 ADC1_BASE, ADC_CFGR, 0, 1, 1 // DMA enable
+	config32 ADC1_BASE, ADC_CFGR, 0, 1, 1 // DMA circ mode selected
+	config32 ADC1_BASE, ADC_CR, 13, 1, 1  // DMA circ mode selected
+
+	@; Enable DMA1 Clock
+	config32 RCC_BASE, AHB1ENR, 0, 1, 1
+
+	@; Reset DMA1 Clock
+	config32 RCC_BASE, AHB1RSTR, 0, 1, 1
+	config32 RCC_BASE, AHB1RSTR, 0, 1, 0
+
+	@; Wait for reset to take place
+	MOV_imm32 r1, 0x12345
+1:	subs r1, #1
+	bne 1b
+
+	@; Disable DMA1 Clock
+	config32 RCC_BASE, AHB1ENR, 0, 0, 0
+	config32 DMA1_BASE, DMA_CCR1, 0, 0, 0 // disable
+
+	@; Clear any flags on channel 1
+	config32 DMA1_BASE, DMA_IFCR, 0, 1, 1
+	config32 DMA1_BASE, DMA_IFCR, 0, 1, 0
+
+	@; Set peripherial reg address
+	MOV_imm32 r0, ADC1_BASE+ADC_DR
+	MOV_imm32 r1, DMA1_BASE
+	str r0, [r1, #DMA_CPAR1]
+
+	@; Set mem address
+	ldr r0, =ADC1_data
+	str r0, [r1, #DMA_CMAR1]
+
+	@; set number of data to transfer - only getting one value at a time
+	config32 DMA1_BASE, DMA_CNDTR1, 0, 7, 1
+	@; set channel priority ( 3 = high )
+	config32 DMA1_BASE, DMA_CCR1, 12, 3, 3
+	@; set data transfer direction
+	config32 DMA1_BASE, DMA_CCR1, 4, 1, 0
+	@; set circ mode
+	config32 DMA1_BASE, DMA_CCR1, 5, 1, 1
+	@; set increment modes
+	config32 DMA1_BASE, DMA_CCR1, 7, 1, 1
+	config32 DMA1_BASE, DMA_CCR1, 6, 1, 0
+	@; set sizes to 16 bit
+	config32 DMA1_BASE, DMA_CCR1, 8, 3, 1
+	config32 DMA1_BASE, DMA_CCR1, 10, 3, 1
+	@; set interupt - clear all, set bit 1
+	config32 DMA1_BASE, DMA_CCR1, 1, 7, 1
+	@; channel selection for ch1
+	config32 DMA1_BASE, DMA_CSELR, 0, 15, 0
+	@; channel selection for ch1 (4=tim2_CH3)
+	config32 DMA1_BASE, DMA_CSELR, 0, 15, 4
+
+	@;-----------TIM2 config---------------
+	@; set ch3 to pwm mode 1
+	config32 TIM2_BASE, CCMR2, 4, 7, 6
+	config32 TIM2_BASE, CCMR2, 15, 1, 0
+	@; set ch3 preload enable
+	config32 TIM2_BASE, CCMR2, 3, 1, 1
+	@; set ch3 output mode
+	config32 TIM2_BASE, CCMR2, 0, 3, 0
+	@; set ch3 ccer enable
+	config32 TIM2_BASE, CCER, 8, 1, 1
+	@; set ch3 compare val
+	config32 TIM2_BASE, CCR3, 0, 0, 64
+	@ generate event on ch3
+	config32 TIM2_BASE, EGR, 3, 1, 1
+	@; capture/compare ch3 dma
+	config32 TIM2_BASE, DIER, 11, 1, 1
+
+	@; enable channel
+	config32 ADC1_BASE, DMA_CCR1, 0, 1, 1
+
+	@;start TIM2
+	mov_imm32 r3,TIM2_BASE
+	ldr r2,[r3,#CR1] 	@;resume timer operation
+	orr r2,#(1<<0)		@; by setting CR1 CEN (counter enable)
+	str r2,[r3,#CR1]	@; ..
+	
+	pop {r7,pc}
+
+
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+@; stm32L476xx_ADC1_01.S wmh 2019-10-27 : 
+
+	@;useful macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+
+	.macro	CONFIG32 structbase, regoffset, bitoffset, bitmask, bitval
+		MOV_imm32 r3,(\structbase)
+		ldr r2,[r3,#(\regoffset)]
+		bic r2,#((\bitmask)<<(\bitoffset))
+		orr r2,#((\bitval)<<(\bitoffset))
+		str r2,[r3,#(\regoffset)]
+	.endm
+	
+	@;constants derived from those defined in the STM32L476 manual (RM0351, en.DM00083560.pdf)
+	.equ	RCC_BASE,0x40021000 	@;origin of RCC register struct (pg 78 of the manual)
+	.equ 	RCC_AHB2RST,0x4C		@;peripheral clock reset register for ADC
+	.equ	ADCRST,13				@;ADC reset bit location in RCC_AHB2RST
+	.equ 	RCC_AHB2ENR,0x2C		@;peripheral clock enable register for GPIOA and ADC(pg 280 of the manual)	
+	.equ	GPIOAEN,0				@;GPIOA peripheral clock enable bit (pg 280 of the manual)
+	.equ 	ADCEN,13				@;ADC peripheral clock enable bit
+	
+	.equ	GPIOA_BASE,0x48000000	@;origin of GPIOA register struct (pg 77 of the manual)
+	.equ	GPIOA_MODER,0x00		@;GPIOA configuration register offsets (pg 311 of the manual)      
+	.equ	GPIOA_OTYPER,0x04		@; .. 
+	.equ	GPIOA_OSPEEDR,0x08	    @; .. 
+	.equ	GPIOA_OPUPDR,0x0C		@; .. 	
+	.equ	GPIOA_IDR,	0x10		@; .. 	      
+	.equ	GPIOA_ODR,	0x14		@; .. 	
+	.equ	GPIOA_BSRR,	0x18		@; .. 	      
+	.equ	GPIOA_LCKR,	0x1C		@; .. 	
+	.equ	GPIOA_AFRL,	0x20		@; .. 	
+	.equ	GPIOA_AFRH,	0x24		@; .. 	
+	.equ	GPIOA_BRR,	0x28		@; .. 
+	.equ	GPIOA_ASCR,	0x2C		@; .. 
+	.equ	GPIOAEN,	0			@;GPIOA peripheral clock enable bit 
+	
+
+@; ADC definitions from stm32L476xx.h and RM0351
+	.equ	ADC, 						0x50040000
+	.equ	ADC1, 						0x50040000	@;Master ADC1
+	.equ	ADC2, 						0x50040100	@;Slave ADC2
+	.equ	ADC3, 						0x50040200 	@;Single ADC3
+	.equ	ADC123, 					0x50040300	@;ADCs common registers
+
+	.equ	ADC_ISR,              	 	0x00 
+	.equ	ADC_IER,              	 	0x04 
+	.equ	ADC_CR,               	 	0x08 
+	.equ	ADC_CFGR,             	 	0x0C 
+	.equ	ADC_CFGR2,            	 	0x10 
+	.equ	ADC_SMPR1,            	 	0x14 
+	.equ	ADC_SMPR2,            	 	0x18 
+	.equ	ADC_RESERVED1,        	 	0x0C
+	.equ	ADC_TR1,              	 	0x20 
+	.equ	ADC_TR2,              	 	0x24 
+	.equ	ADC_TR3,              	 	0x28 
+	.equ	ADC_RESERVED2,        	 	0x2C 
+	.equ	ADC_SQR1,             	 	0x30 
+	.equ	ADC_SQR2,             	 	0x34 
+	.equ	ADC_SQR3,             	 	0x38 
+	.equ	ADC_SQR4,             	 	0x3C 
+	.equ	ADC_DR,               	 	0x40 
+	.equ	ADC_RESERVED3,        	 	0x44
+	.equ	ADC_RESERVED4,        	 	0x48
+	.equ	ADC_JSQR,             	 	0x4C 
+	.equ	ADC_RESERVED5,     	 		0x50
+	.equ	ADC_OFR1,             	 	0x60 
+	.equ	ADC_OFR2,             	 	0x64 
+	.equ	ADC_OFR3,             	 	0x68 
+	.equ	ADC_OFR4,             	 	0x6C 
+	.equ	ADC_RESERVED6,     	 		0x70
+	.equ	ADC_JDR1,             	 	0x80 
+	.equ	ADC_JDR2,             	 	0x84 
+	.equ	ADC_JDR3,             	 	0x88 
+	.equ	ADC_JDR4,             	 	0x8C 
+	.equ	ADC_RESERVED7,     	 		0x90
+	.equ	ADC_AWD2CR,           	 	0xA0 
+	.equ	ADC_AWD3CR,           	 	0xA4 
+	.equ	ADC_RESERVED8,        	 	0xA8 
+	.equ	ADC_RESERVED9,        	 	0xAC
+	.equ	ADC_DIFSEL,           	 	0xB0 
+	.equ	ADC_CALFACT,          	 	0xB4 
+
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; we're using thumb instructions only
+
+	.text						
+	.align 2
+
+	.global ADC1_init
+	.thumb_func
+ADC1_init: @;configure ADC1 for software triggered conversion with input on PA1 (JOY_LEFT) 
+	@; PC0 ADC123_IN1 is STM32L476G-DISCO MAG_CS
+	@; PC1 ADC123_IN2 is STM32L476G-DISCO MAG_INT
+	@; PC2 ADC123_IN3 is STM32L476G-DISCO MAG_DRDY
+	@; PC3 ADC123_IN4 is STM32L476G-DISCO VLCD?
+	@; PA0  ADC123_IN5 is STM32L476G-DISCO JOY_CENTER
+	@; PA1  ADC12_IN6 is STM32L476G-DISCO JOY_LEFT
+	@; PA0, PA1 are connected through switch to ground, and have a 100nF filter caps to ground (UM1879, pg 29)
+	@; IN1-IN5 are 'fast analog inputs', presumably because they are ADC123 types which can interleave sampling
+	@; The LSM303C datasheet doesn't say whether MAG_INT and MAG_DRDY can be disable, and using MAG_CS not be good. 
+	@; Decision: Use PA1 as originally decided, with the option of switching later to PA0 if 'fast analog' is needed.
+	push {r7,lr}
+	
+
+	@; enable GPIOA busclock 
+	//CONFIG32 RCC_BASE,RCC_AHB2ENR,GPIOAENoffset,GPIOAENmask,GPIOAEN
+	config32 RCC_BASE,RCC_AHB2ENR,0,1,GPIOAEN
+	/*
+	RM0351 Section 8.3.2 I/O pin alternate function multiplexer and mapping 
+	--  Additional functions:	
+		For the ADC, DAC, OPAMP, and COMP, configure the desired I/O in analog mode
+		in the GPIOx_MODER register and configure the required function in the ADC,
+		DAC, OPAMP, and COMP registers. For the ADC, it is necessary to configure the
+		GPIOx_ASCR register (only for STM32L47xxx/48xxx).
+	*/
+	@; configure PA1 as analog input
+	//<----- snip ----->
+	CONFIG32 GPIOA_BASE,GPIOA_MODER,MODE1offset,MODE1mask,MODE1
+
+	@; connect ADC to PA1 
+	//<----- snip ----->
+	CONFIG32 GPIOA_BASE,GPIOA_ASCR,ASC1offset,ASC1mask,ASC1
+
+	@; set BOOSTEN? 
+	/* RM0351 pg 316 BOOSTEN: I/O analog switch voltage booster enable
+		BOOSTEN = 0: I/O analog switches are supplied by VDDA voltage. This is the recommended configuration
+		when using the ADC in high VDDA voltage operation.
+		BOOSTEN = 1: I/O analog switches are supplied by a dedicated voltage booster (supplied by VDD). This is
+		the recommended configuration when using the ADC in low VDDA voltage operation.
+	*/
+	//<----- snip ----->
+	//CONFIG32 SYSCFG_BASE,SYSCFG_CFGR1,BOOSTENoffset,BOOSTENmask,BOOSTEN
+
+	
+	@; enable ADC busclock
+	//<----- snip ----->
+	//CONFIG32 RCC_BASE,RCC_AHB2ENR,ADCENoffset,ADCENmask,ADCEN
+	
+	@; reset ADC (clear out existing configuration if any)
+	//<----- snip ----->	CONFIG32 RCC_BASE,RCC_AHB2ENR,ADCRSToffset,ADCRSTmask,ADCRSTset
+	//CONFIG32 RCC_BASE,RCC_AHB2RSTR,ADCRSToffset,ADCRSTmask,ADCRSTset
+	//CONFIG32 RCC_BASE,RCC_AHB2RSTR,ADCRSToffset,ADCRSTmask,ADCRSTclr
+	
+	@; TODO: wait until ADC is reset (manual 18.4.9,18.4.10) -- how? 
+	MOV_imm32 r0,0x12345					@;temporary -- fixed delay
+1:	subs r0,#1
+	bne 1b
+	
+	@; set ADC clock 
+	/*
+	RM0351 pg 209 
+		note 2: The ADC clock can be derived from the AHB clock of the ADC bus interface, divided by a programmable
+		factor (1, 2 or 4). When the programmable factor is ‘1’, the AHB prescaler must be equal to ‘1’.
+	*/
+
+/*
+	RM0351 pg 217 
+		6.2.13 ADC clock
+		The ADC clock is derived from the system clock, or from the PLLSAI1 or the PLLSAI2
+		output. It can reach 80 MHz and can be divided by the following prescalers values:
+		1,2,4,6,8,10,12,16,32,64,128 or 256 by configuring the ADC123_CCR register. It is
+		asynchronous to the AHB clock. Alternatively, the ADC clock can be derived from the AHB
+		clock of the ADC bus interface, divided by a programmable factor (1, 2 or 4). This
+		programmable factor is configured using the CKMODE bit fields in the ADC123_CCR.
+		If the programmed factor is ‘1’, the AHB prescaler must be set to ‘1’.
+*/
+/*
+	RM0351 pg 509
+		The input clock is the same for the three ADCs and can be selected between two different
+		clock sources (see Figure 67: ADC clock scheme):
+		1. The ADC clock can be a specific clock source. It can be derived from the following
+		clock sources:
+		– The system clock
+		– PLLSAI1 (single ADC implementation)
+		– PLLSAI2
+		Refer to RCC Section for more information on how to generate ADC dedicated clock.
+		To select this scheme, bits CKMODE[1:0] of the ADCx_CCR register must be reset.
+		2. The ADC clock can be derived from the AHB clock of the ADC bus interface, divided by
+		a programmable factor (1, 2 or 4). In this mode, a programmable divider factor can be
+		selected (/1, 2 or 4 according to bits CKMODE[1:0]).
+		To select this scheme, bits CKMODE[1:0] of the ADCx_CCR register must be different
+		from “00”.
+		Note: For option 2), a prescaling factor of 1 (CKMODE[1:0]=01) can be used only if the AHB
+		prescaler is set to 1 (HPRE[3:0] = 0xxx in RCC_CFGR register).
+		Option 1) has the advantage of reaching the maximum ADC clock frequency whatever the
+		AHB clock scheme selected. The ADC clock can eventually be divided by the following ratio:
+		1, 2, 4, 6, 8, 12, 16, 32, 64, 128, 256; using the prescaler configured with bits PRESC[3:0] in
+		the ADCx_CCR register.
+		Option 2) has the advantage of bypassing the clock domain resynchronizations. This can be
+		useful when the ADC is triggered by a timer and if the application requires that the ADC is
+		precisely triggered without any uncertainty (otherwise, an uncertainty of the trigger instant is
+		added by the resynchronizations between the two clock domains).
+*/
+
+	@;confirm  that "Option 2" pre-condition exists (HPRE == 0xxx)
+	//<----- snip ----->	MOV_imm32 r3,RCC_BASE					@;is HPRE in RCC_CFGR ==0?
+	ldr r2,[r3,#RCC_CFGR]					@; ..
+	ands r2,#(HPREmask<<HPREoffset)			@; ..
+	beq 1f									@;	yes -- continue
+	@;here if HPRE != 0
+	mov r0,1								@; return error code 1 : HPRE != 0
+	pop {r7,pc}
+1:	
+	
+	@;select ADC independent clock source
+	//<----- snip ----->
+	CONFIG32 RCC_BASE,RCC_CCIPR,ADCSELoffset,ADCSELmask,ADCSEL
+
+	@; set ADC clock mode and prescalar value (ADC123_CCR)
+	//<----- snip ----->
+	CONFIG32 ADC123_BASE,ADC123_CCR,CKMODEoffset,CKMODEmask,CKMODE
+	
+	@;powerup ADC1 -- assume ADC1_CR = default condition = 0x20000000  because of earlier reset performed n ADC 
+	//<----- snip ----->
+	@; take ADC1 out of power down
+	CONFIG32 ADC1_BASE,ADC1_CR, DEEPPWDoffset,DEEPPWDmask, DEEPPWD 
+	movw r0,0x1234							@;give it time to settle
+1:	subs r0,#1								@; ..
+	bne 1b									@; ..
+	@; repeat to make sure
+	CONFIG32 ADC1_BASE,ADC1_CR, DEEPPWDoffset,DEEPPWDmask, DEEPPWD 
+	movw r0,0x1234							@; give it some more time
+1:	subs r0,#1								@; ..
+	bne 1b									@; ..
+	@; enable ADC voltage regulator
+	CONFIG32 ADC1_BASE,ADC1_CR, ADVREGENoffset, ADVREGENmask, ADVREGEN @;turn on ADC1 power
+	MOV_imm32 r0,0x12345					@; give it time to powerup 
+1:	subs r0,#1								@; ..
+	bne 1b									@; ..
+
+	@; calibrate ADC1
+	//<----- snip ----->
+	CONFIG32 ADC1_BASE,ADC1_CR, ADCALoffset, ADCALmask, ADCAL @;start the calibration
+	MOV_imm32 r3,ADC1_BASE					@;wait for the calibration to complete
+1:	ldr r2,[r3,#ADC1_CR]					@; ..
+	tst r2,#(ADCAL<<ADCALoffset)			@; ..
+	bne 1b
+
+	@;enable ADC1 
+	//<----- snip ----->
+	CONFIG32 ADC1_BASE,ADC1_CR, ADENoffset, ADENmask, ADEN @; enable ADC1
+	
+	
+	@; ADC trigger (dest or source)
+	/* see RM0351 10.3.2 From timer (TIM1/TIM2/TIM3/TIM4/TIM6/TIM8/TIM15) and EXTI to ADC (ADC1/ADC2/ADC3)
+	   see RM0351 10.3.10 From ADC (ADC1) to ADC (ADC2)
+	   and some others
+	   also RM0351 11. DMA
+	   also RM0351 12. Interrupt
+	*/
+	
+	@; set ADC channel selection/sequencer
+	//<----- snip ----->
+	CONFIG32 ADC1_BASE,ADC1_SQR1, SQ1offset, SQ1mask, SQ1 @;place IN6 as first (and only) channel
+	CONFIG32 ADC1_BASE,ADC1_SQR1, Loffset, Lmask, L @;single sample per trigger
+	@; set ADC channel sampling time
+	//<----- snip ----->
+	CONFIG32 ADC1_BASE,ADC1_CR, SMP6offset, SMP6mask, SMP6 @; set sampling time for channel
+	
+		
+	@; select ADC conversion mode ?? (I think single is the default)
+	
+	mov r0,0								@; flag success
+	pop {r7,pc}

@@ -74,7 +74,7 @@ int main(void)
 
 	USART2_init(); 
 
-	/*initial test of green LED, USART2 drivers with stm32L476 Discovery board ST-Link serial port connected
+	//initial test of green LED, USART2 drivers with stm32L476 Discovery board ST-Link serial port connected
 	//should turn on green LED and print 12345 on ST-Link serial connection
 	int c;
 	GreenLED_init();
@@ -100,8 +100,8 @@ int main(void)
 		USART2_bputchar(c+2);
 		USART2_bputchar(c+3);
 	}
-	*/
 
+/*
 	init_Cmd_handle(&adminCmd_handle, &adminDevicetable, USART2_nbgetchar, &adminTasklist);
 	Msg_Handler_init(&adminMsgctl, USART2_nbputchar);
 	while (1)
@@ -110,9 +110,7 @@ int main(void)
 //		Cmd_Handler(&userCmd_handle);
 		Msg_Handler(&adminMsgctl);
 	}
-
-
-
+*/
 }
 
 

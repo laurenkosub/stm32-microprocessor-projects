@@ -1,0 +1,193 @@
+@; misc_utilities.S wmh 2019-10-18 : resource for 
+	.syntax unified				@; ARM Unified Assembler Language (UAL). 
+	.thumb						@; but here we'll use thumb instructions only
+
+	@;------ utility macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+
+	.text
+	
+	.global bytecopy @; uint8_t* bytecopy(uint8_t *dest, uint8_t *src, uint32_t count); //like C memcpy except returns pointer to end of dest 
+	.thumb_func
+bytecopy:
+	@;leaf function so context is not saved 
+	cbz r2,2f			@; 0-length strings are ok
+1:	subs r2,#1			@; sets flags
+	ldrb r3,[r1],#1
+	strb r3,[r0],#1
+	bne 1b
+	@; here when copy is finished; r0 points to next available byte at dest
+ 	bx lr
+	
+	.global sprintf_uint32 @;	uint32_t* sprintf_uint32(uint8_t *str, uint32_t n);//convert word to ASCII numeric string in buffer, return pointer to end+1
+	.thumb_func
+sprintf_uint32:
+	push {r4,r5}	@;we need more registers
+	
+	adr r2,dividers
+1:	ldr r3,[r2],#4	@;get first divider
+	cmp r3,r1		@;is divider greater than value
+	bhi 1b			@;	yes -- skip leading 0s
+2:	@;here with a value to convert in r1 and a divisor in r3
+	udiv r5,r1,r3	@;r5 gets the binary value of leading digit of conversion
+	add r4,r5,#'0'	@;convert it to ASCII	
+3:	@;here with an ascii value in r4 to be stored in the output string	
+	strb r4,[r0],#1	@; append it to the output string
+	mul r5,r3,r5	@; recover the remainder and continue the conversion
+	sub r1,r1,r5	@; ..
+4:	@;here after writing a new character to the output string; r1 has remaining value to convert	
+	ldr r3,[r2],#4	@;get the next divisor
+	cbz	r3,5f		@;is the divisor the endmark (= 0)? Then we're done -- exit
+	cmp r1,#0		@;	no -- then, is the remaining value to be converted non-zero?
+	bne	2b			@;		yes-- generate and save the next digit of the conversion 
+	@;here if next value to be converted is 0
+	mov r4,#'0'		@; append ASCII '0'  it to the output string 
+	strb r4,[r0],#1	@;  ..
+	b 4b			@; and go up to continue the conversion
+5:	@;here when number has been converted to an ASCII string; r0 points to end+1
+	pop {r4,r5}
+	bx lr
+	
+	.align 2		@;put word data on word boundares
+dividers:	
+	.word 1000000000
+	.word 100000000
+	.word 10000000
+	.word 1000000
+	.word 100000
+	.word 10000
+	.word 1000
+	.word 100
+	.word 10
+	.word 1
+	.word 0			@;endmarker
+
+	
+	.bss						@;RAM data zeroed by startup
+	.align 2					@;data is all word so should be on word-boundary; 
+	.global ADC1_report_data 	@;for visibility in debug
+ADC1_report_data:				@;origin of ADC1_report data structure 
+	@;------ system variables of device: the required part of every device's data structure. Accessed by offsets .equ'd at top
+							.skip 12	@;unused -- MoT task control and link variables go in for ordinary MoT tasks
+	ADC1_report_MSGPTR:		.skip 4		@;pointer to this message's next character to print
+	ADC1_report_MSGCOUNT:	.skip 4		@;count of remaining number of characters of message to print	
+	ADC1_report_MSGLINK:	.skip 4		@;pointer to data structure of next device with a message (if any)
+	ADC1_report_msgbuffer:	.skip 64	@;RAM staging area for building messages having variable contents
+	
+	@;ADC1_report_data field-offsets
+	.equ ADC1_MSGPTR,12
+	.equ ADC1_MSGCOUNT,16
+	.equ ADC1_MSGLINK,20
+	@;ADC1 register values
+	.equ ADC1_BASE,  0x50040000			@;origin of ADC1 register struct (pg 78 of the manual)
+	.equ ADC1_DR,0x40					@;offset in ADC1 to data register
+	
+	
+	.text
+	
+	.global ADC1_report	
+	.thumb_func
+ADC1_report: @;build report string in msgbuffer and give it to MoT message handler. Called in ADC1's EOC interrupt routine
+	@;copy message string to report buffer
+	MOV_imm32 r0, ADC1_report_msgbuffer			@;where we'll build the message string
+	adr r1, ADC1_report_msg						@;message string address
+	MOV_imm32 r2, #(ADC1_report_msglen)			@;message string length
+	bl bytecopy			@; uint8_t* bytecopy(uint8_t *dest, uint8_t *src, uint32_t count); //like C memcpy except returns pointer to end of dest 
+	@;here with r0 pointing to end of copied message string 
+	@;get new ADC1 data value in r1
+	MOV_imm32 r3,ADC1_BASE						@;
+	MOV_imm32 r2,ADC1_data						@;global variable defined in main   
+	ldrh r1,[r3,#ADC1_DR]
+	@;convert ADC1 data value in r1 to ASCII, place ASCII numeric of value ADC1_DR value at end of message string
+	bl sprintf_uint32 	@;uint32_t* sprintf_uint32(uint8_t *str, uint32_t n); //convert word to ASCII numeric string in buffer, return pointer to end+1
+	@;here with r0 pointing to end+1 of message
+	@;add CRLF to end of message
+	movw r1,#(0x0D0A)							@; ..
+	strh r1,[r0],#2								@; ..
+	@;here with message completed, r0 pointing to end+1
+	MOV_imm32 r3,ADC1_report_data				@;begin preparation for giving message to handler
+	ldr r1,[r3,#ADC1_MSGLINK]					@;is a message from this task on the message list already ?
+	cbnz r1,1f									@;	yes -  abort posting and report failure
+	@;here if ok to post
+	MOV_imm32 r1,ADC1_report_msgbuffer			@;set message pointer
+	str r1,[r3,#ADC1_MSGPTR]					@; 	..
+	sub r2,r0,r1								@;calculate message bytecount
+	str r2,[r3,#ADC1_MSGCOUNT]					@;  and set it
+	@;here with data structure prepared for posting message
+	mov r0,r3									@; prepare for MsgPost((void *devicedata))
+	bl USART2_MsgPost							@;  and go
+1:	@; here with r0=0 if message got posted, =-1 if not. Ignored for now. 
+	pop {r7,pc}								@;this 'pop' is balances the 'push' done at 'MoTdevice_TIM2PWM_cmd:". Returns to Cmd_Handler
+	
+	.global ADC1_report
+	.thumb_func
+AVG_report: @;build report string in msgbuffer and give it to MoT message handler. Called in ADC1's EOC interrupt routine
+	@;copy message string to report buffer
+	MOV_imm32 r0, ADC1_report_msgbuffer			@;where we'll build the message string
+	adr r1, ADC1_report_msg						@;message string address
+	MOV_imm32 r2, #(ADC1_report_msglen)			@;message string length
+	bl bytecopy			@; uint8_t* bytecopy(uint8_t *dest, uint8_t *src, uint32_t count); //like C memcpy except returns pointer to end of dest
+	@;here with r0 pointing to end of copied message string
+	@;get new ADC1 data value in r1
+	MOV_imm32 r3,ADC1_BASE						@;
+	MOV_imm32 r2,AVG_data						@;global variable defined in main
+	ldrh r1,[r3,#ADC1_DR]
+	@;convert ADC1 data value in r1 to ASCII, place ASCII numeric of value ADC1_DR value at end of message string
+	bl sprintf_uint32 	@;uint32_t* sprintf_uint32(uint8_t *str, uint32_t n); //convert word to ASCII numeric string in buffer, return pointer to end+1
+	@;here with r0 pointing to end+1 of message
+	@;add CRLF to end of message
+	movw r1,#(0x0D0A)							@; ..
+	strh r1,[r0],#2								@; ..
+	@;here with message completed, r0 pointing to end+1
+	MOV_imm32 r3,ADC1_report_data				@;begin preparation for giving message to handler
+	ldr r1,[r3,#ADC1_MSGLINK]					@;is a message from this task on the message list already ?
+	cbnz r1,1f									@;	yes -  abort posting and report failure
+	@;here if ok to post
+	MOV_imm32 r1,ADC1_report_msgbuffer			@;set message pointer
+	str r1,[r3,#ADC1_MSGPTR]					@; 	..
+	sub r2,r0,r1								@;calculate message bytecount
+	str r2,[r3,#ADC1_MSGCOUNT]					@;  and set it
+	@;here with data structure prepared for posting message
+	mov r0,r3									@; prepare for MsgPost((void *devicedata))
+	bl USART2_MsgPost							@;  and go
+1:	@; here with r0=0 if message got posted, =-1 if not. Ignored for now.
+	pop {r7,pc}
+
+	ADC1_report_msg:
+	.ascii "ADC1 raw= "
+	.equ ADC1_report_msglen,( . - ADC1_report_msg)
+	
+	.align 1 @;!!important to do this wherever we have inline messages ! 
+	@;not doing this when putting text inline with code will randomly lead to 'Error: unaligned opcodes detected in executable segment'
+	
+/*
+	.global TIM2_NVIC_init	@; general interrupt enable and priority setting
+							@; 	called first, configures NVIC for all active interrupts
+	.thumb_func
+TIM2_NVIC_init:
+	push {r7,lr}
+
+	@;enable TIM2 in NVIC (will also need to be enable in TIM configuration)
+	ldr 	r3, =NVIC_ISER		@; NVIC_ISER : set-enable registers
+	ldr		r2, [r3]
+	orr 	r2, r2, #(1<<28)	@; set enable for NVIC_ISER7
+	str		r2, [r3]
+
+	ldr		r3, =TIM2_BASE		@; enable in TIM2 config
+	ldr		r2, [r3, #DIER]		@; DIER = interrupt enable reg
+	mov		r2, #0b1000111		@; UIE=1, CC1IE=1, CC2IE=1, TIE=1
+	str		r2, [r3, #DIER]
+
+	@;set TIM2 interrupt priority mid-level (8)
+	ldr		r3, =NVIC_IPR	@; NVIC_IPR = interupt priority regs
+	mov		r2, #8
+	strb	r2, [r3, #28]
+
+	pop {r7,pc}
+*/
+
+	
+		

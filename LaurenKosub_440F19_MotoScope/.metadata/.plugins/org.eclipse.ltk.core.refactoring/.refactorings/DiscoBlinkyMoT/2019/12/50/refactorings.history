@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DiscoBlinkyMoT/Src/MoT_system/MoT_DMA&apos; to &apos;MoT_DMA.S&apos;" description="Rename resource &apos;MoT_DMA&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/MoT_system/MoT_DMA" name="MoT_DMA.S" stamp="1576364220633" updateReferences="true"/>
+</session>

@@ -1,0 +1,31 @@
+Description:
+The MoTdevice ExamFunc serves to complete the following two functions:
+function 0: initialize the MoT device to continously sample ADC readings every 10 usec and record the interval between successive peaks of an input waveform
+function 1: report as a 32-bit hex number the average interval in usecs between peaks for every 10 peaks observed.
+
+The MoTdevice has a slot within the admin device table such that whenever a MoT command 
+specifies device #3 the program jumps to MoTdevice_Func's function table. From there,
+the program looks at the next input which specifies which function to call (0 or 1).
+
+Funcion 0 sets up the TIM2 timer such that it triggers an interupt every 10 us.
+Then, it configures the ADC1 to wave up and perform analog to digital conversions
+on the input data each time TIM2 is triggered. It also configures the DMA to read
+the converted analog to digital values of the input and write it to a global variable
+within main. I was debating whether or not I should write the data to a circular buffer
+of size 1024 to capture a lot of data at the same time and then perform operations on that
+data in order to find the peaks; however, I found it difficult to do that and ensure
+my time stamps were correct for each individual piece of data. Therefore, I decided to
+instead read only one data element every 10us and keep track of how that data was changing 
+locally. If the next value was smaller than the previous value and both were greater than 0,
+we could determine that the data was at a peak and determine the time between each peek
+since we know that data only changes every 10us. Once a peak is found it a MoT command is 
+dispatched, printing the contents of the global varibale time_between.
+
+Function 1 checks the value of the number of peaks every TIM2 interupt in order to 
+determine when 10 peaks' time differences have been calculated. In main, every 10 peaks' 
+time differences are averaged together and stored in a global variable.  Once you have hit 
+more than 10 peaks, the average resets itself and you recalculate an average for the next 10 peaks.
+
+Overall, these two functions use TIM2 in order to trigger ADC1, and after ADC1
+has completed its data conversions, then the DMA is triggered in order to write 
+the data to main to be processed.

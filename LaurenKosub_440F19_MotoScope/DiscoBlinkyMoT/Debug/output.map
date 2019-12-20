@@ -1,0 +1,749 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(ADC1_TIM2_TRGO.o)
+                              Src/MoT_system/MoT_DMA_Comm.o (ADC1_TIM2Tinit)
+/home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(HCLK48MHz.o)
+                              Src/main11.o (HCLK48MHz_init)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+                              Src/main11.o (sqrt)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (__ieee754_sqrt)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (__fdlib_version)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (matherr)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (__errno)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o) (_impure_ptr)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o) (__aeabi_dsub)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+                              Src/main11.o (__aeabi_dmul)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (__aeabi_dcmplt)
+/home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+                              /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o) (__aeabi_dcmpun)
+
+Allocating common symbols
+Common symbol       size              file
+
+serchar             0x4               Src/main11.o
+TIM2_ticks          0x4               Src/main11.o
+adc_data            0x4               Src/main11.o
+ADC1_data           0x4               Src/main11.o
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 Src/LL_device/LCDdisp.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/LCDdisp.o
+ .data          0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_GreenLED.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_GreenLED.o
+ .data          0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_RedLED.o
+ .bss           0x0000000000000000        0x0 Src/LL_device/stm32L476Disco_RedLED.o
+ .data          0x0000000000000000        0x0 Src/MoT_system/MoT_CmdHandler16.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_CmdHandler16.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .data          0x0000000000000000        0x0 Src/MoT_system/MoT_DMA_Comm.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_DMA_Comm.o
+ .data          0x0000000000000000        0x0 Src/MoT_system/MoT_ringbufbuf03.o
+ .bss           0x0000000000000000        0x0 Src/MoT_system/MoT_ringbufbuf03.o
+ .data          0x0000000000000000        0x0 Src/MoTdevice_GreenLED08.o
+ .data          0x0000000000000000        0x0 Src/MoTdevice_Scope.o
+ .bss           0x0000000000000000        0x0 Src/MoTdevice_Scope.o
+ .text          0x0000000000000000       0x70 Src/MoTdevice_TriangleWaveGen01.S.o
+ .data          0x0000000000000000        0x0 Src/MoTdevice_TriangleWaveGen01.S.o
+ .bss           0x0000000000000000        0x0 Src/MoTdevice_TriangleWaveGen01.S.o
+ .debug_line    0x0000000000000000       0x75 Src/MoTdevice_TriangleWaveGen01.S.o
+ .debug_info    0x0000000000000000       0x26 Src/MoTdevice_TriangleWaveGen01.S.o
+ .debug_abbrev  0x0000000000000000       0x14 Src/MoTdevice_TriangleWaveGen01.S.o
+ .debug_aranges
+                0x0000000000000000       0x20 Src/MoTdevice_TriangleWaveGen01.S.o
+ .debug_str     0x0000000000000000       0x7c Src/MoTdevice_TriangleWaveGen01.S.o
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/MoTdevice_TriangleWaveGen01.S.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .group         0x0000000000000000        0xc Src/main11.o
+ .text          0x0000000000000000        0x0 Src/main11.o
+ .data          0x0000000000000000        0x0 Src/main11.o
+ .bss           0x0000000000000000        0x0 Src/main11.o
+ .text.SWdelay  0x0000000000000000       0x28 Src/main11.o
+ .data          0x0000000000000000        0x0 Src/misc_utilities.o
+ .text          0x0000000000000000       0x14 startup/startup_stm32l476xx.o
+ .data          0x0000000000000000        0x0 startup/startup_stm32l476xx.o
+ .bss           0x0000000000000000        0x0 startup/startup_stm32l476xx.o
+ .data          0x0000000000000000        0x0 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(ADC1_TIM2_TRGO.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(ADC1_TIM2_TRGO.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(HCLK48MHz.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(HCLK48MHz.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+ .debug_frame   0x0000000000000000       0x20 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+ .text          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x0000000000000000        0x4 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000000000000000       0xac /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x0000000000000000       0x22 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x0000000000000000       0x50 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x0000000000000000       0x22 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x0000000000000000       0xc4 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x0000000000000000       0x22 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+ .data          0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+ .bss           0x0000000000000000        0x0 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x0000000000000000       0x20 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+ .ARM.attributes
+                0x0000000000000000       0x22 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000020000000 0x0000000000018000 xrw
+RAM2             0x0000000010000000 0x0000000000008000 xrw
+FLASH            0x0000000008000000 0x0000000000100000 xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD Src/LL_device/LCDdisp.o
+LOAD Src/LL_device/stm32L476Disco_GreenLED.o
+LOAD Src/LL_device/stm32L476Disco_RedLED.o
+LOAD Src/MoT_system/MoT_AdminCfg02.o
+LOAD Src/MoT_system/MoT_CmdHandler16.o
+LOAD Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+LOAD Src/MoT_system/MoT_DMA_Comm.o
+LOAD Src/MoT_system/MoT_ringbufbuf03.o
+LOAD Src/MoTdevice_GreenLED08.o
+LOAD Src/MoTdevice_Scope.o
+LOAD Src/MoTdevice_TriangleWaveGen01.S.o
+LOAD Src/main11.o
+LOAD Src/misc_utilities.o
+LOAD startup/startup_stm32l476xx.o
+LOAD /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a
+LOAD /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libTIM5_DAC2_PA5.a
+LOAD /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a
+                0x0000000020018000                _estack = 0x20018000
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x0000000008000000      0x188
+                0x0000000008000000                . = ALIGN (0x8)
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000      0x188 startup/startup_stm32l476xx.o
+                0x0000000008000000                g_pfnVectors
+                0x0000000008000188                . = ALIGN (0x8)
+
+.text           0x0000000008000188     0x23e0
+                0x0000000008000188                . = ALIGN (0x8)
+ *(.text)
+ .text          0x0000000008000188       0x8c Src/LL_device/LCDdisp.o
+                0x0000000008000188                LCDDisp_init
+ .text          0x0000000008000214       0x78 Src/LL_device/stm32L476Disco_GreenLED.o
+                0x0000000008000214                GreenLED_init
+                0x0000000008000258                GreenLED_OFF
+                0x000000000800026a                GreenLED_ON
+                0x000000000800027c                GreenLED_toggle
+ .text          0x000000000800028c       0x78 Src/LL_device/stm32L476Disco_RedLED.o
+                0x000000000800028c                RedLED_init
+                0x00000000080002d0                RedLED_OFF
+                0x00000000080002e2                RedLED_ON
+                0x00000000080002f4                RedLED_toggle
+ .text          0x0000000008000304       0x74 Src/MoT_system/MoT_AdminCfg02.o
+                0x0000000008000304                adminDevicetable
+                0x0000000008000310                adminDefaultDevice_task0
+                0x0000000008000350                adminDefaultDevice_task1
+ .text          0x0000000008000378      0x110 Src/MoT_system/MoT_CmdHandler16.o
+                0x0000000008000378                init_Cmd_handle
+                0x000000000800039c                Cmd_Handler
+                0x000000000800047e                do_tasks_return
+ .text          0x0000000008000488      0x444 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                0x0000000008000488                configure_GPIOD_for_USART2
+                0x00000000080004f8                adminTether_init
+                0x00000000080004f8                USART2_init
+                0x0000000008000584                USART2_nbgetchar
+                0x00000000080005a0                USART2_nbputchar
+                0x00000000080005c2                USART2_bgetchar
+                0x00000000080005da                USART2_bputchar
+                0x00000000080005f2                USART2_writeDR
+                0x0000000008000602                USART2_IRQHandler
+                0x00000000080006c4                USART2_IRQinit
+                0x000000000800071a                USART2_MsgPost
+                0x000000000800074a                USART2_MsgsInit
+                0x000000000800075c                USART2_RXbuffer_init
+                0x0000000008000774                USART2_RXgetbuf0
+                0x0000000008000784                USART2_RXgetbuf1
+                0x0000000008000794                USART2_RXresetRXBUF0_NUMOVERRUNS
+                0x00000000080007a6                USART2_RXgetRXBUF0_NUMOVERRUNS
+                0x00000000080007b4                USART2_RXresetRXBUF0_NUMNEWLINES
+                0x00000000080007c6                USART2_RXgetRXBUF0_NUMNEWLINES
+                0x00000000080007d4                USART2_RXresetRXBUF1_NUMOVERRUNS
+                0x00000000080007e6                USART2_RXgetRXBUF1_NUMOVERRUNS
+                0x00000000080007f4                USART2_RXresetRXBUF1_NUMNEWLINES
+                0x0000000008000806                USART2_RXgetRXBUF1_NUMNEWLINES
+                0x00000000080008a6                USART2_RXBUF1_discard
+ .text          0x00000000080008cc      0x548 Src/MoT_system/MoT_DMA_Comm.o
+                0x00000000080008cc                general_init
+                0x00000000080008e0                TIM2_NVIC_init
+                0x0000000008000906                DMA_init
+                0x0000000008000ad6                TRIGGER_TIM2
+                0x0000000008000ba6                TRIGGER_PA1
+                0x0000000008000d86                modify_sample_size
+                0x0000000008000da2                modify_report_size
+ .text          0x0000000008000e14      0x122 Src/MoT_system/MoT_ringbufbuf03.o
+                0x0000000008000e14                ringbufbuf0_rd
+                0x0000000008000e50                ringbufbuf1_rd
+                0x0000000008000e80                ringbufbuf_wr
+                0x0000000008000ef6                ringbufbuf_init
+                0x0000000008000f22                ringbufbuf0_reset
+                0x0000000008000f2c                ringbufbuf1_reset
+ .text          0x0000000008000f36      0x282 Src/MoTdevice_GreenLED08.o
+                0x0000000008000f36                MoTdevice_GreenLED_cmd
+                0x0000000008000f48                MoTdevice_GreenLED_init
+                0x0000000008000fb4                MoTdevice_GreenLED_slow
+                0x0000000008000ffa                MoTdevice_GreenLED_fast
+                0x0000000008001040                MoTdevice_GreenLED_stop
+                0x0000000008001090                MoTdevice_GreenLED_ONtask
+                0x00000000080010d2                MoTdevice_GreenLED_ONtask_msg_posted
+                0x00000000080010f4                MoTdevice_GreenLED_OFFtask
+                0x0000000008001136                MoTdevice_GreenLED_OFFtask_msg_posted
+ .text          0x00000000080011b8      0x194 Src/MoTdevice_Scope.o
+                0x00000000080011b8                MoTdevice_Scope_cmd
+                0x00000000080011c8                modify_scope
+                0x00000000080011fa                init_scope
+                0x0000000008001202                modify_mode
+                0x0000000008001222                scan_mode
+                0x000000000800122e                scan_mode_start
+                0x0000000008001240                scan_mode_stop
+                0x0000000008001252                scan_mode_step
+                0x000000000800129a                single_mode
+                0x00000000080012ce                modify_sample_rate
+                0x0000000008001300                modify_trigger
+                0x000000000800130a                change_trigger_tim2
+                0x0000000008001310                change_trigger_pa1
+                0x0000000008001316                modify_trigger_delay
+ .text          0x000000000800134c       0xdc Src/misc_utilities.o
+                0x000000000800134c                bytecopy
+                0x000000000800135c                sprintf_uint32
+                0x00000000080013c0                ADC1_report
+ .text          0x0000000008001428      0x278 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(ADC1_TIM2_TRGO.o)
+                0x0000000008001428                ADC1_TIM2Tinit
+                0x0000000008001612                ADC1_SWT
+                0x0000000008001624                ADC1_bgetdata
+                0x000000000800163a                ADC1_getdata
+                0x0000000008001640                ADC1_2_IRQinit
+                0x0000000008001688                ADC1_2_IRQHandler
+ .text          0x00000000080016a0       0xba /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(HCLK48MHz.o)
+                0x00000000080016a0                LSE_init
+                0x00000000080016ee                HCLK48MHz_init
+ *fill*         0x000000000800175a        0x2 
+ .text          0x000000000800175c      0x378 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_addsubdf3.o)
+                0x000000000800175c                __aeabi_drsub
+                0x0000000008001764                __aeabi_dsub
+                0x0000000008001764                __subdf3
+                0x0000000008001768                __adddf3
+                0x0000000008001768                __aeabi_dadd
+                0x00000000080019e0                __aeabi_ui2d
+                0x00000000080019e0                __floatunsidf
+                0x0000000008001a00                __floatsidf
+                0x0000000008001a00                __aeabi_i2d
+                0x0000000008001a24                __extendsfdf2
+                0x0000000008001a24                __aeabi_f2d
+                0x0000000008001a68                __aeabi_ul2d
+                0x0000000008001a68                __floatundidf
+                0x0000000008001a78                __floatdidf
+                0x0000000008001a78                __aeabi_l2d
+ .text          0x0000000008001ad4      0x424 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_muldivdf3.o)
+                0x0000000008001ad4                __aeabi_dmul
+                0x0000000008001ad4                __muldf3
+                0x0000000008001d28                __aeabi_ddiv
+                0x0000000008001d28                __divdf3
+ .text          0x0000000008001ef8      0x110 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_cmpdf2.o)
+                0x0000000008001ef8                __gtdf2
+                0x0000000008001ef8                __gedf2
+                0x0000000008001f00                __ltdf2
+                0x0000000008001f00                __ledf2
+                0x0000000008001f08                __cmpdf2
+                0x0000000008001f08                __eqdf2
+                0x0000000008001f08                __nedf2
+                0x0000000008001f84                __aeabi_cdrcmple
+                0x0000000008001f94                __aeabi_cdcmple
+                0x0000000008001f94                __aeabi_cdcmpeq
+                0x0000000008001fa4                __aeabi_dcmpeq
+                0x0000000008001fb8                __aeabi_dcmplt
+                0x0000000008001fcc                __aeabi_dcmple
+                0x0000000008001fe0                __aeabi_dcmpge
+                0x0000000008001ff4                __aeabi_dcmpgt
+ .text          0x0000000008002008       0x2c /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_arm_unorddf2.o)
+                0x0000000008002008                __aeabi_dcmpun
+                0x0000000008002008                __unorddf2
+ *(.text*)
+ .text.printToUSART2
+                0x0000000008002034       0x36 Src/main11.o
+                0x0000000008002034                printToUSART2
+ *fill*         0x000000000800206a        0x2 
+ .text.checkBounds
+                0x000000000800206c       0x70 Src/main11.o
+                0x000000000800206c                checkBounds
+ .text.waveformAverage
+                0x00000000080020dc      0x104 Src/main11.o
+                0x00000000080020dc                waveformAverage
+ .text.main     0x00000000080021e0       0xdc Src/main11.o
+                0x00000000080021e0                main
+ .text.Reset_Handler
+                0x00000000080022bc       0x48 startup/startup_stm32l476xx.o
+                0x00000000080022bc                Reset_Handler
+ .text.Default_Handler
+                0x0000000008002304        0x2 startup/startup_stm32l476xx.o
+                0x0000000008002304                RTC_Alarm_IRQHandler
+                0x0000000008002304                EXTI2_IRQHandler
+                0x0000000008002304                TIM8_TRG_COM_IRQHandler
+                0x0000000008002304                TIM8_CC_IRQHandler
+                0x0000000008002304                DebugMon_Handler
+                0x0000000008002304                TIM1_CC_IRQHandler
+                0x0000000008002304                TSC_IRQHandler
+                0x0000000008002304                HardFault_Handler
+                0x0000000008002304                SysTick_Handler
+                0x0000000008002304                TAMP_STAMP_IRQHandler
+                0x0000000008002304                PendSV_Handler
+                0x0000000008002304                NMI_Handler
+                0x0000000008002304                EXTI3_IRQHandler
+                0x0000000008002304                LPTIM2_IRQHandler
+                0x0000000008002304                DFSDM1_FLT1_IRQHandler
+                0x0000000008002304                I2C3_ER_IRQHandler
+                0x0000000008002304                DFSDM1_FLT2_IRQHandler
+                0x0000000008002304                EXTI0_IRQHandler
+                0x0000000008002304                I2C2_EV_IRQHandler
+                0x0000000008002304                CAN1_RX0_IRQHandler
+                0x0000000008002304                FPU_IRQHandler
+                0x0000000008002304                TIM1_UP_TIM16_IRQHandler
+                0x0000000008002304                UsageFault_Handler
+                0x0000000008002304                SPI1_IRQHandler
+                0x0000000008002304                TIM6_DAC_IRQHandler
+                0x0000000008002304                TIM8_UP_IRQHandler
+                0x0000000008002304                DMA2_Channel2_IRQHandler
+                0x0000000008002304                DMA1_Channel4_IRQHandler
+                0x0000000008002304                SAI2_IRQHandler
+                0x0000000008002304                DFSDM1_FLT3_IRQHandler
+                0x0000000008002304                USART3_IRQHandler
+                0x0000000008002304                DMA1_Channel7_IRQHandler
+                0x0000000008002304                CAN1_RX1_IRQHandler
+                0x0000000008002304                LCD_IRQHandler
+                0x0000000008002304                UART5_IRQHandler
+                0x0000000008002304                ADC3_IRQHandler
+                0x0000000008002304                TIM4_IRQHandler
+                0x0000000008002304                DMA2_Channel1_IRQHandler
+                0x0000000008002304                QUADSPI_IRQHandler
+                0x0000000008002304                I2C1_EV_IRQHandler
+                0x0000000008002304                DMA1_Channel6_IRQHandler
+                0x0000000008002304                UART4_IRQHandler
+                0x0000000008002304                DMA2_Channel4_IRQHandler
+                0x0000000008002304                TIM3_IRQHandler
+                0x0000000008002304                RCC_IRQHandler
+                0x0000000008002304                DMA1_Channel1_IRQHandler
+                0x0000000008002304                Default_Handler
+                0x0000000008002304                DMA2_Channel7_IRQHandler
+                0x0000000008002304                EXTI15_10_IRQHandler
+                0x0000000008002304                TIM7_IRQHandler
+                0x0000000008002304                SDMMC1_IRQHandler
+                0x0000000008002304                TIM5_IRQHandler
+                0x0000000008002304                I2C3_EV_IRQHandler
+                0x0000000008002304                EXTI9_5_IRQHandler
+                0x0000000008002304                RTC_WKUP_IRQHandler
+                0x0000000008002304                PVD_PVM_IRQHandler
+                0x0000000008002304                SPI2_IRQHandler
+                0x0000000008002304                MemManage_Handler
+                0x0000000008002304                CAN1_TX_IRQHandler
+                0x0000000008002304                SVC_Handler
+                0x0000000008002304                DMA2_Channel5_IRQHandler
+                0x0000000008002304                DMA1_Channel5_IRQHandler
+                0x0000000008002304                EXTI4_IRQHandler
+                0x0000000008002304                RNG_IRQHandler
+                0x0000000008002304                TIM1_TRG_COM_TIM17_IRQHandler
+                0x0000000008002304                DMA1_Channel3_IRQHandler
+                0x0000000008002304                COMP_IRQHandler
+                0x0000000008002304                WWDG_IRQHandler
+                0x0000000008002304                LPUART1_IRQHandler
+                0x0000000008002304                DMA2_Channel6_IRQHandler
+                0x0000000008002304                TIM2_IRQHandler
+                0x0000000008002304                EXTI1_IRQHandler
+                0x0000000008002304                DFSDM1_FLT0_IRQHandler
+                0x0000000008002304                I2C2_ER_IRQHandler
+                0x0000000008002304                DMA1_Channel2_IRQHandler
+                0x0000000008002304                TIM8_BRK_IRQHandler
+                0x0000000008002304                CAN1_SCE_IRQHandler
+                0x0000000008002304                FLASH_IRQHandler
+                0x0000000008002304                BusFault_Handler
+                0x0000000008002304                USART1_IRQHandler
+                0x0000000008002304                OTG_FS_IRQHandler
+                0x0000000008002304                SPI3_IRQHandler
+                0x0000000008002304                I2C1_ER_IRQHandler
+                0x0000000008002304                FMC_IRQHandler
+                0x0000000008002304                SWPMI1_IRQHandler
+                0x0000000008002304                LPTIM1_IRQHandler
+                0x0000000008002304                SAI1_IRQHandler
+                0x0000000008002304                DMA2_Channel3_IRQHandler
+                0x0000000008002304                TIM1_BRK_TIM15_IRQHandler
+ *fill*         0x0000000008002306        0x2 
+ .text.sqrt     0x0000000008002308       0xb8 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+                0x0000000008002308                sqrt
+ .text.__ieee754_sqrt
+                0x00000000080023c0      0x194 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+                0x00000000080023c0                __ieee754_sqrt
+ .text.matherr  0x0000000008002554        0x4 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+                0x0000000008002554                matherr
+ .text.__errno  0x0000000008002558        0xc /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
+                0x0000000008002558                __errno
+ *(.glue_7)
+ .glue_7        0x0000000008002564        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000000008002564        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x0000000008002568                . = ALIGN (0x8)
+ *fill*         0x0000000008002564        0x4 
+                0x0000000008002568                _etext = .
+
+.vfp11_veneer   0x0000000008002568        0x0
+ .vfp11_veneer  0x0000000008002568        0x0 linker stubs
+
+.v4_bx          0x0000000008002568        0x0
+ .v4_bx         0x0000000008002568        0x0 linker stubs
+
+.iplt           0x0000000008002568        0x0
+ .iplt          0x0000000008002568        0x0 Src/LL_device/LCDdisp.o
+
+.rodata         0x0000000008002568       0x88
+                0x0000000008002568                . = ALIGN (0x8)
+ *(.rodata)
+ .rodata        0x0000000008002568       0x80 Src/main11.o
+ *(.rodata*)
+ .rodata.sqrt.str1.4
+                0x00000000080025e8        0x8 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+                                          0x5 (size before relaxing)
+                0x00000000080025f0                . = ALIGN (0x8)
+
+.rel.dyn        0x00000000080025f0        0x0
+ .rel.iplt      0x00000000080025f0        0x0 Src/LL_device/LCDdisp.o
+
+.ARM.extab      0x00000000080025f0        0x0
+                0x00000000080025f0                . = ALIGN (0x8)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000000080025f0                . = ALIGN (0x8)
+
+.ARM            0x00000000080025f0        0x0
+                0x00000000080025f0                . = ALIGN (0x8)
+                0x00000000080025f0                __exidx_start = .
+ *(.ARM.exidx*)
+                0x00000000080025f0                __exidx_end = .
+                0x00000000080025f0                . = ALIGN (0x8)
+
+.preinit_array  0x00000000080025f0        0x0
+                0x00000000080025f0                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+                0x00000000080025f0                . = ALIGN (0x8)
+
+.init_array     0x00000000080025f0        0x0
+                0x00000000080025f0                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                        PROVIDE (__init_array_end = .)
+                0x00000000080025f0                . = ALIGN (0x8)
+
+.fini_array     0x00000000080025f0        0x0
+                0x00000000080025f0                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x00000000080025f0                . = ALIGN (0x8)
+                0x00000000080025f0                _sidata = LOADADDR (.data)
+
+.data           0x0000000020000000     0x3670 load address 0x00000000080025f0
+                0x0000000020000000                . = ALIGN (0x8)
+                0x0000000020000000                _sdata = .
+ *(.data)
+ .data          0x0000000020000000     0x2854 Src/MoT_system/MoT_AdminCfg02.o
+                0x0000000020000000                adminTasklist
+                0x0000000020000010                adminDefaultDevice_task
+                0x0000000020002848                adminTasklist_last
+ .data          0x0000000020002854      0x9ec Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                0x0000000020002874                USART2_RXbufHANDLE
+                0x0000000020003238                admin_Msgctl
+                0x0000000020003238                USART2_MsgCtl
+ *(.data*)
+ .data.__fdlib_version
+                0x0000000020003240        0x1 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+                0x0000000020003240                __fdlib_version
+ *fill*         0x0000000020003241        0x3 
+ .data._impure_ptr
+                0x0000000020003244        0x4 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+                0x0000000020003244                _impure_ptr
+ .data.impure_data
+                0x0000000020003248      0x428 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+                0x0000000020003670                . = ALIGN (0x8)
+                0x0000000020003670                _edata = .
+
+.igot.plt       0x0000000020003670        0x0 load address 0x0000000008005c60
+ .igot.plt      0x0000000020003670        0x0 Src/LL_device/LCDdisp.o
+                0x0000000020003670                . = ALIGN (0x4)
+
+.bss            0x0000000020003670      0xa6c load address 0x0000000008005c60
+                0x0000000020003670                _sbss = .
+                0x0000000020003670                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000020003670      0x9e4 Src/MoT_system/MoT_AdminCfg02.o
+                0x0000000020003690                adminCmd_handle
+ .bss           0x0000000020004054       0x20 Src/MoTdevice_GreenLED08.o
+                0x0000000020004054                MoTdevice_GreenLED_data
+ .bss           0x0000000020004074       0x58 Src/misc_utilities.o
+                0x0000000020004074                ADC1_report_data
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00000000200040cc       0x10 Src/main11.o
+                0x00000000200040cc                serchar
+                0x00000000200040d0                TIM2_ticks
+                0x00000000200040d4                adc_data
+                0x00000000200040d8                ADC1_data
+                0x00000000200040dc                . = ALIGN (0x4)
+                0x00000000200040dc                _ebss = .
+                0x00000000200040dc                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x00000000200040dc      0x604 load address 0x0000000008005c60
+                0x00000000200040e0                . = ALIGN (0x8)
+ *fill*         0x00000000200040dc        0x4 
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x00000000200042e0                . = (. + _Min_Heap_Size)
+ *fill*         0x00000000200040e0      0x200 
+                0x00000000200046e0                . = (. + _Min_Stack_Size)
+ *fill*         0x00000000200042e0      0x400 
+                0x00000000200046e0                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x0000000000000000       0x35
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/LL_device/LCDdisp.o
+ .ARM.attributes
+                0x0000000000000025       0x25 Src/LL_device/stm32L476Disco_GreenLED.o
+ .ARM.attributes
+                0x000000000000004a       0x25 Src/LL_device/stm32L476Disco_RedLED.o
+ .ARM.attributes
+                0x000000000000006f       0x25 Src/MoT_system/MoT_AdminCfg02.o
+ .ARM.attributes
+                0x0000000000000094       0x25 Src/MoT_system/MoT_CmdHandler16.o
+ .ARM.attributes
+                0x00000000000000b9       0x25 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .ARM.attributes
+                0x00000000000000de       0x25 Src/MoT_system/MoT_DMA_Comm.o
+ .ARM.attributes
+                0x0000000000000103       0x25 Src/MoT_system/MoT_ringbufbuf03.o
+ .ARM.attributes
+                0x0000000000000128       0x25 Src/MoTdevice_GreenLED08.o
+ .ARM.attributes
+                0x000000000000014d       0x25 Src/MoTdevice_Scope.o
+ .ARM.attributes
+                0x0000000000000172       0x39 Src/main11.o
+ .ARM.attributes
+                0x00000000000001ab       0x25 Src/misc_utilities.o
+ .ARM.attributes
+                0x00000000000001d0       0x25 startup/startup_stm32l476xx.o
+ .ARM.attributes
+                0x00000000000001f5       0x21 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(ADC1_TIM2_TRGO.o)
+ .ARM.attributes
+                0x0000000000000216       0x21 /home/lkosub/ENEE440/LaurenKosub_440F19_MotoScope/DiscoBlinkyMoT/Lib/libADC1_TIM2T_48MHz.a(HCLK48MHz.o)
+ .ARM.attributes
+                0x0000000000000237       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+ .ARM.attributes
+                0x000000000000026b       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+ .ARM.attributes
+                0x000000000000029f       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_lib_ver.o)
+ .ARM.attributes
+                0x00000000000002d3       0x34 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)
+OUTPUT(DiscoBlinkyMoT.elf elf32-littlearm)
+
+.debug_line     0x0000000000000000      0xc0d
+ .debug_line    0x0000000000000000       0x56 Src/LL_device/LCDdisp.o
+ .debug_line    0x0000000000000056       0x7e Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_line    0x00000000000000d4       0x7c Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_line    0x0000000000000150       0x59 Src/MoT_system/MoT_AdminCfg02.o
+ .debug_line    0x00000000000001a9       0xb0 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_line    0x0000000000000259      0x1b6 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_line    0x000000000000040f       0xdc Src/MoT_system/MoT_DMA_Comm.o
+ .debug_line    0x00000000000004eb       0xb4 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_line    0x000000000000059f       0x96 Src/MoTdevice_GreenLED08.o
+ .debug_line    0x0000000000000635       0xcd Src/MoTdevice_Scope.o
+ .debug_line    0x0000000000000702      0x418 Src/main11.o
+ .debug_line    0x0000000000000b1a       0x76 Src/misc_utilities.o
+ .debug_line    0x0000000000000b90       0x7d startup/startup_stm32l476xx.o
+
+.debug_info     0x0000000000000000      0xcdd
+ .debug_info    0x0000000000000000       0x26 Src/LL_device/LCDdisp.o
+ .debug_info    0x0000000000000026       0x26 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_info    0x000000000000004c       0x26 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_info    0x0000000000000072       0x26 Src/MoT_system/MoT_AdminCfg02.o
+ .debug_info    0x0000000000000098       0x26 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_info    0x00000000000000be       0x26 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_info    0x00000000000000e4       0x26 Src/MoT_system/MoT_DMA_Comm.o
+ .debug_info    0x000000000000010a       0x26 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_info    0x0000000000000130       0x26 Src/MoTdevice_GreenLED08.o
+ .debug_info    0x0000000000000156       0x26 Src/MoTdevice_Scope.o
+ .debug_info    0x000000000000017c      0xb19 Src/main11.o
+ .debug_info    0x0000000000000c95       0x26 Src/misc_utilities.o
+ .debug_info    0x0000000000000cbb       0x22 startup/startup_stm32l476xx.o
+
+.debug_abbrev   0x0000000000000000      0x349
+ .debug_abbrev  0x0000000000000000       0x14 Src/LL_device/LCDdisp.o
+ .debug_abbrev  0x0000000000000014       0x14 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_abbrev  0x0000000000000028       0x14 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_abbrev  0x000000000000003c       0x14 Src/MoT_system/MoT_AdminCfg02.o
+ .debug_abbrev  0x0000000000000050       0x14 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_abbrev  0x0000000000000064       0x14 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_abbrev  0x0000000000000078       0x14 Src/MoT_system/MoT_DMA_Comm.o
+ .debug_abbrev  0x000000000000008c       0x14 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_abbrev  0x00000000000000a0       0x14 Src/MoTdevice_GreenLED08.o
+ .debug_abbrev  0x00000000000000b4       0x14 Src/MoTdevice_Scope.o
+ .debug_abbrev  0x00000000000000c8      0x25b Src/main11.o
+ .debug_abbrev  0x0000000000000323       0x14 Src/misc_utilities.o
+ .debug_abbrev  0x0000000000000337       0x12 startup/startup_stm32l476xx.o
+
+.debug_aranges  0x0000000000000000      0x1c8
+ .debug_aranges
+                0x0000000000000000       0x20 Src/LL_device/LCDdisp.o
+ .debug_aranges
+                0x0000000000000020       0x20 Src/LL_device/stm32L476Disco_GreenLED.o
+ .debug_aranges
+                0x0000000000000040       0x20 Src/LL_device/stm32L476Disco_RedLED.o
+ .debug_aranges
+                0x0000000000000060       0x20 Src/MoT_system/MoT_AdminCfg02.o
+ .debug_aranges
+                0x0000000000000080       0x20 Src/MoT_system/MoT_CmdHandler16.o
+ .debug_aranges
+                0x00000000000000a0       0x20 Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+ .debug_aranges
+                0x00000000000000c0       0x20 Src/MoT_system/MoT_DMA_Comm.o
+ .debug_aranges
+                0x00000000000000e0       0x20 Src/MoT_system/MoT_ringbufbuf03.o
+ .debug_aranges
+                0x0000000000000100       0x20 Src/MoTdevice_GreenLED08.o
+ .debug_aranges
+                0x0000000000000120       0x20 Src/MoTdevice_Scope.o
+ .debug_aranges
+                0x0000000000000140       0x40 Src/main11.o
+ .debug_aranges
+                0x0000000000000180       0x20 Src/misc_utilities.o
+ .debug_aranges
+                0x00000000000001a0       0x28 startup/startup_stm32l476xx.o
+
+.debug_str      0x0000000000000000     0x7256
+ .debug_str     0x0000000000000000       0x70 Src/LL_device/LCDdisp.o
+ .debug_str     0x0000000000000070       0x2b Src/LL_device/stm32L476Disco_GreenLED.o
+                                         0x80 (size before relaxing)
+ .debug_str     0x000000000000009b       0x29 Src/LL_device/stm32L476Disco_RedLED.o
+                                         0x7e (size before relaxing)
+ .debug_str     0x00000000000000c4       0x23 Src/MoT_system/MoT_AdminCfg02.o
+                                         0x78 (size before relaxing)
+ .debug_str     0x00000000000000e7       0x25 Src/MoT_system/MoT_CmdHandler16.o
+                                         0x7a (size before relaxing)
+ .debug_str     0x000000000000010c       0x3e Src/MoT_system/MoT_Comm_stm32L476_4MHZ_USART2_9600N81_01.o
+                                         0x93 (size before relaxing)
+ .debug_str     0x000000000000014a       0x21 Src/MoT_system/MoT_DMA_Comm.o
+                                         0x76 (size before relaxing)
+ .debug_str     0x000000000000016b       0x25 Src/MoT_system/MoT_ringbufbuf03.o
+                                         0x7a (size before relaxing)
+ .debug_str     0x0000000000000190       0x1e Src/MoTdevice_GreenLED08.o
+                                         0x73 (size before relaxing)
+ .debug_str     0x00000000000001ae       0x19 Src/MoTdevice_Scope.o
+                                         0x6e (size before relaxing)
+ .debug_str     0x00000000000001c7     0x7056 Src/main11.o
+                                       0x7331 (size before relaxing)
+ .debug_str     0x000000000000721d       0x18 Src/misc_utilities.o
+                                         0x6d (size before relaxing)
+ .debug_str     0x0000000000007235       0x21 startup/startup_stm32l476xx.o
+                                         0x76 (size before relaxing)
+
+.debug_ranges   0x0000000000000000       0x50
+ .debug_ranges  0x0000000000000000       0x30 Src/main11.o
+ .debug_ranges  0x0000000000000030       0x20 startup/startup_stm32l476xx.o
+
+.debug_macro    0x0000000000000000     0x196b
+ .debug_macro   0x0000000000000000       0xea Src/main11.o
+ .debug_macro   0x00000000000000ea      0xa60 Src/main11.o
+ .debug_macro   0x0000000000000b4a      0x34e Src/main11.o
+ .debug_macro   0x0000000000000e98       0x22 Src/main11.o
+ .debug_macro   0x0000000000000eba       0x58 Src/main11.o
+ .debug_macro   0x0000000000000f12       0x18 Src/main11.o
+ .debug_macro   0x0000000000000f2a       0x94 Src/main11.o
+ .debug_macro   0x0000000000000fbe       0x35 Src/main11.o
+ .debug_macro   0x0000000000000ff3       0x34 Src/main11.o
+ .debug_macro   0x0000000000001027      0x174 Src/main11.o
+ .debug_macro   0x000000000000119b       0x57 Src/main11.o
+ .debug_macro   0x00000000000011f2       0x58 Src/main11.o
+ .debug_macro   0x000000000000124a       0x1f Src/main11.o
+ .debug_macro   0x0000000000001269       0x43 Src/main11.o
+ .debug_macro   0x00000000000012ac       0x20 Src/main11.o
+ .debug_macro   0x00000000000012cc      0x18e Src/main11.o
+ .debug_macro   0x000000000000145a      0x330 Src/main11.o
+ .debug_macro   0x000000000000178a      0x1e1 Src/main11.o
+
+.comment        0x0000000000000000       0x7f
+ .comment       0x0000000000000000       0x7f Src/main11.o
+                                         0x80 (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x168
+ .debug_frame   0x0000000000000000       0xcc Src/main11.o
+ .debug_frame   0x00000000000000cc       0x4c /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-w_sqrt.o)
+ .debug_frame   0x0000000000000118       0x30 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x0000000000000148       0x20 /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a(lib_a-s_matherr.o)

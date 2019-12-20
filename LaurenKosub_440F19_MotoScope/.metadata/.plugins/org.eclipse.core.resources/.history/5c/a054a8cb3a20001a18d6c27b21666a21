@@ -1,0 +1,69 @@
+@; stm32L476Disco_GreenLED.S wmh 2019-09-16 : drivers for green LED on STM32L476 Discovery  board
+@; adds void-void functions GreenLED_ON() and GreenLED_OFF(), renames initGPIOE8() to GreenLED_INIT() 
+@; GreenLED.S wmh 2019-08-21 : functions initializing and controlling the green LED at port pin PE8 on the STM32L476 Discovery board
+@; uppercase 'S' file extension tells GCC to use preprocessor to interpret '#define' definitions 
+
+	@;useful macro
+	.macro MOV_imm32 reg, constant
+		movw \reg, #:lower16:\constant
+		movt \reg, #:upper16:\constant
+	.endm
+
+	.macro	CONFIG32 structbase, regoffset, bitoffset, bitmask, bitval
+		MOV_imm32 r3,(\structbase)
+		ldr r2,[r3,#(\regoffset)]
+		bic r2,#((\bitmask)<<(\bitoffset))
+		orr r2,#((\bitval)<<(\bitoffset))
+		str r2,[r3,#(\regoffset)]
+	.endm
+
+
+	@;constants derived from those defined in the STM32L476 manual (RM0351, en.DM00083560.pdf)
+	.equ	LCD_BASE,0x0
+	.equ	LCD_CD, 0x0
+	.equ
+
+	.syntax unified				@; ARM Unified Assembler Language (UAL) is allowed 
+	.thumb						@; we're using thumb instructions only
+
+	.text						
+	.align 2
+
+	.global GreenLED_init
+	.thumb_func
+LCDDisp_init: @;configure port bit PE8 as GPIO output with high-speed push/pull drivers and no pu/pd.
+	push {r7,lr}
+	config32 LCD_BASE, LCD_CR, 0, 1, 1
+	
+	pop {r7,pc}					@; return to caller
+
+
+	.global GreenLED_OFF
+	.thumb_func
+GreenLED_OFF: @;turn 'L476 Discovery board's green LED off (GPIOE PE8 => 0) 
+	push {r7,lr}
+	mov_imm32 r3,GPIOE_BASE		@;r3= GPIOE struct address
+	mov r2,#(1<<(16+PE8))		@;r2= BR8 (see RM0351 Table 39. GPIO register map)
+	str r2,[r3,#BSRR]			@;reset PE8
+	pop {r7,pc}					@; return to caller
+	
+
+	.global GreenLED_ON
+	.thumb_func
+GreenLED_ON: @;turn 'L476 Discovery board's green LED off (GPIOE PE8 => 0) 
+	push {r7,lr}
+	mov_imm32 r3,GPIOE_BASE		@;r3= GPIOE struct address
+	mov r2,#(1<<(PE8))			@;r2= BR8 (see RM0351 Table 39. GPIO register map)
+	str r2,[r3,#BSRR]			@;reset PE8
+	pop {r7,pc}					@; return to caller
+
+	.global GreenLED_toggle
+	.thumb_func
+GreenLED_toggle: @;flip PE8 to its opposite state
+	ldr r3,=GPIOE_BASE			@;load GPIOE struct address
+	ldr r2,[r3,#IDR]			@;get current port values
+	eor r2,r2,#(1<<(PE8))		@;toggle port bit 
+	str r2,[r3,#ODR]			@;update port values
+	bx lr						@; return to caller
+
+

@@ -6,17 +6,65 @@ serchar             0x4               Src/main06.o
 
 Discarded input sections
 
+ .group         0x0000000000000000        0xc .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .text          0x0000000000000000        0x0 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .data          0x0000000000000000        0x0 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .bss           0x0000000000000000        0x0 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_info    0x0000000000000000       0x21 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_abbrev  0x0000000000000000       0x13 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_aranges
+                0x0000000000000000       0x18 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_macro   0x0000000000000000       0x11 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_macro   0x0000000000000000      0xa60 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_line    0x0000000000000000       0x58 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .debug_str     0x0000000000000000     0x2d11 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .comment       0x0000000000000000       0x80 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .ARM.attributes
+                0x0000000000000000       0x39 .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
+ .text          0x0000000000000000      0x110 Src/MoT/MoT_Cmd_Handler16.o
  .data          0x0000000000000000        0x0 Src/MoT/MoT_Cmd_Handler16.o
  .bss           0x0000000000000000        0x0 Src/MoT/MoT_Cmd_Handler16.o
+ .debug_line    0x0000000000000000       0xaa Src/MoT/MoT_Cmd_Handler16.o
+ .debug_info    0x0000000000000000       0x26 Src/MoT/MoT_Cmd_Handler16.o
+ .debug_abbrev  0x0000000000000000       0x14 Src/MoT/MoT_Cmd_Handler16.o
+ .debug_aranges
+                0x0000000000000000       0x20 Src/MoT/MoT_Cmd_Handler16.o
+ .debug_str     0x0000000000000000       0x78 Src/MoT/MoT_Cmd_Handler16.o
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/MoT/MoT_Cmd_Handler16.o
+ .text          0x0000000000000000       0x64 Src/MoT/MoT_Msg_Handler201.o
  .data          0x0000000000000000        0x0 Src/MoT/MoT_Msg_Handler201.o
  .bss           0x0000000000000000        0x0 Src/MoT/MoT_Msg_Handler201.o
+ .debug_line    0x0000000000000000       0x7d Src/MoT/MoT_Msg_Handler201.o
+ .debug_info    0x0000000000000000       0x26 Src/MoT/MoT_Msg_Handler201.o
+ .debug_abbrev  0x0000000000000000       0x14 Src/MoT/MoT_Msg_Handler201.o
+ .debug_aranges
+                0x0000000000000000       0x20 Src/MoT/MoT_Msg_Handler201.o
+ .debug_str     0x0000000000000000       0x79 Src/MoT/MoT_Msg_Handler201.o
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/MoT/MoT_Msg_Handler201.o
+ .text          0x0000000000000000        0x8 Src/MoT/MoT_admin_cfg01.o
+ .data          0x0000000000000000       0x28 Src/MoT/MoT_admin_cfg01.o
+ .bss           0x0000000000000000      0x9e4 Src/MoT/MoT_admin_cfg01.o
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/MoT/MoT_admin_cfg01.o
+ .text          0x0000000000000000      0x346 Src/MoTdevice_GreenLED07.o
  .data          0x0000000000000000        0x0 Src/MoTdevice_GreenLED07.o
+ .bss           0x0000000000000000       0x20 Src/MoTdevice_GreenLED07.o
+ .debug_line    0x0000000000000000       0xa3 Src/MoTdevice_GreenLED07.o
+ .debug_info    0x0000000000000000       0x26 Src/MoTdevice_GreenLED07.o
+ .debug_abbrev  0x0000000000000000       0x14 Src/MoTdevice_GreenLED07.o
+ .debug_aranges
+                0x0000000000000000       0x20 Src/MoTdevice_GreenLED07.o
+ .debug_str     0x0000000000000000       0x77 Src/MoTdevice_GreenLED07.o
+ .ARM.attributes
+                0x0000000000000000       0x25 Src/MoTdevice_GreenLED07.o
  .group         0x0000000000000000        0xc Src/main06.o
  .group         0x0000000000000000        0xc Src/main06.o
  .text          0x0000000000000000        0x0 Src/main06.o
  .data          0x0000000000000000        0x0 Src/main06.o
  .bss           0x0000000000000000        0x0 Src/main06.o
- .text.SWdelay  0x0000000000000000       0x28 Src/main06.o
+ .debug_macro   0x0000000000000000      0xa60 Src/main06.o
  COMMON         0x0000000000000000        0x4 Src/main06.o
  .data          0x0000000000000000        0x0 Src/stm32L476Disco_GreenLED.o
  .bss           0x0000000000000000        0x0 Src/stm32L476Disco_GreenLED.o
@@ -36,6 +84,7 @@ FLASH            0x0000000008000000 0x0000000000100000 xr
 
 Linker script and memory map
 
+LOAD .metadata/.plugins/org.eclipse.cdt.make.core/specs.o
 LOAD Src/MoT/MoT_Cmd_Handler16.o
 LOAD Src/MoT/MoT_Msg_Handler201.o
 LOAD Src/MoT/MoT_admin_cfg01.o
@@ -56,249 +105,219 @@ LOAD /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000188                . = ALIGN (0x8)
 
-.text           0x0000000008000188      0x730
+.text           0x0000000008000188      0x328
                 0x0000000008000188                . = ALIGN (0x8)
  *(.text)
- .text          0x0000000008000188      0x110 Src/MoT/MoT_Cmd_Handler16.o
-                0x0000000008000188                init_Cmd_handle
-                0x00000000080001ac                Cmd_Handler
-                0x000000000800028e                do_tasks_return
- .text          0x0000000008000298       0x64 Src/MoT/MoT_Msg_Handler201.o
-                0x0000000008000298                MSG_post_fn
-                0x00000000080002b2                Msg_Handler_init
-                0x00000000080002be                Msg_Handler
-                0x00000000080002c6                Msg_sender
- .text          0x00000000080002fc        0x8 Src/MoT/MoT_admin_cfg01.o
-                0x00000000080002fc                adminDevicetable
- .text          0x0000000008000304      0x346 Src/MoTdevice_GreenLED07.o
-                0x0000000008000304                MoTdevice_GreenLED_cmd
-                0x0000000008000318                MoTdevice_GreenLED_init
-                0x0000000008000390                MoTdevice_GreenLED_slow
-                0x00000000080003e2                MoTdevice_GreenLED_fast
-                0x0000000008000434                MoTdevice_GreenLED_stop
-                0x0000000008000490                MoTdevice_GreenLED_blinkN
-                0x00000000080004f0                MoTdevice_GreenLED_ONtask
-                0x000000000800053e                MoTdevice_GreenLED_ONtask_msg_posted
-                0x0000000008000560                MoTdevice_GreenLED_OFFtask
-                0x00000000080005ae                MoTdevice_GreenLED_OFFtask_msg_posted
- .text          0x000000000800064a       0x68 Src/stm32L476Disco_GreenLED.o
-                0x000000000800064a                GreenLED_init
-                0x000000000800068e                GreenLED_OFF
-                0x00000000080006a0                GreenLED_ON
- *fill*         0x00000000080006b2        0x2 
- .text          0x00000000080006b4      0x174 Src/stm32L476Disco_USART2_9600N81.o
-                0x00000000080006b4                configure_GPIOD_for_USART2
-                0x0000000008000724                USART2_init
-                0x00000000080007ac                USART2_nbgetchar
-                0x00000000080007c8                USART2_nbputchar
-                0x00000000080007ea                USART2_bgetchar
-                0x0000000008000802                USART2_bputchar
-                0x000000000800081a                USART2_writeDR
+ .text          0x0000000008000188       0x68 Src/stm32L476Disco_GreenLED.o
+                0x0000000008000188                GreenLED_init
+                0x00000000080001cc                GreenLED_OFF
+                0x00000000080001de                GreenLED_ON
+ .text          0x00000000080001f0      0x174 Src/stm32L476Disco_USART2_9600N81.o
+                0x00000000080001f0                configure_GPIOD_for_USART2
+                0x0000000008000260                USART2_init
+                0x00000000080002e8                USART2_nbgetchar
+                0x0000000008000304                USART2_nbputchar
+                0x0000000008000326                USART2_bgetchar
+                0x000000000800033e                USART2_bputchar
+                0x0000000008000356                USART2_writeDR
  *(.text*)
- .text.main     0x0000000008000828       0x44 Src/main06.o
-                0x0000000008000828                main
+ .text.SWdelay  0x0000000008000364       0x28 Src/main06.o
+                0x0000000008000364                SWdelay
+ .text.main     0x000000000800038c       0xd4 Src/main06.o
+                0x000000000800038c                main
  .text.Reset_Handler
-                0x000000000800086c       0x48 startup/startup_stm32l476xx.o
-                0x000000000800086c                Reset_Handler
+                0x0000000008000460       0x48 startup/startup_stm32l476xx.o
+                0x0000000008000460                Reset_Handler
  .text.Default_Handler
-                0x00000000080008b4        0x2 startup/startup_stm32l476xx.o
-                0x00000000080008b4                RTC_Alarm_IRQHandler
-                0x00000000080008b4                EXTI2_IRQHandler
-                0x00000000080008b4                TIM8_TRG_COM_IRQHandler
-                0x00000000080008b4                TIM8_CC_IRQHandler
-                0x00000000080008b4                DebugMon_Handler
-                0x00000000080008b4                TIM1_CC_IRQHandler
-                0x00000000080008b4                TSC_IRQHandler
-                0x00000000080008b4                HardFault_Handler
-                0x00000000080008b4                SysTick_Handler
-                0x00000000080008b4                TAMP_STAMP_IRQHandler
-                0x00000000080008b4                PendSV_Handler
-                0x00000000080008b4                NMI_Handler
-                0x00000000080008b4                EXTI3_IRQHandler
-                0x00000000080008b4                LPTIM2_IRQHandler
-                0x00000000080008b4                DFSDM1_FLT1_IRQHandler
-                0x00000000080008b4                I2C3_ER_IRQHandler
-                0x00000000080008b4                DFSDM1_FLT2_IRQHandler
-                0x00000000080008b4                EXTI0_IRQHandler
-                0x00000000080008b4                I2C2_EV_IRQHandler
-                0x00000000080008b4                CAN1_RX0_IRQHandler
-                0x00000000080008b4                FPU_IRQHandler
-                0x00000000080008b4                TIM1_UP_TIM16_IRQHandler
-                0x00000000080008b4                UsageFault_Handler
-                0x00000000080008b4                ADC1_2_IRQHandler
-                0x00000000080008b4                SPI1_IRQHandler
-                0x00000000080008b4                TIM6_DAC_IRQHandler
-                0x00000000080008b4                TIM8_UP_IRQHandler
-                0x00000000080008b4                DMA2_Channel2_IRQHandler
-                0x00000000080008b4                DMA1_Channel4_IRQHandler
-                0x00000000080008b4                SAI2_IRQHandler
-                0x00000000080008b4                DFSDM1_FLT3_IRQHandler
-                0x00000000080008b4                USART3_IRQHandler
-                0x00000000080008b4                DMA1_Channel7_IRQHandler
-                0x00000000080008b4                CAN1_RX1_IRQHandler
-                0x00000000080008b4                LCD_IRQHandler
-                0x00000000080008b4                UART5_IRQHandler
-                0x00000000080008b4                ADC3_IRQHandler
-                0x00000000080008b4                TIM4_IRQHandler
-                0x00000000080008b4                DMA2_Channel1_IRQHandler
-                0x00000000080008b4                QUADSPI_IRQHandler
-                0x00000000080008b4                I2C1_EV_IRQHandler
-                0x00000000080008b4                DMA1_Channel6_IRQHandler
-                0x00000000080008b4                UART4_IRQHandler
-                0x00000000080008b4                DMA2_Channel4_IRQHandler
-                0x00000000080008b4                TIM3_IRQHandler
-                0x00000000080008b4                RCC_IRQHandler
-                0x00000000080008b4                DMA1_Channel1_IRQHandler
-                0x00000000080008b4                Default_Handler
-                0x00000000080008b4                DMA2_Channel7_IRQHandler
-                0x00000000080008b4                EXTI15_10_IRQHandler
-                0x00000000080008b4                TIM7_IRQHandler
-                0x00000000080008b4                SDMMC1_IRQHandler
-                0x00000000080008b4                TIM5_IRQHandler
-                0x00000000080008b4                I2C3_EV_IRQHandler
-                0x00000000080008b4                EXTI9_5_IRQHandler
-                0x00000000080008b4                RTC_WKUP_IRQHandler
-                0x00000000080008b4                PVD_PVM_IRQHandler
-                0x00000000080008b4                SPI2_IRQHandler
-                0x00000000080008b4                MemManage_Handler
-                0x00000000080008b4                CAN1_TX_IRQHandler
-                0x00000000080008b4                SVC_Handler
-                0x00000000080008b4                DMA2_Channel5_IRQHandler
-                0x00000000080008b4                DMA1_Channel5_IRQHandler
-                0x00000000080008b4                EXTI4_IRQHandler
-                0x00000000080008b4                RNG_IRQHandler
-                0x00000000080008b4                TIM1_TRG_COM_TIM17_IRQHandler
-                0x00000000080008b4                DMA1_Channel3_IRQHandler
-                0x00000000080008b4                COMP_IRQHandler
-                0x00000000080008b4                WWDG_IRQHandler
-                0x00000000080008b4                LPUART1_IRQHandler
-                0x00000000080008b4                DMA2_Channel6_IRQHandler
-                0x00000000080008b4                TIM2_IRQHandler
-                0x00000000080008b4                EXTI1_IRQHandler
-                0x00000000080008b4                USART2_IRQHandler
-                0x00000000080008b4                DFSDM1_FLT0_IRQHandler
-                0x00000000080008b4                I2C2_ER_IRQHandler
-                0x00000000080008b4                DMA1_Channel2_IRQHandler
-                0x00000000080008b4                TIM8_BRK_IRQHandler
-                0x00000000080008b4                CAN1_SCE_IRQHandler
-                0x00000000080008b4                FLASH_IRQHandler
-                0x00000000080008b4                BusFault_Handler
-                0x00000000080008b4                USART1_IRQHandler
-                0x00000000080008b4                OTG_FS_IRQHandler
-                0x00000000080008b4                SPI3_IRQHandler
-                0x00000000080008b4                I2C1_ER_IRQHandler
-                0x00000000080008b4                FMC_IRQHandler
-                0x00000000080008b4                SWPMI1_IRQHandler
-                0x00000000080008b4                LPTIM1_IRQHandler
-                0x00000000080008b4                SAI1_IRQHandler
-                0x00000000080008b4                DMA2_Channel3_IRQHandler
-                0x00000000080008b4                TIM1_BRK_TIM15_IRQHandler
+                0x00000000080004a8        0x2 startup/startup_stm32l476xx.o
+                0x00000000080004a8                RTC_Alarm_IRQHandler
+                0x00000000080004a8                EXTI2_IRQHandler
+                0x00000000080004a8                TIM8_TRG_COM_IRQHandler
+                0x00000000080004a8                TIM8_CC_IRQHandler
+                0x00000000080004a8                DebugMon_Handler
+                0x00000000080004a8                TIM1_CC_IRQHandler
+                0x00000000080004a8                TSC_IRQHandler
+                0x00000000080004a8                HardFault_Handler
+                0x00000000080004a8                SysTick_Handler
+                0x00000000080004a8                TAMP_STAMP_IRQHandler
+                0x00000000080004a8                PendSV_Handler
+                0x00000000080004a8                NMI_Handler
+                0x00000000080004a8                EXTI3_IRQHandler
+                0x00000000080004a8                LPTIM2_IRQHandler
+                0x00000000080004a8                DFSDM1_FLT1_IRQHandler
+                0x00000000080004a8                I2C3_ER_IRQHandler
+                0x00000000080004a8                DFSDM1_FLT2_IRQHandler
+                0x00000000080004a8                EXTI0_IRQHandler
+                0x00000000080004a8                I2C2_EV_IRQHandler
+                0x00000000080004a8                CAN1_RX0_IRQHandler
+                0x00000000080004a8                FPU_IRQHandler
+                0x00000000080004a8                TIM1_UP_TIM16_IRQHandler
+                0x00000000080004a8                UsageFault_Handler
+                0x00000000080004a8                ADC1_2_IRQHandler
+                0x00000000080004a8                SPI1_IRQHandler
+                0x00000000080004a8                TIM6_DAC_IRQHandler
+                0x00000000080004a8                TIM8_UP_IRQHandler
+                0x00000000080004a8                DMA2_Channel2_IRQHandler
+                0x00000000080004a8                DMA1_Channel4_IRQHandler
+                0x00000000080004a8                SAI2_IRQHandler
+                0x00000000080004a8                DFSDM1_FLT3_IRQHandler
+                0x00000000080004a8                USART3_IRQHandler
+                0x00000000080004a8                DMA1_Channel7_IRQHandler
+                0x00000000080004a8                CAN1_RX1_IRQHandler
+                0x00000000080004a8                LCD_IRQHandler
+                0x00000000080004a8                UART5_IRQHandler
+                0x00000000080004a8                ADC3_IRQHandler
+                0x00000000080004a8                TIM4_IRQHandler
+                0x00000000080004a8                DMA2_Channel1_IRQHandler
+                0x00000000080004a8                QUADSPI_IRQHandler
+                0x00000000080004a8                I2C1_EV_IRQHandler
+                0x00000000080004a8                DMA1_Channel6_IRQHandler
+                0x00000000080004a8                UART4_IRQHandler
+                0x00000000080004a8                DMA2_Channel4_IRQHandler
+                0x00000000080004a8                TIM3_IRQHandler
+                0x00000000080004a8                RCC_IRQHandler
+                0x00000000080004a8                DMA1_Channel1_IRQHandler
+                0x00000000080004a8                Default_Handler
+                0x00000000080004a8                DMA2_Channel7_IRQHandler
+                0x00000000080004a8                EXTI15_10_IRQHandler
+                0x00000000080004a8                TIM7_IRQHandler
+                0x00000000080004a8                SDMMC1_IRQHandler
+                0x00000000080004a8                TIM5_IRQHandler
+                0x00000000080004a8                I2C3_EV_IRQHandler
+                0x00000000080004a8                EXTI9_5_IRQHandler
+                0x00000000080004a8                RTC_WKUP_IRQHandler
+                0x00000000080004a8                PVD_PVM_IRQHandler
+                0x00000000080004a8                SPI2_IRQHandler
+                0x00000000080004a8                MemManage_Handler
+                0x00000000080004a8                CAN1_TX_IRQHandler
+                0x00000000080004a8                SVC_Handler
+                0x00000000080004a8                DMA2_Channel5_IRQHandler
+                0x00000000080004a8                DMA1_Channel5_IRQHandler
+                0x00000000080004a8                EXTI4_IRQHandler
+                0x00000000080004a8                RNG_IRQHandler
+                0x00000000080004a8                TIM1_TRG_COM_TIM17_IRQHandler
+                0x00000000080004a8                DMA1_Channel3_IRQHandler
+                0x00000000080004a8                COMP_IRQHandler
+                0x00000000080004a8                WWDG_IRQHandler
+                0x00000000080004a8                LPUART1_IRQHandler
+                0x00000000080004a8                DMA2_Channel6_IRQHandler
+                0x00000000080004a8                TIM2_IRQHandler
+                0x00000000080004a8                EXTI1_IRQHandler
+                0x00000000080004a8                USART2_IRQHandler
+                0x00000000080004a8                DFSDM1_FLT0_IRQHandler
+                0x00000000080004a8                I2C2_ER_IRQHandler
+                0x00000000080004a8                DMA1_Channel2_IRQHandler
+                0x00000000080004a8                TIM8_BRK_IRQHandler
+                0x00000000080004a8                CAN1_SCE_IRQHandler
+                0x00000000080004a8                FLASH_IRQHandler
+                0x00000000080004a8                BusFault_Handler
+                0x00000000080004a8                USART1_IRQHandler
+                0x00000000080004a8                OTG_FS_IRQHandler
+                0x00000000080004a8                SPI3_IRQHandler
+                0x00000000080004a8                I2C1_ER_IRQHandler
+                0x00000000080004a8                FMC_IRQHandler
+                0x00000000080004a8                SWPMI1_IRQHandler
+                0x00000000080004a8                LPTIM1_IRQHandler
+                0x00000000080004a8                SAI1_IRQHandler
+                0x00000000080004a8                DMA2_Channel3_IRQHandler
+                0x00000000080004a8                TIM1_BRK_TIM15_IRQHandler
  *(.glue_7)
- .glue_7        0x00000000080008b6        0x0 linker stubs
+ .glue_7        0x00000000080004aa        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080008b6        0x0 linker stubs
+ .glue_7t       0x00000000080004aa        0x0 linker stubs
  *(.eh_frame)
  *(.init)
  *(.fini)
-                0x00000000080008b8                . = ALIGN (0x8)
- *fill*         0x00000000080008b6        0x2 
-                0x00000000080008b8                _etext = .
+                0x00000000080004b0                . = ALIGN (0x8)
+ *fill*         0x00000000080004aa        0x6 
+                0x00000000080004b0                _etext = .
 
-.vfp11_veneer   0x00000000080008b8        0x0
- .vfp11_veneer  0x00000000080008b8        0x0 linker stubs
+.vfp11_veneer   0x00000000080004b0        0x0
+ .vfp11_veneer  0x00000000080004b0        0x0 linker stubs
 
-.v4_bx          0x00000000080008b8        0x0
- .v4_bx         0x00000000080008b8        0x0 linker stubs
+.v4_bx          0x00000000080004b0        0x0
+ .v4_bx         0x00000000080004b0        0x0 linker stubs
 
-.iplt           0x00000000080008b8        0x0
- .iplt          0x00000000080008b8        0x0 Src/MoT/MoT_Cmd_Handler16.o
+.iplt           0x00000000080004b0        0x0
+ .iplt          0x00000000080004b0        0x0 Src/main06.o
 
-.rel.dyn        0x00000000080008b8        0x0
- .rel.iplt      0x00000000080008b8        0x0 Src/MoT/MoT_Cmd_Handler16.o
+.rel.dyn        0x00000000080004b0        0x0
+ .rel.iplt      0x00000000080004b0        0x0 Src/main06.o
 
-.rodata         0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
+.rodata         0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
  *(.rodata)
  *(.rodata*)
-                0x00000000080008b8                . = ALIGN (0x8)
+                0x00000000080004b0                . = ALIGN (0x8)
 
-.ARM.extab      0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
+.ARM.extab      0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080008b8                . = ALIGN (0x8)
+                0x00000000080004b0                . = ALIGN (0x8)
 
-.ARM            0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
-                0x00000000080008b8                __exidx_start = .
+.ARM            0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
+                0x00000000080004b0                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080008b8                __exidx_end = .
-                0x00000000080008b8                . = ALIGN (0x8)
+                0x00000000080004b0                __exidx_end = .
+                0x00000000080004b0                . = ALIGN (0x8)
 
-.preinit_array  0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
+.preinit_array  0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
-                0x00000000080008b8                . = ALIGN (0x8)
+                0x00000000080004b0                . = ALIGN (0x8)
 
-.init_array     0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
+.init_array     0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
                 [!provide]                        PROVIDE (__init_array_end = .)
-                0x00000000080008b8                . = ALIGN (0x8)
+                0x00000000080004b0                . = ALIGN (0x8)
 
-.fini_array     0x00000000080008b8        0x0
-                0x00000000080008b8                . = ALIGN (0x8)
+.fini_array     0x00000000080004b0        0x0
+                0x00000000080004b0                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080008b8                . = ALIGN (0x8)
-                0x00000000080008b8                _sidata = LOADADDR (.data)
+                0x00000000080004b0                . = ALIGN (0x8)
+                0x00000000080004b0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x28 load address 0x00000000080008b8
+.data           0x0000000020000000        0x0 load address 0x00000000080004b0
                 0x0000000020000000                . = ALIGN (0x8)
                 0x0000000020000000                _sdata = .
  *(.data)
- .data          0x0000000020000000       0x28 Src/MoT/MoT_admin_cfg01.o
-                0x0000000020000000                adminTasklist
-                0x0000000020000010                adminTasklist_last
-                0x000000002000001c                adminMsgctl
  *(.data*)
-                0x0000000020000028                . = ALIGN (0x8)
-                0x0000000020000028                _edata = .
+                0x0000000020000000                . = ALIGN (0x8)
+                0x0000000020000000                _edata = .
 
-.igot.plt       0x0000000020000028        0x0 load address 0x00000000080008e0
- .igot.plt      0x0000000020000028        0x0 Src/MoT/MoT_Cmd_Handler16.o
-                0x0000000020000028                . = ALIGN (0x4)
+.igot.plt       0x0000000020000000        0x0 load address 0x00000000080004b0
+ .igot.plt      0x0000000020000000        0x0 Src/main06.o
+                0x0000000020000000                . = ALIGN (0x4)
 
-.bss            0x0000000020000028      0xa04 load address 0x00000000080008e0
-                0x0000000020000028                _sbss = .
-                0x0000000020000028                __bss_start__ = _sbss
+.bss            0x0000000020000000        0x0 load address 0x00000000080004b0
+                0x0000000020000000                _sbss = .
+                0x0000000020000000                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000028      0x9e4 Src/MoT/MoT_admin_cfg01.o
-                0x0000000020000048                adminCmd_handle
- .bss           0x0000000020000a0c       0x20 Src/MoTdevice_GreenLED07.o
-                0x0000000020000a0c                MoTdevice_GreenLED_data
  *(.bss*)
  *(COMMON)
-                0x0000000020000a2c                . = ALIGN (0x4)
-                0x0000000020000a2c                _ebss = .
-                0x0000000020000a2c                __bss_end__ = _ebss
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _ebss = .
+                0x0000000020000000                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000a2c      0x604 load address 0x00000000080008e0
-                0x0000000020000a30                . = ALIGN (0x8)
- *fill*         0x0000000020000a2c        0x4 
+                0x0000000020000000      0x600 load address 0x00000000080004b0
+                0x0000000020000000                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000c30                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000a30      0x200 
-                0x0000000020001030                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000c30      0x400 
-                0x0000000020001030                . = ALIGN (0x8)
+                0x0000000020000200                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000000      0x200 
+                0x0000000020000600                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000200      0x400 
+                0x0000000020000600                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -306,96 +325,67 @@ LOAD /home/lkosub/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.
  libgcc.a(*)
 
 .ARM.attributes
-                0x0000000000000000       0x35
+                0x0000000000000000       0x37
  *(.ARM.attributes)
  .ARM.attributes
-                0x0000000000000000       0x25 Src/MoT/MoT_Cmd_Handler16.o
+                0x0000000000000000       0x39 Src/main06.o
  .ARM.attributes
-                0x0000000000000025       0x25 Src/MoT/MoT_Msg_Handler201.o
+                0x0000000000000039       0x25 Src/stm32L476Disco_GreenLED.o
  .ARM.attributes
-                0x000000000000004a       0x25 Src/MoT/MoT_admin_cfg01.o
+                0x000000000000005e       0x25 Src/stm32L476Disco_USART2_9600N81.o
  .ARM.attributes
-                0x000000000000006f       0x25 Src/MoTdevice_GreenLED07.o
- .ARM.attributes
-                0x0000000000000094       0x39 Src/main06.o
- .ARM.attributes
-                0x00000000000000cd       0x25 Src/stm32L476Disco_GreenLED.o
- .ARM.attributes
-                0x00000000000000f2       0x25 Src/stm32L476Disco_USART2_9600N81.o
- .ARM.attributes
-                0x0000000000000117       0x25 startup/startup_stm32l476xx.o
+                0x0000000000000083       0x25 startup/startup_stm32l476xx.o
 OUTPUT(DiscoBlinkyMoT.elf elf32-littlearm)
 
-.debug_line     0x0000000000000000      0x4a0
- .debug_line    0x0000000000000000       0xaa Src/MoT/MoT_Cmd_Handler16.o
- .debug_line    0x00000000000000aa       0x7d Src/MoT/MoT_Msg_Handler201.o
- .debug_line    0x0000000000000127       0xa3 Src/MoTdevice_GreenLED07.o
- .debug_line    0x00000000000001ca      0x11c Src/main06.o
- .debug_line    0x00000000000002e6       0x6e Src/stm32L476Disco_GreenLED.o
- .debug_line    0x0000000000000354       0xcf Src/stm32L476Disco_USART2_9600N81.o
- .debug_line    0x0000000000000423       0x7d startup/startup_stm32l476xx.o
+.debug_info     0x0000000000000000      0x183
+ .debug_info    0x0000000000000000      0x115 Src/main06.o
+ .debug_info    0x0000000000000115       0x26 Src/stm32L476Disco_GreenLED.o
+ .debug_info    0x000000000000013b       0x26 Src/stm32L476Disco_USART2_9600N81.o
+ .debug_info    0x0000000000000161       0x22 startup/startup_stm32l476xx.o
 
-.debug_info     0x0000000000000000      0x1e4
- .debug_info    0x0000000000000000       0x26 Src/MoT/MoT_Cmd_Handler16.o
- .debug_info    0x0000000000000026       0x26 Src/MoT/MoT_Msg_Handler201.o
- .debug_info    0x000000000000004c       0x26 Src/MoTdevice_GreenLED07.o
- .debug_info    0x0000000000000072      0x104 Src/main06.o
- .debug_info    0x0000000000000176       0x26 Src/stm32L476Disco_GreenLED.o
- .debug_info    0x000000000000019c       0x26 Src/stm32L476Disco_USART2_9600N81.o
- .debug_info    0x00000000000001c2       0x22 startup/startup_stm32l476xx.o
+.debug_abbrev   0x0000000000000000       0xe8
+ .debug_abbrev  0x0000000000000000       0xae Src/main06.o
+ .debug_abbrev  0x00000000000000ae       0x14 Src/stm32L476Disco_GreenLED.o
+ .debug_abbrev  0x00000000000000c2       0x14 Src/stm32L476Disco_USART2_9600N81.o
+ .debug_abbrev  0x00000000000000d6       0x12 startup/startup_stm32l476xx.o
 
-.debug_abbrev   0x0000000000000000      0x122
- .debug_abbrev  0x0000000000000000       0x14 Src/MoT/MoT_Cmd_Handler16.o
- .debug_abbrev  0x0000000000000014       0x14 Src/MoT/MoT_Msg_Handler201.o
- .debug_abbrev  0x0000000000000028       0x14 Src/MoTdevice_GreenLED07.o
- .debug_abbrev  0x000000000000003c       0xac Src/main06.o
- .debug_abbrev  0x00000000000000e8       0x14 Src/stm32L476Disco_GreenLED.o
- .debug_abbrev  0x00000000000000fc       0x14 Src/stm32L476Disco_USART2_9600N81.o
- .debug_abbrev  0x0000000000000110       0x12 startup/startup_stm32l476xx.o
-
-.debug_aranges  0x0000000000000000       0xf0
+.debug_aranges  0x0000000000000000       0x90
  .debug_aranges
-                0x0000000000000000       0x20 Src/MoT/MoT_Cmd_Handler16.o
+                0x0000000000000000       0x28 Src/main06.o
  .debug_aranges
-                0x0000000000000020       0x20 Src/MoT/MoT_Msg_Handler201.o
+                0x0000000000000028       0x20 Src/stm32L476Disco_GreenLED.o
  .debug_aranges
-                0x0000000000000040       0x20 Src/MoTdevice_GreenLED07.o
+                0x0000000000000048       0x20 Src/stm32L476Disco_USART2_9600N81.o
  .debug_aranges
-                0x0000000000000060       0x28 Src/main06.o
- .debug_aranges
-                0x0000000000000088       0x20 Src/stm32L476Disco_GreenLED.o
- .debug_aranges
-                0x00000000000000a8       0x20 Src/stm32L476Disco_USART2_9600N81.o
- .debug_aranges
-                0x00000000000000c8       0x28 startup/startup_stm32l476xx.o
-
-.debug_str      0x0000000000000000     0x3761
- .debug_str     0x0000000000000000       0x78 Src/MoT/MoT_Cmd_Handler16.o
- .debug_str     0x0000000000000078       0x20 Src/MoT/MoT_Msg_Handler201.o
-                                         0x79 (size before relaxing)
- .debug_str     0x0000000000000098       0x1e Src/MoTdevice_GreenLED07.o
-                                         0x77 (size before relaxing)
- .debug_str     0x00000000000000b6     0x3642 Src/main06.o
-                                       0x37f8 (size before relaxing)
- .debug_str     0x00000000000036f8       0x21 Src/stm32L476Disco_GreenLED.o
-                                         0x7a (size before relaxing)
- .debug_str     0x0000000000003719       0x27 Src/stm32L476Disco_USART2_9600N81.o
-                                         0x80 (size before relaxing)
- .debug_str     0x0000000000003740       0x21 startup/startup_stm32l476xx.o
-                                         0x7a (size before relaxing)
+                0x0000000000000068       0x28 startup/startup_stm32l476xx.o
 
 .debug_ranges   0x0000000000000000       0x38
  .debug_ranges  0x0000000000000000       0x18 Src/main06.o
  .debug_ranges  0x0000000000000018       0x20 startup/startup_stm32l476xx.o
 
-.debug_macro    0x0000000000000000      0xdc8
+.debug_macro    0x0000000000000000      0x368
  .debug_macro   0x0000000000000000       0x1a Src/main06.o
- .debug_macro   0x000000000000001a      0xa60 Src/main06.o
- .debug_macro   0x0000000000000a7a      0x34e Src/main06.o
+ .debug_macro   0x000000000000001a      0x34e Src/main06.o
+
+.debug_line     0x0000000000000000      0x2ff
+ .debug_line    0x0000000000000000      0x145 Src/main06.o
+ .debug_line    0x0000000000000145       0x6e Src/stm32L476Disco_GreenLED.o
+ .debug_line    0x00000000000001b3       0xcf Src/stm32L476Disco_USART2_9600N81.o
+ .debug_line    0x0000000000000282       0x7d startup/startup_stm32l476xx.o
+
+.debug_str      0x0000000000000000     0x3704
+ .debug_str     0x0000000000000000     0x368d Src/main06.o
+                                       0x37f8 (size before relaxing)
+ .debug_str     0x000000000000368d       0x2f Src/stm32L476Disco_GreenLED.o
+                                         0x7a (size before relaxing)
+ .debug_str     0x00000000000036bc       0x27 Src/stm32L476Disco_USART2_9600N81.o
+                                         0x80 (size before relaxing)
+ .debug_str     0x00000000000036e3       0x21 startup/startup_stm32l476xx.o
+                                         0x7a (size before relaxing)
 
 .comment        0x0000000000000000       0x7f
  .comment       0x0000000000000000       0x7f Src/main06.o
                                          0x80 (size before relaxing)
 
-.debug_frame    0x0000000000000000       0x54
- .debug_frame   0x0000000000000000       0x54 Src/main06.o
+.debug_frame    0x0000000000000000       0x58
+ .debug_frame   0x0000000000000000       0x58 Src/main06.o

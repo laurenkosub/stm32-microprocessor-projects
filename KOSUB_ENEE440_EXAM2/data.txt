@@ -1,0 +1,18 @@
+The MoTdevice_Func requires the following data:
+- MoT data including a slot in the admin device table, operations to write waveform
+  data (found in misc_utilities), and other variable declarations.
+- ADC1_data : a 1 byte circular buffer that contains a value of the waveform data. This
+  corresponds to a point on the wave. This value is updated every 10 us and is used in
+  order to monitor when a peak occurs and how much time occurs between peaks
+- time : a local variable in main that allows the program to keep track of the time each
+  time ADC1_data updates. This is increments in 10 us intervals because ADC1_data is written
+  to every 10 us. The value is also used in order to calculate the time differnce between
+  two peaks.
+- time_difference : a global variable in main that stores the current time difference between
+  the two most recently observed peaks. This value is reported in function 0 and is used in
+  funciton 1 in order to calcuate the average of 10 difference time differences.
+- AVG_cnt : a variable that keeps track of the number of peaks we have observed. It is reset
+  every 10 peaks because we only want to look at 10 peaks at a time.
+- AVG_data : stores the average value of the time between peaks for the last 10 observed peaks.
+  This value is reported during function 1.
+

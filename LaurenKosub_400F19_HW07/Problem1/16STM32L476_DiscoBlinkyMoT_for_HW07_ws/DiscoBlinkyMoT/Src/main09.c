@@ -93,14 +93,16 @@ int main(void)
 //	TIM2PWM_init();			// ""
 	TIM2_init();
 //	DBGMCU_FREEZE_TIM2();	//test and debug utility
+	TIM2_IRQHandler();
 	
-	USART2_init(); 			// USART2 is admin Cmd and Msg channel
+/*	USART2_init(); 			// USART2 is admin Cmd and Msg channel
 	init_Cmd_handle(&adminCmd_handle, &adminDevicetable, &USART2_RXgetbuf0, &adminTasklist);
 
 	while (1)
 	{
 		Cmd_Handler(&adminCmd_handle);
 	}
+	*/
 }
 
 
